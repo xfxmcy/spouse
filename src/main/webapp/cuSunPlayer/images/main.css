@@ -1,0 +1,12 @@
+body {margin:0; padding:0;  margin-top:0px;font-size:12px; color:#313131;text-align: left; font-family:Verdana, Arial, Helvetica, sans-serif; background:#ffffff url(bodybg.gif); }
+div,ul,li,ol,dl,dt,dd,form,img,p{margin: 0; padding: 0; border: 0; }
+li{list-style-type:none;}
+h4,h5{margin: 0; padding: 0; font-size:14px;}
+/* __link */
+a {color: #313131; text-decoration:none;}
+a:link {color: #313131;text-decoration:none;}
+a:visited {color: #313131;text-decoration:none;}
+a:hover {color: #990000; text-decoration:underline;}
+a:active {color: #313131;}
+
+div#player { width:960px;margin:0 auto;margin-top:50px; background:#ffffff; height:360px; border:1px #cccccc solid;}

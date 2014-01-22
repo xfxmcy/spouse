@@ -1,0 +1,100 @@
+
+.login-screen {
+
+}
+.login-icon {
+  left: 200px;
+  position: absolute;
+  top: 160px;
+  width: 96px;
+}
+.login-icon > img {
+  display: block;
+  margin-bottom: 6px;
+  width: 100%;
+}
+.login-icon > h4 {
+  font-size: 17px;
+  font-weight: 200;
+  line-height: 34px;
+  opacity: 1;
+  filter: alpha(opacity=1);
+}
+.login-icon > h4 small {
+  color: inherit;
+  display: block;
+  font-size: inherit;
+  font-weight: 700;
+}
+.login-form {
+  background-color: #edeff1;
+  height:240px;
+  padding: 20px;
+  position: relative;
+}
+.login-form:before {
+  content: '';
+  border-style: solid;
+  border-width: 12px 12px 12px 0;
+  border-color: transparent #edeff1 transparent transparent;
+  height: 0;
+  position: absolute;
+  left: -12px;
+  top: 35px;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+}
+.login-form .control-group {
+  margin-bottom: 6px;
+  position: relative;
+}
+.login-form .login-field {
+  border-color: transparent;
+  font-size: 12px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  text-indent: 3px;
+  width: 220px;
+  margin-bottom: 10px !important;
+}
+.login-form .login-field:focus + .login-field-icon {
+  color: #1abc9c;
+}
+.login-form .login-field-icon-user {
+  background:url(../images/user.png) no-repeat;
+  width:16px;
+  height:16px;
+  color: #bfc9ca;
+  font-size: 16px;
+  position: absolute;
+  right: 28px;
+  top: 6px;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-backface-visibility: hidden;
+}
+.login-form .login-field-icon-password {
+  background:url(../images/password.png) no-repeat;
+  width:16px;
+  height:16px;
+  color: #bfc9ca;
+  font-size: 16px;
+  position: absolute;
+  right: 28px;
+  top: 6px;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
+  -webkit-backface-visibility: hidden;
+}
+.login-link {
+  color: #bfc9ca;
+  display: block;
+  font-size: 13px;
+  margin-top: 15px;
+  text-align: center;
+}
+

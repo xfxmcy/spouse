@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+.icpf_upload_container {
+	display:inline-block;
+}
+.icpf_upload_item {
+	display: inline-block;
+	height: 20px;
+	margin-right: 5px;
+}
+
+.icpf_upload_file {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.icpf_upload_text {
+	text-decoration: underline;
+	font-size: 10pt;
+	text-indent: 0em;
+}
+
+.icpf_upload_button {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+
+.icpf_upload_button:HOVER {
+	cursor: pointer;
+}
+
+.icpf_upload_btn_add {
+	background: url("icons/edit_add.png") no-repeat;
+}
+
+.icpf_upload_btn_edit {
+	background: url("icons/edit.png") no-repeat;
+}
+
+.icpf_upload_btn_delete {
+	background: url("icons/edit_remove.png") no-repeat;
+}

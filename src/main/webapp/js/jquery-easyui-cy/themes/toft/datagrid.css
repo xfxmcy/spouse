@@ -1,0 +1,395 @@
+/*datagrid:最外围datagrid的div样式*/
+.datagrid{
+	font-size:12px;
+	border:1px solid #848284;
+	overflow1:hidden;
+	background: #deebff;
+	height:100%;
+}
+/*datagrid-wrap:datagrid内部的div样式*/
+.datagrid-wrap{
+	position:relative;
+}
+/*datagrid-view datagrid-wrap内部div样式 */
+.datagrid-view{
+	position:relative;
+	overflow:hidden;
+}
+/*datagrid-view1 位于 datagrid-view的div。冻结列容器*/
+.datagrid-view1{
+	position:absolute;
+	overflow:hidden;
+	left:0px;
+	top:0px;
+}
+/*datagrid-view1 位于 datagrid-view的div。非冻结列容器*/
+.datagrid-view2{
+	position:absolute;
+	overflow:hidden;
+	left:210px;
+	top:0px;
+}
+/*降序字段排序span样式*/
+.datagrid-sort-desc .datagrid-sort-icon{
+	padding:2px 13px 3px 0px;
+	background:url('images/datagrid_sort_desc.gif') no-repeat center center;
+}
+/*生序字段排序span样式*/
+.datagrid-sort-asc .datagrid-sort-icon{
+	padding:2px 13px 3px 0px;
+	background:url('images/datagrid_sort_asc.gif') no-repeat center center;
+}
+
+/*分页条样式*/
+.datagrid-pager{
+	background:#efefef;
+	border-top:1px solid #ccc;
+}
+/*表格头样式*/
+.datagrid-header{
+	overflow:hidden;
+	background:#7baade none repeat-x left bottom;
+	border-bottom:1px solid #ccc;
+	margin-bottom:1px;
+	position: relative;
+}
+.datagrid-view .datagrid-menu{
+	position: absolute;
+	top:0px;
+	right:0px;
+	width:16px;
+	height:26px;
+	background: transparent url(images/datagrid-menu.gif) no-repeat 50% 100% ;
+	z-index:20;
+}
+.datagrid-menu-items{ border:solid 1px #cccccc; padding:1px; position: absolute; z-index: 21;background-color: #efefef;width:97px; width:100px\9; overflow: hidden;z-index: 600;}
+.datagrid-menu-items a {display:block; text-decoration: none; color:#000; border:solid 1px  #efefef; padding:2px; height:14px; }
+.datagrid-menu-items a span{ padding-left:20px;background-image:url(images/cbChecked.gif); background-repeat: no-repeat; background-position: 2px 50%;width:90px; display: block; height:16px; overflow: hidden;white-space:nowrap;word-break:break-all; cursor: pointer;}
+.datagrid-menu-items .unchecked  span{background-image:url(images/cbUnchecked.gif); }
+.datagrid-menu-items a:hover{border:1px solid #7eabcd; background:url('images/button_plain_hover.png') repeat-x left bottom;}
+.datagrid-view .datagrid-view-2rows{
+	height:52px;
+}
+/*表格头样式 位于datagrid-header内*/
+.datagrid-header-inner{
+	float:left;
+	margin-bottom:-1px;
+}
+.datagrid-view2 .datagrid-header-inner{padding-right:20px;}
+.datagrid-view1 .datagrid-header-inner{height:100%;}
+.datagrid-view1 .datagrid-header-inner table{height:100%\9;}
+
+.datagrid-header-2rows{height:52px;}
+.datagrid-header-1rows{height:26px;}
+
+
+/*表格列头样式*/
+.datagrid-header th{
+	border-right:1px solid #fff;
+	font-size:12px;
+	font-weight:normal;
+	background:#7baade none repeat-x left bottom;
+	border-bottom:1px solid #fff;
+	border-top:0px solid #fff;
+	color:#fff;
+}
+/*列头hover样式*/
+.datagrid-header th.datagrid-header-over{
+	background:#7baade;
+}
+/*列头th>span的样式*/
+.datagrid-header .datagrid-cell{
+	margin:0;
+	padding:4px 0px;
+	white-space:nowrap;
+	word-wrap:normal;
+	overflow:hidden;
+}
+/*分组列头 一层列样式*/
+.datagrid-header .datagrid-cell-group{
+	margin:0;
+	padding:4px 2px;
+	white-space:nowrap;
+	word-wrap:normal;
+	overflow:hidden;
+}
+/*行数头样式*/
+.datagrid-header-rownumber{
+	width:40px;
+	text-align:center;
+	margin:0px;
+	padding:0px 0px;
+}
+/*行数单元格样式*/
+.datagrid-cell-rownumber{
+	width:40px;
+	text-align:center;
+	background:transparent none repeat-x left bottom;
+	margin:0px;
+	padding:0px 0px;
+	color:#000;
+}
+/* 复选框列头样式 */
+.datagrid-header-check{
+	padding:0px 3px;
+}
+/* 复选框单元格样式 */
+.datagrid-cell-check{
+	/*padding:6px 3px;*/
+	padding:0px 3px;
+	
+}
+/*数据区样式，冻结列，非冻结列都适用*/
+.datagrid-body{
+	margin:0;
+	padding:0;
+	overflow:auto;
+	zoom:1;
+	background-color: #deebff;
+}
+/*冻结列内部div样式*/
+.datagrid-view1 .datagrid-body-inner{
+}
+/*冻结列数据内容*/
+.datagrid-view1 .datagrid-body{
+	overflow:hidden;
+}
+/*数据td样式*/
+.datagrid-body td{
+	font-size:12px;
+	border-right:1px solid #fff;
+	border-bottom:1px solid #fff;
+	overflow:hidden;
+	padding:0;
+	margin:0;
+}
+/*数据单元格样式*/
+.datagrid-body .datagrid-cell{
+	overflow:hidden;
+	margin:0;
+	padding:0px 0px;
+	/*_padding:3px 4px;*/
+	white-space:nowrap;
+	word-wrap:normal;
+	cursor:pointer;
+	position: relative;
+}
+/*冻结单元格，非冻结单元格均加上该样式保证高度一致*/
+.datagrid-body .datagrid-cell-height{
+	/*height:16px!important;*/
+	height:22px;
+}
+/*交替数据行样式*/
+.datagrid-row-alt{
+	background:#e7f3ff;
+}
+/*单元格hover样式*/
+.datagrid-row-over{
+	/*background:#D0E5F5;
+	background1:#FBEC88;
+	cursor:default;*/
+}
+/*选中行样式*/
+.datagrid-row-selected{
+	background:#bdd3e7;
+}
+/*列头宽度拖拽的手柄样式*/
+.datagrid-resize-proxy{
+	position:absolute;
+	width:1px;
+	top:0;
+	height:10000px;
+	background:#000;
+	cursor:e-resize;
+	display:none;
+}
+
+
+/*datagrid-noborder:无边框时的样式*/
+.datagrid-noborder,
+.datagrid-noborder .datagrid-body td,
+.datagrid-noborder .datagrid-body,
+.datagrid-noborder .datagrid-row-selected,
+.datagrid-noborder .datagrid-header th,.datagrid-noborder .datagrid-header,
+.datagrid-noborder .datagrid-header,
+.datagrid-noborder .datagrid-header th.datagrid-header-over
+{
+	border-width:0px;
+	background-color: #e7f3ff;
+	margin:0px;
+	color:#000;
+}
+.datagrid-noborder .datagrid-header-check input,.datagrid-noborder .datagrid-cell-check input{
+	_background-color:expression('auto');
+}
+
+
+
+/*linkbutton*/
+/*按钮HTML行如：
+<A class="l-btn l-btn-plain l-btn-disabled" icon="pagination-prev" >
+	<SPAN class=l-btn-left >
+		<SPAN class=l-btn-text >
+			<SPAN class="l-btn-empty pagination-prev"  >&nbsp;</SPAN>
+		</SPAN>
+	</SPAN>
+</A>*/
+
+.datagrid-pager{position: absolute; bottom:0px;width:100%;}
+
+/*分页条上的按钮边框与背景色一致*/
+.datagrid-pager .l-btn{ border:1px solid #efefef;}
+
+/*分页条按钮样式*/
+a.l-btn{
+	color:#444;
+	background:url('images/button_a_bg.gif') no-repeat top right;
+	font-size:12px;
+	text-decoration:none;
+	display:inline-block;
+	zoom:1;
+	height:24px;
+	padding-right:18px;
+	cursor:pointer;
+	outline:none;
+}
+/*按钮样式*/
+a.l-btn-plain{
+	background:transparent;
+	padding-right:5px;
+	border:1px solid transparent;
+	margin:1px;
+}
+/*禁用按钮样式*/
+a.l-btn-disabled{
+	color:#ccc;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	cursor:default;
+}
+a.l-btn span.l-btn-left{
+	display:block;
+	background:url('images/button_span_bg.gif') no-repeat top left;
+	padding:4px 0px 4px 18px;
+	line-height:16px;
+}
+a.l-btn-plain span.l-btn-left{
+	background:transparent;
+	padding-left:5px;
+}
+
+a.l-btn span span.l-btn-text{
+	display:inline-block;
+	height:16px;
+	line-height:16px;
+	padding:0px;
+}
+a.l-btn span span span.l-btn-empty{
+	display:inline-block;
+	padding:0px;
+	width:16px;
+}
+a:hover.l-btn{
+	background-position: bottom right;
+	outline:none;
+}
+a:hover.l-btn span.l-btn-left{
+	background-position: bottom left;
+}
+
+a:hover.l-btn-plain{
+	border:1px solid #7eabcd;
+	background:url('images/button_plain_hover.png') repeat-x left bottom;
+}
+a:hover.l-btn-disabled{
+	background-position:top right;
+}
+a:hover.l-btn-disabled span.l-btn-left{
+	background-position:top left;
+}
+
+
+
+
+/*pagination*/
+/*分页条样式*/
+.pagination{
+	zoom:1;
+}
+.pagination table{
+	float:left;
+}
+/*分页条按钮分隔线*/
+.pagination-btn-separator{
+	height:20px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #fff;
+	margin:1px;
+}
+/*当前页数文本框样式*/
+.pagination-num{
+	border:1px solid #ccc;
+	margin:0 2px;
+	width:20px;
+}
+/*每页记录条数下拉框样式*/
+.pagination-page-list{
+	margin:0px 0px;
+}
+/*分页信息文字样式*/
+.pagination-info{
+	padding-right:1px;
+	padding-bottom:4px;
+	font-size:12px;
+	position: absolute;
+	bottom:0px;
+	right:0px;
+}
+.pagination span{
+	font-size:12px;
+}
+.pagination-first{
+	background:url('images/pagination_first.gif') no-repeat;
+}
+.pagination-prev{
+	background:url('images/pagination_prev.gif') no-repeat;
+}
+.pagination-next{
+	background:url('images/pagination_next.gif') no-repeat;
+}
+.pagination-last{
+	background:url('images/pagination_last.gif') no-repeat;
+}
+.pagination-load{
+	background:url('images/pagination_load.png') no-repeat;
+}
+.pagination-loading{
+	background:url('images/pagination_loading.gif') no-repeat;
+}
+/*增加导出图片的样式*/
+.datagrid-tool-xls{
+	background:url('images/excel.png') no-repeat;
+}
+
+/*隐藏右键菜单的ul*/
+.contextMenu{display:none;}
+
+/* large text tip */
+.datagrid-largetext-tip{position:absolute; background-color:#efefef; border:1px solid #000100;z-index: 999;word-wrap: break-word; word-break: normal;
+}
+
+/*treegrid*/
+.datagrid-treecolumn-pad,.datagrid-treecolumn-nodestatus,.datagrid-treecolumn-nodeicon{padding-left:20px; height:20px;}
+.datagrid-treecolumn-nodeexpaned{background: transparent url(images/tg-expanded.gif) no-repeat center center;}
+.datagrid-treecolumn-nodeunexpaned{background: transparent url(images/tg-unexpanded.gif) no-repeat center center;}
+
+/*group data grid*/
+.datagrid-body .datagrid-grouptitlerow{font-weight: bold; border-bottom:solid 1px #99bbe8; color:#15428b;}
+.datagrid-body .datagrid-grouptitlerow .datagrid-cell{background-color: #fff;}
+
+/*summary*/
+.datagrid-summayrow .datagrid-cell{background-color:#eaf4f9; color:#000; font-weight:bold;}
+.datagrid-summaryrow-globalsummary  .datagrid-cell{background-color:#eee; color:#000; font-weight:bold;}
+
+/*empty row for lazyload*/
+.datagrid-emptyrow td{height:23px;}

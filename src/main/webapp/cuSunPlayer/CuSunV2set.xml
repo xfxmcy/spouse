@@ -1,0 +1,113 @@
+﻿<CuPlayer>
+      <Player_Set 
+		JcScpBufferTime = "5"
+ 		JcScpVolume = "75"
+		JcScpCode = "utf8"
+ 		JcScpImgDisplay = "no"
+		JcScpAutoHideControl="yes"
+		JcScpControlHideTime="0.5"
+		JcScpControlHeight="40"	
+		JcScpShowList= "showad"
+		JcScpAutoRepeat = "no"
+		JcScpAutoPlay = "yes"
+		JcScpsetMode = "1"
+		JcScpAFrontCanClose = "no"
+		JcScpShowRightmenu = "yes"
+		JcScpShareMode = "JcScpVideoPath"
+	/>
+      <Logo_Set
+ 		JcScpLogoDisplay = "yes"
+ 		JcScpLogoPath = "http://xfxmcy.com/cuSunPlayer/images/logo.psd"
+ 		JcScpLogoPosition = "top-left"
+		JcScpLogoWidth = "165"
+ 		JcScpLogoHeight = "75"
+ 		JcScpLogoAlpha = "1"
+	/>
+      <Flashvars_Set
+		JcScpServer =""
+		JcScpVideoPath = "cg.f4v"
+		JcScpVideoPathHD = "cg.f4v"
+		JcScpImg ="images/flashChangfa2.jpg" 
+        
+		JcScpStarTime = "0" 
+		JcScpEndTime = "0"
+		
+		ShowJcScpAFront = "yes"
+		JcScpCountDowns = "10"
+		JcScpCountDownsPosition = "top-right"
+		JcScpAFrontW = "645"
+		JcScpAFrontH = "300"
+		JcScpAFrontPath = "cuSunPlayer/images/SevenColorPlayer_650x418.swf"
+		JcScpAFrontLink = "http://yxp.163.com/act/20120214.html"
+		
+		ShowJcScpAVideo= "no"
+		JcScpAVideoPath= "http://vf1.mtime.cn/Video/2012/07/11/flv/120711093250238753.flv"	
+		JcScpAVideoLink= "http://yxp.163.com/act/20120214.html"
+		
+		
+ 
+		ShowJcScpAEnd = "yes"
+		JcScpAEndPath = "images/Cover_changfa.jpg"
+		JcScpAEndW = "400"
+		JcScpAEndH = "200"
+		JcScpAEndLink= "http://yxp.163.com/act/ShowJcScpAEnd466.html"
+		
+	 />
+
+	 <SkinColor_Set
+ 		JcScpBackcolor = "0x000000"
+ 		JcScpBackcolortop = "0x353535"
+ 		JcScpLightcolor = "0xcfcfcf"
+
+ 		JcScpFontcolor = "0xffffff"
+ 		JcScptimebg = "0x393939"
+
+ 		JcScpLoadbar = "0x898989"
+ 		JcScpLoaded = "0x4d4b4b"
+ 		JcScpLoadbg = "0x000000"
+ 		JcScpPlayBtn = "0x2d2d2d"
+		
+ 		JcScpBar = "0xffffff"
+	 />
+
+
+	<thumbnail> 
+		<filename>images/P_changfa.jpg</filename> 
+		<title>122形象篇《角度篇》</title> 
+		<url>http://www.89525.net/player/CuSunPlayerV1/cusunplayer238.html</url> 
+		<target>_parent</target> 
+	</thumbnail> 
+	<thumbnail> 
+		<filename>images/P_everytime.jpg</filename> 
+		<title>233《枪王ewewe告片2010年7月2日全国公映</title> 
+		<url>http://www.89525.net/player/CuSunPlayerV1/cusunplayer238.html</url> 
+		<target>_blank</target> 
+	</thumbnail> 
+	<thumbnail> 
+		<filename>images/P_everytime.jpg</filename> 
+		<title>2010EveryTime</title> 
+		<url>http://www.89525.net/player/CuSunPlayerV1/cusunplayer238.html</url> 
+		<target>_self</target> 
+	</thumbnail> 
+	<thumbnail> 
+		<filename>images/P_changfa.jpg</filename> 
+		<title>《枪王之王》发布预告片2010年7月2日全国公映</title> 
+		<url>http://www.89525.net/player/CuSunPlayerV1/cusunplayer238.html</url> 
+		<target>_blank</target> 
+	</thumbnail> 
+	 <thumbnail> 
+		<filename>images/P_qiang.jpg</filename> 
+		<title>《魔发奇缘1111》1600万周末票房称雄</title> 
+		<url>http://www.89525.net/player/CuSunPlayerV1/cusunplayer238.html</url> 
+		<target>_self</target> 
+	</thumbnail> 
+	<thumbnail> 
+		<filename>images/P_changfa.jpg</filename> 
+		<title>形象篇《角度篇》</title> 
+		<url>http://www.89525.net/player/CuSunPlayerV1/cusunplayer238.html</url> 
+		<target>_parent</target> 
+	</thumbnail> 
+	
+	
+</CuPlayer>
+

@@ -1,0 +1,10 @@
+/target
+
+/xfxmcy.log
+/WEB-INF
+/.classpath
+/.project
+/.settings
+/build
+/src/main/webapp/cuSunPlayer/resource/
+/src/main/webapp/media/mp3/

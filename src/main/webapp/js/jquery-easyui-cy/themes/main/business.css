@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+.form1{
+	line-height:40px;
+}
+.form1 label{
+	display:inline-block;
+	width:100px;
+	text-align:right;
+}

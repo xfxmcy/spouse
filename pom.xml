@@ -1,0 +1,246 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>spouse</groupId>
+  <artifactId>spouse</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>spouse</name>
+  <description/>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2.1-b03</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope> <!-- 编译和测试的时候有用 ,打包不用 -->
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope> <!-- 编译和测试的时候有用 ,打包不用 -->
+
+		</dependency>
+		
+
+
+		<!-- cy.spring 被依赖的放在上面 统一版本 -->
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-instrument</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>cy.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+
+		<!-- mybatis 和 spring 整合的jar mybatis-spring 是mybatis自己写的 因为spring 先发布的 -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.1.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-context</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-tx</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-jdbc</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.25</version>
+		</dependency>
+		<!-- alibaba -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>0.2.9</version>
+		</dependency>
+		<!-- 快速json  JSON.toJSONString(object) -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.26</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>aopalliance</groupId>
+			<artifactId>aopalliance</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<!-- log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<!-- jackson 在springMVC返回json时使用 -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.11</version>
+		</dependency>
+		<!-- upload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<dependency>
+	    	<groupId>commons-io</groupId>
+	    	<artifactId>commons-io</artifactId>
+	    	<version>2.0.1</version>
+	    </dependency>
+	    <!-- POI -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
+ </dependencies>
+
+	
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<version>3.0</version>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

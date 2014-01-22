@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xfxmcy.spouse.dao.SMNoteMapper" >
+  <resultMap id="BaseResultMap" type="com.xfxmcy.spouse.vo.SMNote" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="book_id" property="bookId" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="memoFirst" property="memofirst" jdbcType="VARCHAR" />
+    <result column="memoSecond" property="memosecond" jdbcType="VARCHAR" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="author_id" property="authorId" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.xfxmcy.spouse.vo.SMNote" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, book_id, title, memoFirst, memoSecond, createTime, author_id
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from sm_note
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sm_note
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xfxmcy.spouse.vo.SMNote" >
+    insert into sm_note (id, book_id, title, 
+      memoFirst, memoSecond, createTime, 
+      author_id, content)
+    values (#{id,jdbcType=VARCHAR}, #{bookId,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{memofirst,jdbcType=VARCHAR}, #{memosecond,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{authorId,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xfxmcy.spouse.vo.SMNote" >
+    insert into sm_note
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bookId != null" >
+        book_id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="memofirst != null" >
+        memoFirst,
+      </if>
+      <if test="memosecond != null" >
+        memoSecond,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+      <if test="authorId != null" >
+        author_id,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="bookId != null" >
+        #{bookId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="memofirst != null" >
+        #{memofirst,jdbcType=VARCHAR},
+      </if>
+      <if test="memosecond != null" >
+        #{memosecond,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="authorId != null" >
+        #{authorId,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xfxmcy.spouse.vo.SMNote" >
+    update sm_note
+    <set >
+      <if test="bookId != null" >
+        book_id = #{bookId,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="memofirst != null" >
+        memoFirst = #{memofirst,jdbcType=VARCHAR},
+      </if>
+      <if test="memosecond != null" >
+        memoSecond = #{memosecond,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="authorId != null" >
+        author_id = #{authorId,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xfxmcy.spouse.vo.SMNote" >
+    update sm_note
+    set book_id = #{bookId,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      memoFirst = #{memofirst,jdbcType=VARCHAR},
+      memoSecond = #{memosecond,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      author_id = #{authorId,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xfxmcy.spouse.vo.SMNote" >
+    update sm_note
+    set book_id = #{bookId,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      memoFirst = #{memofirst,jdbcType=VARCHAR},
+      memoSecond = #{memosecond,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      author_id = #{authorId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,30 @@
+#iss_tjise_sms_div {
+	width: 48px;
+	height:48px;
+	border: 0px solid #CCCCCC;
+	font-size : 12px;
+	position:fixed;
+	right:0;
+	bottom: 0;
+	z-index: 100000;
+}
+
+
+#iss_tjise_sms_div a {
+	float: right;
+	text-decoration: none;
+	height: 48px;
+	width: 48px;
+	background : url('../main/images/message.png') no-repeat center center;
+}
+
+.tipmsg {
+	text-align: center;
+	line-height: 23px;
+	padding: 5px;
+	font-size: 14px
+}
+.tip_button{
+	background:url('main/images/message.png') no-repeat center center;
+}
+

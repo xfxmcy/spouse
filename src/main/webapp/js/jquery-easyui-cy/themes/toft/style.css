@@ -1,0 +1,133 @@
+@CHARSET "UTF-8";
+/*使用,ie6-out,.ie6-in,#bodycontainer 确保页面最小宽度为760px;*/
+
+
+/*body样式，可以在此处定义字体相关信息*/
+body{font-size:12px;font-family:"\5fae\8f6f\96c5\9ed1","Times New Roman",Tahoma,Helvetica, Arial,sans-serif; margin:0px 1px; padding:0px; overflow: auto;}
+
+
+/*表单布局*/
+/* feildset */
+.feildset{ border:1px solid #848284;clear:both; background-color: #e7f3ff; margin:2px 0px;padding:0px;}
+.panel-body .feildset{margin-top:0px;}
+.feildset ul {width:100%; margin:2px 0px; margin-left:-40px; *margin-left:0px;/*IE7 IE6*/}
+/*DEFAULT AS 3 COLUMNS*/
+.feildset ul li { width:33.3%;float:left; list-style-type: none; margin:0px; padding:0px;  display:block; height:30px; }/*DEFAULT 3 COLUMNS ,ORVERRIDE TO CHANGE COLUMN NUMBERS*/
+
+.feildset ul li input{ width:130px; border:solid 1px #7baade;}
+.feildset ul li select{width:132px;width:134px\9; border:1px solid #7baade;}
+.feildset ul .ui_q_right{float:right; text-align:right; padding-top:5px; padding-right:10px;}
+.feildset ul li label{ width:80px; display:inline-block;text-align:right;}
+
+.feildset .c3 li { width:33.3%;}
+.feildset .c3 .cs2 { width:66.6%;}
+.feildset .c2 li { width:49.5%;}
+.feildset .c2 .cs2 { width:99.5%;}
+.feildset .c1 li { width:99.5%;}
+
+/*radio*/
+.feildset ul .radio input {width:auto; border-width:0px;}
+.feildset ul .radio label {width:auto; *width:expression(this.previousSibling==null?'80px':'auto');}
+.feildset ul .radio :first-child {width:80px;}
+/* for l120*/
+.feildset .l120 .radio label {width:auto;*width:expression(this.previousSibling==null?'120px':'auto');}
+.feildset .l120 .radio :first-child {width:120px;}
+
+/*checkbox*/
+.feildset ul .checkbox input {width:auto;border-width:0px;}
+.feildset ul .checkbox label {width:auto;*width:expression(this.previousSibling==null?'80px':'auto');}
+.feildset ul .checkbox :first-child {width:80px;}
+/*for l120*/
+.feildset .l120 .checkbox label {width:auto;*width:expression(this.previousSibling==null?'120px':'auto');}
+.feildset .l120 .checkbox :first-child {width:120px;}
+
+/*label 120 px*/
+.feildset  .l120 li label{ width:120px;}
+
+/*date*/
+.feildset  ul .date input{width:65px;}
+
+/* col span whole ROW*/
+.feildset ul .csr{width:99.5%!important; display:block;}
+.feildset ul .csr textarea{width:70%; font-family:"\5fae\8f6f\96c5\9ed1","Times New Roman",Tahoma,Helvetica, Arial,sans-serif;}
+
+.feildset .fieldsettitle{text-align:left; text-decoration:underline; padding:4px; font-size:120%; }
+
+
+.feildset input[readonly],textarea[readonly]{background-color:#f3f3f3;}
+.feildset input[disabled],select[disabled],textarea[disabled]{background-color:#ccc;}
+.feildset input,textarea,select{_background-color:expression(this.readOnly?'#f3f3f3':(this.disabled?'#ccc':'#fff'));}
+.feildset ul .radio input,.feildset ul .checkbox input  {background-color: #e7f3ff;_background-color:expression(' #e7f3ff');}
+
+.datagrid input,textarea,select{_background-color:expression(this.readOnly?'#f3f3f3':(this.disabled?'#ccc':''));}
+
+
+	
+/* BUTTON */
+.sysBtn{
+	cursor: pointer;
+	color: #000;
+	padding-top: 2px;
+	height: 20px;
+	border-top: 1px solid gray;
+	border-right: 1px double #0066CC;
+	border-bottom: 1px groove #0066CC;
+	border-left: 1px groove #0066CC;
+	background-image: url('images/btn2.jpg');
+	background-color: #D8F2FE;
+	padding:2px;
+	text-align: center;
+	}
+.feildset .sysBtn{width:auto; text-align: center;}
+
+
+/*clear fix 清除浮动  NB!*/
+.clearfix:after { 
+    content: ".";  
+    display: block;  
+    height: 0;  
+    clear: both;  
+    visibility: hidden; 
+} 
+ 
+.clearfix {display: inline-block;} 
+ 
+/* Hides from IE-mac \*/ 
+* html .clearfix {height: 1%;} 
+.clearfix {display: block;} 
+/* End hide from IE-mac */ 
+
+
+/*按钮区样式*/
+.buttons{padding:4px; text-align: center;}
+
+/*需保存条样式*/
+#needsave{position:absolute; background-color: #ce3000; color:#fff; right:20px; top:10px; display: none;z-index:200;}
+
+
+.bodytitle{background-image: url('images/dhtBJ.gif');background-repeat: repeat-x; padding:3px;}
+.bodytitle span{ padding-left:20px; background: transparent url('images/dhttop.gif') no-repeat  0 -2; }
+
+/* form reset*/
+form {padding:0px ; margin:0px;}
+
+/*iButton (reset only)*/
+.iButton:link,.iButton:visited {}
+.iButton:hover {}
+.iButton:active {}
+.iButton{text-decoration: none;color:#000;}
+.iButton font{font-size:12px;}
+
+/* form buttons */
+.dataFormButtons {}/*common data form button container*/
+.topbuttonsform{ margin-top:0px;}/*top buttons form */
+.topformbuttons{text-align: left; padding:3px 0px; background-color: #bdd3e7; border:solid 1px #848284; border-width:1px 1px 0px 1px;}
+.bottomformbuttons{text-align: center;}
+
+/*grid buttons*/
+.gridButtons {}
+.topgridbuttons{text-align: left; padding:3px 0px; background-color: #bdd3e7; border:solid 1px #848284; border-width:1px 1px 0px 1px; }
+.bottomgridbuttons{text-align: center; padding:3px;}
+
+
+

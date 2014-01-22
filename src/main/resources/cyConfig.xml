@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ibatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Apache iBATIS Ibator Configuration 1.0//EN" "http://ibatis.apache.org/dtd/ibator-config_1_0.dtd" >
+<ibatorConfiguration >
+  <classPathEntry location="F:/xm/JarAndSource/DataBase/MySQL/mysql-connector-java-5.0.0-beta-bin.jar" /> 
+  <ibatorContext id="mysql" >
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/spouse" userId="root" password="cy" />
+    <javaModelGenerator targetPackage="com.xfxmcy.spouse.vo" targetProject="spouse" />
+    <sqlMapGenerator targetPackage="com.xfxmcy.spouse.mapping" targetProject="spouse" />
+    <daoGenerator targetPackage="com.xfxmcy.mhxy.dao" targetProject="spouse" type="GENERIC-CI" />
+   	
+   	<!--  table  -->	
+   	<!-- 菜单 -->
+	<table  domainObjectName="SPEmployer" tableName="sp_employer" ></table>
+	<!-- 用户-->
+    <table  domainObjectName="SYMemu" tableName="sy_menu" ></table>
+    <!-- 网站用户 
+    <table  domainObjectName="MhEmployer" tableName="m_employer" ></table>
+    -->
+    <!-- 用户角色 
+    <table  domainObjectName="MhCharacter" tableName="m_character" ></table>
+    -->
+    <!-- 梦幻门派 
+    <table  domainObjectName="MhSchool" tableName="school" ></table>
+    -->
+ <!--   <table  domainObjectName="StageTask" tableName="t_stage_task" ></table>
+    <table  domainObjectName="ExamProRes" tableName="r_examination_project_resource" ></table>
+    <table  domainObjectName="GroupProLab" tableName="r_group_project_label" ></table>
+    <table  domainObjectName="PublicProLab" tableName="r_public_project_label" ></table>
+    <table  domainObjectName="Label" tableName="label" ></table>
+    <table  domainObjectName="LabelCategory" tableName="label_category" ></table> -->
+  </ibatorContext>
+</ibatorConfiguration>

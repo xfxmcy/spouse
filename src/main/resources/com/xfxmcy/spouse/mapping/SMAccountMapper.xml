@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xfxmcy.spouse.dao.SMAccountMapper" >
+  <resultMap id="BaseResultMap" type="com.xfxmcy.spouse.vo.SMAccount" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="account" property="account" jdbcType="VARCHAR" />
+    <result column="pass" property="pass" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="menofirst" property="menofirst" jdbcType="VARCHAR" />
+    <result column="menosecond" property="menosecond" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, account, pass, title, email, phone, id_card, menofirst, menosecond
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sm_account
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sm_account
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xfxmcy.spouse.vo.SMAccount" >
+    insert into sm_account (id, account, pass, 
+      title, email, phone, 
+      id_card, menofirst, menosecond
+      )
+    values (#{id,jdbcType=VARCHAR}, #{account,jdbcType=VARCHAR}, #{pass,jdbcType=VARCHAR}, 
+      #{title,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{idCard,jdbcType=VARCHAR}, #{menofirst,jdbcType=VARCHAR}, #{menosecond,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xfxmcy.spouse.vo.SMAccount" >
+    insert into sm_account
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="account != null" >
+        account,
+      </if>
+      <if test="pass != null" >
+        pass,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="menofirst != null" >
+        menofirst,
+      </if>
+      <if test="menosecond != null" >
+        menosecond,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="account != null" >
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="pass != null" >
+        #{pass,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="menofirst != null" >
+        #{menofirst,jdbcType=VARCHAR},
+      </if>
+      <if test="menosecond != null" >
+        #{menosecond,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xfxmcy.spouse.vo.SMAccount" >
+    update sm_account
+    <set >
+      <if test="account != null" >
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="pass != null" >
+        pass = #{pass,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="menofirst != null" >
+        menofirst = #{menofirst,jdbcType=VARCHAR},
+      </if>
+      <if test="menosecond != null" >
+        menosecond = #{menosecond,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xfxmcy.spouse.vo.SMAccount" >
+    update sm_account
+    set account = #{account,jdbcType=VARCHAR},
+      pass = #{pass,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      menofirst = #{menofirst,jdbcType=VARCHAR},
+      menosecond = #{menosecond,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
