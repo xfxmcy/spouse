@@ -32,7 +32,7 @@ alter table SP_Employer comment '人员表';
 create table SY_menu
 (
    id                   varchar(32) comment 'id',
-   circoncls            varchar(100) comment 'style',
+   iconCls            varchar(100) comment 'style',
    seq                  int comment 'order',
    text                 varchar(300) comment 'text',
    url                  varchar(300) comment 'url',
