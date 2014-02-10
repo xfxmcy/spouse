@@ -8,6 +8,7 @@
     <sqlMapGenerator targetPackage="com.xfxmcy.spouse.mapping" targetProject="spouse" />
     <daoGenerator targetPackage="com.xfxmcy.mhxy.dao" targetProject="spouse" type="GENERIC-CI" />
    	
+   	
    	<!--  table  -->	
    	<!-- 菜单 -->
 	<table  domainObjectName="SPEmployer" tableName="sp_employer" ></table>
