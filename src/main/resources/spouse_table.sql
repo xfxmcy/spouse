@@ -74,5 +74,6 @@ CREATE TABLE `sm_favorite` (
   `memoSecond` varchar(300) DEFAULT NULL COMMENT 'memoSecond',
   `createTime` datetime DEFAULT NULL COMMENT 'createTime',
   `seq` int DEFAULT NULL COMMENT 'seq',
+  `creater` varchar(300) DEFAULT NULL COMMENT 'creater',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='favorite';

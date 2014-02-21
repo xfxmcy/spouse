@@ -10,6 +10,7 @@
 	var nodeCurrent ;// 当前选中节点
 	var linkDialog;  // 链接form 
 	var idIndex = 100;
+	var queryType = 'queryTreegrid'; // 查询参数
 	/* 右键menu */
 	function onContextMenu(e,row){
 		e.preventDefault();
@@ -26,16 +27,25 @@
 		var formDialog;
 		var objectLink;
 		nodeCurrent = $('#favorite_grid').treegrid('getSelected');
-		 linkDialog = parent.sy.dialog({
+		 linkDialog = parent.cy.dialog({
 			title : 'add a favorite',
-			href : '${cy}/xfxmcy/my/favorite/favorite.jsp?parentId='+nodeCurrent.id,
+			href : '${cy}/xfxmcy/my/favorite/favorite.jsp?type=simpleSave&parentId='+nodeCurrent.id,
 			width : 440,
-			height : 180,
+			height : 183,
 			buttons : [ {
 				text : 'add',
 				handler : function() {			
 					formDialog = linkDialog.find('form');
-					formDialog.form('submit', {
+					$.post('${cy}/favorite/favoritePersistent.do',cy.serializeObject(formDialog),function(json){
+						if (json.success) {
+							objectLink = {};
+							manageFavorite.treegrid('reload');
+						//	addLink(json.otherMessage);
+							linkDialog.dialog('close');
+						}
+						parent.simpleMessAlert.call(this,'提示',json.message);
+					},'json');
+					/* formDialog.form('submit', {
 						url : '${cy}/favorite/favoritePersistent.do',
 						success : function(d) {
 							var json = $.parseJSON(d);
@@ -45,12 +55,12 @@
 							//	addLink(json.otherMessage);
 								linkDialog.dialog('close');
 							}
-							sy.showParentMessage(json.message,'提示');
+							simpleMessAlert.call(this,json.message,'提示');
 						}
-					});
-				}
+					});*/
+				} 
 			}, {
-				text : '清空',
+				text : 'clean',
 				handler : function() {
 					formDialog.form('clear');	
 				}
@@ -63,6 +73,7 @@
 		
 	}
 	/*add link entity in front desk , not fresh page*/
+	/*not using*/
 	function addLink(objectLink){
 		idIndex++;
 		var createDate = new Date();
@@ -108,7 +119,7 @@
 							{
 								fit : true, //强烈使用
 								title : 'my Favorite',
-								url : '${cy}/favorite/favoriteQuery.do?queryType=queryTreegrid',
+								url : '${cy}/favorite/favoriteQuery.do?queryType='+queryType,
 							//	url : '${pageContext.request.contextPath}/jquery-easyui-1.3.3/demo/treegrid/treegrid_data2.json',
 								fitColumns : true,//列很少的情况使用,自使用,尽量不出现滚动条
 								pagination : true,
@@ -153,27 +164,37 @@
 									field : 'description',
 									title : '说明',
 									width : 200
-								}] ]
+								}] ],
+								onLoadSuccess:function(row, data){
+									//queryType = 'queryTreegrid';
+									console.info(queryType);
+								},
+								onBeforeLoad:function(){
+									this.datagrid('options').url = "${cy}/favorite/favoriteQuery.do?queryType="+queryType+"&page="
+									+ $(this).datagrid('options').pageNumber
+									+ "&rows="
+									+ $(this).datagrid('options').pageSize;
+								}
 							});
 							
 			/*north面板的 两个linkbutton和input*/
-			$('#favorite_manage_search').linkbutton({
+			/* $('#favorite_manage_search').linkbutton({
 				iconCls : 'icon-search'
 			});
 			$('#favorite_manage_clear').linkbutton({
 				iconCls : 'icon-redo'
-			});
+			}); */
 			/*根据查询条件查询*/
-			$('#favorite_manage_search').bind('click', function() {
+			/* $('#favorite_manage_search').bind('click', function() {
 	
 				manageFavorite.datagrid('load', {});
 	
-			});
+			}); */
 			/*查询条件清空*/
-			$('#favorite_manage_clear').bind('click', function() {
+			/* $('#favorite_manage_clear').bind('click', function() {
 	
 				manageFavorite.datagrid('load');
-			});
+			}); */
 			
 			$("body").css("visibility","visible");
 		});
@@ -183,32 +204,28 @@
 	function editMaterialLink() {
 		nodeCurrent = $('#favorite_grid').treegrid('getSelected');
 		if(!isEdited(nodeCurrent)){
-			sy.showParentMessage('当前节点不可操作','提示');
+			parent.simpleMessAlert.call(this,'当前节点不可操作','提示');
 		}
 		else{
 			var parentNode = manageFavorite.treegrid("getParent",nodeCurrent.id);
-		    linkDialog = parent.sy.dialog({
+		    linkDialog = parent.cy.dialog({
 			title : '修改链接',
-			href : '${cy}/xfxmcy/my/favorite/favorite.jsp?mid='+nodeCurrent.id,
+			href : '${cy}/xfxmcy/my/favorite/favorite.jsp?type=simpleUpdate&mid='+nodeCurrent.id,
 			width : 440,
-			height : 180,
+			height : 183,
 			buttons : [ {
 				text : '修改',
 				handler : function() {			
 					formDialog = linkDialog.find('form');
-					formDialog.form('submit', {
-						url : '${cy}/favorite/.do',
-						success : function(d) {
-							var json = $.parseJSON(d);
-							if (json.success) {
-								objectLink = {};
-								manageFavorite.treegrid('reload');
-							//	addLink(json.otherMessage);	不刷新
-								linkDialog.dialog('close');
-							}
-							sy.showParentMessage(json.message,'提示');
+					$.post('${cy}/favorite/favoriteMerge.do',cy.serializeObject(formDialog),function(json){
+						if (json.success) {
+							objectLink = {};
+							manageFavorite.treegrid('reload');
+						//	addLink(json.otherMessage);
+							linkDialog.dialog('close');
 						}
-					});
+						parent.simpleMessAlert.call(this,'提示',json.message);
+					},'json');
 				}
 			}, {
 					text : '清空',
@@ -219,10 +236,10 @@
 				onLoad : function(){
 					formDialog = linkDialog.find('form');
 					/*赋值*/
-					formDialog.find('#mdescription').val(nodeCurrent.mdescription);
-					formDialog.find('#mtitle').val(nodeCurrent.mtitle);
-					formDialog.find('#linkStr').val(nodeCurrent.linkStr);
-					formDialog.find('#parentId').val(parentNode.id);
+					formDialog.find('#mdescription').val(nodeCurrent.description);
+					formDialog.find('#mtitle').val(nodeCurrent.title);
+					formDialog.find('#linkStr').val(nodeCurrent.url);
+					formDialog.find('#parentId').val(nodeCurrent.pid);
 				}	
 			});
 			
@@ -233,26 +250,26 @@
 	function removeMaterialLink() {
 		nodeCurrent = $('#favorite_grid').treegrid('getSelected');
 		if(!isEdited(nodeCurrent)){
-			sy.showParentMessage('当前节点不可操作','提示');
+			cy.showParentMessage('当前节点不可操作','提示');
 		}	
 		else{/*后期可以批量删除*/
-			parent.sy.messagerConfirm({
-				msg : 'do you sure your dicision ? when you delete the parent catalog, the offspring will be disappeared',
-				title : 'warning',
-				fn : function(result){
+			parent.simpleMessConf.call(this,
+				 'warning',
+				 'do you sure your dicision ? when you delete the parent catalog, the offspring will be disappeared',
+				 function(result){
 					/*sure*/
 					if(result){
 						removeIt.call(this,nodeCurrent.id);
 					}
 				}
-			});
+			);
 		
 		}
 	}
 	/*验证选中节点是否可以编辑*/
 	function isEdited(node){
 		// 可以操作
-		if(null != node && 1 != node.id){
+		if(null != node && null != node.pid && '' != node.pid){
 			return true;
 		}
 		// 不可操作
@@ -262,7 +279,7 @@
 	}
 	/*remove*/
 	function removeIt(nodeId){
-		$.post('${cy}/favorite/favoriteDelete/'+nodeId+'.do',null,callBack);
+		$.post('${cy}/favorite/favoriteDelete/'+nodeId+'.do?queryType=simpleDelete',null,callBack);
 		if (nodeId){
 			$('#favorite_grid').treegrid('remove', nodeId);
 		}
@@ -270,21 +287,16 @@
 	/*callback 操作*/
 	function callBack(data){
 		var json = $.parseJSON(data);
-		sy.showParentMessage(json.message,'提示');
+		parent.simpleMessAlert.call(this,'Alert',json.message);
 	}
-	/*过滤查询 searchEmp*/
-	function searchEmp(){
-		manageFavorite.datagrid("load",sy.serializeObject($('#searchForm')));
-		/* manageFavorite.datagrid("load",{
-			'folk.endbirthday' : $("#searchForm input[name = 'folk.endbirthday']").val(),
-			'folk.pname' : $("#searchForm input[name = 'folk.pname']").val(),
-			'folk.prebirthday' : $("#searchForm input[name = 'folk.prebirthday']").val()
-			
-		}); */
+	/*过滤查询 searchMana*/
+	function searchMana(){
+		queryType = "filterTreegrid";
+		manageFavorite.treegrid('reload');
 		
 	}
 	/*clean*/
-	function cleanSearchEmp(){
+	function cleansearchMana(){
 	//	$("#searchForm input[name = 'folk.pname']").val('');
 	//	$("#searchForm input[name = 'folk.endbirthday']").val('');
 	//	$("#searchForm input[name = 'folk.prebirthday']").val('');
@@ -304,19 +316,23 @@
 						style="width: 100%;height: 100%;FONT-SIZE: 15pt; FILTER: shadow(color=#AF0530); WIDTH: 100%; LINE-HEIGHT: 150%; FONT-FAMILY: 华文行楷 ">
 						<tr>
 							
-							<td>标题关键字&nbsp;&nbsp;<input name="folk.pname" style="width:317px;" /></td>
+							<td>标题关键字&nbsp;&nbsp;
+								<input name="likeNameFirst" style="width:317px;" />
+							</td>
+							
 						</tr>
 						<tr>
-							
-							<td>添加时间 &nbsp;&nbsp;<input name="folk.prebirthday"
+							<td>添加时间 &nbsp;&nbsp;
+							<input name="beginDate"
 								class="easyui-datebox" data-options="editable:false"
-								style="width: 155px;" />至<input name="folk.endbirthday"
+								style="width: 155px;" />至
+							<input name="endDate"
 								class="easyui-datebox" data-options="editable:false"
 								style="width: 155px;" />&nbsp;&nbsp;
-								<a href="javascript:void(0);"
-								class="easyui-linkbutton" onclick="searchEmp();">查询</a>&nbsp;
-								<a href="javascript:void(0);" class="easyui-linkbutton"
-								onclick="cleanSearchEmp();">清空</a></td>
+							<a href="#"
+								class="easyui-linkbutton" onclick="searchMana();">查询</a>&nbsp;
+							<a href="javascript:void(0);" class="easyui-linkbutton"
+								onclick="cleansearchMana();">清空</a></td>
 						</tr>
 						 
 					</table>

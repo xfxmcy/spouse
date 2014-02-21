@@ -95,5 +95,16 @@ public interface SMFavoriteMapper {
      *   		 2014年1月11日 		cy
      */
 	Long queryTotalFavorite(QueryParam param);
+	/**
+	 * 
+	 * queryMaxSeq: query Max Seq to +1
+	 *
+	 * @param map	param
+	 * @return		result
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年2月18日 		cy
+	 */
+	Long queryMaxSeq(Map<String, Object> map);
 	
 }

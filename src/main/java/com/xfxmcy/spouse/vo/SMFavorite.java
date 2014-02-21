@@ -20,8 +20,17 @@ public class SMFavorite {
     private String memosecond;
 
     private Date createtime;
+    
+    private String creater;
 
-    private Integer seq;
+    public String getCreater() {
+		return creater;
+	}
+
+	public void setCreater(String creater) {
+		this.creater = creater;
+	}
+	private Integer seq;
 
     public String get_parentId(){
     	return pid ;

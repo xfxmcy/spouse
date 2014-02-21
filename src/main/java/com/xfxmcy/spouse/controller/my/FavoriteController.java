@@ -116,8 +116,9 @@ public class FavoriteController {
 	 */
 	@RequestMapping("/favoritePersistent")
 	@ResponseBody
-	public SystemicInfo doPersistentFavorite(QueryParam param , SMFavorite favorite ,SystemicInfo info){
+	public SystemicInfo doPersistentFavorite(QueryParam param , SMFavorite favorite ,SystemicInfo info,HttpServletRequest request){
 		try{
+			favorite.setCreater(SpouseUtil.getSessionUser(request).getUserId());
 			favorite = favoriteServiceImpl.persistenceFavorite(param,favorite);
 			info.setSuccess(true, "success");
 		}catch(Exception e){

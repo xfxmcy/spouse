@@ -12,6 +12,9 @@
 */
 
 package com.xfxmcy.spouse.model;
+
+import java.util.Date;
+
 /**
  * ClassName:QueryParam
  * Function: manual query param
@@ -35,6 +38,30 @@ public class QueryParam {
 	private String treeRootId  = "1";
 	/*owner*/
 	private String owner ;
+	
+	private String likeNameFirst ;
+	
+	
+	public String getLikeNameFirst() {
+		return likeNameFirst;
+	}
+	public void setLikeNameFirst(String likeNameFirst) {
+		this.likeNameFirst = likeNameFirst;
+	}
+	public Date beginDate , endDate;
+	
+	public Date getBeginDate() {
+		return beginDate;
+	}
+	public void setBeginDate(Date beginDate) {
+		this.beginDate = beginDate;
+	}
+	public Date getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
 	/*column be ordered*/
 	private String colOrdered;
 	

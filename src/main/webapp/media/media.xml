@@ -1,25 +1,25 @@
 <player>
 	<playlist>
 		<track>
-			<file>media/mp3/fukua.mp3</file>
+			<file>http://www.xfxmcy.com/media/mp3/fukua.mp3</file>
 			<title>浮夸</title>
 			<artist>陈奕迅</artist>
 			<album>MP3</album>
 		</track>
 		<track>
-			<file>media/mp3/ruguomeiyouni.mp3</file>
+			<file>http://www.xfxmcy.com/media/mp3/ruguomeiyouni.mp3</file>
 			<title>如果没有你</title>
 			<artist>莫文蔚</artist>
 			<album>MP3</album>
 		</track>
 		<track>
-			<file>media/mp3/haojiubujian.mp3</file>
+			<file>http://www.xfxmcy.com/media/mp3/haojiubujian.mp3</file>
 			<title>好久不见</title>
 			<artist>陈奕迅</artist>
 			<album>MP3</album>
 		</track>
 		<track>
-			<file>/media/mp3/taotai.mp3</file>
+			<file>http://www.xfxmcy.com/media/mp3/taotai.mp3</file>
 			<title>淘汰</title>
 			<artist>陈奕迅</artist>
 			<album>MP3</album>

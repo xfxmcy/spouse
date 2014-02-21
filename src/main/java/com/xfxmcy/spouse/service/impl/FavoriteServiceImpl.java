@@ -14,6 +14,7 @@
 package com.xfxmcy.spouse.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,6 +65,7 @@ public class FavoriteServiceImpl implements FavoriteService {
 	public SpouseGrid queryTreeGridFavorite(QueryParam param ,SessionUser user) {
 		SpouseGrid grid = new SpouseGrid();
 		List<SMFavorite> list = null ;
+		List<SMFavorite> result = null ;
 		/*query treegrid*/
 		if(SpouseConstant.Favorite.QUERY_TREEGRID_PAGED.equals(param.getQueryType())){
 			if(null != user && null != user.getUserId() && !"".equals(user.getUserId())){
@@ -83,14 +85,52 @@ public class FavoriteServiceImpl implements FavoriteService {
 			}
 			/*append parent and children*/
 			else{
-				for (SMFavorite smFavorite : list) {
-					list = this.appendChildren(list , smFavorite);
+				result = new ArrayList<SMFavorite>();
+				/*赋值*/
+				for(SMFavorite smFavorite : list){
+					result.add(smFavorite);
 				}
-				list = this.appendParent(list);
-				grid.setGrid(favoriteMapper.queryTotalFavorite(param),list);
+				for (SMFavorite smFavorite : list) {
+					result = this.appendChildren(result , smFavorite);
+				}
+				result = this.appendParent(result);
+				grid.setGrid(favoriteMapper.queryTotalFavorite(param),result);
 			}
 			//this.convertFavoriteTreeNode(list);
 			logger.info("favorite constucted successfully");
+		}
+		/*filter search*/
+		else if(SpouseConstant.Favorite.QUERY_TREEGRID_FILTER.equals(param.getQueryType())){
+			if(null != user && null != user.getUserId() && !"".equals(user.getUserId())){
+				param.setOwner(user.getUserId());
+			}
+			/*filtered query was setted 1 temporary*/
+			param.setRows(1);
+			/*query paged the direct children for the root*/
+			list = favoriteMapper.queryFavoritePaged(param);
+			/*null  only show the root*/
+			if(null == list || 0 == list.size()){
+				list = new ArrayList<SMFavorite>();
+				/*root*/
+				SMFavorite sm = favoriteMapper.selectByPrimaryKey(user.getUserId());
+				if(null != sm){
+					list.add(sm);
+				}
+				grid.setGrid(1l,list);
+			}
+			/*append parent and children*/
+			else{
+				result = new ArrayList<SMFavorite>();
+				/*赋值*/
+				for(SMFavorite smFavorite : list){
+					result.add(smFavorite);
+				}
+				for (SMFavorite smFavorite : list) {
+					result = this.appendChildren(result , smFavorite);
+				}
+				result = this.appendParent(result);
+				grid.setGrid(favoriteMapper.queryTotalFavorite(param),result);
+			}
 		}
 		return grid;
 	}
@@ -141,6 +181,7 @@ public class FavoriteServiceImpl implements FavoriteService {
 	 * ──────────────────────────────────
 	 *   		 2014年1月11日 		cy
 	 */
+	@Transactional(propagation = Propagation.NOT_SUPPORTED ,readOnly = true)
 	private List<SMFavorite> appendChildren(List<SMFavorite> list,
 			SMFavorite smFavorite) {
 		if(null == smFavorite)  
@@ -170,9 +211,19 @@ public class FavoriteServiceImpl implements FavoriteService {
 	
 	@Override
 	public SMFavorite persistenceFavorite(QueryParam param, SMFavorite favorite) {
+		Map<String,Object> map = new HashMap<String,Object>();
 		/*simple save*/
 		if(SpouseConstant.SIMPLE_SAVE.equals(param.getQueryType())){
 			favorite.setId(IdUtil.generaterThrityTwo());
+			favorite.setCreatetime(new Date());
+			/*select max seq*/
+			map.put(SpouseConstant.SQL_PARENT_KEY, favorite.getPid());
+			Integer result = 9;
+			try{
+				result = favoriteMapper.queryMaxSeq(map).intValue();
+			}catch(RuntimeException e){
+			}	
+			favorite.setSeq(result+1);
 			favoriteMapper.insertSelective(favorite);
 		}
 		return favorite;
@@ -183,8 +234,7 @@ public class FavoriteServiceImpl implements FavoriteService {
 	@Override
 	public SMFavorite mergeFavorite(QueryParam param, SMFavorite favorite) {
 		/*simple update*/
-		if(SpouseConstant.SIMPLE_SAVE.equals(param.getQueryType())){
-			
+		if(SpouseConstant.SIMPLE_UPDATE.equals(param.getQueryType())){
 			favoriteMapper.updateByPrimaryKeySelective(favorite);
 		}
 		return favorite;
@@ -197,7 +247,7 @@ public class FavoriteServiceImpl implements FavoriteService {
 		/*param*/
 		Map<String,Object> mapParam = new HashMap<String,Object>();
 		/*simple delete*/
-		if(SpouseConstant.SIMPLE_SAVE.equals(param.getQueryType())){
+		if(SpouseConstant.SIMPLE_DELETE.equals(param.getQueryType())){
 			mapParam.put(SpouseConstant.SQL_PRIMARY_KEY, key);
 			favoriteMapper.deleteByPrimaryKey(mapParam);
 		}

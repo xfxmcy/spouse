@@ -7,16 +7,16 @@
 				<table class="tableForm datagrid-toolbar"
 					style="width: 100%;height: 110px;">
 					<tr>
-						<td>标题 &nbsp; &nbsp;<input name="linkMaterial.mtitle" id="mtitle" style="width:130px;" /></td>
-						<td>说明 &nbsp; &nbsp;<input name="linkMaterial.mdescription" id='mdescription'  style="width:130px;" /></td>
+						<td>标题 &nbsp; &nbsp;<input name="title" id="mtitle" style="width:130px;" /></td>
+						<td>说明 &nbsp; &nbsp;<input name="description" id='mdescription'  style="width:130px;" /></td>
 					</tr>
 					
 					<tr>
-						<td>链接 &nbsp; &nbsp;<input name="linkMaterial.linkStr" id="linkStr"   value="${param.linkStr}" style="width:130px;" /></td>
+						<td>链接 &nbsp; &nbsp;<input name="url" id="linkStr"   value="${param.linkStr}" style="width:130px;" /></td>
 						<td>
-							<input name="parentId" id="parentId" value="${param.parentId}"   style="width:130px;display: none;" />
-							
-							<input name="mid" value="${param.mid}"  style="width:130px;display: none;" />
+							<input name="pid" id="parentId" value="${param.parentId}"   style="width:130px;display: none;" />
+							<input name="queryType" id="queryType" value="${param.type}"   style="width:130px;display: none;" />
+							<input name="id" value="${param.mid}"  style="width:130px;display: none;" />
 						</td>
 							
 					

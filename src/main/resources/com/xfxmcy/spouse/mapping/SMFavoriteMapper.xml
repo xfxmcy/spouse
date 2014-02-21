@@ -10,10 +10,11 @@
     <result column="memoFirst" property="memofirst" jdbcType="VARCHAR" />
     <result column="memoSecond" property="memosecond" jdbcType="VARCHAR" />
     <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="creater" property="creater" jdbcType="VARCHAR" />
     <result column="seq" property="seq" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, url, description, pid, title, memoFirst, memoSecond, createTime, seq
+    id, url, description, pid, title, memoFirst, memoSecond, createTime, seq,creater
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
@@ -28,11 +29,12 @@
   <insert id="insert" parameterType="com.xfxmcy.spouse.vo.SMFavorite" >
     insert into sm_favorite (id, url, description, 
       pid, title, memoFirst, 
-      memoSecond, createTime, seq
+      memoSecond, createTime, seq,creater
       )
     values (#{id,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
       #{pid,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{memofirst,jdbcType=VARCHAR}, 
       #{memosecond,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{seq,jdbcType=VARCHAR}
+      , #{creater,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.xfxmcy.spouse.vo.SMFavorite" >
@@ -65,6 +67,9 @@
       <if test="seq != null" >
         seq,
       </if>
+      <if test="creater != null" >
+        creater,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -93,6 +98,9 @@
       </if>
       <if test="seq != null" >
         #{seq,jdbcType=VARCHAR},
+      </if>
+      <if test="creater != null" >
+        #{creater,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -123,6 +131,9 @@
       <if test="seq != null" >
         seq = #{seq,jdbcType=VARCHAR},
       </if>
+      <if test="creater != null" >
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
@@ -135,7 +146,8 @@
       memoFirst = #{memofirst,jdbcType=VARCHAR},
       memoSecond = #{memosecond,jdbcType=VARCHAR},
       createTime = #{createtime,jdbcType=TIMESTAMP},
-      seq = #{seq,jdbcType=VARCHAR}
+      seq = #{seq,jdbcType=VARCHAR},
+      creater = #{creater,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
   
@@ -145,7 +157,19 @@
     <include refid="Base_Column_List" />
     from sm_favorite
     <where>
-    	 <if test="treeRootId != null">
+    	 <if test="likeNameFirst != null">
+    	  	title like #{likeNameFirst,jdbcType=VARCHAR}
+    	 </if>
+    	 <if test="owner != null">
+    	  	creater = #{owner,jdbcType=VARCHAR}
+    	 </if>
+    	 <if test="beginDate != null">
+    	  	createTime > #{createtime,jdbcType=TIMESTAMP}
+    	 </if>
+    	  <if test="endDate != null">
+    	  	endDate > #{createtime,jdbcType=TIMESTAMP}  
+    	 </if>
+    	  <if test="treeRootId != null">
     	  	pid = #{treeRootId,jdbcType=VARCHAR}
     	 </if>
     </where>
@@ -158,10 +182,26 @@
   <!-- query the count -->
   <select id="queryTotalFavorite" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.model.QueryParam" >
 		select count(*) from sm_favorite
-		 <where>
+	<where>
     	 <if test="treeRootId != null">
     	  	pid = #{treeRootId,jdbcType=VARCHAR}
     	 </if>
+    	  <if test="likeNameFirst != null">
+    	  	title like #{likeNameFirst,jdbcType=VARCHAR}
+    	 </if>
+    	 <if test="owner != null">
+    	  	creater = #{owner,jdbcType=VARCHAR}
+    	 </if>
+    	 <if test="beginDate != null">
+    	  	createTime > #{createtime,jdbcType=TIMESTAMP}
+    	 </if>
+    	  <if test="endDate != null">
+    	  	endDate > #{createtime,jdbcType=TIMESTAMP}  
+    	 </if>
     </where>
-	</select>
+  </select>
+  <!-- query the queryMaxSeq -->
+  <select id="queryMaxSeq" resultType="java.lang.Long" parameterType="java.util.HashMap" >
+		select MAX(seq) from sm_favorite where pid = #{pid,jdbcType=VARCHAR}
+  </select>
 </mapper>

@@ -42,6 +42,8 @@ public final class SpouseConstant {
 	
 	/*SQL  primaty key*/
 	public final static String SQL_PRIMARY_KEY = "id";
+	/*SQL  parent key*/
+	public final static String SQL_PARENT_KEY = "pid";
 	
 	/**
 	 * 
@@ -132,10 +134,10 @@ public final class SpouseConstant {
 	 */
 	public class Favorite {
 		
-		
 		/*query tree grid paged*/
 		public final static String QUERY_TREEGRID_PAGED = "queryTreegrid";
-		
+		/*filter query tree grid paged*/
+		public final static String QUERY_TREEGRID_FILTER = "filterTreegrid";
 	}
 }
 

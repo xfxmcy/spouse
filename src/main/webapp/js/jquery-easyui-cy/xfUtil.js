@@ -210,6 +210,26 @@ function simpleMessShow(pTitle,pMsg,pTimeout,pShowType){
 /**
  * @author CY
  * 
+ * @requires jQuery
+ * 
+ * 将form表单元素的值序列化成对象
+ * 
+ * @returns object
+ */
+cy.serializeObject = function(form) {
+	var o = {};
+	$.each(form.serializeArray(), function(index) {
+		if (o[this['name']]) {
+			o[this['name']] = o[this['name']] + "," + this['value'];
+		} else {
+			o[this['name']] = this['value'];
+		}
+	});
+	return o;
+};
+/**
+ * @author CY
+ * 
  * @requires jQuery,EasyUI
  * 
  * 简单使用messager.show
@@ -217,6 +237,7 @@ function simpleMessShow(pTitle,pMsg,pTimeout,pShowType){
 function simpleMessConf(pTitle,pMsg,pFn){
 	$.messager.confirm(pTitle,pMsg,pFn);
 }
+
 /**
  * @author CY
  * 
