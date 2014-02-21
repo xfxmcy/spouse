@@ -171,6 +171,7 @@
 								},
 								onBeforeLoad:function(){
 									// filter / search
+									
 									this.datagrid('options').url = "${cy}/favorite/favoriteQuery.do?queryType="+queryType+"&page="
 									+ $(this).datagrid('options').pageNumber
 									+ "&rows="
