@@ -116,7 +116,7 @@
 			//so.addVariable("JcScpAPausePath","Images/Apause375x250.jpg");　 
 			//so.addVariable("JcScpAPauseLink","http://yxp.163.com/act/20120214.html"); 
 			//-角标广告参数-----------------------------
-			so.addVariable("ShowJcScpACorner","no");　
+			so.addVariable("ShowJcScpACorner","no");
 			//so.addVariable("JcScpACornerW","85");　
 			//so.addVariable("JcScpACornerH","50");　
 			//so.addVariable("JcScpACornerPath","Images/SevenColorPlayer_a10.swf");　
