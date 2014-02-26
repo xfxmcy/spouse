@@ -1,10 +1,10 @@
 ﻿/**
- * jQuery EasyUI 1.3.2
+ * jQuery EasyUI 1.3.5
  * 
  * Copyright (c) 2009-2013 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the GPL or commercial licenses
- * To use it on other terms please contact us: jeasyui@gmail.com
+ * To use it on other terms please contact us: info@jeasyui.com
  * http://www.gnu.org/licenses/gpl.txt
  * http://www.jeasyui.com/license_commercial.php
  *
@@ -13,91 +13,120 @@
 function _1(_2){
 var _3=$.data(_2,"menubutton").options;
 var _4=$(_2);
-_4.removeClass("m-btn-active m-btn-plain-active").addClass("m-btn");
-_4.linkbutton($.extend({},_3,{text:_3.text+"<span class=\"m-btn-downarrow\">&nbsp;</span>"}));
+_4.removeClass(_3.cls.btn1+" "+_3.cls.btn2).addClass("m-btn");
+_4.linkbutton($.extend({},_3,{text:_3.text+"<span class=\""+_3.cls.arrow+"\">&nbsp;</span>"}));
 if(_3.menu){
-$(_3.menu).menu({onShow:function(){
-_4.addClass((_3.plain==true)?"m-btn-plain-active":"m-btn-active");
+$(_3.menu).menu();
+var _5=$(_3.menu).menu("options");
+var _6=_5.onShow;
+var _7=_5.onHide;
+$.extend(_5,{onShow:function(){
+var _8=$(this).menu("options");
+var _9=$(_8.alignTo);
+var _a=_9.menubutton("options");
+_9.addClass((_a.plain==true)?_a.cls.btn2:_a.cls.btn1);
+_6.call(this);
 },onHide:function(){
-_4.removeClass((_3.plain==true)?"m-btn-plain-active":"m-btn-active");
+var _b=$(this).menu("options");
+var _c=$(_b.alignTo);
+var _d=_c.menubutton("options");
+_c.removeClass((_d.plain==true)?_d.cls.btn2:_d.cls.btn1);
+_7.call(this);
 }});
 }
-_5(_2,_3.disabled);
+_e(_2,_3.disabled);
 };
-function _5(_6,_7){
-var _8=$.data(_6,"menubutton").options;
-_8.disabled=_7;
-var _9=$(_6);
-if(_7){
-_9.linkbutton("disable");
-_9.unbind(".menubutton");
+function _e(_f,_10){
+var _11=$.data(_f,"menubutton").options;
+_11.disabled=_10;
+var btn=$(_f);
+var t=btn.find("."+_11.cls.trigger);
+if(!t.length){
+t=btn;
+}
+t.unbind(".menubutton");
+if(_10){
+btn.linkbutton("disable");
 }else{
-_9.linkbutton("enable");
-_9.unbind(".menubutton");
-_9.bind("click.menubutton",function(){
-_a();
+btn.linkbutton("enable");
+var _12=null;
+t.bind("click.menubutton",function(){
+_13(_f);
 return false;
-});
-var _b=null;
-_9.bind("mouseenter.menubutton",function(){
-_b=setTimeout(function(){
-_a();
-},_8.duration);
+}).bind("mouseenter.menubutton",function(){
+_12=setTimeout(function(){
+_13(_f);
+},_11.duration);
 return false;
 }).bind("mouseleave.menubutton",function(){
-if(_b){
-clearTimeout(_b);
+if(_12){
+clearTimeout(_12);
 }
 });
 }
-function _a(){
-if(!_8.menu){
+};
+function _13(_14){
+var _15=$.data(_14,"menubutton").options;
+if(_15.disabled||!_15.menu){
 return;
 }
 $("body>div.menu-top").menu("hide");
-$(_8.menu).menu("show",{alignTo:_9});
-_9.blur();
-};
-};
-$.fn.menubutton=function(_c,_d){
-if(typeof _c=="string"){
-return $.fn.menubutton.methods[_c](this,_d);
+var btn=$(_14);
+var mm=$(_15.menu);
+if(mm.length){
+mm.menu("options").alignTo=btn;
+mm.menu("show",{alignTo:btn});
 }
-_c=_c||{};
-return this.each(function(){
-var _e=$.data(this,"menubutton");
-if(_e){
-$.extend(_e.options,_c);
+btn.blur();
+};
+$.fn.menubutton=function(_16,_17){
+if(typeof _16=="string"){
+var _18=$.fn.menubutton.methods[_16];
+if(_18){
+return _18(this,_17);
 }else{
-$.data(this,"menubutton",{options:$.extend({},$.fn.menubutton.defaults,$.fn.menubutton.parseOptions(this),_c)});
+return this.linkbutton(_16,_17);
+}
+}
+_16=_16||{};
+return this.each(function(){
+var _19=$.data(this,"menubutton");
+if(_19){
+$.extend(_19.options,_16);
+}else{
+$.data(this,"menubutton",{options:$.extend({},$.fn.menubutton.defaults,$.fn.menubutton.parseOptions(this),_16)});
 $(this).removeAttr("disabled");
 }
 _1(this);
 });
 };
 $.fn.menubutton.methods={options:function(jq){
-return $.data(jq[0],"menubutton").options;
+var _1a=jq.linkbutton("options");
+var _1b=$.data(jq[0],"menubutton").options;
+_1b.toggle=_1a.toggle;
+_1b.selected=_1a.selected;
+return _1b;
 },enable:function(jq){
 return jq.each(function(){
-_5(this,false);
+_e(this,false);
 });
 },disable:function(jq){
 return jq.each(function(){
-_5(this,true);
+_e(this,true);
 });
 },destroy:function(jq){
 return jq.each(function(){
-var _f=$(this).menubutton("options");
-if(_f.menu){
-$(_f.menu).menu("destroy");
+var _1c=$(this).menubutton("options");
+if(_1c.menu){
+$(_1c.menu).menu("destroy");
 }
 $(this).remove();
 });
 }};
-$.fn.menubutton.parseOptions=function(_10){
-var t=$(_10);
-return $.extend({},$.fn.linkbutton.parseOptions(_10),$.parser.parseOptions(_10,["menu",{plain:"boolean",duration:"number"}]));
+$.fn.menubutton.parseOptions=function(_1d){
+var t=$(_1d);
+return $.extend({},$.fn.linkbutton.parseOptions(_1d),$.parser.parseOptions(_1d,["menu",{plain:"boolean",duration:"number"}]));
 };
-$.fn.menubutton.defaults=$.extend({},$.fn.linkbutton.defaults,{plain:true,menu:null,duration:100});
+$.fn.menubutton.defaults=$.extend({},$.fn.linkbutton.defaults,{plain:true,menu:null,duration:100,cls:{btn1:"m-btn-active",btn2:"m-btn-plain-active",arrow:"m-btn-downarrow",trigger:"m-btn"}});
 })(jQuery);
 

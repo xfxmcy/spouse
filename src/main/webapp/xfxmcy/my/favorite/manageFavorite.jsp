@@ -119,7 +119,7 @@
 							{
 								fit : true, //强烈使用
 								title : 'my Favorite',
-								url : '${cy}/favorite/favoriteQuery.do?queryType='+queryType,
+								url : '${cy}/favorite/favoriteQuery.do?queryType=queryTreegrid',
 							//	url : '${pageContext.request.contextPath}/jquery-easyui-1.3.3/demo/treegrid/treegrid_data2.json',
 								fitColumns : true,//列很少的情况使用,自使用,尽量不出现滚动条
 								pagination : true,
@@ -168,14 +168,6 @@
 								onLoadSuccess:function(row, data){
 									//queryType = 'queryTreegrid';
 									console.info(queryType);
-								},
-								onBeforeLoad:function(){
-									// filter / search
-									
-									this.datagrid('options').url = "${cy}/favorite/favoriteQuery.do?queryType="+queryType+"&page="
-									+ $(this).datagrid('options').pageNumber
-									+ "&rows="
-									+ $(this).datagrid('options').pageSize;
 								}
 							});
 							
@@ -293,9 +285,17 @@
 	}
 	/*过滤查询 searchMana*/
 	function searchMana(){
-		queryType = "filterTreegrid";
-		manageFavorite.treegrid('reload');
 		
+		 manageFavorite.treegrid('load',{
+			"isFilter" : true,
+			"likeNameFirst" : $('#likeNameFirst').val()
+			
+		}); 
+		/*
+		"beginDate" : $('#beginTime').datebox('getValue'),
+			"endDate" : $('#endTime').datebox('getValue')
+		*/
+		 
 	}
 	/*clean*/
 	function cleansearchMana(){
@@ -303,7 +303,7 @@
 	//	$("#searchForm input[name = 'folk.endbirthday']").val('');
 	//	$("#searchForm input[name = 'folk.prebirthday']").val('');
 		$("#searchForm input").val('');
-		manageFavorite.datagrid("load",{});
+		manageFavorite.treegrid("load",{});
 	}
 	
 	
@@ -312,30 +312,33 @@
 
 <body>
 		<div style="margin-left: 1%;margin-right:1%;margin-top: -3px;height: 450px;">
-			<div style="height:110px;overflow: hidden;" id="favoriteToolBar" >
+			<div style="height:60px;overflow: hidden;" id="favoriteToolBar" >
 				<form id="searchForm">
 					<table class="tableForm datagrid-toolbar"
 						style="width: 100%;height: 100%;FONT-SIZE: 15pt; FILTER: shadow(color=#AF0530); WIDTH: 100%; LINE-HEIGHT: 150%; FONT-FAMILY: 华文行楷 ">
 						<tr>
 							
 							<td>标题关键字&nbsp;&nbsp;
-								<input name="likeNameFirst" style="width:317px;" />
-							</td>
+								<input id="likeNameFirst" name="likeNameFirst" style="width:317px;" />
+								&nbsp;&nbsp;<a href="#"
+								class="easyui-linkbutton" onclick="searchMana();">查询</a>&nbsp;
+							<a href="javascript:void(0);" class="easyui-linkbutton"
+								onclick="cleansearchMana();">清空</a></td>
 							
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td>添加时间 &nbsp;&nbsp;
-							<input name="beginDate"
+							<input name="beginDate" id="beginTime"
 								class="easyui-datebox" data-options="editable:false"
 								style="width: 155px;" />至
-							<input name="endDate"
+							<input name="endDate" id="endTime"
 								class="easyui-datebox" data-options="editable:false"
 								style="width: 155px;" />&nbsp;&nbsp;
 							<a href="#"
 								class="easyui-linkbutton" onclick="searchMana();">查询</a>&nbsp;
 							<a href="javascript:void(0);" class="easyui-linkbutton"
 								onclick="cleansearchMana();">清空</a></td>
-						</tr>
+						</tr> -->
 						 
 					</table>
 				</form>

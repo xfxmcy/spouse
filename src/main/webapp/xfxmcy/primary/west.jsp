@@ -3,7 +3,7 @@
 <c:set var="cy" value="${pageContext.request.contextPath}" />
 <script type="text/javascript" charset="utf-8">
 	var tree;
-	var menuPanel;
+	var menuXfxmcyPanel;
 	$(function() {
 		/*初始化页面*/
 		easyloader.load([ "tree", "dialog", "parser", "tabs", "accordion",
@@ -12,7 +12,7 @@
 			initialDialog.call(this);
 			/*加载 tree plugin*/
 			initialTree.call(this);
-			menuPanel = $('#menuPanel').panel({
+			menuXfxmcyPanel = $('#menuXfxmcyPanel').panel({
 				tools : [ {
 					iconCls : 'icon-reload',
 					handler : function() {
@@ -43,16 +43,18 @@
 			if ('${sessionInfo.userId}') {
 				ctrlTree();
 			}
+			$("body").css("visibility","visible");
 		});
 	});
 	/*构建树*/
 	function ctrlTree() {
-		tree = $('#menu').tree({
+		tree = $('#menuXfxmcy').tree({
 			url : '${cy}/menu/menuCtrlTree/simple.do',
 			parentField : 'pid',
 			lines : true,
 			onClick : function(node) {
-				addTab(node);
+				
+				addTab.call(this,node);
 			},
 			onDblClick : function(node) {
 				if (node.state == 'closed') {
@@ -62,13 +64,14 @@
 				}
 			}
 		});
+		$('#menuXfxmcy').show();
 	}
 </script>
 <div class="easyui-accordion" fit="true" border="false">
 	<div title="菜单">
-		<div id="menuPanel" fit="true" border="false" title="功能菜单"
+		<div id="menuXfxmcyPanel" fit="true" border="false" title="功能菜单"
 			style="padding: 5px;">
-			<ul id="menu"></ul>
+			<ul id="menuXfxmcy"></ul>
 		</div>
 	</div>
 	<div title="其他内容"></div>

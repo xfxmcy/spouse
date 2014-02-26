@@ -14,7 +14,7 @@
   top: 7px;
   border-width: 1px;
   border-style: solid;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 .slider-handle {
   position: absolute;
@@ -29,6 +29,7 @@
   position: absolute;
   display: inline-block;
   line-height: 12px;
+  font-size: 12px;
   white-space: nowrap;
   top: -22px;
 }
@@ -51,6 +52,7 @@
 .slider-rulelabel span {
   position: absolute;
   display: inline-block;
+  font-size: 12px;
 }
 .slider-v .slider-inner {
   width: 6px;

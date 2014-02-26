@@ -1,10 +1,10 @@
 ﻿/**
- * jQuery EasyUI 1.3.2
+ * jQuery EasyUI 1.3.5
  * 
  * Copyright (c) 2009-2013 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the GPL or commercial licenses
- * To use it on other terms please contact us: jeasyui@gmail.com
+ * To use it on other terms please contact us: info@jeasyui.com
  * http://www.gnu.org/licenses/gpl.txt
  * http://www.jeasyui.com/license_commercial.php
  *
@@ -93,9 +93,6 @@ function _6(_11){
 var _12=$.data(_11,"timespinner").options;
 var _13=$(_11).val();
 var _14=_d(_11,_13);
-if(!_14){
-_14=_d(_11,_12.value);
-}
 if(!_14){
 _12.value="";
 $(_11).val("");

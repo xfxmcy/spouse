@@ -157,20 +157,20 @@
     <include refid="Base_Column_List" />
     from sm_favorite
     <where>
-    	 <if test="likeNameFirst != null">
-    	  	title like #{likeNameFirst,jdbcType=VARCHAR}
+    	 <if test="likeNameFirst != null" >
+    	  	title like #{likeNameFirst,jdbcType=VARCHAR} and
     	 </if>
     	 <if test="owner != null">
-    	  	creater = #{owner,jdbcType=VARCHAR}
+    	  	creater = #{owner,jdbcType=VARCHAR} 
     	 </if>
     	 <if test="beginDate != null">
-    	  	createTime > #{createtime,jdbcType=TIMESTAMP}
+    	  	createTime > #{beginDate,jdbcType=TIMESTAMP} and
     	 </if>
     	  <if test="endDate != null">
-    	  	endDate > #{createtime,jdbcType=TIMESTAMP}  
+    	  	 #{endDate,jdbcType=TIMESTAMP} > createTime  and  
     	 </if>
     	  <if test="treeRootId != null">
-    	  	pid = #{treeRootId,jdbcType=VARCHAR}
+    	  	pid = #{treeRootId,jdbcType=VARCHAR} 
     	 </if>
     </where>
     order by seq
@@ -183,20 +183,16 @@
   <select id="queryTotalFavorite" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.model.QueryParam" >
 		select count(*) from sm_favorite
 	<where>
-    	 <if test="treeRootId != null">
-    	  	pid = #{treeRootId,jdbcType=VARCHAR}
-    	 </if>
+    	
     	  <if test="likeNameFirst != null">
-    	  	title like #{likeNameFirst,jdbcType=VARCHAR}
+    	  	title like #{likeNameFirst,jdbcType=VARCHAR} and
     	 </if>
     	 <if test="owner != null">
-    	  	creater = #{owner,jdbcType=VARCHAR}
+    	  	creater = #{owner,jdbcType=VARCHAR} 
     	 </if>
-    	 <if test="beginDate != null">
-    	  	createTime > #{createtime,jdbcType=TIMESTAMP}
-    	 </if>
-    	  <if test="endDate != null">
-    	  	endDate > #{createtime,jdbcType=TIMESTAMP}  
+    
+    	  <if test="treeRootId != null">
+    	  	pid = #{treeRootId,jdbcType=VARCHAR} 
     	 </if>
     </where>
   </select>

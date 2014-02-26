@@ -20,8 +20,6 @@
   top: auto;
   bottom: 0;
   width: 18px;
-  height: 28px !important;
-  height: 30px;
   font-size: 1px;
   display: none;
   cursor: pointer;
@@ -33,11 +31,6 @@
 }
 .tabs-scroller-right {
   right: 0;
-}
-.tabs-header-plain .tabs-scroller-left,
-.tabs-header-plain .tabs-scroller-right {
-  height: 25px !important;
-  height: 27px;
 }
 .tabs-tool {
   position: absolute;
@@ -72,7 +65,6 @@
   margin: 0px;
   padding: 0px;
   padding-left: 4px;
-  font-size: 12px;
   width: 5000px;
   border-style: solid;
   border-width: 0 0 1px 0;
@@ -154,6 +146,9 @@
   left: 10px;
   top: 50%;
   margin-top: -8px;
+}
+.tabs-title {
+  font-size: 12px;
 }
 .tabs-closable {
   padding-right: 8px;

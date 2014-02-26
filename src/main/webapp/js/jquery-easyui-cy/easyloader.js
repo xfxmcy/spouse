@@ -4,7 +4,7 @@
  * Copyright (c) 2009-2013 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the GPL or commercial licenses
- * To use it on other terms please contact us: jeasyui@gmail.com
+ * To use it on other terms please contact us: info@jeasyui.com
  * http://www.gnu.org/licenses/gpl.txt
  * http://www.jeasyui.com/license_commercial.php
  * 
@@ -27,6 +27,10 @@
 		progressbar:{
 			js:'jquery.progressbar.js',
 			css:'progressbar.css'
+		},
+		tooltip:{
+			js:'jquery.tooltip.js',
+			css:'tooltip.css'
 		},
 		pagination:{
 			js:'jquery.pagination.js',
@@ -57,6 +61,7 @@
 			css:'window.css',
 			dependencies:['resizable','draggable','panel']
 		},
+		
 		dialog:{
 			js:'jquery.dialog.js',
 			css:'dialog.css',
@@ -84,15 +89,15 @@
 			css:'tabs.css',
 			dependencies:['panel','linkbutton']
 		},
-		splitbutton:{
-			js:'jquery.splitbutton.js',
-			css:'splitbutton.css',
-			dependencies:['linkbutton','menu']
-		},
 		menubutton:{
 			js:'jquery.menubutton.js',
 			css:'menubutton.css',
 			dependencies:['linkbutton','menu']
+		},
+		splitbutton:{
+			js:'jquery.splitbutton.js',
+			css:'splitbutton.css',
+			dependencies:['menubutton']
 		},
 		accordion:{
 			js:'jquery.accordion.js',
@@ -123,7 +128,8 @@
 		},
 		validatebox:{
 			js:'jquery.validatebox.js',
-			css:'validatebox.css'
+			css:'validatebox.css',
+			dependencies:['tooltip']
 		},
 		numberbox:{
 			js:'jquery.numberbox.js',
@@ -165,6 +171,9 @@
 			js:'jquery.slider.js',
 			dependencies:['draggable']
 		},
+		tooltip:{
+			js:'jquery.tooltip.js'
+		},
 		parser:{
 			js:'jquery.parser.js'
 		},
@@ -176,25 +185,31 @@
 			dependencies:['dialog']
 		},
 		validMethods: {
-			js:'jquery.validateMethods.js'
+			js:'jquery.validateMethods.js',
+			dependencies:['validatebox']
 		}
 	};
 	
 	var locales = {
 		'af':'easyui-lang-af.js',
+		'ar':'easyui-lang-ar.js',
 		'bg':'easyui-lang-bg.js',
 		'ca':'easyui-lang-ca.js',
 		'cs':'easyui-lang-cs.js',
 		'cz':'easyui-lang-cz.js',
 		'da':'easyui-lang-da.js',
 		'de':'easyui-lang-de.js',
+		'el':'easyui-lang-el.js',
 		'en':'easyui-lang-en.js',
 		'es':'easyui-lang-es.js',
 		'fr':'easyui-lang-fr.js',
 		'it':'easyui-lang-it.js',
+		'jp':'easyui-lang-jp.js',
 		'nl':'easyui-lang-nl.js',
+		'pl':'easyui-lang-pl.js',
 		'pt_BR':'easyui-lang-pt_BR.js',
 		'ru':'easyui-lang-ru.js',
+		'sv_SE':'easyui-lang-sv_SE.js',
 		'tr':'easyui-lang-tr.js',
 		'zh_CN':'easyui-lang-zh_CN.js',
 		'zh_TW':'easyui-lang-zh_TW.js'
@@ -375,15 +390,6 @@
 			}
 		},
 		
-		loadCss: function (cssPath) {
-			//if (/\.css$/i.test(name)){
-				var linkTag = document.createElement("link");
-		    	linkTag.rel = "stylesheet";
-		    	linkTag.href = cssPath;
-		    	document.getElementsByTagName("head")[0].appendChild(linkTag);
-			//}
-		},
-		
 		onProgress: function(name){},
 		onLoad: function(name){}
 	};
@@ -403,9 +409,6 @@
 	if (window.jQuery){
 		jQuery(function(){
 			easyloader.load('parser', function(){
-				if (window.parserComplete && typeof window.parserComplete === "function") {
-					jQuery.parser.onComplete = window.parserComplete;
-				}
 				jQuery.parser.parse();
 			});
 		});

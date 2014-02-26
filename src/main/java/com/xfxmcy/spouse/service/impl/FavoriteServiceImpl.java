@@ -67,7 +67,8 @@ public class FavoriteServiceImpl implements FavoriteService {
 		List<SMFavorite> list = null ;
 		List<SMFavorite> result = null ;
 		/*query treegrid*/
-		if(SpouseConstant.Favorite.QUERY_TREEGRID_PAGED.equals(param.getQueryType())){
+		if(SpouseConstant.Favorite.QUERY_TREEGRID_PAGED.equals(param.getQueryType()) && "false".equals( param.getIsFilter())){
+			/*filter*/
 			if(null != user && null != user.getUserId() && !"".equals(user.getUserId())){
 				param.setTreeRootId(user.getUserId());
 			}
@@ -100,10 +101,11 @@ public class FavoriteServiceImpl implements FavoriteService {
 			logger.info("favorite constucted successfully");
 		}
 		/*filter search*/
-		else if(SpouseConstant.Favorite.QUERY_TREEGRID_FILTER.equals(param.getQueryType())){
+		else if(SpouseConstant.Favorite.QUERY_TREEGRID_PAGED.equals(param.getQueryType()) && "true" .equals( param.getIsFilter())){
 			if(null != user && null != user.getUserId() && !"".equals(user.getUserId())){
 				param.setOwner(user.getUserId());
 			}
+			param.setLikeNameFirst("%"+param.getLikeNameFirst()+"%");
 			/*filtered query was setted 1 temporary*/
 			param.setRows(1);
 			/*query paged the direct children for the root*/
@@ -118,18 +120,11 @@ public class FavoriteServiceImpl implements FavoriteService {
 				}
 				grid.setGrid(1l,list);
 			}
-			/*append parent and children*/
+			/*append parent */
 			else{
-				result = new ArrayList<SMFavorite>();
 				/*赋值*/
-				for(SMFavorite smFavorite : list){
-					result.add(smFavorite);
-				}
-				for (SMFavorite smFavorite : list) {
-					result = this.appendChildren(result , smFavorite);
-				}
-				result = this.appendParent(result);
-				grid.setGrid(favoriteMapper.queryTotalFavorite(param),result);
+				list = this.appendParent(list);
+				grid.setGrid(favoriteMapper.queryTotalFavorite(param),list);
 			}
 		}
 		return grid;
@@ -164,7 +159,7 @@ public class FavoriteServiceImpl implements FavoriteService {
 			//this.appendParent(list);
 		}
 		
-		return list;
+		return this.appendParent(list);
 		
 	}
 

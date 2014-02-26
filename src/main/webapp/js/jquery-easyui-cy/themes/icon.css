@@ -31,11 +31,6 @@
 .icon-search{
 	background:url('icons/search.png') no-repeat center center;
 }
-
-.icon-zoom {
-	background: url('icons/zoom.png') no-repeat center center;
-}
-
 .icon-print{
 	background:url('icons/print.png') no-repeat center center;
 }
@@ -57,6 +52,17 @@
 .icon-tip{
 	background:url('icons/tip.png') no-repeat center center;
 }
+.icon-filter{
+	background:url('icons/filter.png') no-repeat center center;
+}
+.icon-child{
+	background:url('icons/child.png') no-repeat center center;
+}
+.icon-connector{
+	background:url('icons/connector.png') no-repeat center center;
+}
+
+
 
 .icon-mini-add{
 	background:url('icons/mini_add.png') no-repeat center center;
@@ -66,61 +72,4 @@
 }
 .icon-mini-refresh{
 	background:url('icons/mini_refresh.png') no-repeat center center;
-}
-
-.icon-run {
-	background:url('icons/run.png') no-repeat center center;
-}
-
-.icon-query {
-	background:url('icons/query.png') no-repeat center center;
-}
-
-.icon-detail {
-	background: url('icons/detail.png') no-repeat center center;
-}
-
-.icon-exception {
-	background:url('icons/exception.png') no-repeat center center;
-}
-
-.icon-service {
-	background:url('icons/service.png') no-repeat center center;
-}
-
-.icon-log {
-	background:url('icons/log.png') no-repeat center center;
-}
-
-.icon-monitor {
-	background:url('icons/monitor.png') no-repeat center center;
-}
-
-.icon-tatice {
-	background:url('icons/tatice.png') no-repeat center center;
-}
-
-.icon-application {
-	background:url('icons/application.png') no-repeat center center;
-}
-
-.icon-connector {
-	background:url('icons/connector.png') no-repeat center center;
-}
-
-.icon-subscription {
-	background:url('icons/subscription.png') no-repeat center center;
-}
-
-.icon-publish {
-	background:url('icons/publish.png') no-repeat center center;
-}
-.icon-export {
-	background:url('icons/export.png') no-repeat center center;
-}
-.icon-import {
-	background:url('icons/inport.gif') no-repeat center center;
-}
-.icon-child {
-	background:url('icons/love.gif') no-repeat center center;
 }

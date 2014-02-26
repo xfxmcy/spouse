@@ -1,10 +1,10 @@
 ﻿/**
- * jQuery EasyUI 1.3.2
+ * jQuery EasyUI 1.3.5
  * 
  * Copyright (c) 2009-2013 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the GPL or commercial licenses
- * To use it on other terms please contact us: jeasyui@gmail.com
+ * To use it on other terms please contact us: info@jeasyui.com
  * http://www.gnu.org/licenses/gpl.txt
  * http://www.jeasyui.com/license_commercial.php
  *
@@ -26,10 +26,7 @@ function _4(_5){
 var _6=$.data(_5,"dialog").options;
 var _7=$.data(_5,"dialog").contentPanel;
 if(_6.toolbar){
-if(typeof _6.toolbar=="string"){
-$(_6.toolbar).addClass("dialog-toolbar").prependTo(_5);
-$(_6.toolbar).show();
-}else{
+if($.isArray(_6.toolbar)){
 $(_5).find("div.dialog-toolbar").remove();
 var _8=$("<div class=\"dialog-toolbar\"><table cellspacing=\"0\" cellpadding=\"0\"><tr></tr></table></div>").prependTo(_5);
 var tr=_8.find("tr");
@@ -45,15 +42,15 @@ _a[0].onclick=eval(_9.handler||function(){
 _a.linkbutton($.extend({},_9,{plain:true}));
 }
 }
+}else{
+$(_6.toolbar).addClass("dialog-toolbar").prependTo(_5);
+$(_6.toolbar).show();
 }
 }else{
 $(_5).find("div.dialog-toolbar").remove();
 }
 if(_6.buttons){
-if(typeof _6.buttons=="string"){
-$(_6.buttons).addClass("dialog-button").appendTo(_5);
-$(_6.buttons).show();
-}else{
+if($.isArray(_6.buttons)){
 $(_5).find("div.dialog-button").remove();
 var _b=$("<div class=\"dialog-button\"></div>").appendTo(_5);
 for(var i=0;i<_6.buttons.length;i++){
@@ -64,6 +61,9 @@ _c[0].onclick=p.handler;
 }
 _c.linkbutton(p);
 }
+}else{
+$(_6.buttons).addClass("dialog-button").appendTo(_5);
+$(_6.buttons).show();
 }
 }else{
 $(_5).find("div.dialog-button").remove();

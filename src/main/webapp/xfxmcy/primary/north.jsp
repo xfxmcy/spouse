@@ -1,6 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
- <a href="${pageContext.request.contextPath}"> 	
+ <a href="${pageContext.request.contextPath}/spouse/managerment/guest.do"> 	
  	<img alt="xfxmcy" height="70" src="${pageContext.request.contextPath}/images/aa.png">
  </a>
  <span style="margin-left: 10%;margin-bottom: 2px;" class="cy_font">

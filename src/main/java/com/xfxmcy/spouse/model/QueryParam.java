@@ -35,31 +35,40 @@ public class QueryParam {
 	
 	private String queryType ;
 	/*favorite treegrid*/
-	private String treeRootId  = "1";
+	private String treeRootId  ;
 	/*owner*/
 	private String owner ;
 	
 	private String likeNameFirst ;
 	
+	private String isFilter  = "false";
 	
+	public String getIsFilter() {
+		return isFilter;
+	}
+	public void setIsFilter(String isFilter) {
+		this.isFilter = isFilter;
+	}
 	public String getLikeNameFirst() {
-		return likeNameFirst;
+		return  likeNameFirst ;
 	}
 	public void setLikeNameFirst(String likeNameFirst) {
 		this.likeNameFirst = likeNameFirst;
 	}
-	public Date beginDate , endDate;
+	private String beginDate , endDate;
 	
-	public Date getBeginDate() {
+
+	
+	public String getBeginDate() {
 		return beginDate;
 	}
-	public void setBeginDate(Date beginDate) {
+	public void setBeginDate(String beginDate) {
 		this.beginDate = beginDate;
 	}
-	public Date getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
-	public void setEndDate(Date endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 	/*column be ordered*/

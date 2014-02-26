@@ -9,3 +9,9 @@
 	width:100px;
 	text-align:right;
 }
+.form1 span{
+	
+}
+.button-group{ margin:20px 0 10px 10px;}
+.search-group{ line-height:40px; margin:10px 20px;}
+.button-label{ margin:0 5px; cursor:pointer;}

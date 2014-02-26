@@ -1,0 +1,101 @@
+﻿
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+ 
+}
+.sf-menu {
+	line-height:	20px;
+}
+.sf-menu ul {
+	position:		absolute;
+	top:			-999em;
+	 /* left offset of submenus need to match (see below) */
+	text-align:left;
+}
+.sf-menu ul li {
+	width:			200px;
+	line-height:20px;
+}
+
+ul.sf-menu li { padding-left: 5px; }
+.sf-menu li:hover { visibility:	inherit;  /* fixes IE7 'sticky bug' */  }
+.sf-menu li { float: left; position: relative;}
+
+
+.sf-menu a { display:block; text-decoration: none; 	position:relative; }
+
+.sf-menu li:hover ul, .sf-menu li.sfHover ul {
+	left:			5px;
+	top:			2.4em; /* match top ul list item height */
+	z-index:		199;
+}
+ul.sf-menu li a{
+	color:#FFF;
+	text-decoration: none;
+}
+
+
+ul.sf-menu li a:hover {  color:#bababa; }
+ul.sf-menu li:hover li ul, ul.sf-menu li.sfHover li ul { top:-999em;z-index: 9999; 
+}
+ul.sf-menu li li:hover ul, ul.sf-menu li li.sfHover ul { left:	11.3em; top:1.2em;  }
+ul.sf-menu li li:hover li ul, ul.sf-menu li li.sfHover li ul { top: -999em; z-index:9999;}
+ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul { left: 11.3em; top: 0;  }
+
+/*** SKIN ***/
+.sf-menu { float: right; }
+
+.sf-menu ul li a { color:#111;  }
+.sf-menu a {
+	padding: .3em 10px;
+	text-decoration: none;
+	color:#FFF;
+
+}
+
+.sf-menu a, .sf-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+	font-size:14px;
+	
+}
+.sf-menu li ul li a, .sf-menu li ul li {
+	 font-size: 13px !important; 
+	 line-height:40px;
+	text-transform:capitalize;
+	color: #9a9a9a !important;
+	padding-left:0;
+	width:170px;
+
+}
+.sf-menu li ul li:last-child,.sf-menu ul li:last-child a:focus, .sf-menu ul li:last-child a:hover, .sf-menu ul li:last-child a:active {
+	 border-bottom: none; 
+	 background-image: none
+	 
+}
+
+.sf-menu ul li a:focus, .sf-menu ul li a:hover, .sf-menu ul li a:active {
+	outline: 0;	
+	width:	150px;
+	color:#727272 !important;
+	font-size:14px;
+	background:#f2f2f2 url('../images/bg-line.png') left bottom repeat-x;
+}
+
+.sf-menu ul li:last-child a{
+			border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+
+}
+
+/*** shadows for all but IE6 ***/
+.sf-shadow ul {
+	width:170px;
+	background: #fff;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.sf-shadow ul li {
+	background: url('../images/bg-line.png') left bottom repeat-x;
+}

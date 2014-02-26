@@ -3,13 +3,16 @@
   border-style: solid;
   padding: 1px;
   overflow: hidden;
-  font-size: 12px;
 }
 .calendar table {
   border-collapse: separate;
   font-size: 12px;
   width: 100%;
   height: 100%;
+}
+.calendar table td,
+.calendar table th {
+  font-size: 12px;
 }
 .calendar-noborder {
   border: 0;
@@ -29,6 +32,7 @@
   padding: 0 3px;
   height: 18px;
   line-height: 18px;
+  font-size: 12px;
   cursor: pointer;
   -moz-border-radius: 5px 5px 5px 5px;
   -webkit-border-radius: 5px 5px 5px 5px;
@@ -107,6 +111,7 @@
   margin: 0;
   padding: 2px;
   font-weight: bold;
+  font-size: 12px;
 }
 .calendar-menu-prev,
 .calendar-menu-next {

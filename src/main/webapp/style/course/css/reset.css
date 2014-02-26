@@ -1,0 +1,20 @@
+﻿/*============================================================= */
+/*======================== RESET ALL STYLES =================== */
+/*============================================================= */
+
+* html { padding:0; margin: 0;}
+* { font-size: 100%; }
+html, body, ul, ol, li, dl, dt, dd, p, pre, blockquote, form, fieldset, legend, table, td, th { margin: 0; padding: 0; }
+h1,h2,h3,h4,h5,h6 { font-weight: normal; font-size:100%; margin:0; padding:0; }
+img { border: 0; }
+ul { list-style-type:none; }
+ins { text-decoration:none; }
+table { border-collapse:collapse; border-spacing:0; }
+:focus { outline:0; }
+
+html, body { border:0; height: 100%; width: 100%; }
+
+body {
+	text-align: left;
+	overflow:inherit;
+}

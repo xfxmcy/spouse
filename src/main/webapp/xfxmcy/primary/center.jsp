@@ -68,7 +68,7 @@
 
 	/*add Tab*/
 	function addTab(node) {
-		if (node.state)
+		if (!node.state)
 			return;
 		if (centerTabs.tabs('exists', node.text)) {
 			centerTabs.tabs('select', node.text);

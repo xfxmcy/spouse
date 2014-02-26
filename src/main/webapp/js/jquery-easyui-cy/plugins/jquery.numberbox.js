@@ -1,10 +1,10 @@
 ﻿/**
- * jQuery EasyUI 1.3.2
+ * jQuery EasyUI 1.3.5
  * 
  * Copyright (c) 2009-2013 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the GPL or commercial licenses
- * To use it on other terms please contact us: jeasyui@gmail.com
+ * To use it on other terms please contact us: info@jeasyui.com
  * http://www.gnu.org/licenses/gpl.txt
  * http://www.jeasyui.com/license_commercial.php
  *
@@ -47,37 +47,14 @@ _d.onChange.call(_a,_b,_e);
 function _f(_10){
 var _11=$.data(_10,"numberbox").options;
 $(_10).unbind(".numberbox").bind("keypress.numberbox",function(e){
-if(e.which==45){
-if($(this).val().indexOf("-")==-1){
-return true;
-}else{
-return false;
-}
-}
-if(e.which==46){
-if($(this).val().indexOf(".")==-1){
-return true;
-}else{
-return false;
-}
-}else{
-if((e.which>=48&&e.which<=57&&e.ctrlKey==false&&e.shiftKey==false)||e.which==0||e.which==8){
-return true;
-}else{
-if(e.ctrlKey==true&&(e.which==99||e.which==118)){
-return true;
-}else{
-return false;
-}
-}
-}
+return _11.filter.call(_10,e);
 }).bind("blur.numberbox",function(){
 _7(_10,$(this).val());
 $(this).val(_11.formatter.call(_10,_8(_10)));
 }).bind("focus.numberbox",function(){
 var vv=_8(_10);
-if($(this).val()!=vv){
-$(this).val(vv);
+if(vv!=_11.parser.call(_10,$(this).val())){
+$(this).val(_11.formatter.call(_10,vv));
 }
 });
 };
@@ -164,59 +141,84 @@ $.fn.numberbox.parseOptions=function(_20){
 var t=$(_20);
 return $.extend({},$.fn.validatebox.parseOptions(_20),$.parser.parseOptions(_20,["decimalSeparator","groupSeparator","suffix",{min:"number",max:"number",precision:"number"}]),{prefix:(t.attr("prefix")?t.attr("prefix"):undefined),disabled:(t.attr("disabled")?true:undefined),value:(t.val()||undefined)});
 };
-$.fn.numberbox.defaults=$.extend({},$.fn.validatebox.defaults,{disabled:false,value:"",min:null,max:null,precision:0,decimalSeparator:".",groupSeparator:"",prefix:"",suffix:"",formatter:function(_21){
-if(!_21){
-return _21;
+$.fn.numberbox.defaults=$.extend({},$.fn.validatebox.defaults,{disabled:false,value:"",min:null,max:null,precision:0,decimalSeparator:".",groupSeparator:"",prefix:"",suffix:"",filter:function(e){
+var _21=$(this).numberbox("options");
+if(e.which==45){
+return ($(this).val().indexOf("-")==-1?true:false);
 }
-_21=_21+"";
-var _22=$(this).numberbox("options");
-var s1=_21,s2="";
-var _23=_21.indexOf(".");
-if(_23>=0){
-s1=_21.substring(0,_23);
-s2=_21.substring(_23+1,_21.length);
+var c=String.fromCharCode(e.which);
+if(c==_21.decimalSeparator){
+return ($(this).val().indexOf(c)==-1?true:false);
+}else{
+if(c==_21.groupSeparator){
+return true;
+}else{
+if((e.which>=48&&e.which<=57&&e.ctrlKey==false&&e.shiftKey==false)||e.which==0||e.which==8){
+return true;
+}else{
+if(e.ctrlKey==true&&(e.which==99||e.which==118)){
+return true;
+}else{
+return false;
 }
-if(_22.groupSeparator){
+}
+}
+}
+},formatter:function(_22){
+if(!_22){
+return _22;
+}
+_22=_22+"";
+var _23=$(this).numberbox("options");
+var s1=_22,s2="";
+var _24=_22.indexOf(".");
+if(_24>=0){
+s1=_22.substring(0,_24);
+s2=_22.substring(_24+1,_22.length);
+}
+if(_23.groupSeparator){
 var p=/(\d+)(\d{3})/;
 while(p.test(s1)){
-s1=s1.replace(p,"$1"+_22.groupSeparator+"$2");
+s1=s1.replace(p,"$1"+_23.groupSeparator+"$2");
 }
 }
 if(s2){
-return _22.prefix+s1+_22.decimalSeparator+s2+_22.suffix;
+return _23.prefix+s1+_23.decimalSeparator+s2+_23.suffix;
 }else{
-return _22.prefix+s1+_22.suffix;
+return _23.prefix+s1+_23.suffix;
 }
 },parser:function(s){
 s=s+"";
-var _24=$(this).numberbox("options");
-if(_24.groupSeparator){
-s=s.replace(new RegExp("\\"+_24.groupSeparator,"g"),"");
+var _25=$(this).numberbox("options");
+if(parseFloat(s)!=s){
+if(_25.prefix){
+s=$.trim(s.replace(new RegExp("\\"+$.trim(_25.prefix),"g"),""));
 }
-if(_24.decimalSeparator){
-s=s.replace(new RegExp("\\"+_24.decimalSeparator,"g"),".");
+if(_25.suffix){
+s=$.trim(s.replace(new RegExp("\\"+$.trim(_25.suffix),"g"),""));
 }
-if(_24.prefix){
-s=s.replace(new RegExp("\\"+$.trim(_24.prefix),"g"),"");
+if(_25.groupSeparator){
+s=$.trim(s.replace(new RegExp("\\"+_25.groupSeparator,"g"),""));
 }
-if(_24.suffix){
-s=s.replace(new RegExp("\\"+$.trim(_24.suffix),"g"),"");
+if(_25.decimalSeparator){
+s=$.trim(s.replace(new RegExp("\\"+_25.decimalSeparator,"g"),"."));
 }
 s=s.replace(/\s/g,"");
-var val=parseFloat(s).toFixed(_24.precision);
+}
+var val=parseFloat(s).toFixed(_25.precision);
 if(isNaN(val)){
 val="";
 }else{
-if(typeof (_24.min)=="number"&&val<_24.min){
-val=_24.min.toFixed(_24.precision);
+if(typeof (_25.min)=="number"&&val<_25.min){
+val=_25.min.toFixed(_25.precision);
 }else{
-if(typeof (_24.max)=="number"&&val>_24.max){
-val=_24.max.toFixed(_24.precision);
+if(typeof (_25.max)=="number"&&val>_25.max){
+val=_25.max.toFixed(_25.precision);
 }
 }
 }
 return val;
-},onChange:function(_25,_26){
+},onChange:function(_26,_27){
 }});
 })(jQuery);
 
