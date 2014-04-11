@@ -58,10 +58,10 @@
       <div class="clr"></div>
       <div class="project">
         <ul>
-          <li><a href="#"><img src="${cy}/images/project_1.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/project_1.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/project_1.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/project_1.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
+          <li><a href="#"><img src="${cy}/images/jing/jing.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
+          <li><a href="#"><img src="${cy}/images/jing/jing3.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
+          <li><a href="#"><img src="${cy}/images/jing/jing8.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
+          <li><a href="#"><img src="${cy}/images/jing/jing11.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
         </ul>
         <div class="clr"></div>
       </div>

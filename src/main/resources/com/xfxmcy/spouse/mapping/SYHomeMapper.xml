@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xfxmcy.spouse.dao.SYHomeMapper">
+	<resultMap id="BaseResultMap" type="com.xfxmcy.spouse.vo.SYHome">
+		<result column="id" property="id" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="path" property="path" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="VARCHAR" />
+		<result column="pre_count" property="preCount" jdbcType="INTEGER" />
+		<result column="is_big" property="isBig" jdbcType="CHAR" />
+		<result column="ph_order" property="phOrder" jdbcType="INTEGER" />
+		<result column="descri" property="descri" jdbcType="VARCHAR" />
+		<result column="is_small" property="isSmall" jdbcType="CHAR" />
+		<result column="show_location" property="showLocation"
+			jdbcType="CHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, name, path, type, pre_count, is_big, ph_order, descri,
+		is_small,show_location
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from sy_home
+		where id = #{id,jdbcType=VARCHAR}
+	</select>
+	<select id="selectByCondition" resultMap="BaseResultMap"
+		parameterType="java.util.HashMap">
+		select
+		<include refid="Base_Column_List" />
+		from sy_home
+		<where>
+			<if test="isBig != null">
+				is_big = #{isBig,jdbcType=VARCHAR}	
+			</if>
+			<if test="isSmall != null">
+				is_small = #{isSmall,jdbcType=VARCHAR}
+			</if>
+		</where>
+	</select>
+
+	<insert id="insert" parameterType="com.xfxmcy.spouse.vo.SYHome">
+		insert into sy_home (id, name, path,
+		type, pre_count, is_big,
+		ph_order, descri, is_small,
+		show_location)
+		values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+		#{path,jdbcType=VARCHAR},
+		#{type,jdbcType=VARCHAR}, #{preCount,jdbcType=INTEGER}, #{isBig,jdbcType=CHAR},
+		#{phOrder,jdbcType=INTEGER}, #{descri,jdbcType=VARCHAR},
+		#{isSmall,jdbcType=CHAR},
+		#{showLocation,jdbcType=CHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.xfxmcy.spouse.vo.SYHome">
+		insert into sy_home
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="path != null">
+				path,
+			</if>
+			<if test="type != null">
+				type,
+			</if>
+			<if test="preCount != null">
+				pre_count,
+			</if>
+			<if test="isBig != null">
+				is_big,
+			</if>
+			<if test="phOrder != null">
+				ph_order,
+			</if>
+			<if test="descri != null">
+				descri,
+			</if>
+			<if test="isSmall != null">
+				is_small,
+			</if>
+			<if test="showLocation != null">
+				show_location,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="path != null">
+				#{path,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				#{type,jdbcType=VARCHAR},
+			</if>
+			<if test="preCount != null">
+				#{preCount,jdbcType=INTEGER},
+			</if>
+			<if test="isBig != null">
+				#{isBig,jdbcType=CHAR},
+			</if>
+			<if test="phOrder != null">
+				#{phOrder,jdbcType=INTEGER},
+			</if>
+			<if test="descri != null">
+				#{descri,jdbcType=VARCHAR},
+			</if>
+			<if test="isSmall != null">
+				#{isSmall,jdbcType=CHAR},
+			</if>
+			<if test="showLocation != null">
+				#{showLocation,jdbcType=CHAR},
+			</if>
+		</trim>
+	</insert>
+
+
+
+</mapper>

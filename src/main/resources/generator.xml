@@ -30,15 +30,15 @@
 		</javaClientGenerator>
 		<!-- 要生成那些表(更改tableName和domainObjectName就可以) 要将数据库的哪些表 生成出来-->
 	 	<!-- <table tableName="sp_employer" domainObjectName="SPEmployer" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> --> 
-		<table tableName="sm_account" domainObjectName="SMAccount" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+<!-- 		<table tableName="sm_account" domainObjectName="SMAccount" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 		<table tableName="sm_album" domainObjectName="SMAlbum" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 		<table tableName="sm_diary" domainObjectName="SMDiary" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 		<table tableName="sm_favorite" domainObjectName="SMFavorite" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 		<table tableName="sm_memo" domainObjectName="SMMemo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 		<table tableName="sm_note" domainObjectName="SMNote" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 		<table tableName="sm_notebook" domainObjectName="SMNoteBook" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-		<table tableName="sm_photo" domainObjectName="SMPhoto" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
-	
+		<table tableName="sm_photo" domainObjectName="SMPhoto" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> -->
+		<table tableName="sy_home" domainObjectName="SYHome" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 	 	<!--   表名                                                                 生成的类名                 Example 的配置 默认为true(生成的class会比较乱,多生成  实体Example类,
 		  										          生成的配置文件会有好多example的配置,所以我们设为false) -->
 	</context>

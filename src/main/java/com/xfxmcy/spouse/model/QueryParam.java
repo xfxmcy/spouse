@@ -56,20 +56,20 @@ public class QueryParam {
 		this.likeNameFirst = likeNameFirst;
 	}
 	private String beginDate , endDate;
+	/*just a memo*/
+	private String memoFirst,memoSecond;
 	
-
-	
-	public String getBeginDate() {
-		return beginDate;
+	public String getMemoFirst() {
+		return memoFirst;
 	}
-	public void setBeginDate(String beginDate) {
-		this.beginDate = beginDate;
+	public void setMemoFirst(String memoFirst) {
+		this.memoFirst = memoFirst;
 	}
-	public String getEndDate() {
-		return endDate;
+	public String getMemoSecond() {
+		return memoSecond;
 	}
-	public void setEndDate(String endDate) {
-		this.endDate = endDate;
+	public void setMemoSecond(String memoSecond) {
+		this.memoSecond = memoSecond;
 	}
 	/*column be ordered*/
 	private String colOrdered;

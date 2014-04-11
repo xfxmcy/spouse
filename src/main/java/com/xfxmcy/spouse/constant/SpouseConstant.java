@@ -44,7 +44,10 @@ public final class SpouseConstant {
 	public final static String SQL_PRIMARY_KEY = "id";
 	/*SQL  parent key*/
 	public final static String SQL_PARENT_KEY = "pid";
-	
+	/*big photo*/
+	public final static String SQL_HOME_IS_BIG = "1";
+	/*small photo*/
+	public final static String SQL_HOME_IS_SMALL = "1";
 	/**
 	 * 
 	 * ClassName:SystemicPage
@@ -138,6 +141,28 @@ public final class SpouseConstant {
 		public final static String QUERY_TREEGRID_PAGED = "queryTreegrid";
 		/*filter query tree grid paged*/
 		public final static String QUERY_TREEGRID_FILTER = "filterTreegrid";
+	}
+	/**
+	 * 
+	 * ClassName:Home
+	 * Function: photo in home page
+	 * Reason:	 photo in home page
+	 *
+	 * @author   cy
+	 * @version  SpouseConstant
+	 * @since    Ver 1.1
+	 * @Date	 2014	2014年3月3日		下午11:02:11
+	 *
+	 * @see
+	 */
+	public class Home {
+		
+		/*construct template home page*/
+		public final static String CONSTRUCT_HOME_PAGED = "constructHomePage";
+		/*construct page through freemarker*/
+		public final static String MARKER_PATH_INDEX = "/index.jsp";
+		/*ftl for index page*/
+		public final static String MARKER_PATH_INDEX_FTL = "/index.ftl";
 	}
 }
 

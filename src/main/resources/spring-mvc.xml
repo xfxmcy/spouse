@@ -32,7 +32,17 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 			</list>
 		</property>
 	</bean>
-
+	
+	<!-- freemarker model must setting before ordinary model -->
+	<!-- <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+  		<property name="templateLoaderPath" value="/WEB-INF/freemarker/"/>
+	</bean>
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+	  <property name="cache" value="true"/>
+	  <property name="prefix" value=""/>
+	  <property name="suffix" value=".ftl"/>
+	  <property name="contentType" value="text/html; charset=UTF-8"/>
+	</bean> -->
 	<!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/" p:suffix=".jsp" />
 	

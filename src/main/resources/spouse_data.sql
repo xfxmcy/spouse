@@ -31,3 +31,4 @@ INSERT INTO `sy_menu` VALUES ('7', 'icon-child', '5', 'my photo', '', '2', null,
 INSERT INTO `sy_menu` VALUES ('8', 'icon-child', '6', 'its photo', '', '2', null, null);
 INSERT INTO `sy_menu` VALUES ('9', 'icon-connector', '0', 'family', '', null, null, null);
 
+/*home data*/

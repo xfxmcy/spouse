@@ -77,3 +77,19 @@ CREATE TABLE `sm_favorite` (
   `creater` varchar(300) DEFAULT NULL COMMENT 'creater',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='favorite';
+
+create table sy_home
+(
+   id                   varchar(32) comment 'id',
+   name                 varchar(200),
+   path                 varchar(500),
+   type                 varchar(10) comment '1.大图滚动2.小图',
+   pre_count            integer,
+   is_big               char(1),
+   ph_order             int comment '大图的顺序 0 不展示',
+   descri               varchar(300),
+   is_small             char(1),
+   show_location        char(1) comment '小图:0左1中2右'
+);
+
+alter table sy_home comment '前台展示的3个图像和1个集合，统计赞的数量';
