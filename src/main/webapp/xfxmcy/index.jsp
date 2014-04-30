@@ -176,7 +176,7 @@
 	<!-- left -->
 	<div
 		data-options="region:'west',href:'${cy}/xfxmcy/primary/west.jsp'"
-		style="width: 200px;overflow: hidden;"></div>
+		style="width: 210px;overflow: hidden;"></div>
 
 	<!-- center -->
 	<div

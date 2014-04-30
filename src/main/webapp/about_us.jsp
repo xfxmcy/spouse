@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>about us</title>
+<link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${cy}/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -30,8 +31,8 @@
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknow the industry's standard dummy text ever since the 1500s </p>
         <p> <a href="#"><strong>It was popularised in the 196</strong></a></p>
       </div>
-      <ul class="img">
-        <li><a href="#"><img src="${cy}/images/picture_1.jpg" width="241" height="105" border="0" alt="banner" /></a></li>
+      <ul>
+        <li><a href="${cy}/romantic/index.jsp"><img src="${cy}/images/xfxmcy.png" width="241" height="105" border="0" alt="banner" /></a></li>
       </ul>
       <div class="clr"></div>
       <div class="service_bg">
@@ -152,7 +153,7 @@
           <a href="#" class="link2">It was popularised</a> </div>
         <div class="clr"></div>
         <div class="block_full">
-          <p class="title"><img src="${cy}/images/picture_2.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />There are many variations</p>
+          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />There are many variations</p>
           <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. </p>
           <p>It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to </p>
           <a href="#" class="link2">It was popularised</a>

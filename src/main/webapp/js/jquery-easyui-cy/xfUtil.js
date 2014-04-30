@@ -228,6 +228,56 @@ cy.serializeObject = function(form) {
 	return o;
 };
 /**
+ *  图片类型转换
+ */
+
+cy.transHomePhotoType= function(value) {
+	var statusValue = {};
+	statusValue.status = "";
+	switch (value) {
+	case "0":
+		statusValue.status = "待审核";
+		break;
+	case "1":
+		statusValue.status = "申请被打回";
+		break;
+	case "2":
+		statusValue.status = "待开启";
+		break;
+	case "3":
+		statusValue.status = "已开启";
+		break;
+	case "4":
+		statusValue.status = "进行中";
+		break;
+	case "5":
+		statusValue.status = "评价完毕";
+		break;
+	case "6":
+		statusValue.status = "结项草稿";
+		break;
+	case "7":
+		statusValue.status = "待结项审核";
+		break;
+	case "8":
+		statusValue.status = "结项被打回";
+		break;
+	case "9":
+		statusValue.status = "待入库";
+		break;
+	case "10":
+		statusValue.status = "已结束";
+		break;
+	case "11":
+		statusValue.status = "待评价";	
+		break;
+	default:
+		statusValue.status = "已结束";
+		break;
+	}
+	return statusValue;
+};
+/**
  * @author CY
  * 将JSON对象转换成字符串
  * 

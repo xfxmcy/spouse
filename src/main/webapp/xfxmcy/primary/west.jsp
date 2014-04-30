@@ -70,7 +70,7 @@
 <div class="easyui-accordion" fit="true" border="false">
 	<div title="菜单">
 		<div id="menuXfxmcyPanel" fit="true" border="false" title="功能菜单"
-			style="padding: 5px;">
+			style="padding: 2px;">
 			<ul id="menuXfxmcy"></ul>
 		</div>
 	</div>

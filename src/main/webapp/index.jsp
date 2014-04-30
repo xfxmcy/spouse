@@ -5,10 +5,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>xfxmcy</title>
+<link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link href="${cy}/style.css" rel="stylesheet" type="text/css" />
+<link href="${cy}/css/prize.css" rel="stylesheet" type="text/css" /> 
 <script type="text/javascript" src="${cy}/js/primary/jquery.js" charset="utf-8"></script>
 <script type="text/javascript" src="${cy}/js/primary/easySlider1.5.js" charset="utf-8"></script>
+<script type="text/javascript" src="${cy}/js/cy/prize.js" charset="utf-8"></script>
+  
+<script type="text/javascript">
+function UrlConf(){
+	this.prize = "${cy}/app/prize/jing_prize.jsp";
+}
+var urlConf = new UrlConf(); 
+
+function openPrize() {
+	window.open('' + urlConf.prize + '',
+					'window',
+					'top=50px,left=500px,resizable=yes,scrollbars=no,height=590px,width=880px,status=no,toolbar=no,titlebar=no,location=no',
+					false);
+}
+</script>
 <script type="text/javascript" charset="utf-8">
 // <![CDATA[
 $(document).ready(function(){	
@@ -33,6 +49,7 @@ $(document).ready(function(){
 	padding:0;
 	list-style:none;
 }
+
 /* 
 	define width and height of list item (slide)
 	entire slider area will adjust according to the parameters provided here
@@ -70,8 +87,9 @@ p#controls {
 }
 </style>
 </head>
+<link href="${cy}/style.css" rel="stylesheet" type="text/css" /> 
 <body>
-<div id="container">
+<div id="container" style="width: 1132px;">
   <div class="header">
     <div class="logo"  >
     	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="349" height="220">
@@ -102,9 +120,9 @@ p#controls {
   <div class="main">
     <div class="services">
       <div class="service_bg">
-        <h3>Our acquaintance</h3>
-        <p><u>2014年夏天......</u></p>
-        <p> <a href="#"><strong>expected</strong></a></p>
+        <a href="${cy}/romantic/index.jsp"><h3>Our acquaintance</h3></a>
+        <p><a href="${cy}/romantic/index.jsp"><u>2014年夏天......</u></a></p>
+        <p><a href="${cy}/romantic/index.jsp"><strong>expected</strong></a></p>
       </div>
       <ul class="banner">
         <li><a href="#"><img src="${cy}/images/jxk.png" width="104" height="104" border="0" alt="banner" /></a></li>
@@ -114,11 +132,11 @@ p#controls {
       <h3>Give a bless!</h3>
       <p>a statistics of blessing them</p>
       <p><span class="px22">+ 800 258 4578</span></p>
-      <h3>About them</h3>
+      <a href="${cy}/romantic/index.jsp"><h3>About them</h3></a>
       <p><a href="${cy}/spouse/managerment/host.do"><img src="${cy}/images/xfxmcy.png" width="50%"  hspace="5" align="left" alt="picture" /></a>
-      <a href="#"><strong>lcy</strong></a><br />
+      <a href="#"><strong></strong></a><br />
         silent and loneliness<br/>
-        <a href="#"><strong>xx</strong></a><br />
+        <a href="#"><strong>cy</strong></a><br />
         await
        </p>
     </div>

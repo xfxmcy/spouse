@@ -38,6 +38,9 @@
 				is_small = #{isSmall,jdbcType=VARCHAR}
 			</if>
 		</where>
+		 <if test="page != null">
+			limit #{startPoint},#{rows}
+	</if>
 	</select>
 
 	<insert id="insert" parameterType="com.xfxmcy.spouse.vo.SYHome">
@@ -120,6 +123,23 @@
 		</trim>
 	</insert>
 
-
+	
+  <!-- query the count -->
+  <select id="countByCondition" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.model.QueryParam" >
+		select count(*) from sy_home
+	<where>
+    	
+    	  <if test="likeNameFirst != null">
+    	  	title like #{likeNameFirst,jdbcType=VARCHAR} and
+    	 </if>
+    	 <if test="owner != null">
+    	  	creater = #{owner,jdbcType=VARCHAR} 
+    	 </if>
+    
+    	  <if test="treeRootId != null">
+    	  	pid = #{treeRootId,jdbcType=VARCHAR} 
+    	 </if>
+    </where>
+  </select>
 
 </mapper>

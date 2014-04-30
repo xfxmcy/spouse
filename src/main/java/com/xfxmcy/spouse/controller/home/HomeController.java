@@ -22,8 +22,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.model.SystemicInfo;
 import com.xfxmcy.spouse.service.SyHomeService;
+import com.xfxmcy.spouse.util.SpouseUtil;
 
 /**
  * ClassName:HomeController
@@ -49,6 +51,18 @@ public class HomeController {
 	@Resource
 	private SyHomeService syHomeServiceImpl;
 	
+	/**
+	 * 
+	 * refreshIndexPage: refresh index
+	 *
+	 * @param param		param
+	 * @param sysInfo	systemic info
+	 * @param request	request
+	 * @return			systemic info	
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年4月16日 		cy
+	 */
 	@RequestMapping("/marker")
 	@ResponseBody
 	public SystemicInfo refreshIndexPage(QueryParam param,SystemicInfo sysInfo,HttpServletRequest request) {
@@ -61,6 +75,29 @@ public class HomeController {
 			sysInfo.setSuccess(false,"password is error");
 		}
 		return sysInfo;
+	}
+	
+	/**
+	 * 
+	 * doQuery: do query homePage
+	 *
+	 * @param param	param
+	 * @param grid	grid
+	 * @return		grid
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年4月16日 		cy
+	 */
+	@RequestMapping("/homeQuery")
+	@ResponseBody
+	public SpouseGrid doQuery(QueryParam param , SpouseGrid grid ){
+		try{
+			grid = syHomeServiceImpl.doQuery(param);	
+			logger.info(grid);
+		}catch(Exception e){
+			logger.error(e.getMessage());
+		}	
+		return grid;
 	}
 }
 

@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <title>文件上传</title>
 <link href="${cy}/jslib/swfupload/css/default.css" rel="stylesheet"
 	type="text/css" />

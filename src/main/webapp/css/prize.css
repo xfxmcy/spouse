@@ -1,0 +1,19 @@
+#iss_tjise_sms_div {
+	width: 100px;
+	height:100px;
+	border: 0px solid #CCCCCC;
+	font-size : 12px;
+	position:fixed;
+	right:0;
+	bottom: 0;
+	z-index: 100000;
+}
+
+
+#iss_tjise_sms_div a {
+	float: right;
+	text-decoration: none;
+	height: 100px;
+	width: 100px;
+	background : url('../images/prize1.png') no-repeat center center;
+}

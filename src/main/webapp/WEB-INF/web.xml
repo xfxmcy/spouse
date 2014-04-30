@@ -21,11 +21,11 @@
     <!-- error page -->
     <error-page>
     	<error-code>404</error-code>
-    	<location>/nofinding/notFound.html</location>
+    	<location>/nofinding/notFound.jsp</location>
     </error-page>
     <error-page>
     	<error-code>500</error-code>
-    	<location>/nofinding/error.html</location>
+    	<location>/nofinding/error.jsp</location>
     </error-page>
     <!-- spring load listener  -->
 	<listener>
@@ -81,6 +81,10 @@
 		<servlet-name>springMvc</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>springMvc</servlet-name>
+		<url-pattern>*.ajax</url-pattern>
+	</servlet-mapping>
 	<!-- log4j 	-->
  	<servlet>
 		<servlet-name>Log4jInit</servlet-name>
@@ -104,6 +108,7 @@
   
   
   <welcome-file-list>
+  	<welcome-file>app/love/index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>

@@ -91,7 +91,14 @@ public class SystemicController {
 		else if("message".equals(path)){
 			returnPath = SpouseConstant.SystemicPage.SPOUSE_CONTACT_US;
 		}
-		
+		/*favorite index*/
+		else if("favorite".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.FAVORITE_INDEX;
+		}
+		/*main index*/
+		else if("main".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.MAIN_INDEX;
+		}
 		return returnPath;
 	}
 	

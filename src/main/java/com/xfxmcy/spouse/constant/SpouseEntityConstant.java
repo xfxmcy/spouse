@@ -1,0 +1,38 @@
+/**
+ * SpouseEntityConstant.java
+ * com.xfxmcy.spouse.constant
+ *
+ * Function： entiry constant 
+ *
+ *   ver     date      		author
+ * ──────────────────────────────────
+ *   		 2014年4月17日 		cy
+ *
+ * Copyright (c) 2014, xfxmcy All Rights Reserved.
+*/
+
+package com.xfxmcy.spouse.constant;
+/**
+ * ClassName:SpouseEntityConstant
+ * Function: spouse entiry constant
+ * Reason:	 spouse entiry constant
+ *
+ * @author   cy
+ * @version  
+ * @since    Ver 1.1
+ * @Date	 2014年4月17日		下午3:43:30
+ *
+ * @see 	 
+ */
+public class SpouseEntityConstant {
+	/*index slide*/
+	public static final String HOME_SLIDE = "0";
+	/*home character*/
+	public static final String HOME_CHARACTER = "1";
+	/*home our image*/
+	public static final String HOME_IMAGE = "2";
+	
+	
+	
+}
+

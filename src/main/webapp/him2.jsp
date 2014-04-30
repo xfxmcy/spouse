@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>services</title>
+<link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${cy}/style.css" rel="stylesheet" type="text/css" />
 </head>

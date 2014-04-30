@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>contact us</title>
+<link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${cy}/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${cy}/js/primary/jquery.js"></script>
@@ -76,7 +77,7 @@ jQuery(document).ready(function(){
         </ul>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
         <p><span class="px22">+ 800 258 4578</span></p>
-        <p><img src="${cy}/images/picture_3.jpg" width="204" height="205" alt="picture 1" /></p>
+        <p><img src="${cy}/images/you.jpg" width="204" height="205" alt="picture 1" /></p>
       </div>
       <div class="clr"></div>
     </div>
@@ -86,7 +87,7 @@ jQuery(document).ready(function(){
         <div class="clr"></div>
         <div class="block_text">
           <h2></h2>
-          <p><img src="${cy}/images/service_1.jpg" width="150" height="110" hspace="10" vspace="0" align="left" alt="picture 1" /><strong>It is a long established fact that a reader will be</strong> distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+          <p><img src="${cy}/images/xfxmcy.png" width="150" height="110" hspace="10" vspace="0" align="left" alt="picture 1" /><strong>It is a long established fact that a reader will be</strong> distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
           <p><a href="#">&gt;&gt; oreder now </a></p>
           <p>&nbsp;</p>
           <form action="" method="post" id="contactform">

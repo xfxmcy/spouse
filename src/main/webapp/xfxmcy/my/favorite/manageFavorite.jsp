@@ -167,7 +167,6 @@
 								}] ],
 								onLoadSuccess:function(row, data){
 									//queryType = 'queryTreegrid';
-									console.info(queryType);
 								}
 							});
 							

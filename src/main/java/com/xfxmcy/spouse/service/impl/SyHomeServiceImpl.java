@@ -26,6 +26,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.xfxmcy.spouse.constant.SpouseConstant;
 import com.xfxmcy.spouse.dao.SYHomeMapper;
 import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.service.SyHomeService;
 import com.xfxmcy.spouse.util.TemplateComponent;
 import com.xfxmcy.spouse.vo.SYHome;
@@ -68,6 +69,21 @@ public class SyHomeServiceImpl implements SyHomeService {
 			
 		}
 
+	}
+
+	
+	@Transactional(propagation = Propagation.NOT_SUPPORTED ,readOnly = true)
+	@Override
+	public SpouseGrid doQuery(QueryParam param) {
+		SpouseGrid grid = new SpouseGrid();
+		/*query param*/
+		Map<String,Object> mapParam = new HashMap<String,Object>();
+		if(SpouseConstant.SIMPLE_QUERY_PAGED.equals(param.getQueryType())){
+			grid.setRows(homeMapper.selectByCondition(mapParam));
+			grid.setTotal(homeMapper.countByCondition(mapParam));
+		}
+		return grid;
+		
 	}
 
 }

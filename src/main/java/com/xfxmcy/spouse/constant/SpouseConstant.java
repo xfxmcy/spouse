@@ -38,7 +38,10 @@ public final class SpouseConstant {
 	public final static String SIMPLE_QUERY_LIST = "simpleQueryList";
 	/*simple query paged*/
 	public final static String SIMPLE_QUERY_PAGED = "simpleQueryPaged";
-	
+	/*paged param start*/
+	public final static String SIMPLE_QUERY_PAGED_START = "start";
+	/*paged param row*/
+	public final static String SIMPLE_QUERY_PAGED_ROW = "row";
 	
 	/*SQL  primaty key*/
 	public final static String SQL_PRIMARY_KEY = "id";
@@ -78,6 +81,8 @@ public final class SpouseConstant {
 		/*favorite*/  
 		  /*management index*/
 		  public final static String FAVORITE_INDEX = "/xfxmcy/my/favorite/manageFavorite";
+		/*main page*/
+		  public final static String MAIN_INDEX = "/xfxmcy/main/main";
 		  
 		
 	}

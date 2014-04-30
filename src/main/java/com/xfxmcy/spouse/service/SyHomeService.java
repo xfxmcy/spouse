@@ -13,10 +13,8 @@
 
 package com.xfxmcy.spouse.service;
 
-import java.util.List;
-
 import com.xfxmcy.spouse.model.QueryParam;
-import com.xfxmcy.spouse.vo.SYHome;
+import com.xfxmcy.spouse.model.SpouseGrid;
 
 /**
  * ClassName:SyHomeService
@@ -41,6 +39,17 @@ public interface SyHomeService {
 	 * ──────────────────────────────────
 	 *   		 2014年3月3日 		cy
 	 */
-	void constructPageTemplate(QueryParam param); 
+	void constructPageTemplate(QueryParam param);
+	/**
+	 * 
+	 * doQuery: doQuery  home 's page
+	 *
+	 * @param param		param
+	 * @return			grid
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年4月16日 		cy
+	 */
+	SpouseGrid doQuery(QueryParam param); 
 }
 

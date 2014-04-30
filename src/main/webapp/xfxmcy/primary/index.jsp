@@ -14,13 +14,13 @@
 		
 		panels = [ {
 			id : 'p1',
-			title : 'CY',
+			title : 'Jing',
 			height : 420,
 			collapsible : true,
 			href:'${cy}/xfxmcy/primary/portal/president.jsp'
 		}, {
 			id : 'p2',
-			title : 'XX',
+			title : 'CY',
 			height : 420,
 			collapsible : true,
 			href:'${cy}/xfxmcy/primary/portal/commodity.jsp'

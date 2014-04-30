@@ -7,6 +7,7 @@
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">	
 <head>
+<link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <!-- css -->
 <link rel="stylesheet" href="${cy}/js/jquery-easyui-cy/themes/icon.css"/>
 <link rel="stylesheet" href="${cy}/js/jquery-easyui-cy/themes/style.css"/>

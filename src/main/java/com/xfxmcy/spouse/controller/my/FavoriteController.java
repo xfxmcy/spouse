@@ -67,16 +67,16 @@ public class FavoriteController {
 	 * ──────────────────────────────────
 	 *   		 2014年1月12日 		cy
 	 */
-	@RequestMapping("/manage/{path}")
+	/*@RequestMapping("/manage/{path}")
 	public String favoritePageTransforming(@PathVariable String path) {
 		String returnPath = "/index";
-		/*enter managing page*/
+		enter managing page
 		if("main".equals(path)){
 			returnPath = SpouseConstant.SystemicPage.FAVORITE_INDEX;
 			logger.trace("sb wanna enter managerment");
 		}
 		return returnPath;
-	}
+	}*/
 	
 	
 	
@@ -118,6 +118,7 @@ public class FavoriteController {
 	@ResponseBody
 	public SystemicInfo doPersistentFavorite(QueryParam param , SMFavorite favorite ,SystemicInfo info,HttpServletRequest request){
 		try{
+			logger.error("------乱码???-------->"+favorite.getTitle());
 			favorite.setCreater(SpouseUtil.getSessionUser(request).getUserId());
 			favorite = favoriteServiceImpl.persistenceFavorite(param,favorite);
 			info.setSuccess(true, "success");

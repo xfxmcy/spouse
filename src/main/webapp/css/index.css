@@ -1,5 +1,5 @@
 @charset "UTF-8";
-body { margin:0 auto; padding:0; background:url(../images/bg.gif);}
+body {  margin:0 auto; padding:0; background:url(../images/bg.gif);}
 
 h3 { color:#4f4f4f; font:bold 24px Tahoma, Geneva, sans-serif; padding:0; margin:0;}
 h4 { color:#797979; font:bold 14px Tahoma, Geneva, sans-serif; padding:0; margin:0;}
@@ -7,12 +7,12 @@ h4 { color:#797979; font:bold 14px Tahoma, Geneva, sans-serif; padding:0; margin
 a { font:normal 12px Tahoma, Geneva, sans-serif; text-decoration:none;}
 a:hover { text-decoration:underline;}
 
-#container { width:1132px; background:#141414; margin:0; padding:0;}
+#container { width:1132px; background:#141414; margin:0; padding:0;margin-left: 8%;}
 
 /* Header */
 .header { width:1132px; margin:0; padding:0;}
 /* Logo */
-.logo { background:url(../images/logo.jpg); width:1132px; height:210px; padding-left: 70%;background-repeat: no-repeat;}
+.logo { background:url(../images/logo.jpg); width:352px; height:210px; padding-left: 69.5%;background-repeat: no-repeat;}
 /* Menu */
 .menu { width:1132px; background:url(../images/menu_bg.jpg); height:70px; padding:26px 0 0 0;}
 .menu ul { list-style:none; margin:0 30px 0 0; padding:0; float:right;}

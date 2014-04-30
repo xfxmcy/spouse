@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>project</title>
+<link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${cy}/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -40,36 +41,42 @@
   <div class="main">
     <div class="services">
       <div class="service_bg">
-        <h3>Business info</h3>
-        <ul class="link">
-          <li>Lorem Ipsum is simply dummy text of the printing and <a href="#"><strong>typesetting industry</strong></a>.</li>
-          <li>Lorem Ipsum is simply dummy text of the printing and <a href="#"><strong>typesetting industry</strong></a>.</li>
-          <li>Lorem Ipsum is simply dummy text of the printing and <a href="#"><strong>typesetting industry</strong></a>.</li>
+        <h3>our memory</h3>
+        <ul class="link" style="font-size: 14px;">
+          <li>5/4/2014 &nbsp;&nbsp;&nbsp;<a href="#"><strong>first acquaintance</strong></a>.</li>
+          <li>14/4/2014&nbsp;&nbsp;&nbsp;<a href="#"><strong>first phone</strong></a>.</li>
+          <li>18/4/2014&nbsp;&nbsp;&nbsp;<a href="#"><strong>first date</strong></a>.</li>
         </ul>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make </p>
-        <p>a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release </p>
+        <p>snapshot </p>
+        <p>release</p>
       </div>
       <div class="clr"></div>
     </div>
     <div class="global_main">
       <div class="page_title_text">
-        <h1>Projects</h1>
+        <h1>Jing</h1>
       </div>
       <div class="clr"></div>
       <div class="project">
+       <%--  <ul>
+          <li><a href="#"><img src="${cy}/images/jing/jing.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>看着我的眼睛....</span></li>
+          <li><a href="#"><img src="${cy}/images/jing/jing3.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>老师不在,快抄啊! 1+1=？  看看同桌的答案..哈哈 2</span></li>
+          <li><a href="#"><img src="${cy}/images/jing/jing8.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>smile</span></li>
+          <li><a href="#"><img src="${cy}/images/jing/jing11.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>tenderness</span></li>
+        </ul> --%>
         <ul>
-          <li><a href="#"><img src="${cy}/images/jing/jing.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/jing/jing3.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/jing/jing8.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/jing/jing11.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
+          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
+          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
+          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
+          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
         </ul>
         <div class="clr"></div>
       </div>
       <div class="block_text">
         <div class="block_full">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+          <p style="font-size: 14px;"><!-- 静 ,美丽,体贴,孝顺,勤劳,善良,爱与智慧的结合体 ....prefect --></p>
           <div class="line"></div>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+          <p style="font-size: 14px;"><!-- cy想做,土豆辣子,土豆炒土豆,走在通向西藏的路上,抱着熊,欣赏薰衣草的芬芳,目的地云南!<br/>(有静&nbsp;足迹的地方) ...welfare --></p>
           <div class="clr"></div>
         </div>
         <div class="clr"></div>
