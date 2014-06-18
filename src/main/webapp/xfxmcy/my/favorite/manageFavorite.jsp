@@ -163,7 +163,19 @@
 								}, {
 									field : 'description',
 									title : '说明',
-									width : 200
+									width : 150
+								},{
+									field : 'memofirst',
+									title : '是否前台展示',
+									width : 60,
+									formatter:function(value){
+										if(null != value && "1"==value){
+											return "是";
+										}
+										else{
+											return "否";
+										}
+									}
 								}] ],
 								onLoadSuccess:function(row, data){
 									//queryType = 'queryTreegrid';
@@ -233,6 +245,12 @@
 					formDialog.find('#mtitle').val(nodeCurrent.title);
 					formDialog.find('#linkStr').val(nodeCurrent.url);
 					formDialog.find('#parentId').val(nodeCurrent.pid);
+					if(nodeCurrent.memofirst && nodeCurrent.memofirst == "1"){
+						formDialog.find('#memoFT').attr('checked','checked');	
+					}else{
+						formDialog.find('#memoFF').attr('checked','checked');
+					}
+					
 				}	
 			});
 			

@@ -38,6 +38,8 @@ public final class SpouseConstant {
 	public final static String SIMPLE_QUERY_LIST = "simpleQueryList";
 	/*simple query paged*/
 	public final static String SIMPLE_QUERY_PAGED = "simpleQueryPaged";
+	/*romantic query paged*/
+	public final static String ROMANTIC_QUERY_PAGED = "romaticPaged";
 	/*paged param start*/
 	public final static String SIMPLE_QUERY_PAGED_START = "start";
 	/*paged param row*/
@@ -47,10 +49,21 @@ public final class SpouseConstant {
 	public final static String SQL_PRIMARY_KEY = "id";
 	/*SQL  parent key*/
 	public final static String SQL_PARENT_KEY = "pid";
+	/*SQL  user id userid*/
+	public final static String SQL_USERID_KEY = "userid";
+	/*SQL  start*/
+	public final static String SQL_START = "start";
+	/*SQL  end*/
+	public final static String SQL_END = "end";
 	/*big photo*/
 	public final static String SQL_HOME_IS_BIG = "1";
 	/*small photo*/
 	public final static String SQL_HOME_IS_SMALL = "1";
+	/*true*/
+	public final static String SQL_FIELD_TRUE = "1";
+	/*false*/
+	public final static String SQL_FIELD_FALSE = "0";
+	
 	/**
 	 * 
 	 * ClassName:SystemicPage
@@ -83,8 +96,16 @@ public final class SpouseConstant {
 		  public final static String FAVORITE_INDEX = "/xfxmcy/my/favorite/manageFavorite";
 		/*main page*/
 		  public final static String MAIN_INDEX = "/xfxmcy/main/main";
-		  
-		
+		/*main page*/
+		  public final static String ME_INDEX = "/xfxmcy/me/me";  
+		/*romantic page*/
+		  public final static String ROMANTIC_INDEX = "/xfxmcy/romantic/romantic";
+		/*schedule page*/
+		  public final static String SCHEDULE_INDEX = "/schedule";  
+		/*my schedule page*/
+		  public final static String SCHEDULE_MANA_INDEX = "/xfxmcy/my/schedule/mySchedule";
+		/*meeting manager*/  
+		  public static final String MEETING_INDEX = "/xfxmcy/family/meeting/meetingManager";  
 	}
 	/**
 	 * 
@@ -146,6 +167,8 @@ public final class SpouseConstant {
 		public final static String QUERY_TREEGRID_PAGED = "queryTreegrid";
 		/*filter query tree grid paged*/
 		public final static String QUERY_TREEGRID_FILTER = "filterTreegrid";
+		/*show favorite in front*/
+		public final static String QUERY_TREEGRID_FRONT = "frontGrid";
 	}
 	/**
 	 * 
@@ -169,5 +192,25 @@ public final class SpouseConstant {
 		/*ftl for index page*/
 		public final static String MARKER_PATH_INDEX_FTL = "/index.ftl";
 	}
+	/**
+	 * 
+	 * ClassName:Task
+	 * Function: task constant
+	 * Reason:	 task constant
+	 *
+	 * @author   cy
+	 * @version  SpouseConstant
+	 * @since    Ver 1.1
+	 * @Date	 2014	2014年3月3日		下午11:02:11
+	 *
+	 * @see
+	 */
+	public class Task {
+		
+		/*query by user*/
+		public final static String TASK_FOR_USER = "taskForUser";
+		/*query cy's task*/
+		public final static String TASK_FOR_CY = "taskForCy";
+	}	
 }
 

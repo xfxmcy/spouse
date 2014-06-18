@@ -108,6 +108,7 @@
 			<artifactId>spring-web</artifactId>
 			<version>3.2.1</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>cy.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -147,17 +148,16 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-	
+		<!-- spring  date-->
+		<dependency>
+		  <groupId>joda-time</groupId>
+		  <artifactId>joda-time</artifactId>
+		  <version>2.3</version>
+		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.25</version>
-		</dependency>
-		<!-- alibaba -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid</artifactId>
-			<version>0.2.9</version>
 		</dependency>
 		<!-- 快速json  JSON.toJSONString(object) -->
 		<dependency>
@@ -191,6 +191,11 @@
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>0.2.9</version>
 		</dependency>
 		<!-- jackson 在springMVC返回json时使用 -->
 		<dependency>
@@ -244,6 +249,18 @@
 				<configuration>
 					<version>3.0</version>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.xfxmcy.line</groupId>
+				<artifactId>xfxmcy</artifactId>
+				<version>1.0.0</version>
+				<configuration>
+					<includes>
+						<include>java</include>
+						<include>sql</include>
+						<include>xml</include>
+					</includes>
 				</configuration>
 			</plugin>
 		</plugins>

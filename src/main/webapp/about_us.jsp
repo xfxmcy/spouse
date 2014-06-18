@@ -21,30 +21,31 @@
         <li><a href="${cy}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${cy}/spouse/managerment/his.do">him</a></li>
         <li><a href="${cy}/spouse/managerment/message.do">Contact her/him</a></li>
+        <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
     </div>
   </div>
   <div class="main">
     <div class="services">
       <div class="service_bg">
-        <h3>One team one goal</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknow the industry's standard dummy text ever since the 1500s </p>
-        <p> <a href="#"><strong>It was popularised in the 196</strong></a></p>
+        <h3>Fly me too moon</h3>
+        <p>回忆是条长线,盘旋在天边</p>
+        <p> <a href="#"><strong>沉浮中以为,情深缘浅</strong></a></p>
       </div>
       <ul>
         <li><a href="${cy}/romantic/index.jsp"><img src="${cy}/images/xfxmcy.png" width="241" height="105" border="0" alt="banner" /></a></li>
       </ul>
       <div class="clr"></div>
       <div class="service_bg">
-        <h3>Company news</h3>
-        <p><a href="#"><strong>12. 01. 09</strong></a></p>
-        <p><strong>Lorem ipsum dolor sit amet...</strong></p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br />
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer...</p>
-        <p><a href="#"><strong>12. 01. 09</strong></a></p>
-        <p><strong>Lorem ipsum dolor sit amet...</strong></p>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br />
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer...</p>
+        <h3>no change in life</h3>
+        <p><a href="#"><strong>14. 04. 15</strong></a></p>
+        <p><strong>你再度出现,我看见誓言</strong></p>
+        <p>错过今世的依恋... <br />
+        	回头看...不曾走远...</p>
+        <p><a href="#"><strong>14. 04. 18</strong></a></p>
+        <p><strong>依依目光...此生不换...</strong></p>
+        <p>要分算不习惯... <br />
+                                 你哭喊,我呼唤,听清耳边的呢喃...</p>
       </div>
     </div>
     <div class="global_main">
@@ -117,7 +118,7 @@
 			//so.addVariable("JcScpAPausePath","Images/Apause375x250.jpg");　 
 			//so.addVariable("JcScpAPauseLink","http://yxp.163.com/act/20120214.html"); 
 			//-角标广告参数-----------------------------
-			so.addVariable("ShowJcScpACorner","no");
+			 so.addVariable("ShowJcScpACorner","no");
 			//so.addVariable("JcScpACornerW","85");　
 			//so.addVariable("JcScpACornerH","50");　
 			//so.addVariable("JcScpACornerPath","Images/SevenColorPlayer_a10.swf");　
@@ -131,32 +132,31 @@
       <div class="clr"></div>
       <div class="block_text">
         <div class="block_full">
-          <p class="title">Lorem Ipsum is simply dummy text of the printing andtypesetting industry. </p>
-          <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br />
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br />
-            <strong>Why do we use it?</strong></p>
-          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look<a href="#"> <strong>like readable English</strong></a>. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-          <a href="#" class="link2">It was popularised</a>
+          <p class="title">...今世的依恋 ...</p>
+          <p>yesterday is destory<br/>
+            <strong>you in the front of you</strong></p>
+          <p>I want have a love<a href="#"> <strong>give me a chance</strong></a></p>
+          <a href="#" class="link2">jing</a>
           <div class="clr"></div>
         </div>
         <div class="block_list">
-          <p class="title">Lorem Ipsum is simply dum</p>
-          <p>industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknow the industry's standard dummy text ever since the 1500s </p>
-          <a href="#" class="link2">It was popularised</a> </div>
+          <p class="title">jing</p>
+          <p>cy </p>
+          <a href="#" class="link2">jing er</a> </div>
         <div class="block_list">
-          <p class="title">Lorem Ipsum is simply dum</p>
-          <p>industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknow the industry's standard dummy text ever since the 1500s </p>
-          <a href="#" class="link2">It was popularised</a> </div>
+          <p class="title">jing</p>
+          <p>cy </p>
+          <a href="#" class="link2">jing er</a> </div>
         <div class="block_list">
-          <p class="title">Lorem Ipsum is simply dum</p>
-          <p>industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknow the industry's standard dummy text ever since the 1500s </p>
-          <a href="#" class="link2">It was popularised</a> </div>
+          <p class="title">jing</p>
+          <p>cy </p>
+          <a href="#" class="link2">jing er</a> </div>
         <div class="clr"></div>
         <div class="block_full">
-          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />There are many variations</p>
-          <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. </p>
-          <p>It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to </p>
-          <a href="#" class="link2">It was popularised</a>
+          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />prefect jing</p>
+          <p>episode</p>
+          <p>cy</p>
+          <a href="#" class="link2">jing er</a>
           <div class="clr"></div>
         </div>
       </div>
@@ -171,6 +171,7 @@
         <li><a href="${cy}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${cy}/spouse/managerment/his.do">him</a></li>
         <li><a href="${cy}/spouse/managerment/message.do">Contact her/him</a></li>
+        <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
        <p>author lcy</p>

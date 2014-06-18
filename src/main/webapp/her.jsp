@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>project</title>
+<title>her</title>
 <link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${cy}/style.css" rel="stylesheet" type="text/css" />
@@ -35,6 +35,7 @@
         <li><a href="${cy}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${cy}/spouse/managerment/his.do">him</a></li>
         <li><a href="${cy}/spouse/managerment/message.do">Contact her/him</a></li>
+        <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
     </div>
   </div>
@@ -92,6 +93,7 @@
         <li><a href="${cy}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${cy}/spouse/managerment/his.do">him</a></li>
         <li><a href="${cy}/spouse/managerment/message.do">Contact her/him</a></li>
+        <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
        <p>author lcy</p>

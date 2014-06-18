@@ -125,7 +125,7 @@
 
 	
   <!-- query the count -->
-  <select id="countByCondition" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.model.QueryParam" >
+  <select id="countByCondition" resultType="java.lang.Long" parameterType="java.util.HashMap" >
 		select count(*) from sy_home
 	<where>
     	

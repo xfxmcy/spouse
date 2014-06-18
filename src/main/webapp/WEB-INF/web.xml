@@ -10,7 +10,7 @@
     <!-- file's uploaded path -->
 	<context-param>
 		<param-name>upload_path</param-name>
-		<param-value>/upload</param-value>
+		<param-value>/resource/upload</param-value>
 	</context-param>
  	<!-- file's uploaded type -->
 	<context-param>

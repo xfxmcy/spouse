@@ -4,10 +4,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>project</title>
+<title>him</title>
 <link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${cy}/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${cy}/js/jquery-easyui-cy/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+	var liFavorite = "";
+	(function(){
+		$.post("${cy}/favorite/favoriteQuery.do?queryType=frontGrid",null,function(data){
+			if(data.rows && data.rows.length > 0){
+				for(var i=0 ; i < data.rows.length ; i++){
+					liFavorite += "<li>" + data.rows[i].title;
+					liFavorite += "<a onclick='javascript:window.open(\""+data.rows[i].url+"\")' href='#'><strong>    " + data.rows[i].url;
+					liFavorite += "</strong></a></li>";
+				}	
+			}
+			$("#favorite").append(liFavorite);
+		});
+		
+	})();
+</script>
 </head>
 <body>
 <div id="container">
@@ -35,20 +52,18 @@
         <li><a href="${cy}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${cy}/spouse/managerment/his.do">him</a></li>
         <li><a href="${cy}/spouse/managerment/message.do">Contact her/him</a></li>
+        <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
     </div>
   </div>
   <div class="main">
     <div class="services">
       <div class="service_bg">
-        <h3>Business info</h3>
-        <ul class="link">
-          <li>Lorem Ipsum is simply dummy text of the printing and <a href="#"><strong>typesetting industry</strong></a>.</li>
-          <li>Lorem Ipsum is simply dummy text of the printing and <a href="#"><strong>typesetting industry</strong></a>.</li>
-          <li>Lorem Ipsum is simply dummy text of the printing and <a href="#"><strong>typesetting industry</strong></a>.</li>
+        <h3>my favorite</h3>
+        <ul id="favorite" class="link">
+        
         </ul>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make </p>
-        <p>a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release </p>
+        
       </div>
       <div class="clr"></div>
     </div>
@@ -59,18 +74,18 @@
       <div class="clr"></div>
       <div class="project">
         <ul>
-          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
+          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>dream</span></li>
+          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>love</span></li>
+          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>together</span></li>
+          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>you</span></li>
         </ul>
         <div class="clr"></div>
       </div>
       <div class="block_text">
         <div class="block_full">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+          <p>把昨天都作废,现在你在我眼前,我想love</p>
           <div class="line"></div>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+          <p>请给我机会</p>
           <div class="clr"></div>
         </div>
         <div class="clr"></div>
@@ -86,6 +101,7 @@
         <li><a href="${cy}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${cy}/spouse/managerment/his.do">him</a></li>
         <li><a href="${cy}/spouse/managerment/message.do">Contact her/him</a></li>
+        <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
        <p>author lcy</p>

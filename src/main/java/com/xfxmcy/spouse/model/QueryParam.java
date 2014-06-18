@@ -13,7 +13,11 @@
 
 package com.xfxmcy.spouse.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  * ClassName:QueryParam
@@ -31,7 +35,7 @@ public class QueryParam {
 	
 	/*using in paged*/
 	
-	private Integer rows = 5,page =1;
+	private Integer rows = 5,page =null;
 	
 	private String queryType ;
 	/*favorite treegrid*/
@@ -43,6 +47,19 @@ public class QueryParam {
 	
 	private String isFilter  = "false";
 	
+	
+	public String getBeginDate() {
+		return beginDate;
+	}
+	public void setBeginDate(String beginDate) {
+		this.beginDate = beginDate;
+	}
+	public String getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
 	public String getIsFilter() {
 		return isFilter;
 	}
@@ -123,6 +140,27 @@ public class QueryParam {
 
 	public void setPage(Integer page) {
 		this.page = page;
+	}
+	
+	private String start;
+	
+	
+	private String end;
+	public String getStart() {
+		return start;
+	}
+	public void setStart(String start) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date = new Date(Long.parseLong(start));
+		this.start = sdf.format(date);
+	}
+	public String getEnd() {
+		return end;
+	}
+	public void setEnd(String end) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date = new Date(Long.parseLong(end));
+		this.end = sdf.format(date);
 	}
 	public QueryParam() {
 

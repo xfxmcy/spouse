@@ -93,3 +93,41 @@ create table sy_home
 );
 
 alter table sy_home comment '前台展示的3个图像和1个集合，统计赞的数量';
+
+
+
+drop table if exists sr_romantic;
+
+/*==============================================================*/
+/* Table: sr_romantic                                           */
+/*==============================================================*/
+create table sr_romantic
+(
+   id                   varchar(32) not null comment 'id',
+   date                 varchar(50) comment 'varchar类型的时间',
+   dateClass            varchar(50) comment '时间的class',
+   title                text comment 'title',
+   imageFirst           varchar(300) comment '照片first',
+   imageSecond          varchar(300) comment '照片second',
+   contentFirst         text comment '内容first',
+   contentSecond        text comment '内容second',
+   isYear               char(1) comment '是否是年',
+   primary key (id)
+);
+/*tasks*/
+DROP TABLE IF EXISTS `b_tasks`;
+CREATE TABLE `b_tasks` (
+  `id` varchar(32) NOT NULL COMMENT '主键',
+  `title` varchar(100) NOT NULL COMMENT '任务标题',
+  `allDay` char(2) DEFAULT NULL COMMENT '是否全天',
+  `start` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '任务开始时间',
+  `end` timestamp NULL DEFAULT NULL COMMENT '任务结束时间',
+  `url` varchar(100) DEFAULT NULL COMMENT '任务跳转地址',
+  `userid` varchar(32) DEFAULT NULL COMMENT '所属用户id',
+  `business_id` varchar(32) DEFAULT NULL COMMENT '业务id',
+  `task_from` varchar(100) DEFAULT NULL COMMENT '任务来源',
+  `task_status` char(2) DEFAULT NULL COMMENT '任务状态:0未开始、1已开始未完成、2已完成、3延期完成、4已关闭',
+  `flag` char(2) DEFAULT NULL COMMENT '启用标识',
+  `status` char(2) DEFAULT NULL COMMENT '删除标识',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

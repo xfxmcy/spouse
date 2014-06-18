@@ -3,6 +3,7 @@ package com.xfxmcy.spouse.dao;
 import java.util.List;
 import java.util.Map;
 
+import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.vo.SYHome;
 
 public interface SYHomeMapper {
@@ -40,7 +41,7 @@ public interface SYHomeMapper {
      * ──────────────────────────────────
      *   		 2014年3月3日 		cy
      */
-    List<SYHome> selectByCondition(Map map);
+    List<SYHome> selectByCondition(Map<String,Object> map);
     /**
      * 
      * countByCondition: select count by condition
@@ -51,5 +52,5 @@ public interface SYHomeMapper {
      * ──────────────────────────────────
      *   		 2014年4月16日 		cy
      */
-    long countByCondition(Map map);
+    long countByCondition(Map<String,Object> map);
 }

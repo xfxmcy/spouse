@@ -106,5 +106,16 @@ public interface SMFavoriteMapper {
 	 *   		 2014年2月18日 		cy
 	 */
 	Long queryMaxSeq(Map<String, Object> map);
+	/**
+	 * 
+	 * queryFavoriteNotPaged:query favorite not paged
+	 *
+	 * @param param		param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年6月15日 		cy
+	 */
+	List<SMFavorite> queryFavoriteNotPaged(QueryParam param);
 	
 }

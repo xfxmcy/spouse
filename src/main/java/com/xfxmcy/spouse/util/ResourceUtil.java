@@ -48,5 +48,19 @@ public class ResourceUtil {
 		return bundle.getString("sessionInfoName");
 		
 	}
+	/**
+	 * 
+	 * getAdminId: get admin information , example default user in task
+	 *
+	 * @return			property's key
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2013-10-1 		cy
+	 */
+	public static final String getAdminId() {
+		
+		return bundle.getString("adminId");
+		
+	}
 }
 

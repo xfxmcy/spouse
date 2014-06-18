@@ -22,6 +22,21 @@
     from sm_favorite
     where id = #{id,jdbcType=VARCHAR}
   </select>
+  <!-- not paged  favorite -->
+  <select id="queryFavoriteNotPaged" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sm_favorite
+     <where>
+    	 <if test="memoFirst != null" >
+    	  	memoFirst = #{memoFirst,jdbcType=VARCHAR} and
+    	 </if>
+    	  <if test="owner != null">
+    	  	creater = #{owner,jdbcType=VARCHAR} 
+    	 </if>
+    </where>
+    order by seq
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.util.HashMap" >
     delete from sm_favorite
     where id = #{id,jdbcType=VARCHAR}
@@ -161,7 +176,7 @@
     	  	title like #{likeNameFirst,jdbcType=VARCHAR} and
     	 </if>
     	 <if test="owner != null">
-    	  	creater = #{owner,jdbcType=VARCHAR} 
+    	  	creater = #{owner,jdbcType=VARCHAR} 		
     	 </if>
     	 <if test="beginDate != null">
     	  	createTime > #{beginDate,jdbcType=TIMESTAMP} and

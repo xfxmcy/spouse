@@ -114,6 +114,7 @@ p#controls {
         <li><a href="${cy}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${cy}/spouse/managerment/his.do">him</a></li>
         <li><a href="${cy}/spouse/managerment/message.do">Contact her/him</a></li>
+        <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
     </div>
   </div>
@@ -125,8 +126,8 @@ p#controls {
         <p><a href="${cy}/romantic/index.jsp"><strong>expected</strong></a></p>
       </div>
       <ul class="banner">
-        <li><a href="#"><img src="${cy}/images/jxk.png" width="104" height="104" border="0" alt="banner" /></a></li>
-        <li><a href="#"><img src="${cy}/images/ynx.png" width="104" height="104" border="0" alt="banner" /></a></li>
+        <li><a href="#"><img src="${cy}/images/girl.jpg" width="104" height="104" border="0" alt="banner" /></a></li>
+        <li><a href="#"><img src="${cy}/images/girl1.jpg" width="104" height="104" border="0" alt="banner" /></a></li>
       </ul>
       <div class="clr"></div>
       <h3>Give a bless!</h3>
@@ -196,6 +197,7 @@ p#controls {
         <li><a href="${cy}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${cy}/spouse/managerment/his.do">him</a></li>
         <li><a href="${cy}/spouse/managerment/message.do">Contact her/him</a></li>
+        <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
       <p>Copyright © 2001-2007 DreamTemplate.com. All rights reserved.</p>

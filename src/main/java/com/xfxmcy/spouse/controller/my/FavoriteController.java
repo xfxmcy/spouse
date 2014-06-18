@@ -118,7 +118,6 @@ public class FavoriteController {
 	@ResponseBody
 	public SystemicInfo doPersistentFavorite(QueryParam param , SMFavorite favorite ,SystemicInfo info,HttpServletRequest request){
 		try{
-			logger.error("------乱码???-------->"+favorite.getTitle());
 			favorite.setCreater(SpouseUtil.getSessionUser(request).getUserId());
 			favorite = favoriteServiceImpl.persistenceFavorite(param,favorite);
 			info.setSuccess(true, "success");
@@ -176,5 +175,7 @@ public class FavoriteController {
 		}
 		return info;
 	} 
+	
+	
 }
 

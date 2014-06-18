@@ -65,6 +65,7 @@ jQuery(document).ready(function(){
         <li><a href="${cy}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${cy}/spouse/managerment/his.do">him</a></li>
         <li><a href="${cy}/spouse/managerment/message.do">Contact her/him</a></li>
+        <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
     </div>
   </div>
@@ -73,9 +74,9 @@ jQuery(document).ready(function(){
       <div class="service_bg">
         <h3>Get in touch!</h3>
         <ul class="link">
-          <li>Lorem Ipsum is simply dummy text of the printing and <a href="#"><strong>typesetting industry.</strong></a></li>
+          <li>jing<a href="#"><strong> cy</strong></a></li>
         </ul>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been</p>
+        <p>you</p>
         <p><span class="px22">+ 800 258 4578</span></p>
         <p><img src="${cy}/images/you.jpg" width="204" height="205" alt="picture 1" /></p>
       </div>
@@ -87,8 +88,9 @@ jQuery(document).ready(function(){
         <div class="clr"></div>
         <div class="block_text">
           <h2></h2>
-          <p><img src="${cy}/images/xfxmcy.png" width="150" height="110" hspace="10" vspace="0" align="left" alt="picture 1" /><strong>It is a long established fact that a reader will be</strong> distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-          <p><a href="#">&gt;&gt; oreder now </a></p>
+          <p><img src="${cy}/images/xfxmcy.png" width="150" height="110" hspace="10" vspace="0" align="left" alt="picture 1" /><strong>give us a change</strong>to  realize you</p>
+          <br />
+          <p>&gt;&gt; contact us</p>
           <p>&nbsp;</p>
           <form action="" method="post" id="contactform">
         <ol>
@@ -127,6 +129,7 @@ jQuery(document).ready(function(){
         <li><a href="${cy}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${cy}/spouse/managerment/his.do">him</a></li>
         <li><a href="${cy}/spouse/managerment/message.do">Contact her/him</a></li>
+       	<li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
        <p>author lcy</p>

@@ -99,6 +99,26 @@ public class SystemicController {
 		else if("main".equals(path)){
 			returnPath = SpouseConstant.SystemicPage.MAIN_INDEX;
 		}
+		/*me index*/
+		else if("me".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.ME_INDEX;
+		}
+		/*romantic index*/
+		else if("romantic".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.ROMANTIC_INDEX;
+		}
+		/*schedule index in front*/
+		else if("schedule".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.SCHEDULE_INDEX;
+		}
+		/*schedule index*/
+		else if("mySchedule".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.SCHEDULE_MANA_INDEX;
+		}
+		/*meeting index*/
+		else if("meeting".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.MEETING_INDEX;
+		}
 		return returnPath;
 	}
 	
@@ -165,7 +185,7 @@ public class SystemicController {
 	public SessionUser getSessionUser(SPEmployer employer ,HttpServletRequest request){
 		/* create session info*/
 		SessionUser sessionInfo = new SessionUser();
-		sessionInfo.setUserId(employer.getsAccount());
+		sessionInfo.setUserId(employer.getId());
 		sessionInfo.setLoginName(employer.getsAccount());
 		sessionInfo.setIp(IpUtil.getIpAddr(request));
 		return sessionInfo;

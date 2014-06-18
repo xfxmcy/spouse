@@ -1,0 +1,1600 @@
+html {
+	background: rgb(255, 255, 255); color: rgb(0, 0, 0); -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+}
+body {
+	margin: 0px; padding: 0px;
+}
+div {
+	margin: 0px; padding: 0px;
+}
+dl {
+	margin: 0px; padding: 0px;
+}
+dt {
+	margin: 0px; padding: 0px;
+}
+dd {
+	margin: 0px; padding: 0px;
+}
+ul {
+	margin: 0px; padding: 0px;
+}
+ol {
+	margin: 0px; padding: 0px;
+}
+li {
+	margin: 0px; padding: 0px;
+}
+h1 {
+	margin: 0px; padding: 0px;
+}
+h2 {
+	margin: 0px; padding: 0px;
+}
+h3 {
+	margin: 0px; padding: 0px;
+}
+h4 {
+	margin: 0px; padding: 0px;
+}
+h5 {
+	margin: 0px; padding: 0px;
+}
+h6 {
+	margin: 0px; padding: 0px;
+}
+pre {
+	margin: 0px; padding: 0px;
+}
+code {
+	margin: 0px; padding: 0px;
+}
+form {
+	margin: 0px; padding: 0px;
+}
+fieldset {
+	margin: 0px; padding: 0px;
+}
+legend {
+	margin: 0px; padding: 0px;
+}
+input {
+	margin: 0px; padding: 0px;
+}
+textarea {
+	margin: 0px; padding: 0px;
+}
+p {
+	margin: 0px; padding: 0px;
+}
+blockquote {
+	margin: 0px; padding: 0px;
+}
+th {
+	margin: 0px; padding: 0px;
+}
+td {
+	margin: 0px; padding: 0px;
+}
+hr {
+	margin: 0px; padding: 0px;
+}
+button {
+	margin: 0px; padding: 0px;
+}
+article {
+	margin: 0px; padding: 0px;
+}
+aside {
+	margin: 0px; padding: 0px;
+}
+details {
+	margin: 0px; padding: 0px;
+}
+figcaption {
+	margin: 0px; padding: 0px;
+}
+figure {
+	margin: 0px; padding: 0px;
+}
+footer {
+	margin: 0px; padding: 0px;
+}
+header {
+	margin: 0px; padding: 0px;
+}
+hgroup {
+	margin: 0px; padding: 0px;
+}
+menu {
+	margin: 0px; padding: 0px;
+}
+nav {
+	margin: 0px; padding: 0px;
+}
+section {
+	margin: 0px; padding: 0px;
+}
+article {
+	display: block;
+}
+aside {
+	display: block;
+}
+details {
+	display: block;
+}
+figcaption {
+	display: block;
+}
+figure {
+	display: block;
+}
+footer {
+	display: block;
+}
+header {
+	display: block;
+}
+hgroup {
+	display: block;
+}
+menu {
+	display: block;
+}
+nav {
+	display: block;
+}
+section {
+	display: block;
+}
+audio {
+	display: inline-block;
+}
+canvas {
+	display: inline-block;
+}
+video {
+	display: inline-block;
+}
+body {
+	font: 12px/1.5 "΢���ź�", "����ϸ��", tahoma, arial, ����; font-size-adjust: none; font-stretch: normal;
+}
+button {
+	font: 12px/1.5 "΢���ź�", "����ϸ��", tahoma, arial, ����; font-size-adjust: none; font-stretch: normal;
+}
+input {
+	font: 12px/1.5 "΢���ź�", "����ϸ��", tahoma, arial, ����; font-size-adjust: none; font-stretch: normal;
+}
+select {
+	font: 12px/1.5 "΢���ź�", "����ϸ��", tahoma, arial, ����; font-size-adjust: none; font-stretch: normal;
+}
+textarea {
+	font: 12px/1.5 "΢���ź�", "����ϸ��", tahoma, arial, ����; font-size-adjust: none; font-stretch: normal;
+}
+input {
+	font-size: 100%;
+}
+select {
+	font-size: 100%;
+}
+textarea {
+	font-size: 100%;
+}
+table {
+	border-collapse: collapse; border-spacing: 0;
+}
+th {
+	text-align: inherit;
+}
+fieldset {
+	border: 0px currentColor; border-image: none;
+}
+img {
+	border: 0px currentColor; border-image: none;
+}
+iframe {
+	display: block;
+}
+abbr {
+	border: 0px currentColor; border-image: none; font-variant: normal;
+}
+acronym {
+	border: 0px currentColor; border-image: none; font-variant: normal;
+}
+del {
+	text-decoration: line-through;
+}
+address {
+	font-style: normal; font-weight: 500;
+}
+caption {
+	font-style: normal; font-weight: 500;
+}
+cite {
+	font-style: normal; font-weight: 500;
+}
+code {
+	font-style: normal; font-weight: 500;
+}
+dfn {
+	font-style: normal; font-weight: 500;
+}
+em {
+	font-style: normal; font-weight: 500;
+}
+th {
+	font-style: normal; font-weight: 500;
+}
+var {
+	font-style: normal; font-weight: 500;
+}
+ol {
+	list-style: none;
+}
+ul {
+	list-style: none;
+}
+caption {
+	text-align: left;
+}
+th {
+	text-align: left;
+}
+h1 {
+	font-size: 100%; font-weight: 500;
+}
+h2 {
+	font-size: 100%; font-weight: 500;
+}
+h3 {
+	font-size: 100%; font-weight: 500;
+}
+h4 {
+	font-size: 100%; font-weight: 500;
+}
+h5 {
+	font-size: 100%; font-weight: 500;
+}
+h6 {
+	font-size: 100%; font-weight: 500;
+}
+q::before {
+	content: "";
+}
+q::after {
+	content: "";
+}
+sub {
+	line-height: 0; font-size: 75%; vertical-align: baseline; position: relative;
+}
+sup {
+	line-height: 0; font-size: 75%; vertical-align: baseline; position: relative;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+a:hover {
+	text-decoration: underline;
+}
+ins {
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+}
+.fn-clear::after {
+	height: 0px; clear: both; font-size: 0px; display: block; visibility: hidden; content: " ";
+}
+.fn-clear {
+	-ms-zoom: 1;
+}
+body .fn-hide {
+	display: none;
+}
+.fn-left {
+	display: inline;
+}
+.fn-right {
+	display: inline;
+}
+.fn-left {
+	float: left;
+}
+.fn-right {
+	float: right;
+}
+.content {
+	margin: 0px auto; padding: 0px 40px; position: relative; min-width: 996px; max-width: 1200px;
+}
+.content .right-part {
+	top: 0px; width: 236px; right: 40px; overflow: hidden; position: absolute;
+}
+.content .main {
+	margin-right: 254px;
+}
+.uc-page-tab {
+	height: 40px; border-bottom-color: rgb(228, 228, 228); border-bottom-width: 1px; border-bottom-style: solid; position: relative;
+}
+.uc-page-tab ul {
+	left: 0px; top: 0px; height: 41px; overflow: hidden; position: absolute;
+}
+.uc-page-tab li {
+	margin: 0px 5px 0px 0px; height: 41px; float: left; display: inline;
+}
+.uc-page-tab li a {
+	background: rgb(255, 255, 255); padding: 2px 32px 1px; border: 1px solid rgb(228, 228, 228); transition:0.3s; border-image: none; height: 36px; text-align: center; color: rgb(102, 102, 102); line-height: 2; overflow: hidden; font-size: 18px; float: left; display: inline; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-page-tab li a:link {
+	background: rgb(255, 255, 255); color: rgb(102, 102, 102);
+}
+.uc-page-tab li a:visited {
+	background: rgb(255, 255, 255); color: rgb(102, 102, 102);
+}
+.uc-page-tab li a:hover {
+	background: rgb(239, 239, 239); color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-page-tab .current a {
+	padding: 1px 32px; color: rgb(0, 0, 0); border-top-color: rgb(0, 161, 202); border-bottom-color: rgb(255, 255, 255); border-top-width: 2px; border-top-style: solid;
+}
+.uc-page-tab .current a:link {
+	background: rgb(255, 255, 255); color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-page-tab .current a:visited {
+	background: rgb(255, 255, 255); color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-page-tab .current a:hover {
+	background: rgb(255, 255, 255); color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-page-tab-s {
+	height: 32px;
+}
+.uc-page-tab-s ul {
+	height: 33px;
+}
+.uc-page-tab-s li {
+	height: 33px;
+}
+.uc-page-tab-s li a {
+	padding: 4px 20px 3px; height: 24px; font-size: 12px;
+}
+.uc-page-tab-s .current a {
+	padding: 3px 20px;
+}
+.uc-button {
+	border-radius: 4px; border: 1px solid rgb(0, 162, 201); transition:0.3s; border-image: none; width: 150px; height: 36px; text-align: center; color: rgb(255, 255, 255); line-height: 2; overflow: hidden; font-family: "΢���ź�", "����ϸ��"; font-size: 14px; display: inline-block; cursor: pointer; text-shadow: 0px -1px 0px rgba(0,0,0,0.3); background-color: rgb(0, 162, 201); -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-button-black {
+	border-radius: 4px; border: 1px solid rgb(0, 162, 201); transition:0.3s; border-image: none; width: 150px; height: 36px; text-align: center; color: rgb(255, 255, 255); line-height: 2; overflow: hidden; font-family: "΢���ź�", "����ϸ��"; font-size: 14px; display: inline-block; cursor: pointer; text-shadow: 0px -1px 0px rgba(0,0,0,0.3); background-color: rgb(0, 162, 201); -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-button-gray {
+	border-radius: 4px; border: 1px solid rgb(0, 162, 201); transition:0.3s; border-image: none; width: 150px; height: 36px; text-align: center; color: rgb(255, 255, 255); line-height: 2; overflow: hidden; font-family: "΢���ź�", "����ϸ��"; font-size: 14px; display: inline-block; cursor: pointer; text-shadow: 0px -1px 0px rgba(0,0,0,0.3); background-color: rgb(0, 162, 201); -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-button-blue {
+	border-radius: 4px; border: 1px solid rgb(0, 162, 201); transition:0.3s; border-image: none; width: 150px; height: 36px; text-align: center; color: rgb(255, 255, 255); line-height: 2; overflow: hidden; font-family: "΢���ź�", "����ϸ��"; font-size: 14px; display: inline-block; cursor: pointer; text-shadow: 0px -1px 0px rgba(0,0,0,0.3); background-color: rgb(0, 162, 201); -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-button-disabled {
+	border-radius: 4px; border: 1px solid rgb(0, 162, 201); transition:0.3s; border-image: none; width: 150px; height: 36px; text-align: center; color: rgb(255, 255, 255); line-height: 2; overflow: hidden; font-family: "΢���ź�", "����ϸ��"; font-size: 14px; display: inline-block; cursor: pointer; text-shadow: 0px -1px 0px rgba(0,0,0,0.3); background-color: rgb(0, 162, 201); -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-button:hover {
+	background: rgb(51, 181, 212); border: 1px solid rgb(51, 181, 212); border-image: none; color: rgb(255, 255, 255); text-decoration: none;
+}
+.uc-button:active {
+	background: rgb(32, 165, 197); border: 1px solid rgb(32, 165, 197); border-image: none; box-shadow: inset 0px 2px 1px #138cb3;
+}
+.uc-button-black {
+	background: rgb(255, 255, 255); border: 1px solid rgb(51, 181, 212); border-image: none; color: rgb(0, 162, 201); text-shadow: none;
+}
+.uc-button-black:hover {
+	background: rgb(51, 181, 212); border: 1px solid rgb(51, 181, 212); border-image: none; color: rgb(255, 255, 255); text-decoration: none;
+}
+.uc-button-black:active {
+	background: rgb(32, 165, 197); border: 1px solid rgb(32, 165, 197); border-image: none; color: rgb(255, 255, 255); box-shadow: inset 0px 2px 1px #138cb3;
+}
+.uc-button-gray {
+	background: rgb(255, 255, 255); border: 1px solid rgb(51, 181, 212); border-image: none; color: rgb(0, 162, 201); text-shadow: none;
+}
+.uc-button-gray:hover {
+	background: rgb(51, 181, 212); border: 1px solid rgb(51, 181, 212); border-image: none; color: rgb(255, 255, 255); text-decoration: none;
+}
+.uc-button-gray:active {
+	background: rgb(32, 165, 197); border: 1px solid rgb(32, 165, 197); border-image: none; color: rgb(255, 255, 255); box-shadow: inset 0px 2px 1px #138cb3;
+}
+.uc-button-blue {
+	
+}
+.uc-button-blue:hover {
+	background: rgb(51, 181, 212); border: 1px solid rgb(51, 181, 212); border-image: none; text-decoration: none;
+}
+.uc-button-blue:active {
+	background: rgb(32, 165, 197); border: 1px solid rgb(32, 165, 197); border-image: none; box-shadow: inset 0px 2px 1px #138cb3;
+}
+.uc-button-disabled {
+	background: rgb(239, 239, 239); border: 1px solid rgb(239, 239, 239); border-image: none; color: rgb(204, 204, 204); cursor: default; text-shadow: none;
+}
+.uc-button-disabled:hover {
+	background: rgb(239, 239, 239); border: 1px solid rgb(239, 239, 239); border-image: none; text-decoration: none;
+}
+.uc-button-s {
+	height: 26px; line-height: 1.8; font-size: 12px;
+}
+.uc-button-w100 {
+	width: 100px;
+}
+.uc-button-w170 {
+	width: 170px;
+}
+.uc-radio {
+	height: 26px; display: inline-block;
+}
+.uc-radio .unit {
+	background: rgb(249, 249, 249); border-radius: 4px; border: 1px solid rgb(238, 238, 238); transition:0.3s; border-image: none; width: 94px; height: 24px; text-align: center; line-height: 2; overflow: hidden; margin-right: 10px; display: inline-block; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-radio .unit:link {
+	background: rgb(249, 249, 249); border-color: rgb(238, 238, 238); color: rgb(153, 153, 153);
+}
+.uc-radio .unit:visited {
+	background: rgb(249, 249, 249); border-color: rgb(238, 238, 238); color: rgb(153, 153, 153);
+}
+.uc-radio .unit:hover {
+	background: rgb(234, 251, 254); border-color: rgb(234, 251, 254); color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-radio .current:link {
+	background: rgb(234, 251, 254); border-color: rgb(109, 197, 220); color: rgb(0, 0, 0); cursor: default;
+}
+.uc-radio .current:visited {
+	background: rgb(234, 251, 254); border-color: rgb(109, 197, 220); color: rgb(0, 0, 0); cursor: default;
+}
+.uc-radio .current:hover {
+	background: rgb(234, 251, 254); border-color: rgb(109, 197, 220); color: rgb(0, 0, 0); cursor: default;
+}
+.uc-radio-l .unit {
+	width: 110px;
+}
+.error.uc-radio .unit:link {
+	background: rgb(255, 248, 243); border-color: rgb(238, 0, 0); color: rgb(0, 0, 0); cursor: pointer;
+}
+.error.uc-radio .unit:visited {
+	background: rgb(255, 248, 243); border-color: rgb(238, 0, 0); color: rgb(0, 0, 0); cursor: pointer;
+}
+.error.uc-radio .unit:hover {
+	background: rgb(255, 248, 243); border-color: rgb(238, 0, 0); color: rgb(0, 0, 0); cursor: pointer;
+}
+.uc-slider .unit i {
+	background: url("http://img03.taobaocdn.com/tps/i3/T16F4tFgRdXXaB.os.-13-7.png") no-repeat;
+}
+.uc-slider {
+	padding: 0px 7px; border-radius: 4px; height: 26px; vertical-align: bottom; display: inline-block; position: relative; background-color: rgb(249, 249, 249);
+}
+.uc-slider .range {
+	border-radius: 4px; height: 26px; position: relative; background-color: rgb(249, 249, 249);
+}
+.uc-slider .range .block {
+	height: 24px; display: inline-block;
+}
+.uc-slider .block div {
+	padding: 1px 10px 1px 0px; height: 24px; text-align: right; border-right-color: rgb(230, 230, 230); border-right-width: 1px; border-right-style: solid;
+}
+.uc-slider .block span {
+	color: rgb(153, 153, 153); line-height: 2; font-size: 12px; float: right; display: inline;
+}
+.uc-slider .block .last {
+	border-width: 0px; padding-right: 11px;
+}
+.uc-slider .container {
+	padding: 0px 6px; border-radius: 4px; border: 1px solid rgb(109, 197, 220); border-image: none; left: -7px; top: 0px; width: 0%; height: 24px; overflow: hidden; position: absolute; background-color: rgb(234, 251, 254);
+}
+.uc-slider .container .current {
+	border-radius: 4px; width: 100%; height: 24px; overflow: hidden; white-space: nowrap; background-color: rgb(234, 251, 254);
+}
+.uc-slider .current .unit {
+	height: 24px; margin-left: 0px; display: inline-block;
+}
+.uc-slider .unit div {
+	height: 24px; text-align: right; padding-right: 10px; border-right-color: rgb(208, 234, 249); border-right-width: 1px; border-right-style: solid;
+}
+.uc-slider .unit span {
+	transition:color 0.3s; height: 24px; color: rgb(200, 193, 168); line-height: 2; font-size: 12px; float: right; display: inline; -webkit-transition: color .3s; -moz-transition: color .3s; -o-transition: color .3s;
+}
+.uc-slider .unit i {
+	width: 13px; height: 8px; overflow: hidden; margin-top: 7px; float: right; display: none;
+}
+.uc-slider .unit .last {
+	border-width: 0px; padding-right: 11px;
+}
+.uc-slider .bar {
+	left: -7px; top: 0px; width: 100%; height: 26px; overflow: hidden; position: absolute; cursor: default; opacity: 0; background-color: rgb(255, 0, 0);
+}
+.uc-slider .drag {
+	padding: 9px 0px 0px 3px; border: 1px solid rgb(187, 187, 187); transition:border-color 0.3s, transform 0.3s; border-image: none; left: -7px; top: -2px; width: 10px; height: 19px; overflow: hidden; display: block; position: absolute; cursor: default; box-shadow: 0px 1px 5px rgba(0,0,0,0.25); transform: scale(1); background-color: rgb(255, 255, 255); -webkit-transition: border-color .3s, -webkit-transform .3s; -moz-transition: border-color .3s, -moz-transform .3s; -o-transition: border-color .3s, -o-transform .3s; -webkit-transform: scale(1); -moz-transform: scale(1); -o-transform: scale(1);
+}
+.uc-slider .drag:link {
+	border-color: rgb(204, 204, 204);
+}
+.uc-slider .drag:visited {
+	border-color: rgb(204, 204, 204);
+}
+.uc-slider .drag:hover {
+	border-color: rgb(170, 170, 170);
+}
+.uc-slider .drag i {
+	background: -ms-linear-gradient(rgb(242, 242, 242), rgb(171, 171, 171), rgb(242, 242, 242)); margin: 0px 0px 0px 1px; width: 1px; height: 10px; overflow: hidden; float: left; display: inline;
+}
+.uc-slider .w60 {
+	width: 60%;
+}
+.uc-slider .w50 {
+	width: 50%;
+}
+.uc-slider .w25 {
+	width: 25%;
+}
+.uc-slider .w20 {
+	width: 20%;
+}
+.duration {
+	width: 506px;
+}
+.uc-slider .mm {
+	width: 37px;
+}
+.uc-slider .yy {
+	width: 57px;
+}
+.uc-input {
+	padding: 6px 4px; border-radius: 4px; border: 1px solid rgb(212, 212, 212); border-image: none; width: 44px; height: 12px; color: rgb(0, 0, 0); line-height: 1; font-size: 12px; box-shadow: inset 1px 1px 1px #e8e8e8;
+}
+.c-f60.uc-input {
+	text-align: center; color: rgb(255, 102, 0);
+}
+.uc-select .ico-centos {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-select .ico-debian {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-select .ico-ubuntu {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-select .ico-redhat {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-select .ico-windows {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-select .unit .down {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-select .ico-aliyun-linux {
+	background: url("http://gtms01.alicdn.com/tps/i1/T1xig.FitaXXaSQP_X-16-16.png") no-repeat;
+}
+.uc-select {
+	height: 26px; display: inline-block; position: relative; z-index: 0;
+}
+.z9.uc-select {
+	z-index: 9;
+}
+.uc-select .unit {
+	padding: 0px 6px; border-radius: 4px; border: 1px solid rgb(238, 238, 238); transition:0.3s; border-image: none; height: 24px; line-height: 2; overflow: hidden; display: block; white-space: nowrap; background-color: rgb(249, 249, 249); -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-select .unit:link {
+	border-color: rgb(238, 238, 238); color: rgb(153, 153, 153); background-color: rgb(249, 249, 249);
+}
+.uc-select .unit:visited {
+	border-color: rgb(238, 238, 238); color: rgb(153, 153, 153); background-color: rgb(249, 249, 249);
+}
+.uc-select .unit:hover {
+	border-color: rgb(234, 251, 254); color: rgb(0, 0, 0); text-decoration: none; background-color: rgb(234, 251, 254);
+}
+.uc-select .unit .down {
+	background-position: 0px -120px; margin: 10px 1px 0px 0px; transition:transform 0.3s; width: 7px; height: 4px; float: right; display: inline; cursor: pointer; -webkit-transition: -webkit-transform .3s; -moz-transition: -moz-transform .3s; -o-transition: -o-transform .3s;
+}
+.uc-select .unit .down-rotate {
+	transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -o-transform: rotate(180deg);
+}
+.uc-select .unit:link .down {
+	background-position: 0px -120px;
+}
+.uc-select .unit:visited .down {
+	background-position: 0px -120px;
+}
+.uc-select .unit:hover .down {
+	background-position: 0px -144px;
+}
+@media not all
+{
+.uc-select .unit .icon-down3 {
+	margin-top: 6px;
+}
+}
+.uc-select .unit .down-rotate {
+	-webkit-transform: rotate(180deg);
+}
+.uc-select .current:link {
+	border-color: rgb(109, 197, 220); color: rgb(0, 0, 0); background-color: rgb(234, 251, 254);
+}
+.uc-select .current:visited {
+	border-color: rgb(109, 197, 220); color: rgb(0, 0, 0); background-color: rgb(234, 251, 254);
+}
+.uc-select .current:hover {
+	border-color: rgb(109, 197, 220); color: rgb(0, 0, 0); background-color: rgb(234, 251, 254);
+}
+.uc-select .current:link .down {
+	background-position: 0px -144px;
+}
+.uc-select .current:visited .down {
+	background-position: 0px -144px;
+}
+.uc-select .current:hover .down {
+	background-position: 0px -144px;
+}
+.uc-select .error:link {
+	border-color: rgb(238, 0, 0); color: rgb(0, 0, 0); background-color: rgb(255, 248, 243);
+}
+.uc-select .error:visited {
+	border-color: rgb(238, 0, 0); color: rgb(0, 0, 0); background-color: rgb(255, 248, 243);
+}
+.uc-select .error:hover {
+	border-color: rgb(238, 0, 0); color: rgb(0, 0, 0); background-color: rgb(255, 248, 243);
+}
+.uc-select .error:link .down {
+	background-position: 0px -120px; cursor: pointer;
+}
+.uc-select .error:visited .down {
+	background-position: 0px -120px; cursor: pointer;
+}
+.uc-select .error:hover .down {
+	background-position: 0px -120px; cursor: pointer;
+}
+.uc-select .list {
+	border: 1px solid rgb(204, 204, 204); border-image: none; left: 0px; top: 26px; overflow: hidden; display: none; position: absolute; box-shadow: 0px 1px 5px rgba(0,0,0,0.3); background-color: rgb(255, 255, 255);
+}
+.uc-select .list-scroll {
+	height: 208px; overflow: auto;
+}
+.uc-select .list a {
+	padding: 0px 6px; border: 1px solid rgb(255, 255, 255); border-image: none; height: 24px; color: rgb(0, 0, 0); line-height: 2; display: block; white-space: nowrap !important;
+}
+.uc-select .list a:link {
+	color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);
+}
+.uc-select .list a:visited {
+	color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);
+}
+.uc-select .list a:hover {
+	color: rgb(0, 0, 0); text-decoration: none; background-color: rgb(238, 238, 238);
+}
+.uc-select .ico-centos {
+	width: 16px; height: 16px; overflow: hidden; margin-right: 5px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-select .ico-debian {
+	width: 16px; height: 16px; overflow: hidden; margin-right: 5px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-select .ico-ubuntu {
+	width: 16px; height: 16px; overflow: hidden; margin-right: 5px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-select .ico-redhat {
+	width: 16px; height: 16px; overflow: hidden; margin-right: 5px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-select .ico-windows {
+	width: 16px; height: 16px; overflow: hidden; margin-right: 5px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-select .ico-aliyun-linux {
+	width: 16px; height: 16px; overflow: hidden; margin-right: 5px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-select .ico-centos {
+	background-position: 0px 0px;
+}
+.uc-select .ico-debian {
+	background-position: 0px -24px;
+}
+.uc-select .ico-ubuntu {
+	background-position: 0px -48px;
+}
+.uc-select .ico-redhat {
+	background-position: 0px -72px;
+}
+.uc-select .ico-windows {
+	background-position: 0px -96px;
+}
+.error.uc-select .unit:link {
+	border-color: rgb(238, 0, 0); color: rgb(0, 0, 0); cursor: pointer; background-color: rgb(255, 248, 243);
+}
+.error.uc-select .unit:visited {
+	border-color: rgb(238, 0, 0); color: rgb(0, 0, 0); cursor: pointer; background-color: rgb(255, 248, 243);
+}
+.error.uc-select .unit:hover {
+	border-color: rgb(238, 0, 0); color: rgb(0, 0, 0); cursor: pointer; background-color: rgb(255, 248, 243);
+}
+.uc-number .uc-input {
+	border-width: 1px 0px; border-radius: 0px; width: 60px; height: 12px; text-align: center; overflow: hidden; display: inline-block;
+}
+.uc-number .icon-reduce {
+	height: 24px; font-size: 8px; vertical-align: baseline; display: inline-block; cursor: default; -webkit-transform: scale(0.7);
+}
+.uc-number .icon-add {
+	height: 24px; font-size: 8px; vertical-align: baseline; display: inline-block; cursor: default; -webkit-transform: scale(0.7);
+}
+@media not all
+{
+.uc-number .icon-reduce {
+	margin-top: 4px;
+}
+.uc-number .icon-add {
+	margin-top: 4px;
+}
+}
+.uc-number a {
+	border: 1px solid rgb(227, 227, 227); transition:color 0.3s; border-image: none; width: 20px; height: 24px; text-align: center; line-height: 19px; overflow: hidden; vertical-align: bottom; display: inline-block; background-color: rgb(240, 240, 240); -webkit-transition: color .3s; -moz-transition: color .3s; -o-transition: color .3s;
+}
+.uc-number a .icon-reduce {
+	cursor: pointer;
+}
+.uc-number a .icon-add {
+	cursor: pointer;
+}
+.uc-number a:link {
+	color: rgb(102, 102, 102);
+}
+.uc-number a:visited {
+	color: rgb(102, 102, 102);
+}
+.uc-number a:hover {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-number .arrive:link {
+	color: rgb(204, 204, 204); cursor: default;
+}
+.uc-number .arrive:visited {
+	color: rgb(204, 204, 204); cursor: default;
+}
+.uc-number .arrive:hover {
+	color: rgb(204, 204, 204); cursor: default;
+}
+.uc-number .arrive .icon-reduce {
+	cursor: default;
+}
+.uc-number .arrive .icon-add {
+	cursor: default;
+}
+.uc-ploy {
+	background: rgb(228, 240, 220); margin: 0px 2px 0px 0px; padding: 0px 3px; border-radius: 4px; border: 1px solid rgb(201, 221, 187); border-image: none; height: 18px; color: rgb(51, 51, 51); line-height: 1.5; overflow: hidden; vertical-align: text-bottom; display: inline-block; cursor: default;
+}
+.uc-tip-grave {
+	width: 0px; height: 0px; overflow: hidden; display: block; position: relative; z-index: 1; -ms-zoom: 1;
+}
+.uc-tip {
+	padding: 2px; border-radius: 4px; border: 1px solid rgb(132, 188, 251); transition:left 0.3s; border-image: none; display: inline-block; position: absolute; box-shadow: 0px 1px 5px rgba(0,0,0,0.3); background-color: rgb(227, 240, 255); -webkit-transition: left .3s; -moz-transition: left .3s; -o-transition: left .3s;
+}
+.uc-tip-show {
+	
+}
+.uc-tip .text {
+	padding: 0px 5px; line-height: 2; display: inline-block; white-space: nowrap;
+}
+.uc-tip .arrow-bottom {
+	left: 7px; width: 14px; height: 7px; overflow: hidden; display: block; position: absolute;
+}
+.uc-tip .arrow {
+	border-width: 0px 1px; border-style: solid; border-color: rgb(132, 188, 251); margin: 0px auto; border-image: none; height: 1px; overflow: hidden; display: block; background-color: rgb(227, 240, 255);
+}
+.uc-tip .arrow-2 {
+	width: 0px;
+}
+.uc-tip .arrow-4 {
+	width: 2px;
+}
+.uc-tip .arrow-6 {
+	width: 4px;
+}
+.uc-tip .arrow-8 {
+	width: 6px;
+}
+.uc-tip .arrow-10 {
+	width: 8px;
+}
+.uc-tip .arrow-12 {
+	width: 10px;
+}
+.uc-tip .arrow-14 {
+	width: 12px;
+}
+.uc-table {
+	width: 100%; color: rgb(51, 51, 51); border-collapse: collapse; max-width: 100%; border-spacing: 0;
+}
+.uc-table-s {
+	
+}
+.uc-table th {
+	background: rgb(242, 242, 242); padding: 5px 10px; text-align: left; line-height: 1.5; font-weight: bold; vertical-align: middle; white-space: nowrap;
+}
+.uc-table td {
+	background: rgb(242, 242, 242); padding: 5px 10px; text-align: left; line-height: 1.5; font-weight: bold; vertical-align: middle; white-space: nowrap;
+}
+.uc-table td {
+	background: rgb(255, 255, 255); border-width: 0px 0px 1px; border-style: solid; border-color: rgb(246, 246, 246); padding: 20px 10px; transition:background 0.3s; border-image: none; font-weight: normal; -webkit-transition: background .3s; -moz-transition: background .3s; -o-transition: background .3s;
+}
+.uc-table-text-top td {
+	vertical-align: top;
+}
+.uc-table .text-top {
+	vertical-align: top;
+}
+.uc-table .text-middle {
+	vertical-align: middle;
+}
+.uc-table .text-center {
+	text-align: center;
+}
+.uc-table .text-wrap {
+	-ms-word-break: normal; -ms-word-wrap: break-word;
+}
+.uc-table tr:hover td {
+	background: rgb(249, 249, 249);
+}
+.uc-table .focus td {
+	background: rgb(234, 251, 254);
+}
+.uc-table .focus:hover td {
+	background: rgb(234, 251, 254);
+}
+.uc-table-s th {
+	border-width: 0px; padding: 2px 10px;
+}
+.uc-table-s td {
+	border-width: 0px; padding: 2px 10px;
+}
+.lnk:link {
+	color: rgb(0, 162, 202);
+}
+.lnk:visited {
+	color: rgb(0, 162, 202);
+}
+.lnk:hover {
+	color: rgb(0, 162, 202); text-decoration: underline;
+}
+.lnk-gray:link {
+	color: rgb(102, 102, 102); text-decoration: underline;
+}
+.lnk-gray:visited {
+	color: rgb(102, 102, 102); text-decoration: underline;
+}
+.lnk-gray:hover {
+	color: rgb(0, 162, 202); text-decoration: underline;
+}
+.m {
+	font-size: 14px;
+}
+.cny {
+	font-family: Arial;
+}
+.mt20 {
+	margin-top: 20px;
+}
+.mt10 {
+	margin-top: 10px;
+}
+.mt5 {
+	margin-top: 5px;
+}
+.mb20 {
+	margin-bottom: 20px;
+}
+.mb40 {
+	margin-bottom: 40px;
+}
+.mr10 {
+	margin-right: 10px;
+}
+.pb10 {
+	padding-bottom: 10px;
+}
+.pb15 {
+	padding-bottom: 15px;
+}
+.cny {
+	margin: 0px 1px;
+}
+.uc-buy .uc-radio {
+	float: left; display: inline;
+}
+.uc-buy .uc-slider {
+	float: left; display: inline;
+}
+.uc-buy .uc-select {
+	float: left; display: inline;
+}
+.uc-buy .uc-number {
+	float: left; display: inline;
+}
+.uc-buy .uc-radio .unit {
+	float: left; display: inline;
+}
+.uc-buy .c-f60 {
+	color: rgb(255, 102, 0);
+}
+.uc-new-tab {
+	left: 488px; top: 0px; width: 25px; height: 25px; overflow: hidden; display: inline; position: absolute;
+}
+.uc-page-tab li a {
+	width: 252px; padding-right: 0px; padding-left: 0px;
+}
+.uc-page-tab .current a {
+	width: 252px; padding-right: 0px; padding-left: 0px;
+}
+.uc-page-tab .lnk {
+	margin: 14px 0px 0px 32px; height: 16px; line-height: 1.1; overflow: hidden; float: right; display: inline;
+}
+.uc-page-tab .lnk .icon-counter {
+	margin: 1px 2px 0px 0px; height: 16px; color: rgb(102, 102, 102); float: left; display: inline;
+}
+.uc-buy .tip-row {
+	background: rgb(241, 246, 250); margin: 0px 5px; padding: 6px 10px; height: 26px;
+}
+.uc-buy .tip-row .icon-info {
+	color: rgb(0, 102, 204); font-size: 16px; margin-top: 5px; margin-right: 4px; float: left; display: inline;
+}
+.uc-buy .tip-row .tip-text {
+	color: rgb(0, 0, 0); line-height: 1.5; margin-top: 4px; float: left; display: inline;
+}
+.uc-buy .tip-row button {
+	width: 100px; margin-left: 8px; float: left; display: inline;
+}
+.uc-buy {
+	border-width: 0px 1px; border-style: solid; border-color: rgb(228, 228, 228); border-image: none; position: relative; -ms-zoom: 1; background-color: rgb(255, 255, 255);
+}
+.uc-buy .form {
+	padding: 10px 0px 0px;
+}
+.uc-buy .row {
+	background: rgb(255, 255, 255); margin: 0px 9px; padding: 11px 0px; transition:0.3s; line-height: 26px; -ms-zoom: 1; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-buy .row::after {
+	height: 0px; clear: both; display: block; content: "\0020";
+}
+.uc-buy .row-relative {
+	position: relative;
+}
+.uc-buy .row-hide {
+	padding: 0px; height: 0px; line-height: 0; overflow: hidden;
+}
+.uc-buy .row-error {
+	background: rgb(255, 255, 255);
+}
+.uc-buy .column {
+	color: rgb(51, 51, 51); float: left; display: inline;
+}
+.uc-buy .column .row-li {
+	transition:0.3s; height: 26px; line-height: 26px; -ms-zoom: 1; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-buy .column .row-li::after {
+	height: 0px; clear: both; display: block; content: "\0020";
+}
+.uc-buy .column .row-li-add {
+	overflow: hidden; transform: scale(0); -webkit-transform: scale(0); -moz-transform: scale(0); -o-transform: scale(0);
+}
+.uc-buy .column .row-li-delete {
+	padding: 0px; height: 0px; overflow: hidden; transform: scale(0); -webkit-transform: scale(0); -moz-transform: scale(0); -o-transform: scale(0);
+}
+.uc-buy .column .row-li-hide {
+	padding: 0px; height: 0px; overflow: hidden; margin-top: 0px;
+}
+.uc-buy .column .tip {
+	width: auto; height: 24px; color: rgb(153, 153, 153); line-height: 1.9; font-size: 12px; float: none; display: inline-block;
+}
+.uc-buy .row .row-name {
+	margin: 0px; width: 88px; height: 26px; text-align: right; color: rgb(153, 153, 153); line-height: 25px; font-size: 14px; float: left; display: inline;
+}
+.uc-buy strong {
+	color: rgb(0, 0, 0); line-height: 26px;
+}
+.uc-buy .gray {
+	color: rgb(153, 153, 153);
+}
+.uc-buy .dashed {
+	margin: 10px 9px; height: 0px; overflow: hidden; border-top-color: rgb(214, 214, 214); border-top-width: 1px; border-top-style: dashed;
+}
+.uc-submit {
+	background: rgb(255, 255, 255); border-width: 1px 0px; border-style: solid; border-color: rgb(228, 228, 228); padding: 10px 0px; border-image: none; color: rgb(102, 102, 102); z-index: 2; box-shadow: 0px -5px 5px -4px rgba(0,0,0,0.1);
+}
+.uc-submit-transition-height {
+	transition:top 0.3s; -webkit-transition: top .3s; -moz-transition: top .3s; -o-transition: top .3s;
+}
+.uc-submit .info-row {
+	height: 24px;
+}
+.uc-submit .info-row-s {
+	height: 24px;
+}
+.uc-submit .info-row-s {
+	line-height: 20px; padding-left: 97px; white-space: nowrap;
+}
+.uc-submit .info-row {
+	line-height: 20px; padding-left: 97px; white-space: nowrap;
+}
+.uc-submit .info-row-hide {
+	height: 0px; overflow: hidden;
+}
+.uc-submit .button-row {
+	padding-left: 97px;
+}
+.uc-submit .info-row-s .settle {
+	color: rgb(255, 102, 0); font-size: 20px;
+}
+.uc-submit .info-row .settle {
+	color: rgb(255, 102, 0); font-size: 20px;
+}
+.uc-submit .cost {
+	color: rgb(153, 153, 153); text-decoration: line-through; margin-left: 10px;
+}
+.uc-submit .rebate {
+	color: rgb(51, 153, 0); margin-left: 10px;
+}
+.uc-submit .icon-giving {
+	color: rgb(121, 165, 76); font-size: 16px; margin-right: 4px; margin-left: 20px; vertical-align: text-bottom;
+}
+.uc-submit .uc-ploy {
+	vertical-align: baseline;
+}
+.uc-submit button {
+	margin: 0px 10px 0px 0px;
+}
+.uc-new-tab {
+	background: url("http://img02.taobaocdn.com/tps/i2/T1NyJEFeNfXXXCINHf-39-25.gif") no-repeat;
+}
+.uc-orders .title .arrow {
+	background: url("http://img02.taobaocdn.com/tps/i2/T1NyJEFeNfXXXCINHf-39-25.gif") no-repeat;
+}
+.uc-orders .ico-order-centos {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-orders .ico-order-debian {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-orders .ico-order-ubuntu {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-orders .ico-order-red-hat-enterprise-linux-server {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-orders .ico-order-windows-server {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-select .ico-windows-server {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-select .ico-red-hat-enterprise-linux-server {
+	background: url("http://img02.taobaocdn.com/tps/i2/T11xRyFdRcXXau8B2d-16-168.png") no-repeat;
+}
+.uc-select .ico-windows-server {
+	width: 16px; height: 16px; overflow: hidden; margin-right: 5px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-select .ico-red-hat-enterprise-linux-server {
+	width: 16px; height: 16px; overflow: hidden; margin-right: 5px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-select .ico-red-hat-enterprise-linux-server {
+	background-position: 0px -72px;
+}
+.uc-select .ico-windows-server {
+	background-position: 0px -96px;
+}
+.uc-orders .ico-order-aliyun-linux {
+	background: url("http://gtms01.alicdn.com/tps/i1/T1xig.FitaXXaSQP_X-16-16.png") no-repeat;
+}
+.uc-select .ico-aliyun-linux {
+	background: url("http://gtms01.alicdn.com/tps/i1/T1xig.FitaXXaSQP_X-16-16.png") no-repeat;
+}
+.uc-select .ico-aliyun-linux {
+	width: 16px; height: 16px; overflow: hidden; margin-right: 5px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+#uc-band {
+     width: 506px; margin-right: 10px; float: left; display: inline;
+ }
+#uc-no {
+    width: 506px; margin-right: 10px; float: left; display: inline;
+}
+#uc-cpu {
+	float: left; display: inline;
+}
+#uc-ram {
+	float: left; display: inline;
+}
+.uc-buy .uc-radio .unit {
+	float: left; display: inline;
+}
+.uc-band {
+	margin-right: 8px; float: left; display: inline;
+}
+
+.uc-buy .uc-no {
+    margin-right: 8px; float: left; display: inline;
+}
+.band-unit {
+	float: left; display: inline;
+}
+.uc-buy .uc-os .unit {
+	width: 185px;
+}
+.uc-buy .uc-custom {
+	float: left; display: inline;
+}
+.uc-buy .uc-custom .unit {
+	width: 294px;
+}
+.uc-buy .uc-os-ver .unit {
+	width: 267px;
+}
+.uc-buy .uc-select {
+	margin-right: 10px;
+}
+.uc-buy .c-f60 {
+	color: rgb(255, 102, 0);
+}
+.uc-buy .w620 {
+	width: 620px;
+}
+.row-os {
+	height: 26px;
+}
+.uc-buy #uc-region {
+	float: left; display: inline;
+}
+.uc-buy .uc-region {
+	float: left; display: inline;
+}
+.uc-buy .my-area {
+	float: left; display: inline;
+}
+.uc-buy .uc-os {
+	float: left; display: inline;
+}
+.uc-buy .uc-os-ver {
+	float: left; display: inline;
+}
+.uc-buy .disktype-help {
+	transition:color 0.3s; -webkit-transition: color .3s; -moz-transition: color .3s; -o-transition: color .3s;
+}
+.uc-buy .disktype-help:link {
+	color: rgb(153, 153, 153); font-size: 12px; margin-top: 1px; float: left; display: inline;
+}
+.uc-buy .disktype-help:visited {
+	color: rgb(153, 153, 153); font-size: 12px; margin-top: 1px; float: left; display: inline;
+}
+.uc-buy .disktype-help:hover {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-buy .uc-disk-transition-none .unit {
+	transition:none; -webkit-transition: none; -moz-transition: none; -o-transition: none;
+}
+.uc-buy .snapshot-capacity {
+	color: rgb(255, 102, 0); float: left; display: inline;
+}
+.uc-buy .snapshot-info {
+	margin: 0px 10px; color: rgb(102, 102, 102); float: left; display: inline;
+}
+.uc-buy .disk-delete {
+	transition:color 0.3s; -webkit-transition: color .3s; -moz-transition: color .3s; -o-transition: color .3s;
+}
+.uc-buy .disk-delete:link {
+	color: rgb(153, 153, 153); font-size: 12px; margin-top: 1px; float: right; display: inline;
+}
+.uc-buy .disk-delete:visited {
+	color: rgb(153, 153, 153); font-size: 12px; margin-top: 1px; float: right; display: inline;
+}
+.uc-buy .disk-delete:hover {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-buy .disk-slider {
+	width: 360px; margin-right: 10px; float: left; display: inline;
+}
+.uc-buy .disk-slider-input {
+	margin-right: 8px; float: left; display: inline;
+}
+.uc-buy .disk-unit {
+	margin-right: 10px; float: left; display: inline;
+}
+.uc-buy .disk-help {
+	transition:color 0.3s; -webkit-transition: color .3s; -moz-transition: color .3s; -o-transition: color .3s;
+}
+.uc-buy .disk-help:link {
+	color: rgb(153, 153, 153); font-size: 12px; margin-top: 1px; margin-left: 8px; float: left; display: inline;
+}
+.uc-buy .disk-help:visited {
+	color: rgb(153, 153, 153); font-size: 12px; margin-top: 1px; margin-left: 8px; float: left; display: inline;
+}
+.uc-buy .disk-help:hover {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-buy .disk-add {
+	margin-right: 10px; float: left; display: inline;
+}
+.uc-buy .disk-add:hover {
+	text-decoration: none;
+}
+.uc-buy .disk-add .icon-add {
+	transition:color 0.3s; -webkit-transition: color .3s; -moz-transition: color .3s; -o-transition: color .3s;
+}
+.uc-buy .disk-add:link .icon-add {
+	color: rgb(0, 0, 0); font-size: 12px; margin-right: 4px;
+}
+.uc-buy .disk-add:visited .icon-add {
+	color: rgb(0, 0, 0); font-size: 12px; margin-right: 4px;
+}
+.uc-buy .disk-add:hover .icon-add {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-buy .disk-add-disabled:link {
+	color: rgb(153, 153, 153); text-decoration: none; cursor: text;
+}
+.uc-buy .disk-add-disabled:visited {
+	color: rgb(153, 153, 153); text-decoration: none; cursor: text;
+}
+.uc-buy .disk-add-disabled:hover {
+	color: rgb(153, 153, 153); text-decoration: none; cursor: text;
+}
+.uc-buy .disk-add-disabled:link .icon-add {
+	color: rgb(153, 153, 153); text-decoration: none;
+}
+.uc-buy .disk-add-disabled:visited .icon-add {
+	color: rgb(153, 153, 153); text-decoration: none;
+}
+.uc-buy .disk-add-disabled:hover .icon-add {
+	color: rgb(153, 153, 153); text-decoration: none;
+}
+.uc-buy .disk-info {
+	color: rgb(153, 153, 153); float: left; display: inline;
+}
+.uc-buy .column .fn-hide {
+	display: none;
+}
+.uc-buy .zone-checkbox {
+	width: 13px; height: 13px; overflow: hidden; margin-top: 7px; float: left; display: inline-block;
+}
+.uc-buy .zone-checkbox-title {
+	color: rgb(51, 51, 51); margin-left: 4px; float: left; display: inline;
+}
+.uc-buy .zone-help {
+	transition:color 0.3s; -webkit-transition: color .3s; -moz-transition: color .3s; -o-transition: color .3s;
+}
+.uc-buy .zone-help:link {
+	color: rgb(153, 153, 153); font-size: 12px; margin-top: 1px; margin-left: 8px; float: left; display: inline;
+}
+.uc-buy .zone-help:visited {
+	color: rgb(153, 153, 153); font-size: 12px; margin-top: 1px; margin-left: 8px; float: left; display: inline;
+}
+.uc-buy .zone-help:hover {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-buy .row-li-name {
+	color: rgb(153, 153, 153); float: left; display: inline;
+}
+.uc-buy .uc-zone-radio {
+	width: 550px; float: left;
+}
+.uc-buy .uc-zone-radio .unit {
+	margin-bottom: 10px; float: left; display: inline;
+}
+.uc-buy .row-zone-1 {
+	transition:0.3s; height: 26px; line-height: 26px; overflow: hidden; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-buy .row-zone-2 {
+	transition:0.3s; height: 62px; line-height: 26px; overflow: hidden; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-buy .row-zone-3 {
+	transition:0.3s; height: 98px; line-height: 26px; overflow: hidden; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-buy .row-zone-4 {
+	transition:0.3s; height: 134px; line-height: 26px; overflow: hidden; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-buy .uc-number {
+	margin-right: 8px; float: left; display: inline;
+}
+.uc-buy .uc-number .uc-reduce {
+	float: left; display: inline;
+}
+.uc-buy .uc-number .uc-add {
+	float: left; display: inline;
+}
+.uc-buy .uc-number .uc-input {
+	float: left; display: inline;
+}
+.uc-buy .uc-number .uc-input {
+	width: 46px;
+}
+.uc-buy .row .yundun {
+	width: 13px; height: 13px; overflow: hidden; margin-top: 7px; margin-right: 4px; vertical-align: text-bottom; float: left; display: none;
+}
+.uc-buy .row .icon-yundun {
+	margin: 3px 1px 0px 0px; color: rgb(206, 138, 238); font-size: 16px; float: left; display: inline;
+}
+.uc-buy .row .yundun-text {
+	margin-top: 2px; float: left;
+}
+.uc-buy .row .yundun-help {
+	transition:color 0.3s; -webkit-transition: color .3s; -moz-transition: color .3s; -o-transition: color .3s;
+}
+.uc-buy .row .yundun-help:link {
+	color: rgb(153, 153, 153); font-size: 12px; margin-top: 1px; margin-left: 8px; float: left; display: inline;
+}
+.uc-buy .row .yundun-help:visited {
+	color: rgb(153, 153, 153); font-size: 12px; margin-top: 1px; margin-left: 8px; float: left; display: inline;
+}
+.uc-buy .row .yundun-help:hover {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-submit label {
+	float: left; display: inline;
+}
+.uc-submit .settle {
+	float: left; display: inline;
+}
+.uc-submit .cost {
+	float: left; display: inline;
+}
+.uc-submit .rebate {
+	float: left; display: inline;
+}
+.uc-submit .icon-giving {
+	float: left; display: inline;
+}
+.uc-submit .uc-ploy {
+	float: left; display: inline;
+}
+.uc-submit label {
+	margin-top: 2px;
+}
+.uc-submit .cost {
+	margin-top: 2px;
+}
+.uc-submit .rebate {
+	margin-top: 2px;
+}
+.uc-submit .uc-ploy {
+	margin-top: 2px;
+}
+.uc-submit .icon-giving {
+	margin-top: 4px;
+}
+body .uc-submit .fn-hide {
+	display: none;
+}
+.uc-buy .fn-hide-important {
+	display: none !important;
+}
+.uc-orders {
+	background: rgb(247, 247, 247); border-width: 4px 2px 2px; border-style: solid; border-color: rgb(226, 226, 226); transition:height 0.3s; border-image: none; margin-top: 40px; -webkit-transition: height .3s; -moz-transition: height .3s; -o-transition: height .3s;
+}
+.uc-orders .title {
+	padding: 1px 10px; height: 28px; color: rgb(0, 0, 0); line-height: 2; overflow: hidden; font-size: 14px;
+}
+.uc-orders .title .arrow {
+	background-position: -30px 0px; margin: 8px 2px 0px 0px; transition:0.3s; width: 9px; height: 12px; float: right; display: inline; cursor: pointer; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-orders .title .arrow-rotate {
+	transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -o-transform: rotate(180deg);
+}
+.uc-orders .title:hover .arrow {
+	margin: 9px 2px 0px 0px;
+}
+.uc-orders .title:hover .arrow-rotate {
+	margin: 7px 2px 0px 0px;
+}
+.uc-orders .list {
+	margin: 0px; padding: 0px 10px; overflow: auto;
+}
+.uc-orders .list-scroll {
+	padding-right: 5px; margin-right: 10px;
+}
+.uc-orders .order {
+	margin: 0px 0px 10px; padding: 6px 10px; border: 1px solid rgb(238, 238, 238); border-image: none; -ms-zoom: 1; background-color: rgb(255, 255, 255);
+}
+.uc-orders .order-scroll {
+	margin-right: 5px;
+}
+.uc-orders .order::after {
+	height: 0px; clear: both; display: block; content: "\0020";
+}
+.uc-orders .order:hover {
+	border-color: rgb(248, 237, 195); background-color: rgb(255, 250, 232);
+}
+.uc-orders .order .order-row {
+	margin: 4px 0px; line-height: 1.8; -ms-zoom: 1;
+}
+.uc-orders .order .order-row::after {
+	height: 0px; clear: both; display: block; content: "\0020";
+}
+.uc-orders .order .order-row strong {
+	float: left; display: inline;
+}
+.uc-orders .ico-order-centos {
+	width: 16px; height: 16px; overflow: hidden; margin-left: 4px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-orders .ico-order-debian {
+	width: 16px; height: 16px; overflow: hidden; margin-left: 4px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-orders .ico-order-ubuntu {
+	width: 16px; height: 16px; overflow: hidden; margin-left: 4px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-orders .ico-order-red-hat-enterprise-linux-server {
+	width: 16px; height: 16px; overflow: hidden; margin-left: 4px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-orders .ico-order-aliyun-linux {
+	width: 16px; height: 16px; overflow: hidden; margin-left: 4px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-orders .ico-order-windows-server {
+	width: 16px; height: 16px; overflow: hidden; margin-left: 4px; vertical-align: text-top; display: inline-block; cursor: pointer;
+}
+.uc-orders .ico-order-centos {
+	background-position: 0px 0px;
+}
+.uc-orders .ico-order-debian {
+	background-position: 0px -24px;
+}
+.uc-orders .ico-order-ubuntu {
+	background-position: 0px -48px;
+}
+.uc-orders .ico-order-red-hat-enterprise-linux-server {
+	background-position: 0px -72px;
+}
+.uc-orders .ico-order-windows-server {
+	background-position: 0px -96px;
+}
+.uc-orders .order .order-row .order-price {
+	color: rgb(255, 102, 0); margin-right: 20px; float: right; display: inline;
+}
+.uc-orders .order .order-row label {
+	float: left; display: inline;
+}
+.uc-orders .order .order-info {
+	margin-left: 40px; -ms-word-break: normal; -ms-word-wrap: break-word;
+}
+.uc-orders .order .info-half {
+	width: 90px; float: left; display: inline;
+}
+.uc-orders .orders-submit {
+	padding: 10px 0px; transition:0.3s; text-align: center; color: rgb(102, 102, 102); margin-top: 2px; border-top-color: rgb(226, 226, 226); border-top-width: 2px; border-top-style: solid; box-shadow: 0px -5px 5px -4px rgba(0,0,0,0.1); -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-orders .orders-submit-hide {
+	margin: 0px; padding: 0px; height: 0px; overflow: hidden; border-top-width: 0px; box-shadow: none;
+}
+.uc-orders .orders-submit .orders-submit-row {
+	padding: 3px 0px; transition:0.3s; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.uc-orders .orders-submit .h18 {
+	height: 18px;
+}
+.uc-orders .orders-submit .h20 {
+	height: 20px;
+}
+.uc-orders .orders-submit .orders-submit-row-hide {
+	padding: 0px; height: 0px; overflow: hidden;
+}
+.uc-orders .orders-submit .cost {
+	color: rgb(153, 153, 153); text-decoration: line-through; margin-right: 10px;
+}
+.uc-orders .orders-submit .rebate {
+	color: rgb(51, 153, 0);
+}
+.uc-orders .orders-submit .icon-giving {
+	color: rgb(121, 165, 76); font-size: 16px; margin-right: 4px; vertical-align: text-bottom;
+}
+.uc-orders .orders-submit .uc-ploy {
+	vertical-align: bottom;
+}
+.uc-orders .orders-submit .uc-button {
+	width: 170px;
+}
+.uc-orders .orders-submit .settle {
+	color: rgb(255, 102, 0); line-height: 1; font-size: 24px;
+}
+.uc-orders .icon-wrong {
+	width: 12px; height: 12px; vertical-align: baseline; display: inline-block;
+}
+.uc-orders .lnk-delete-order:link {
+	color: rgb(153, 153, 153);
+}
+.uc-orders .lnk-delete-order:visited {
+	color: rgb(153, 153, 153);
+}
+.uc-orders .lnk-delete-order:hover {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.uc-orders .button-orders-now {
+	
+}
+.block-tip-grave {
+	width: 0px; height: 0px; overflow: hidden; position: relative;
+}
+.block-tip {
+	background: rgba(0, 0, 0, 0.2); padding: 4px; border-radius: 4px; left: 0px; top: 0px; position: absolute; z-index: 99;
+}
+.block-tip .block {
+	background: rgb(255, 255, 255); width: 380px; display: block;
+}
+.block-tip .block-head {
+	padding: 7px 15px; height: 18px; overflow: hidden; border-bottom-color: rgb(226, 226, 226); border-bottom-width: 1px; border-bottom-style: solid; background-color: rgb(247, 247, 247);
+}
+.block-tip .block-body {
+	margin: 0px 15px; padding: 10px 0px; text-align: left; color: rgb(102, 102, 102); line-height: 20px;
+}
+.block-tip .block-body strong {
+	color: rgb(0, 0, 0); font-weight: bold;
+}
+.block-tip .block-foot {
+	margin: 0px 15px; padding: 10px 0px; text-align: left; border-top-color: rgb(227, 227, 227); border-top-width: 1px; border-top-style: dashed;
+}
+.my-region-tip-html {
+	height: 0px; overflow: hidden;
+}
+.my-region-table th {
+	background: rgb(194, 223, 254);
+}
+.my-region-table td {
+	background: rgb(194, 223, 254);
+}
+.my-region-table td {
+	background: rgb(227, 240, 255);
+}
+.snapshot-box .block-body {
+	margin: 0px 5px;
+}
+.snapshot-box .snapshot-list {
+	height: 192px; overflow: auto;
+}
+.snapshot-box .snapshot-list .unit {
+	transition:0.3s; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s;
+}
+.snapshot-box .snapshot-list .unit:link {
+	background: rgb(255, 255, 255); padding: 3px 0px 3px 10px; height: 18px; color: rgb(51, 51, 51); line-height: 1.5; display: block;
+}
+.snapshot-box .snapshot-list .unit:visited {
+	background: rgb(255, 255, 255); padding: 3px 0px 3px 10px; height: 18px; color: rgb(51, 51, 51); line-height: 1.5; display: block;
+}
+.snapshot-box .snapshot-list .unit:hover {
+	background: rgb(238, 238, 238); color: rgb(51, 51, 51); text-decoration: none;
+}
+.snapshot-box .snapshot-list .unit-disabled:link {
+	color: rgb(204, 204, 204); cursor: default; background-color: rgb(255, 255, 255);
+}
+.snapshot-box .snapshot-list .unit-disabled:visited {
+	color: rgb(204, 204, 204); cursor: default; background-color: rgb(255, 255, 255);
+}
+.snapshot-box .snapshot-list .unit-disabled:hover {
+	color: rgb(204, 204, 204); cursor: default; background-color: rgb(255, 255, 255);
+}
+.snapshot-box .block-head .do-close:link {
+	width: 12px; height: 12px; color: rgb(153, 153, 153); float: right; display: inline;
+}
+.snapshot-box .block-head .do-close:visited {
+	width: 12px; height: 12px; color: rgb(153, 153, 153); float: right; display: inline;
+}
+.snapshot-box .block-head .do-close:hover {
+	color: rgb(0, 0, 0); text-decoration: none;
+}
+.snapshot-empty {
+	height: 192px; text-align: center; line-height: 160px; overflow: hidden;
+}
+.yundun-tip .block-tip .block {
+	width: 230px;
+}
+.uc-buy .lnk-gray.disk-add:link {
+	text-decoration: none;
+}
+.uc-buy .lnk-gray.disk-add:visited {
+	text-decoration: none;
+}
+.uc-buy .lnk-gray.disk-add:hover {
+	text-decoration: none;
+}
+.uc-buy .lnk-gray.disk-add:link span {
+	text-decoration: underline;
+}
+.uc-buy .lnk-gray.disk-add:visited span {
+	text-decoration: underline;
+}
+.uc-buy .lnk-gray.disk-add:hover span {
+	text-decoration: underline;
+}

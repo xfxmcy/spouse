@@ -13,6 +13,9 @@
 					
 					<tr>
 						<td>链接 &nbsp; &nbsp;<input name="url" id="linkStr"   value="${param.linkStr}" style="width:130px;" /></td>
+						<td>是否前台展示 &nbsp; &nbsp;否&nbsp;<input type="radio" id="memoFF" value="0" name="memofirst" checked="checked">&nbsp;&nbsp;
+												 是&nbsp;<input type="radio" id="memoFT" value="1" name="memofirst">
+						</td>
 						<td>
 							<input name="pid" id="parentId" value="${param.parentId}"   style="width:130px;display: none;" />
 							<input name="queryType" id="queryType" value="${param.type}"   style="width:130px;display: none;" />

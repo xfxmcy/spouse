@@ -7,15 +7,15 @@
 <head>
 <link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <title>文件上传</title>
-<link href="${cy}/jslib/swfupload/css/default.css" rel="stylesheet"
+<link href="${cy}/js/swfupload/css/default.css" rel="stylesheet"
 	type="text/css" />
-<script type="text/javascript" src="${cy}/jslib/cyUI/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="${cy}/jslib/swfupload/swfupload.js"></script>
-<script type="text/javascript" src="${cy}/jslib/swfupload/swfupload.queue.js"></script>
-<script type="text/javascript" src="${cy}/jslib/swfupload/fileprogress.js"></script>
-<script type="text/javascript" src="${cy}/jslib/swfupload/handlers.js"></script>
+<script type="text/javascript" src="${cy}/js/jquery-easyui-cy/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="${cy}/js/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="${cy}/js/swfupload/swfupload.queue.js"></script>
+<script type="text/javascript" src="${cy}/js/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="${cy}/js/swfupload/handlers.js"></script>
 
-<link rel="stylesheet" href="${cy}/jslib/swfupload/css/default.css">
+<link rel="stylesheet" href="${cy}/js/swfupload/css/default.css">
 
 </head>
 <body>
@@ -49,7 +49,7 @@
 			
 			
 			var settings = {
-					flash_url : "${cy}/jslib/swfupload/swfupload.swf",
+					flash_url : "${cy}/js/swfupload/swfupload.swf",
 					upload_url : "${cy}/UploadServlet",
 					use_query_string: true,
 					file_size_limit : "5000 MB",
@@ -64,7 +64,7 @@
 					debug : false,
 
 					// Button settings
-					button_image_url : "${cy}/jslib/swfupload/images/TestImageNoText_65x29.png",
+					button_image_url : "${cy}/js/swfupload/images/TestImageNoText_65x29.png",
 					button_width : "65",
 					button_height : "29",
 					button_placeholder_id : "spanButtonPlaceHolder",

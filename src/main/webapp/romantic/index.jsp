@@ -8,24 +8,105 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="css/reset_y.css">
 <script id="jquery_183" type="text/javascript" class="library" src="js/jquery-1.8.3.min.js"></script>
-<script> 
-   (function() {
-     if (! 
-     /*@cc_on!@*/
-     0) return;
-     var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', ');
-     var i= e.length;
-     while (i--){
-         document.createElement(e[i])
-     } 
-})() 
+<script>
+/* (function() {
+    if (! 
+    
+    0) return;
+    var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', ');
+    var i= e.length;
+    while (i--){
+        document.createElement(e[i])
+    }
+    
+})(); */
+	initialTimeSheet.call(this);
+  
+   /*initial timesheet*/
+   function initialTimeSheet(){
+	   $.post("${cy}/home/homeQuery.ajax","queryType=romaticPaged",function(data){
+		   var rows = data.rows;
+		   var dataXFirst = -600;
+		   var dataX = 0;
+		   var dataScale = 0.5;
+		   var dataId = 0;
+		   var jingHtml = "";
+		   
+		   $.each(rows,function(index,row){
+			   if(index == 0){
+				   if(row.isyear == 1){
+					   jingHtml += "<div class='step year'  data-x='-600' data-y='0' data-scale ='0.5' id='"+dataId+"'>"
+				        	+"<div class='year2012'>"+row.formattedYear+"</div>"
+				        	+"<div class='"+row.contentclass+"'>"+row.title+"<br/>"
+				        	+"</div>"
+				      		+"</div>";
+				   }
+				   else{
+					   jingHtml += "<div class='timeList_item step'  data-x='"+dataX+"' data-y='0'  id='"+dataId+"'>"
+				        	+"<div class='circle'>"+row.formattedTime+"</div>"
+				           	+"<h2 class='timeList_item_title'>"+row.title+"</h2>"
+				        	+"<div class='"+row.contentclass+"' ><img src='${cy}/resource/upload"+row.imagefirst+"' width='500'>"
+				            +"<h2>"+row.contentfirst+"</h2>";
+				       if(row.imagesecond){
+				    	   jingHtml +=  "<p><img src='${cy}/resource/upload"+row.imagesecond+"' ></p>"	
+				       }    
+				       else if(row.contentsecond){
+				    	   jingHtml +=  "<p>"+row.contentsecond+"</p>";
+				       }    
+				       jingHtml += "</div></div>";  
+				       dataX += 200;
+				   }
+				 
+			   }else{
+				   if(row.isyear == 1){
+					   dataX -= 200;
+					   jingHtml += "<div class='step year'  data-x='"+dataX+"' data-y='0' data-scale ='0.5' id='"+dataId+"'>"
+					   		+"<div class='year2012'>"+row.formattedYear+"</div>"
+			        		+"<div class='"+row.contentclass+"'>"+row.title+"<br/>"
+				        	+"</div>"
+				      		+"</div>";
+					   dataX += 400;
+				   }
+				   else{
+					   jingHtml += "<div class='timeList_item step'  data-x='"+dataX+"' data-y='0'  id='"+dataId+"'>"
+			        	+"<div class='circle'>"+row.formattedTime+"</div>"
+			           	+"<h2 class='timeList_item_title'>"+row.title+"</h2>"
+			        	+"<div class='"+row.contentclass+"' ><img src='${cy}/resource/upload"+row.imagefirst+"' width='500'>"
+			            +"<h2>"+row.contentfirst+"</h2>";
+				       if(row.imagesecond){
+				    	   jingHtml +=  "<p><img src='${cy}/resource/upload"+row.imagesecond+"' ></p>"	
+				       }    
+				       else if(row.contentsecond){
+				    	   jingHtml +=  "<p>"+row.contentsecond+"</p>";
+				       }    
+				       jingHtml += "</div></div>";  
+				       dataX += 200;	
+				   }
+			   }
+			   dataId++ ;
+		   }); 
+		   
+		   dataX += 200;
+		   var last  = "<div class='timeList_item step refresh'  data-x='"+dataX+"' data-y='0' id='"+dataId+"'>"
+		   					+"<div class='list_show'> <a href='javascript:replay();'><img src='images/refress.png'/></a>"
+	          				+"<p class='end'>jing 的每一天离不开大家的支持！2014，我们会更加努力！</p>"
+	        				+"</div>"
+	        				+"</div>"; 
+	       jingHtml += last;	        				
+		   $("#timeList").append(jingHtml);
+		  // document.write("<script src='${cy}/romantic/js/impress.js' type='text/javascript'/>");
+		   //initialPage.call(this);
+		   initialEffort.call(this);
+	   },'json');
+   }
 </script>
 </head>
 <body class="impress-not-supported">
 <div class="bg"> <img src="images/bg04.jpg" width="100%"/> </div>
 <header class="top" id="top">
-  <h1><a href="${cy}/index.jsp"><img src="images/jing.png" alt="jing"/></a>
-  <a href="${cy}/index.jsp"><em>静花雪月</em></a></h1>
+  <h1><a href="${cy}/index.jsp"><img src="images/jing.png" alt="jing"/>静花雪月</a>
+  <%-- <a href="${cy}/index.jsp"><em>静花雪月</em></a> --%>
+  </h1>
   <div class="music" id="bgMusicSwitch" title="stop music">
     <div class="triangle"></div>
     <div class="pause pause1"></div>
@@ -37,14 +118,15 @@
   <div id="line" class="line_white"> </div>
   <div id="impress">
     <div id="timeList">
+    
       <!-- year -->	
-      <div class="step year"  data-x="-600" data-y="0" data-scale ="0.5" id="0">
+      <!-- <div class="step year"  data-x="-600" data-y="0" data-scale ="0.5" id="0">
         <div class="year2012"> 2012 </div>
         <div class="list_show"> 2012，开源中国快速发展的一年<br/>
         </div>
-      </div>
+      </div> -->
       <!-- time -->
-      <div class="timeList_item step"  data-x="0" data-y="0"  id="1">
+      <!-- <div class="timeList_item step"  data-x="0" data-y="0"  id="1">
         <div class="circle"> 02/29 </div>
         <h2 class="timeList_item_title"> 全面启用HTTPS登陆 </h2>
         <div class="list_show show1" > <img src="images/event1.jpg" width="500">
@@ -52,9 +134,9 @@
           <p>彻底保护你的密码不被嗅探和盗用<br/>
             OSCHINA采用商业证书，值得信赖</p>
         </div>
-      </div>
+      </div> -->
       
-      <div class="timeList_item step"  data-x="200" data-y="0" id="2">
+     <!--  <div class="timeList_item step"  data-x="200" data-y="0" id="2">
         <div class="circle"> 03/10 </div>
         <h2 class="timeList_item_title"> 空间自定义风格 </h2>
         <div class="list_show"> <img src="images/event2.jpg">
@@ -104,7 +186,7 @@
       <div class="timeList_item step"  data-x="1200" data-y="0" id="7">
         <div class="circle"> 05/26 </div>
         <h2 class="timeList_item_title" > OSC 深圳源创会 </h2>
-        <div class="list_show show4"> <img src="images/event7.jpg">
+        <div class="list_show show4"><img src="images/event7.jpg">
           <h2> <a href="#">OSC 深圳源创会</a> </h2>
           <p> <img src="images/shenzhen.jpg" /> </p>
         </div>
@@ -244,10 +326,10 @@
           <h2> <a href="#">OSC 厦门源创会</a> </h2>
           <p><img src="images/xiamen.jpg" /></p>
         </div>
-      </div>
+      </div> -->
       
-      <div class="step"  data-x="4200" data-y="0" data-scale ="0.5" id="2013">
-        <div class="year2013"> 2013 </div>
+      <!-- <div class="step year"  data-x="4200" data-y="0" data-scale ="0.5" id="2013">
+        <div class="year2012"> 2013 </div>
         <div class="list_show year"> 此时末日已远······ </div>
       </div>
       <div class="timeList_item step"  data-x="4600" data-y="0" id="23">
@@ -265,16 +347,23 @@
         <div class="list_show"> <img src="images/event24.jpg" class="opacity7">
           <h2> <a href="#">JetBrains 开发工具全场2折</a> </h2>
           <p class="m160">每个人都有选择的权力。你可以选择开源，可以选择正版，当然在国内选择盗版也没人管你。作为软件产业的一份子，我们十分清楚软件的价值，我们应该尊重他人的劳动，这样他人才会尊重你的工作成果。 <br/>
-            拒绝盗版，选择开源 or 正版！</p>
+        	    拒绝盗版，选择开源 or 正版！</p>
         </div>
-      </div>
-      
+      </div> -->
+      <!-- lastet 
       <div class="timeList_item step refresh"  data-x="5000" data-y="0" id="25">
         <div class="list_show"> <a href='javascript:replay();'><img src="images/refress.png"/></a>
-          <p class="end">OSC 的发展离不开您的支持！
-            2013，我们会更加努力！</p>
+          <p class="end">jing 的每一天离不开大家的支持！
+            2014，我们会更加努力！</p>
         </div>
-      </div>
+      </div> -->
+      
+      
+      
+      
+      
+      
+      
     </div>
   </div>
 </section>
@@ -920,7 +1009,8 @@ top: -500px;
 	top: 100px;
 }
 </style>
-<script>var impress = $.browser.msie?undefined:impress();
+<script>
+var impress = $.browser.msie?undefined:impress();
 
 //预加载图片
 new Image().src = "images/bg04.jpg";
@@ -1050,72 +1140,73 @@ $(function(){
 	
 });
 
-
-if(impress)impress.init();
-
-var last_month = 4;
-
-var changeBackground = function(month){
-	var body = $("body");
-	var url = "";
-	if(month == 12 || month == 1 || month==2){
-		if(last_month==4)
-			return;
-		last_month = 4;
-		url = "images/bg04.jpg";
-		$("header").css("background-color","rgba(255,255,255,0.2)");
-		$(".impress-supported .list_show h2").css("color","#0087f1");
-		$(".impress-not-supported .timeList_item_title").css("color","#0087f1");
-	}else if(month>=3 && month<=5){
-		if(last_month==1)
-			return;
-		last_month = 1;
-		url = "images/bg01.jpg";
-		$("header").css("background-color","rgba(255,255,255,0.2)");
-		$(".impress-supported .list_show h2").css("color","#fff");
-		$(".impress-not-supported .timeList_item_title").css("color","#eca200");
-	}else if(month>=6 && month<=8){
-		if(last_month==2)
-			return;
-		last_month = 2;
-		url = "images/bg02.jpg";
-		$("header").css("background-color","rgba(0,0,0,0.2)");
-		$(".impress-supported .list_show h2").css("color","#82e211");
-		$(".impress-not-supported .timeList_item_title").css("color","#82e211");
-	}else{
-		if(last_month==3)
-			return;
-		last_month = 3;
-		url = "images/bg03.jpg";
-		$("header").css("background-color","rgba(255,255,255,0.2)");
-		$(".impress-supported .list_show h2").css("color","#ffca00");
-		$(".impress-not-supported .timeList_item_title").css("color","#ffca00");
-	}
-	$(".bg img").attr("src",url);
-};
-
-if(!$.browser.msie){
-	document.addEventListener('impress:stepenter', function(e){
-		var cur = arguments[0].target;
-		var date = $(cur).find(".circle").html();
-		if(date){
-			var month = +date.split("/")[0];
-			changeBackground(month);
+	
+function initialEffort(){
+	if(impress)impress.init();
+	
+	var last_month = 4;
+	
+	var changeBackground = function(month){
+		var body = $("body");
+		var url = "";
+		if(month == 12 || month == 1 || month==2){
+			if(last_month==4)
+				return;
+			last_month = 4;
+			url = "images/bg04.jpg";
+			$("header").css("background-color","rgba(255,255,255,0.2)");
+			$(".impress-supported .list_show h2").css("color","#0087f1");
+			$(".impress-not-supported .timeList_item_title").css("color","#0087f1");
+		}else if(month>=3 && month<=5){
+			if(last_month==1)
+				return;
+			last_month = 1;
+			url = "images/bg01.jpg";
+			$("header").css("background-color","rgba(255,255,255,0.2)");
+			$(".impress-supported .list_show h2").css("color","#fff");
+			$(".impress-not-supported .timeList_item_title").css("color","#eca200");
+		}else if(month>=6 && month<=8){
+			if(last_month==2)
+				return;
+			last_month = 2;
+			url = "images/bg02.jpg";
+			$("header").css("background-color","rgba(0,0,0,0.2)");
+			$(".impress-supported .list_show h2").css("color","#82e211");
+			$(".impress-not-supported .timeList_item_title").css("color","#82e211");
+		}else{
+			if(last_month==3)
+				return;
+			last_month = 3;
+			url = "images/bg03.jpg";
+			$("header").css("background-color","rgba(255,255,255,0.2)");
+			$(".impress-supported .list_show h2").css("color","#ffca00");
+			$(".impress-not-supported .timeList_item_title").css("color","#ffca00");
 		}
-		if(!loop)
-			return;
-		if (typeof timing !== 'undefined') clearInterval(timing);
-		var duration = 4000;
-		timing = setInterval(function(){
-			var dom = impress.next();
-			var id = +$(dom).attr("id");
-			if(id==25){
-				clearInterval(timing);
-				loop = false;
+		$(".bg img").attr("src",url);
+	};
+	
+	if(!$.browser.msie){
+		document.addEventListener('impress:stepenter', function(e){
+			var cur = arguments[0].target;
+			var date = $(cur).find(".circle").html();
+			if(date){
+				var month = +date.split("/")[0];
+				changeBackground(month);
 			}
-		}, duration);
-	});
+			if(!loop)
+				return;
+			if (typeof timing !== 'undefined') clearInterval(timing);
+			var duration = 4000;
+			timing = setInterval(function(){
+				var dom = impress.next();
+				var id = +$(dom).attr("id");
+				if(id==25){
+					clearInterval(timing);
+					loop = false;
+				}
+			}, duration);
+		});
+	}
 }
-
 
 </script>

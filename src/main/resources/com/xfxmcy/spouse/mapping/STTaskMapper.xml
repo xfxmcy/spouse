@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xfxmcy.spouse.dao.STTaskMapper">
+	<resultMap id="BaseResultMap" type="com.xfxmcy.spouse.vo.Tasks">
+		<result column="id" property="id" jdbcType="VARCHAR" />
+		<result column="title" property="title" jdbcType="VARCHAR" />
+		<result column="allDay" property="allday" jdbcType="CHAR" />
+		<result column="tstart" property="start" jdbcType="TIMESTAMP" />
+		<result column="tend" property="end" jdbcType="TIMESTAMP" />
+		<result column="url" property="url" jdbcType="VARCHAR" />
+		<result column="userid" property="userid" jdbcType="VARCHAR" />
+		<result column="business_id" property="businessId" jdbcType="VARCHAR" />
+		<result column="task_from" property="taskFrom" jdbcType="VARCHAR" />
+		<result column="task_status" property="taskStatus" jdbcType="CHAR" />
+		<result column="flag" property="flag" jdbcType="CHAR" />
+		<result column="status" property="status" jdbcType="CHAR" />
+	</resultMap>
+
+	
+	<sql id="Base_Column_List">
+		id, title, allDay, tstart, tend, url,userid,business_id,task_from,task_status,flag,status
+	</sql>
+	
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from sr_romantic
+		where id = #{id,jdbcType=VARCHAR}
+	</select>
+	<!-- do Query -->
+	<select id="selectByCondition" resultMap="BaseResultMap"
+		parameterType="java.util.HashMap">
+		select
+		<include refid="Base_Column_List" />
+		from b_tasks 
+		<where>
+			<if test="title != null">
+				title like '%$title$%'
+			</if>
+			<if test="taskStatus != null">
+				task_status = #{taskStatus,jdbcType=VARCHAR}
+			</if>
+			 <![CDATA[
+			    and 
+			    
+			    tstart >= #{start,jdbcType=TIMESTAMP}
+			    
+			    and
+			    (tend <= #{end,jdbcType=TIMESTAMP} or (tend is null AND tstart <= #{end,jdbcType=TIMESTAMP}))
+			    ]]>
+		</where>
+		
+		order by tstart
+		
+	</select>
+	<!-- query the count -->
+	<select id="countByCondition" resultType="java.lang.Long"
+		parameterType="java.util.HashMap">
+		select count(*) from b_tasks
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from b_tasks
+		where id = #{id,jdbcType=VARCHAR}
+	</delete>
+	
+	
+	<insert id="insert" parameterType="com.xfxmcy.spouse.vo.SrRomanticWithBLOBs">
+		insert into sr_romantic (id, date, dateClass,
+		imageFirst, imageSecond, isYear,
+		title, contentFirst, contentSecond
+		)
+		values (#{id,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR},
+		#{dateclass,jdbcType=VARCHAR},
+		#{imagefirst,jdbcType=VARCHAR}, #{imagesecond,jdbcType=VARCHAR}, #{isyear,jdbcType=CHAR},
+		#{title,jdbcType=LONGVARCHAR}, #{contentfirst,jdbcType=LONGVARCHAR},
+		#{contentsecond,jdbcType=LONGVARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="com.xfxmcy.spouse.vo.SrRomanticWithBLOBs">
+		insert into sr_romantic
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="date != null">
+				date,
+			</if>
+			<if test="dateclass != null">
+				dateClass,
+			</if>
+			<if test="imagefirst != null">
+				imageFirst,
+			</if>
+			<if test="imagesecond != null">
+				imageSecond,
+			</if>
+			<if test="isyear != null">
+				isYear,
+			</if>
+			<if test="title != null">
+				title,
+			</if>
+			<if test="contentfirst != null">
+				contentFirst,
+			</if>
+			<if test="contentsecond != null">
+				contentSecond,
+			</if>
+			<if test="contentclass != null">
+				contentClass,
+			</if>
+
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=VARCHAR},
+			</if>
+			<if test="date != null">
+				#{date,jdbcType=VARCHAR},
+			</if>
+			<if test="dateclass != null">
+				#{dateclass,jdbcType=VARCHAR},
+			</if>
+			<if test="imagefirst != null">
+				#{imagefirst,jdbcType=VARCHAR},
+			</if>
+			<if test="imagesecond != null">
+				#{imagesecond,jdbcType=VARCHAR},
+			</if>
+			<if test="isyear != null">
+				#{isyear,jdbcType=VARCHAR},
+			</if>
+			<if test="title != null">
+				#{title,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="contentfirst != null">
+				#{contentfirst,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="contentsecond != null">
+				#{contentsecond,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="contentclass != null">
+				#{contentclass,jdbcType=LONGVARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.xfxmcy.spouse.vo.SrRomanticWithBLOBs">
+		update sr_romantic
+		<set>
+			<if test="date != null">
+				date = #{date,jdbcType=VARCHAR},
+			</if>
+			<if test="dateclass != null">
+				dateClass = #{dateclass,jdbcType=VARCHAR},
+			</if>
+			<if test="imagefirst != null">
+				imageFirst = #{imagefirst,jdbcType=VARCHAR},
+			</if>
+			<if test="imagesecond != null">
+				imageSecond = #{imagesecond,jdbcType=VARCHAR},
+			</if>
+			<if test="isyear != null">
+				isYear = #{isyear,jdbcType=CHAR},
+			</if>
+			<if test="title != null">
+				title = #{title,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="contentfirst != null">
+				contentFirst = #{contentfirst,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="contentsecond != null">
+				contentSecond = #{contentsecond,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="contentclass != null">
+				contentClass = #{contentclass,jdbcType=LONGVARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xfxmcy.spouse.vo.SrRomanticWithBLOBs">
+		update sr_romantic
+		set date = #{date,jdbcType=VARCHAR},
+		dateClass = #{dateclass,jdbcType=VARCHAR},
+		imageFirst = #{imagefirst,jdbcType=VARCHAR},
+		imageSecond = #{imagesecond,jdbcType=VARCHAR},
+		isYear = #{isyear,jdbcType=VARCHAR},
+		title = #{title,jdbcType=LONGVARCHAR},
+		contentFirst = #{contentfirst,jdbcType=LONGVARCHAR},
+		contentSecond = #{contentsecond,jdbcType=LONGVARCHAR},
+		contentClass = #{contentclass,jdbcType=LONGVARCHAR}
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.xfxmcy.spouse.vo.SrRomantic">
+		update sr_romantic
+		set date = #{date,jdbcType=VARCHAR},
+		dateClass = #{dateclass,jdbcType=VARCHAR},
+		imageFirst = #{imagefirst,jdbcType=VARCHAR},
+		imageSecond = #{imagesecond,jdbcType=VARCHAR},
+		isYear = #{isyear,jdbcType=CHAR},
+		contentClass = #{contentclass,jdbcType=LONGVARCHAR}
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+</mapper>

@@ -25,6 +25,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.xfxmcy.spouse.constant.SpouseConstant;
 import com.xfxmcy.spouse.dao.SYHomeMapper;
+import com.xfxmcy.spouse.dao.SrRomanticMapper;
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.service.SyHomeService;
@@ -49,6 +50,9 @@ public class SyHomeServiceImpl implements SyHomeService {
 
 	@Resource
 	private SYHomeMapper homeMapper ;
+	
+	@Resource
+	private SrRomanticMapper romanticMapper; 
 	
 	@Transactional(propagation = Propagation.NOT_SUPPORTED ,readOnly = true)
 	@Override
@@ -78,9 +82,20 @@ public class SyHomeServiceImpl implements SyHomeService {
 		SpouseGrid grid = new SpouseGrid();
 		/*query param*/
 		Map<String,Object> mapParam = new HashMap<String,Object>();
+		if(param.getPage() != null){
+			mapParam.put("page", param.getPage());
+			mapParam.put("startPoint", param.getStartPoint());
+			mapParam.put("rows", param.getRows());
+		}
 		if(SpouseConstant.SIMPLE_QUERY_PAGED.equals(param.getQueryType())){
 			grid.setRows(homeMapper.selectByCondition(mapParam));
 			grid.setTotal(homeMapper.countByCondition(mapParam));
+		}
+		/*romantic*/
+		
+		else if(SpouseConstant.ROMANTIC_QUERY_PAGED.equals(param.getQueryType())){
+			grid.setRows(romanticMapper.selectByCondition(mapParam));
+			grid.setTotal(romanticMapper.countByCondition(mapParam));
 		}
 		return grid;
 		

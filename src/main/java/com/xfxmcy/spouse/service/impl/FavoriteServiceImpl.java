@@ -32,6 +32,7 @@ import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.service.FavoriteService;
 import com.xfxmcy.spouse.util.IdUtil;
+import com.xfxmcy.spouse.util.ResourceUtil;
 import com.xfxmcy.spouse.util.SessionUser;
 import com.xfxmcy.spouse.vo.SMFavorite;
 
@@ -126,6 +127,21 @@ public class FavoriteServiceImpl implements FavoriteService {
 				list = this.appendParent(list);
 				grid.setGrid(favoriteMapper.queryTotalFavorite(param),list);
 			}
+		}
+		/*show in front*/
+		else if(SpouseConstant.Favorite.QUERY_TREEGRID_FRONT.equals(param.getQueryType()) ){
+			if(null != user && null != user.getUserId() && !"".equals(user.getUserId())){
+				param.setOwner(user.getUserId());
+			}
+			else{
+				param.setOwner(ResourceUtil.getAdminId());
+			}
+			param.setMemoFirst(SpouseConstant.SQL_FIELD_TRUE);
+			list = favoriteMapper.queryFavoriteNotPaged(param);
+			if(null != list && 0 < list.size()){
+				grid.setRows(list);
+			}
+			
 		}
 		return grid;
 	}

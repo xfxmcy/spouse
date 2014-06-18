@@ -147,8 +147,8 @@
 	function logout(){
 		simpleMessConf.call(this,'Confirm', 'Are you sure to exit this system?', function(r){
 			if (r){
-				$.post("${cy}/spouse/logout.do",null,function(data){
-					var result = eval("("+data+")");
+				$.post("${cy}/spouse/logout.do",null,function(result){
+					//var result = eval("("+data+")");
 					if(result.success){
 						$.messager.show({
 							msg : result.message,
@@ -159,7 +159,7 @@
 						simpleMessAlert.call(this,'error',cy.errorMessage);		
 					}
 					showLoginDialog.call(this, null);
-				});
+				},'json');
 				
 			}
 		});

@@ -3,7 +3,7 @@
 <generatorConfiguration>
 	<!-- 数据库驱动包位置 -->
 	<!-- <classPathEntry location="D:\software\lib\mysql-connector-java-5.1.21.jar" /> -->
-	<classPathEntry location="F:\sourceCode\database\mysql\mysql-connector-java-5.0.8\mysql-connector-java-5.0.8-bin.jar" />
+	<classPathEntry location="F:\sourceforge\database\mysql\mysql-connector-java-5.0.8\mysql-connector-java-5.0.8-bin.jar" />
 	<context id="DB2Tables" targetRuntime="MyBatis3">
 		<commentGenerator>
 			<property name="suppressAllComments" value="true" />
@@ -38,8 +38,11 @@
 		<table tableName="sm_note" domainObjectName="SMNote" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 		<table tableName="sm_notebook" domainObjectName="SMNoteBook" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 		<table tableName="sm_photo" domainObjectName="SMPhoto" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" /> -->
+		<!-- 		
 		<table tableName="sy_home" domainObjectName="SYHome" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+		 -->
 	 	<!--   表名                                                                 生成的类名                 Example 的配置 默认为true(生成的class会比较乱,多生成  实体Example类,
 		  										          生成的配置文件会有好多example的配置,所以我们设为false) -->
+        <table tableName="sr_romantic" domainObjectName="SrRomantic" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />		  										          
 	</context>
 </generatorConfiguration>
