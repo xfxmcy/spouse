@@ -23,14 +23,16 @@ function checkPhoto(rowIndex, rowData){
 var mainDialog ;
 var formDia ;
 function saveMainPhoto(){
-	mainDialog = parent.cy.dialog({
+/* 	mainDialog = parent.cy.dialog({
 		title : 'add a main photo',
-		href : '${cy}/xfxmcy/main/mettingForm.jsp?type=simpleSave',
-		width : 680,
-		height : 400,
+		href : '${cy}/xfxmcy/family/meeting/mettingForm.jsp?type=simpleSave',
+		//content : "<iframe src='${cy}/xfxmcy/family/meeting/mettingForm.jsp'  />",
+		width : 880,
+		height : 500,
 		buttons : [ 
 		]           
-	});
+	}); */
+	window.open('${cy}/xfxmcy/family/meeting/mettingForm.jsp?type=simpleSave','vdi Apply','top=150,left=200,height=500,width=880,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no');
 }
 function updateMainPhoto(id){
 	if ($("#homeGrid").datagrid('getSelections').length == 1) {

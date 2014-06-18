@@ -6,6 +6,7 @@
 <!--<!DOCTYPE html PUBLIC "" >-->
 <HTML>
 <HEAD>
+	
     <SCRIPT type="text/javascript">
         if (window != top) {
             top.location.href = window.location.href;
@@ -24,30 +25,8 @@
             height: 800px
         }
     </STYLE>
-   <!-- <SCRIPT src="c_files/seed-min.js" type="text/javascript" charset="utf-8"></SCRIPT>-->
-   <!-- <SCRIPT type="text/javascript">
-        KISSY.config({
-            combine : true,
-            tag : '2012',
-            packages : {
-                'aliyun' : {
-                    base : 'http://static-img3.cdn.aliyuncs.com',
-                    tag : '1389938362',
-                    debug : true,
-                    ignorePackageNameInUri : true,
-                    combine : false
-                },
-                'gallery' : {
-                    base : 'http://a.tbcdn.cn/s/kissy/gallery/',
-                    tag : '1389938362',
-                    debug : true,
-                    ignorePackageNameInUri : true,
-                    combine : false
-                }
-            }
-        });
-
-    </SCRIPT>-->
+    <link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/> 
+ 
 </HEAD>
 <BODY class="ng-app:buy" id="ng-app" data-spm="6883001" ng-app="buy">
 
@@ -59,16 +38,9 @@
 <!--<SCRIPT src="c_files/header.js" charset="utf-8"></SCRIPT>-->
 <LINK href="${cy}/css/C0MICQKT.css" rel="stylesheet"> <!--required-->
 <SCRIPT src="${cy}/js/ali/90S0BC2E.js"></SCRIPT>
-<DIV class="content mt20 mb40" data-spm="1996018633">
+<!-- <DIV class="content mt20 mb40" data-spm="1996018633"> -->
 <DIV class="main">
-<!-- tab S -->
-<DIV class="uc-page-tab">
-    <UL>
-        <LI class="current"><A hidefocus=""
-                               href="#" target="_self">包年包月</A></LI>
-    </UL>
-</DIV>
-<!-- tab E -->
+
 <!-- buy S -->
 <DIV class="uc-buy">
 <DIV class="form">
@@ -113,59 +85,7 @@
 <!-- 内存 E -->
 <!-- 带宽 S -->
 
-<!--<DIV class="row">-->
-    <LABEL class="row-name">公网带宽：</LABEL>
-    <DIV class="column">
-        <DIV class="row-li">
-										<SPAN class="uc-slider" id="uc-band">
-											<DIV class="range">
-												<SPAN class="block w50">
-													<DIV>
-                                                        <SPAN>5M</SPAN>
-                                                    </DIV>
-												</SPAN><SPAN class="block w25">
 
-													<DIV>
-                                                        <SPAN>100M</SPAN>
-                                                    </DIV>
-												</SPAN><SPAN class="block w25">
-
-													<DIV class="last">
-                                                        <SPAN> 200M</SPAN>
-                                                    </DIV>
-												</SPAN>
-
-                                                <DIV class="container">
-                                                    <DIV class="current">
-														<SPAN class="unit">
-															<DIV>
-                                                                <SPAN>5M</SPAN>
-                                                            </DIV>
-														</SPAN><SPAN class="unit">
-
-															<DIV>
-                                                                <SPAN>100M</SPAN>
-                                                            </DIV>
-														</SPAN><SPAN class="unit">
-
-															<DIV class="last">
-                                                                <SPAN>200M</SPAN>
-                                                            </DIV>
-														</SPAN>
-                                                    </DIV>
-                                                </DIV>
-                                                <DIV class="bar"></DIV>
-                                                <A class="drag" hidefocus="" href="javascript:;"
-                                                   target="_self" rel="nofollow"><I></I> <I></I> <I></I> </A>
-                                            </DIV>
-										</SPAN> <INPUT class="uc-band uc-input c-f60" maxlength="3" value="111">
-            <SPAN class="band-unit">Mbps</SPAN>
-        </DIV>
-        <DIV class="row-li row-li-hide mt5 band-tip-row">
-            <SPAN class="tip"></SPAN>
-        </DIV>
-    </DIV>
-</DIV>
 
 
 
@@ -462,7 +382,7 @@
 </FORM>
 </DIV>
 </DIV>
-</DIV>
+<!-- </DIV> -->
 </DIV>
 </DIV>
 
@@ -1349,7 +1269,7 @@ var vm_config = {
 </SCRIPT>
 
 <SCRIPT type="text/javascript">
-    var UA_Opt = new Object;
+    var UA_Opt = {};
     UA_Opt.FormId = riskControlForm;
     UA_Opt.SendMethod = 1;
     UA_Opt.MaxKSLog = 20;

@@ -105,7 +105,7 @@ public final class SpouseConstant {
 		/*my schedule page*/
 		  public final static String SCHEDULE_MANA_INDEX = "/xfxmcy/my/schedule/mySchedule";
 		/*meeting manager*/  
-		  public static final String MEETING_INDEX = "/xfxmcy/family/meeting/meetingManager";  
+		  public static final   String MEETING_INDEX = "/xfxmcy/family/meeting/meetingManager";  
 	}
 	/**
 	 * 
