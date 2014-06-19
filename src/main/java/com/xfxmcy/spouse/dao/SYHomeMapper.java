@@ -21,7 +21,7 @@ public interface SYHomeMapper {
     int insert(SYHome record);
     /**
      * 
-     * insertSelective: insert selectivelys
+     * insertSelective: insert selectivly
      *
      * @param record		record
      * @return				rows influenced
@@ -30,7 +30,28 @@ public interface SYHomeMapper {
      *   		 2014年3月1日 		cy
      */
     int insertSelective(SYHome record);
-    
+    /**
+     * 
+     * updateSelective:update selectivly
+     *
+     * @param record
+     * @return
+     *   ver     date      		author
+     * ──────────────────────────────────
+     *   		 2014年6月19日 		cy
+     */
+    int updateSelective(SYHome record);
+    /**
+     * 
+     * deleteByCondition:delete by condition
+     *
+     * @param record
+     * @return
+     *   ver     date      		author
+     * ──────────────────────────────────
+     *   		 2014年6月19日 		cy
+     */
+    int deleteByCondition(SYHome record);
     /**
      * 
      * selectByCondition:select by condition

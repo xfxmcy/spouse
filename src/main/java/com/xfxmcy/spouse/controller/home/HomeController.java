@@ -25,7 +25,7 @@ import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.model.SystemicInfo;
 import com.xfxmcy.spouse.service.SyHomeService;
-import com.xfxmcy.spouse.util.SpouseUtil;
+import com.xfxmcy.spouse.vo.SYHome;
 
 /**
  * ClassName:HomeController
@@ -100,7 +100,82 @@ public class HomeController {
 		return grid;
 	}
 	
+	/**
+	 * 
+	 * doPersistentFavorite: persistence a  home photo
+	 *
+	 * @param param		param
+	 * @param home      home photo
+	 * @param info
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年6月19日 		cy
+	 */
+	@RequestMapping("/homePersistent")
+	@ResponseBody
+	public SystemicInfo doPersistentHomePhoto(QueryParam param , SYHome syHome ,SystemicInfo info,HttpServletRequest request){
+		try{
+			syHome = syHomeServiceImpl.persistentHomePhoto(param,syHome);
+			info.setSuccess(true, "success");
+		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
+			logger.error(e.getMessage());
+		}
+		return info;
+	} 
+	/**
+	 * 
+	 * doMergeHomePhoto:merge a home photo
+	 *
+	 * @param param
+	 * @param syHome
+	 * @param info
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年6月19日 		cy
+	 */
+	@RequestMapping("/homeMerge")
+	@ResponseBody
+	public SystemicInfo doMergeHomePhoto(QueryParam param , SYHome syHome ,SystemicInfo info,HttpServletRequest request){
+		try{
+			syHome = syHomeServiceImpl.mergeHomePhoto(param,syHome);
+			info.setSuccess(true, "success");
+		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
+			logger.error(e.getMessage());
+		}
+		return info;
+	}
 	
 	
+	/**
+	 * 
+	 * doDeleteHomePhoto: delete a homtPhoto
+	 *
+	 * @param param
+	 * @param syHome
+	 * @param info
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年6月19日 		cy
+	 */
+	@RequestMapping("/homeDelete")
+	@ResponseBody
+	public SystemicInfo doDeleteHomePhoto(QueryParam param , SYHome syHome ,SystemicInfo info,HttpServletRequest request){
+		try{
+			syHome = syHomeServiceImpl.persistentHomePhoto(param,syHome);
+			info.setSuccess(true, "success");
+		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
+			logger.error(e.getMessage());
+		}
+		return info;
+	}
 }
 

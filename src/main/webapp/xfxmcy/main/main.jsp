@@ -33,7 +33,7 @@ function saveMainPhoto(){
 			handler : function() {			
 				formDia = romanticDialog.find('form');
 				if(!formDia.form("validate")){
-					parent.simpleMessAlert.call(this,'提示',"请认真填写信息,最少上传一张图片");
+					parent.simpleMessAlert.call(this,'提示',"请认真填写信息");
 					return;
 				}
 				$.post('${cy}/romantic/mainPersistent.do',cy.serializeObject(formDia),function(json){

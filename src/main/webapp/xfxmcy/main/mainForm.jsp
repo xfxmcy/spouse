@@ -39,7 +39,7 @@
 					//if (url) {
 						/*更新到表中*/
 						//var fileName = obj.name;
-						//$('#resourcePath').val(url);
+						//$('#path').val(url);
 						//$('#materialName').val(fileName);
 					//}
 				});
@@ -51,28 +51,33 @@
 		<table class="tableForm datagrid-toolbar"
 					style="width: 100%;height: 110px;">
 					<tr>
-						<td>图片名称 &nbsp; &nbsp;<input id="dd" name="date" type="text"  required="required" style="width: 130px;"></input></td>
-						<td colspan="2">图片描述 &nbsp; &nbsp;<input name="dateclass" id="dateclass"   style="width:130px;" /></td>
+						<td>图片名称 &nbsp; &nbsp;<input id="dd" name="name" type="text"  required="required" style="width: 130px;"></input></td>
+						<td colspan="2">图片描述 &nbsp; &nbsp;<input name="descri" id="dateclass"   style="width:350px;" /></td>
 					</tr>
 					
 					<tr>
-						<td>排列顺序&nbsp; &nbsp;<input name="title" id="title"    style="width:130px;" /></td>
-						<td>上传图片&nbsp; &nbsp;<input id="imagefirst" name="imagefirst" class="easyui-validatebox" id="linkStr"   value="${param.linkStr}" style="width:130px;" readonly="readonly" data-options="required:true"  /></td>
+						<td>排列顺序(0不展示)&nbsp; &nbsp;<input name="phOrder" id="title"    style="width:130px;" /></td>
 						<td>
 							<input name="queryType" id="queryType" value="${param.type}"   style="width:130px;display: none;" />
 							<input name="id" value="${param.mid}"  style="width:130px;display: none;" />
-							展示位置&nbsp; &nbsp;<input id="imagefirst" name="imagefirst" class="easyui-validatebox" id="linkStr"   value="${param.linkStr}" style="width:130px;" readonly="readonly" data-options="required:true"  />
+							展示位置&nbsp; &nbsp;
+							<select id="locationClass" class="easyui-combobox" name="showLocation" style="width:130px;" data-options="editable:false">  
+							    <option value="list_show">左</option>  
+							    <option value="list_show show3">中</option>  
+							    <option value="list_show show4">右</option>
+							    <option value="list_show show4">无</option>   
+							</select> 
 						</td>
+						<td>上传图片&nbsp; &nbsp;<input id="imagefirst" name="path" class="easyui-validatebox" id="linkStr"   value="${param.linkStr}" style="width:130px;" readonly="readonly" data-options="required:true"  /></td>
 					</tr>
 					<tr>
 						<td>图片类型 &nbsp; &nbsp;
-							<select id="contentclass" class="easyui-combobox" name="contentclass" style="width:130px;" data-options="editable:false">  
+							<select id="contentclass" class="easyui-combobox" name="type" style="width:130px;" data-options="editable:false">  
 							    <option value="list_show">跑马灯</option>  
 							    <option value="list_show show3">大图</option>  
 							    <option value="list_show show4">小图</option>  
 							    <option value="list_show show5">其他</option>  
 							</select> 
-							
 						</td>
 					</tr>
 				</table>

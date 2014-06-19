@@ -23,29 +23,18 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.2.1-b03</version>
-			<scope>provided</scope>
-		</dependency> -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope> <!-- 编译和测试的时候有用 ,打包不用 -->
 		</dependency>
-
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.0</version>
 			<scope>provided</scope> <!-- 编译和测试的时候有用 ,打包不用 -->
-
 		</dependency>
-		
-
-
 		<!-- cy.spring 被依赖的放在上面 统一版本 -->
 		<dependency>
 			<groupId>cy.springframework</groupId>

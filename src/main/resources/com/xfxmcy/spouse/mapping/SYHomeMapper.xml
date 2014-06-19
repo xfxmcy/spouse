@@ -122,7 +122,39 @@
 			</if>
 		</trim>
 	</insert>
-
+	<update id="updateSelective" parameterType="com.xfxmcy.spouse.vo.SYHome">
+		update sy_home
+		<set>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="path != null">
+				path = #{path,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="preCount != null">
+				preCount = #{preCount,jdbcType=INTEGER},
+			</if>
+			<if test="isBig != null">
+				isBig = #{isBig,jdbcType=CHAR},
+			</if>
+			<if test="phOrder != null">
+				phOrder = #{phOrder,jdbcType=INTEGER},
+			</if>
+			<if test="descri != null">
+				descri = #{descri,jdbcType=VARCHAR},
+			</if>
+			<if test="isSmall != null">
+				isSmall = #{isSmall,jdbcType=CHAR},
+			</if>
+			<if test="showLocation != null">
+				showLocation = #{showLocation,jdbcType=CHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
 	
   <!-- query the count -->
   <select id="countByCondition" resultType="java.lang.Long" parameterType="java.util.HashMap" >
@@ -141,5 +173,9 @@
     	 </if>
     </where>
   </select>
-
+  
+  <delete id="deleteByCondition" parameterType="com.xfxmcy.spouse.vo.SYHome" >
+    	delete from sy_home
+   			 where id = #{id,jdbcType=VARCHAR}
+  </delete>
 </mapper>

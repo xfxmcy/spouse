@@ -15,6 +15,7 @@ package com.xfxmcy.spouse.service;
 
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
+import com.xfxmcy.spouse.vo.SYHome;
 
 /**
  * ClassName:SyHomeService
@@ -50,6 +51,41 @@ public interface SyHomeService {
 	 * ──────────────────────────────────
 	 *   		 2014年4月16日 		cy
 	 */
-	SpouseGrid doQuery(QueryParam param); 
+	SpouseGrid doQuery(QueryParam param);
+	/**
+	 * 
+	 * doPersistentHomePhoto:persistent homePhoto
+	 *
+	 * @param param	   param
+	 * @param syHome   entity
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年6月19日 		cy
+	 */
+	SYHome persistentHomePhoto(QueryParam param, SYHome syHome);
+	/**
+	 * 
+	 * mergeHomePhoto:merge home photo
+	 *
+	 * @param param
+	 * @param syHome
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年6月19日 		cy
+	 */
+	SYHome mergeHomePhoto(QueryParam param, SYHome syHome); 
+	/**
+	 * 
+	 * deleteHomePhoto:delete home photo
+	 *
+	 * @param param
+	 * @param syHome
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年6月19日 		cy
+	 */
+	void deleteHomePhoto(QueryParam param, SYHome syHome); 
 }
 

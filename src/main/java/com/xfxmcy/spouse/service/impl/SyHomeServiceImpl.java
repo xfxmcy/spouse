@@ -24,11 +24,13 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xfxmcy.spouse.constant.SpouseConstant;
+import com.xfxmcy.spouse.constant.SpouseEntityConstant;
 import com.xfxmcy.spouse.dao.SYHomeMapper;
 import com.xfxmcy.spouse.dao.SrRomanticMapper;
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.service.SyHomeService;
+import com.xfxmcy.spouse.util.IdUtil;
 import com.xfxmcy.spouse.util.TemplateComponent;
 import com.xfxmcy.spouse.vo.SYHome;
 
@@ -92,7 +94,6 @@ public class SyHomeServiceImpl implements SyHomeService {
 			grid.setTotal(homeMapper.countByCondition(mapParam));
 		}
 		/*romantic*/
-		
 		else if(SpouseConstant.ROMANTIC_QUERY_PAGED.equals(param.getQueryType())){
 			grid.setRows(romanticMapper.selectByCondition(mapParam));
 			grid.setTotal(romanticMapper.countByCondition(mapParam));
@@ -101,5 +102,61 @@ public class SyHomeServiceImpl implements SyHomeService {
 		
 	}
 
-}
 
+	@Override
+	public SYHome persistentHomePhoto(QueryParam param, SYHome syHome) {
+		Map<String,Object> mapParam = new HashMap<String,Object>();
+		if(SpouseConstant.SIMPLE_SAVE.equals(param.getQueryType())){
+			syHome.setId(IdUtil.generaterThrityTwo());
+			this.initalPhotoType(syHome);
+			syHome.setPreCount(SpouseEntityConstant.HOME_COUNT_START);
+			homeMapper.insertSelective(syHome);
+		}
+		return syHome;
+		
+	}
+
+	/**
+	 * 
+	 * initalPhotoType:initial photo 's photoType
+	 *
+	 * @param syHome
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年6月19日 		cy
+	 */
+	private void initalPhotoType(SYHome syHome) {
+		if(null == syHome.getType())
+			return ;
+		/*slider*/
+		if(SpouseEntityConstant.HOME_SLIDE.equals(syHome.getType())){
+			syHome.setIsBig(SpouseConstant.SQL_FIELD_TRUE);
+			syHome.setIsSmall(SpouseConstant.SQL_FIELD_FALSE);
+		}
+		else if(SpouseEntityConstant.HOME_IMAGE.equals(syHome.getType())){
+			syHome.setIsSmall(SpouseConstant.SQL_FIELD_TRUE);
+			syHome.setIsBig(SpouseConstant.SQL_FIELD_FALSE);
+		}
+		
+	}
+
+
+	@Override
+	public SYHome mergeHomePhoto(QueryParam param, SYHome syHome) {
+		if(SpouseConstant.SIMPLE_UPDATE.equals(param.getQueryType())){
+			this.initalPhotoType(syHome);
+			homeMapper.updateSelective(syHome);
+		}
+		return syHome;
+	}
+
+
+	@Override
+	public void deleteHomePhoto(QueryParam param, SYHome syHome) {
+		if(SpouseConstant.SIMPLE_DELETE.equals(param.getQueryType())){
+			homeMapper.deleteByCondition(syHome);
+		}
+		
+	}
+
+}
