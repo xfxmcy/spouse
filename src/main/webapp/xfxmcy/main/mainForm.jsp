@@ -27,15 +27,16 @@
 			if (data instanceof Array) {
 				$.each(data, function(index, obj) {
 					var url = obj.fileName;
-					if(flag){
+					/* if(flag){
 						$("#imagesecond").val(url);
 						flag = false;
 					}
 					else{
 						$("#imagefirst").val(url);
 						flag = true;
-					}
-					
+					} */
+					$("#imagefirst").val(url);
+					$("#mainForm").form('validate');
 					//if (url) {
 						/*更新到表中*/
 						//var fileName = obj.name;
@@ -47,7 +48,7 @@
 		}
 		
 	</script>
-	<form action="" method="post" id="romantic"> 
+	<form action="" method="post" id="mainForm"> 
 		<table class="tableForm datagrid-toolbar"
 					style="width: 100%;height: 110px;">
 					<tr>
@@ -56,16 +57,16 @@
 					</tr>
 					
 					<tr>
-						<td>排列顺序(0不展示)&nbsp; &nbsp;<input name="phOrder" id="title"    style="width:130px;" /></td>
+						<td>排列(0不展示)&nbsp;<input name="phOrder" id="title"    style="width:130px;" /></td>
 						<td>
 							<input name="queryType" id="queryType" value="${param.type}"   style="width:130px;display: none;" />
 							<input name="id" value="${param.mid}"  style="width:130px;display: none;" />
 							展示位置&nbsp; &nbsp;
 							<select id="locationClass" class="easyui-combobox" name="showLocation" style="width:130px;" data-options="editable:false">  
-							    <option value="list_show">左</option>  
-							    <option value="list_show show3">中</option>  
-							    <option value="list_show show4">右</option>
-							    <option value="list_show show4">无</option>   
+							    <option value="1">左</option>  
+							    <option value="2">中</option>  
+							    <option value="3">右</option>
+							    <option value="0">无</option>   
 							</select> 
 						</td>
 						<td>上传图片&nbsp; &nbsp;<input id="imagefirst" name="path" class="easyui-validatebox" id="linkStr"   value="${param.linkStr}" style="width:130px;" readonly="readonly" data-options="required:true"  /></td>
@@ -73,10 +74,10 @@
 					<tr>
 						<td>图片类型 &nbsp; &nbsp;
 							<select id="contentclass" class="easyui-combobox" name="type" style="width:130px;" data-options="editable:false">  
-							    <option value="list_show">跑马灯</option>  
-							    <option value="list_show show3">大图</option>  
-							    <option value="list_show show4">小图</option>  
-							    <option value="list_show show5">其他</option>  
+							    <option value="0">跑马灯</option>  
+							    <option value="2">大图(左中右)</option>  
+							    <option value="1">小图</option>  
+							    <option value="3">其他</option>  
 							</select> 
 						</td>
 					</tr>

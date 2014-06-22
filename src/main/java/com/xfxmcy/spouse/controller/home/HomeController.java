@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -119,8 +120,9 @@ public class HomeController {
 		try{
 			syHome = syHomeServiceImpl.persistentHomePhoto(param,syHome);
 			info.setSuccess(true, "success");
+			info.setResult(syHome);
 		}catch(Exception e){
-			info.setSuccess(false, "system busy , please have a wait");
+			info.setSuccess(false, "system busy , please waiting ...");
 			logger.error(e.getMessage());
 		}
 		return info;
@@ -143,6 +145,7 @@ public class HomeController {
 	public SystemicInfo doMergeHomePhoto(QueryParam param , SYHome syHome ,SystemicInfo info,HttpServletRequest request){
 		try{
 			syHome = syHomeServiceImpl.mergeHomePhoto(param,syHome);
+			info.setResult(syHome);
 			info.setSuccess(true, "success");
 		}catch(Exception e){
 			info.setSuccess(false, "system busy , please have a wait");
@@ -165,11 +168,12 @@ public class HomeController {
 	 * ──────────────────────────────────
 	 *   		 2014年6月19日 		cy
 	 */
-	@RequestMapping("/homeDelete")
+	@RequestMapping("/homeDelete/{key}")
 	@ResponseBody
-	public SystemicInfo doDeleteHomePhoto(QueryParam param , SYHome syHome ,SystemicInfo info,HttpServletRequest request){
+	public SystemicInfo doDeleteHomePhoto(@PathVariable String key,QueryParam param , SYHome syHome ,SystemicInfo info,HttpServletRequest request){
 		try{
-			syHome = syHomeServiceImpl.persistentHomePhoto(param,syHome);
+			syHome.setId(key);
+			syHomeServiceImpl.deleteHomePhoto(param, syHome);
 			info.setSuccess(true, "success");
 		}catch(Exception e){
 			info.setSuccess(false, "system busy , please have a wait");

@@ -135,22 +135,22 @@
 				type = #{type,jdbcType=VARCHAR},
 			</if>
 			<if test="preCount != null">
-				preCount = #{preCount,jdbcType=INTEGER},
+				pre_count = #{preCount,jdbcType=INTEGER},
 			</if>
 			<if test="isBig != null">
-				isBig = #{isBig,jdbcType=CHAR},
+				is_big = #{isBig,jdbcType=CHAR},
 			</if>
 			<if test="phOrder != null">
-				phOrder = #{phOrder,jdbcType=INTEGER},
+				ph_order = #{phOrder,jdbcType=INTEGER},
 			</if>
 			<if test="descri != null">
 				descri = #{descri,jdbcType=VARCHAR},
 			</if>
 			<if test="isSmall != null">
-				isSmall = #{isSmall,jdbcType=CHAR},
+				is_small = #{isSmall,jdbcType=CHAR},
 			</if>
 			<if test="showLocation != null">
-				showLocation = #{showLocation,jdbcType=CHAR},
+				show_location = #{showLocation,jdbcType=CHAR},
 			</if>
 		</set>
 		where id = #{id,jdbcType=VARCHAR}

@@ -31,6 +31,11 @@ public class SpouseEntityConstant {
 	public static final String HOME_CHARACTER = "1";
 	/*home our image*/
 	public static final String HOME_IMAGE = "2";
+		/*left center right none*/
+		public static final String HOME_PHOTO_LEFT = "1";
+		public static final String HOME_PHOTO_CENTER = "2";
+		public static final String HOME_PHOTO_RIGHT = "3";
+		public static final String HOME_PHOTO_NONE = "0";
 	/*home field pre_count*/
 	public static final Integer HOME_COUNT_START = 1;
 	

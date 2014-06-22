@@ -137,6 +137,11 @@ public class SyHomeServiceImpl implements SyHomeService {
 			syHome.setIsSmall(SpouseConstant.SQL_FIELD_TRUE);
 			syHome.setIsBig(SpouseConstant.SQL_FIELD_FALSE);
 		}
+		else if(SpouseEntityConstant.HOME_CHARACTER.equals(syHome.getType())){
+			syHome.setIsSmall(SpouseConstant.SQL_FIELD_FALSE);
+			syHome.setIsBig(SpouseConstant.SQL_FIELD_FALSE);
+		}
+		
 		
 	}
 

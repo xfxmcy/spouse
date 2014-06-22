@@ -31,12 +31,12 @@ function saveMainPhoto(){
 		buttons : [ {
 			text : 'add',
 			handler : function() {			
-				formDia = romanticDialog.find('form');
+				formDia = mainDialog.find('form');
 				if(!formDia.form("validate")){
 					parent.simpleMessAlert.call(this,'提示',"请认真填写信息");
 					return;
 				}
-				$.post('${cy}/romantic/mainPersistent.do',cy.serializeObject(formDia),function(json){
+				$.post('${cy}/home/homePersistent.do',cy.serializeObject(formDia),function(json){
 					if (json.success) {
 						$("#homeGrid").datagrid("insertRow",{
 							index : 0 ,
@@ -55,7 +55,7 @@ function saveMainPhoto(){
 			}
 		}],
 		onLoad : function(){
-			formDia = romanticDialog.find('form');
+			formDia = mainDialog.find('form');
 		}
 		
 	});
@@ -67,18 +67,70 @@ function updateMainPhoto(id){
 		parent.simpleMessAlert.call(this,'提示','请选择1条记录进行操作');
 	}
 }
-function updateMainPhotoAble(){
-	
+function updateMainPhotoAble(id){
+	mainDialog = parent.cy.dialog({
+		title : 'update a main photo',
+		href : '${cy}/xfxmcy/main/mainForm.jsp?type=simpleUpdate',
+		width : 680,
+		height : 400,
+		buttons : [ {
+			text : 'update',
+			handler : function() {			
+				formDia = mainDialog.find('form');
+				if(!formDia.form("validate")){
+					parent.simpleMessAlert.call(this,'提示',"请认真填写信息");
+					return;
+				}
+				$.post('${cy}/home/homeMerge.do',cy.serializeObject(formDia),function(json){
+					if (json.success) {
+						$("#homeGrid").datagrid("updateRow",{
+							index : $("#homeGrid").datagrid("getRowIndex",id) ,
+							row : json.result
+						});
+						mainDialog.dialog('close');
+					}
+					parent.simpleMessAlert.call(this,'提示',json.message);
+				},'json');
+				
+			} 
+		}, {
+			text : 'clean',
+			handler : function() {
+				formDia.form('clear');	
+			}
+		}],
+		onLoad : function(){
+			formDia = mainDialog.find('form');
+			formDia.form('load',$("#homeGrid").datagrid("getSelected"));	
+		}
+		
+	});
 }
 function deleteMainPhoto(id){
 	if ($("#homeGrid").datagrid('getSelections').length == 1) {
-		deleteMainPhotoAble.call(this, $("#homeGrid").datagrid('getSelected').id);
+		parent.simpleMessConf.call(this,
+				 'warning',
+				 'do you sure your dicision ?',
+				 function(result){
+					if(result){
+						deleteMainPhotoAble.call(this, $("#homeGrid").datagrid('getSelected').id);
+					}
+				}
+		);
+		
 	} else {
 		parent.simpleMessAlert.call(this,'提示','请选择1条记录进行操作');
 	}
 }
-function deleteMainPhotoAble(){
-	
+function deleteMainPhotoAble(id){
+	$.post('${cy}/home/homeDelete/'+id+'.do',"queryType=simpleDelete",function(json){
+		if (json.success) {
+			$("#homeGrid").datagrid("deleteRow",
+				 $("#homeGrid").datagrid("getRowIndex",id)
+			);
+		}
+		parent.simpleMessAlert.call(this,'提示',json.message);
+	},'json');
 }
 function constructIndex(){
 	
@@ -134,15 +186,39 @@ function constructIndex(){
 					data-options="field:'descri', width:330,align:'center'">图片描述</th>
 				<th
 					data-options="field:'type', width:130,align:'center',formatter:function(value,row){
-					if(value == 1)
+					if(value == 0)
 						return 'slider';
 					
-					}">图片类型</th>
+					else if(value == 1)
+						return 'character';
+					
+					else if(value == 2)
+						return 'our family';
+					}
+					">图片类型</th>
 
 				<th
-					data-options="field:'showLocation', width:160,align:'center' ">展示位置</th>
+					data-options="field:'showLocation', width:160,align:'center',formatter:function(value,row){
+					if(value == 0)
+						return 'none';
+					
+					else if(value == 1)
+						return 'left';
+					
+					else if(value == 2)
+						return 'center';
+					
+					else if(value == 3)
+						return 'right';
+					} ">展示位置</th>
 				<th
-					data-options="field:'phOrder', width:150,align:'center' ">排序</th>
+					data-options="field:'phOrder', width:150,align:'center',formatter:function(value,row){
+					if(value == 0)
+						return 'none';
+					
+					else
+						return value;
+					}">排序</th>
 			</tr>
 		</thead>
 	</table>
