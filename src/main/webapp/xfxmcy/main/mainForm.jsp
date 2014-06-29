@@ -17,7 +17,7 @@
 				file_types : "*.jpg;*.png;*.gif;*.jpeg;",
 				file_types_description : "文档",
 				post_params : {
-					folder : "/romantic",
+					folder : "/main",
 					isPdfCoverter : true
 				}
 			};

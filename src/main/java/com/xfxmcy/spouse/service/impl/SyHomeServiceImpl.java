@@ -64,13 +64,14 @@ public class SyHomeServiceImpl implements SyHomeService {
 		/*template root*/
 		Map<String,Object> mapTemplate = new HashMap<String,Object>();
 		if(SpouseConstant.Home.CONSTRUCT_HOME_PAGED.equals(param.getQueryType())){
-			mapParam.put("isBig", SpouseConstant.SQL_HOME_IS_BIG);
+			mapParam.put("isBig", SpouseConstant.SQL_FIELD_TRUE);
+			mapParam.put("ph_order", SpouseConstant.SQL_FIELD_TRUE);
 			List<SYHome> bigPhotos = homeMapper.selectByCondition(mapParam);
 			mapParam.put("isBig",null);
-			mapParam.put("isSmall", SpouseConstant.SQL_HOME_IS_SMALL);
+			mapParam.put("isSmall", SpouseConstant.SQL_FIELD_TRUE);
 			List<SYHome> smallPhotos = homeMapper.selectByCondition(mapParam);
 			mapTemplate.put("bigPhoto", bigPhotos);
-			//mapTemplate.put("smallPhoto", smallPhotos);
+			mapTemplate.put("smallPhoto", smallPhotos);
 			TemplateComponent.getTemplateCom().filePrint(SpouseConstant.Home.MARKER_PATH_INDEX_FTL, mapTemplate, param.getMemoFirst()+SpouseConstant.Home.MARKER_PATH_INDEX);
 			
 		}

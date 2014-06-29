@@ -55,10 +55,7 @@ public final class SpouseConstant {
 	public final static String SQL_START = "start";
 	/*SQL  end*/
 	public final static String SQL_END = "end";
-	/*big photo*/
-	public final static String SQL_HOME_IS_BIG = "1";
-	/*small photo*/
-	public final static String SQL_HOME_IS_SMALL = "1";
+
 	/*true*/
 	public final static String SQL_FIELD_TRUE = "1";
 	/*false*/

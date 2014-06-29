@@ -37,9 +37,14 @@
 			<if test="isSmall != null">
 				is_small = #{isSmall,jdbcType=VARCHAR}
 			</if>
+			<if test="ph_order != null">
+				and ph_order != '0'
+			</if>
 		</where>
+			order by show_location
 		 <if test="page != null">
 			limit #{startPoint},#{rows}
+			  
 	</if>
 	</select>
 

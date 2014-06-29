@@ -133,7 +133,22 @@ function deleteMainPhotoAble(id){
 	},'json');
 }
 function constructIndex(){
-	
+	parent.simpleMessConf.call(this,
+			 'warning',
+			 'do you sure your dicision ?',
+			 function(result){
+				if(result){
+					constructIndexAble.call();
+				}
+			}
+	);
+}
+function constructIndexAble(){
+	$.post('${cy}/home/marker.do',{'queryType':'constructHomePage'},function(json){
+		if (json.success) {
+		}
+		parent.simpleMessAlert.call(this,'提示',json.message);
+	},'json');
 }
 </script>
 <!-- toolbar -->

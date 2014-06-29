@@ -7,9 +7,23 @@
 <title>xfxmcy</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${r"${cy}"}/style.css" rel="stylesheet" type="text/css" />
+<link href="${r"${cy}"}/css/prize.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${r"${cy}"}/js/primary/jquery.js" charset="utf-8"></script>
 <script type="text/javascript" src="${r"${cy}"}/js/primary/easySlider1.5.js" charset="utf-8"></script>
+<script type="text/javascript" src="${r"${cy}"}/js/cy/prize.js" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
+function UrlConf(){
+	this.prize = "${r"${cy}"}/app/prize/jing_prize.jsp";
+}
+var urlConf = new UrlConf(); 
+
+function openPrize() {
+	window.open('' + urlConf.prize + '',
+					'window',
+					'top=50px,left=500px,resizable=yes,scrollbars=no,height=590px,width=880px,status=no,toolbar=no,titlebar=no,location=no',
+					false);
+}
+
 // <![CDATA[
 $(document).ready(function(){	
 	$("#slider").easySlider({
@@ -21,6 +35,8 @@ $(document).ready(function(){
 });
 // ]]>
 </script>
+
+
 <style type="text/css">
 #slider {
 	padding:10px 0 10px 0;
@@ -71,7 +87,8 @@ p#controls {
 </style>
 </head>
 <body>
-<div id="container">
+<link href="${r"${cy}"}/style.css" rel="stylesheet" type="text/css" />
+<div id="container" style="width: 1132px;">
   <div class="header">
     <div class="logo"  >
     	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="349" height="220">
@@ -96,29 +113,30 @@ p#controls {
         <li><a href="${r"${cy}"}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${r"${cy}"}/spouse/managerment/his.do">him</a></li>
         <li><a href="${r"${cy}"}/spouse/managerment/message.do">Contact her/him</a></li>
+        <li><a href="${r"${cy}"}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
     </div>
   </div>
   <div class="main">
     <div class="services">
       <div class="service_bg">
-        <h3>Our acquaintance</h3>
-        <p><u>2014年夏天......</u></p>
-        <p> <a href="#"><strong>expected</strong></a></p>
+        <a href="${r"${cy}"}/romantic/index.jsp"><h3>Our acquaintance</h3></a>
+        <p><a href="${r"${cy}"}/romantic/index.jsp"><u>2014年夏天......</u></a></p>
+        <p><a href="${r"${cy}"}/romantic/index.jsp"><strong>expected</strong></a></p>
       </div>
       <ul class="banner">
-        <li><a href="#"><img src="${r"${cy}"}/images/jxk.png" width="104" height="104" border="0" alt="banner" /></a></li>
-        <li><a href="#"><img src="${r"${cy}"}/images/ynx.png" width="104" height="104" border="0" alt="banner" /></a></li>
+        <li><a href="#"><img src="${r"${cy}"}/images/girl.jpg" width="104" height="104" border="0" alt="banner" /></a></li>
+        <li><a href="#"><img src="${r"${cy}"}/images/girl1.jpg" width="104" height="104" border="0" alt="banner" /></a></li>
       </ul>
       <div class="clr"></div>
       <h3>Give a bless!</h3>
       <p>a statistics of blessing them</p>
       <p><span class="px22">+ 800 258 4578</span></p>
-      <h3>About them</h3>
+      <a href="${r"${cy}"}/romantic/index.jsp"><h3>About them</h3></a>
       <p><a href="${r"${cy}"}/spouse/managerment/host.do"><img src="${r"${cy}"}/images/xfxmcy.png" width="50%"  hspace="5" align="left" alt="picture" /></a>
-      <a href="#"><strong>lcy</strong></a><br />
+      <a href="#"><strong></strong></a><br />
         silent and loneliness<br/>
-        <a href="#"><strong>xx</strong></a><br />
+        <a href="#"><strong>cy</strong></a><br />
         await
        </p>
     </div>
@@ -130,7 +148,7 @@ p#controls {
            <#--大图-->
            <#list bigPhoto as big>
 	            <li>
-	            <img src="${r"${cy}"}${big.path}" width="674" height="337" alt="${big.name}" /><br />
+	            <img src="${r"${cy}"}/resource/upload/${big.path}" width="674" height="337" alt="${big.name}" /><br />
 	              <span>
 	              	<strong> 
 	              	${big.name} 
@@ -145,38 +163,42 @@ p#controls {
       
       <ul class="list_gallery">
        <#--小图-->
-  	   <#--<#list smallPhoto as small>
-            <li>
-            <img src="${r"${cy}"}/${small.url}" alt="screen 1" width="216" height="155" border="0"  />
-            </li>
-       </#list> -->
-        <li>
-        	<a href="#">
-        		<img src="${r"${cy}"}/images/lin.jpg" alt="screen 1" width="216" height="155" border="0" />
-        	</a>
-        </li>
-        <li><a href="#"><img src="${r"${cy}"}/images/daitu.jpg" alt="screen 1" width="216" height="155" border="0" /></a></li>
-        <li class="last"><a href="#"><img src="${r"${cy}"}/images/kakaxi.png" alt="screen 1" width="216" height="155" border="0" /></a></li>
+  	   <#list smallPhoto as small>
+  	   		 <#if small.showLocation  == "3">
+  	   		 	<li class="last">
+           	 		<img src="${r"${cy}"}/resource/upload/${small.path}" alt="screen 1" width="216" height="155" border="0"  />
+            	</li>
+             <#else>
+            	<li>
+           	 		<img src="${r"${cy}"}/resource/upload/${small.path}" alt="screen 1" width="216" height="155" border="0"  />
+            	</li>	 
+  	   		 </#if>
+            
+       </#list>
+        
      </ul>
       <div class="clr"></div>
       <div class="block_text">
       <#--小图-->
-      <#-- <#list smallPhoto as small>
+      <#list smallPhoto as small>
 	        <div class="block_list">
-	          	<p class="title">琳</p>
-	          		<p>下忍 </p>
+	          	<p class="title">${small.name} </p>
+	          		<p>${small.descri}(+${small.preCount})</p>
 	          	<a href="#" onclick="" class="link">&nbsp;赞&nbsp;</a> 
 	        </div>
-        </#list>-->
+      </#list>
         
-        <div class="block_list">
-          <p class="title">带土</p>
-          <p>下忍 </p>
-          <a href="#" class="link">&nbsp;赞&nbsp;</a> </div>
-        <div class="block_list">
-         <p class="title">卡卡西</p>
-          <p>上忍 </p>
-          <a href="#" class="link">&nbsp;赞&nbsp;</a> </div>
+        <#--
+	        <div class="block_list">
+	          <p class="title">带土</p>
+	          <p>下忍 </p>
+	          <a href="#" class="link">&nbsp;赞&nbsp;</a> </div>
+	        <div class="block_list">
+	         <p class="title">卡卡西</p>
+	          <p>上忍 </p>
+	          <a href="#" class="link">&nbsp;赞&nbsp;</a> </div>
+          -->
+          
         <div class="clr"></div>
         <div class="block_full">
            <p class="title">team</p>
@@ -200,9 +222,10 @@ p#controls {
         <li><a href="${r"${cy}"}/spouse/managerment/hers.do">her</a></li>
         <li><a href="${r"${cy}"}/spouse/managerment/his.do">him</a></li>
         <li><a href="${r"${cy}"}/spouse/managerment/message.do">Contact her/him</a></li>
+        <li><a href="${r"${cy}"}//spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
-      <p>Copyright © 2001-2007 DreamTemplate.com. All rights reserved.</p>
+      <p>Copyright © 2001-2007 xfxmcy.com. All rights reserved.</p>
       <div class="clr"></div>
     </div>
     <div class="clr"></div>

@@ -1,0 +1,256 @@
+{
+    "order_num": {
+        "max": 99,
+        "min": 1,
+        "step": 1
+    },
+    "order_time": [
+        {
+            "max": 9,
+            "min": 1,
+            "step": 1,
+            "unit": "month"
+        },
+        {
+            "max": 3,
+            "min": 1,
+            "step": 1,
+            "unit": "year"
+        },
+        {
+            "max": 15,
+            "min": 1,
+            "step": 1,
+            "unit": "day"
+        }
+    ],
+    "vm_cpu|vm_ram": [
+        {
+            "cond": {
+                "vm_cpu": "2"
+            },
+            "result": [
+                {
+                    "enable": "1",
+                    "text": "2GB",
+                    "value": "2048"
+                },
+                {
+                    "enable": "1",
+                    "text": "4GB",
+                    "value": "4096"
+                },
+                {
+                    "enable": "1",
+                    "text": "8GB",
+                    "value": "8192"
+                }
+            ]
+        },
+        {
+            "cond": {
+                "vm_cpu": "1"
+            },
+            "result": [
+                {
+                    "enable": "1",
+                    "text": "1GB",
+                    "value": "1024"
+                },
+                {
+                    "enable": "1",
+                    "text": "2GB",
+                    "value": "2048"
+                },
+                {
+                    "enable": "1",
+                    "text": "4GB",
+                    "value": "4096"
+                }
+            ]
+        },
+        {
+            "cond": {
+                "vm_cpu": "4"
+            },
+            "result": [
+                {
+                    "enable": "1",
+                    "text": "4GB",
+                    "value": "4096"
+                },
+                {
+                    "enable": "1",
+                    "text": "8GB",
+                    "value": "8192"
+                },
+                {
+                    "enable": "1",
+                    "text": "16GB",
+                    "value": "16384"
+                }
+            ]
+        },
+        {
+            "cond": {
+                "vm_cpu": "8"
+            },
+            "result": [
+                {
+                    "enable": "1",
+                    "text": "8GB",
+                    "value": "8192"
+                },
+                {
+                    "enable": "1",
+                    "text": "16GB",
+                    "value": "16384"
+                }
+            ]
+        }
+    ],
+    "vm_cpu+vm_ram|vm_os": [],
+    "vm_region_no|vm_disk_type": [
+        {
+            "cond": {
+                "vm_region_no": "cn-qingdao-cm5-a01"
+            },
+            "result": [
+                {
+                    "text": "cloud",
+                    "value": "vm_yundisk_storage"
+                },
+                {
+                    "text": "temporary",
+                    "value": "vm_sata_storage"
+                }
+            ]
+        }
+    ],
+    "vm_ram|vm_ssd_storage": [
+        {
+            "cond": {
+                "vm_ram": "4096"
+            },
+            "result": [
+                {
+                    "enable": "1",
+                    "max": 300,
+                    "min": 100,
+                    "step": 1
+                }
+            ]
+        }
+    ],
+    "vm_sata_storage|vm_yundisk_storage": [
+        {
+            "cond": {
+                "vm_sata_storage": "5-1024"
+            },
+            "result": []
+        }
+    ],
+    "vm_ssd_storage|vm_yundisk_storage": [],
+    "vm_cpu|vm_ssd_storage": [],
+    "vm_bandwidth": [
+        {
+            "max": 204800,
+            "min": 0,
+            "step": 1024
+        }
+    ],
+    "vm_cpu": [
+        {
+            "text": "1核",
+            "value": "1"
+        },
+        {
+            "text": "2核",
+            "value": "2"
+        },
+        {
+            "text": "4核",
+            "value": "4"
+        },
+        {
+            "text": "8核",
+            "value": "8"
+        }
+    ],
+    "vm_os": [
+        {
+            "text": "2223  为1",
+            "value": "8a81859a465f86a801465fa133a50016"
+        }
+    ],
+    "vm_ram": [
+        {
+            "enable": "1",
+            "text": "1GB",
+            "value": "1024"
+        },
+        {
+            "enable": "1",
+            "text": "2GB",
+            "value": "2048"
+        },
+        {
+            "enable": "1",
+            "text": "4GB",
+            "value": "4096"
+        },
+        {
+            "enable": "1",
+            "text": "8GB",
+            "value": "8192"
+        },
+        {
+            "enable": "1",
+            "text": "16GB",
+            "value": "16384"
+        }
+    ],
+    "vm_region_no": [],
+    "vm_ssd_num": [
+        {
+            "max": 4,
+            "min": 1,
+            "step": 1
+        }
+    ],
+    "vm_ssd_storage": [
+        {
+            "max": 300,
+            "min": 100,
+            "step": 1
+        }
+    ],
+    "vm_ssd_storage_max": [
+        {
+            "max": 984,
+            "min": 0,
+            "step": 1
+        }
+    ],
+    "vm_yundisk_num": [
+        {
+            "max": 4,
+            "min": 0,
+            "step": 1
+        }
+    ],
+    "vm_yundisk_storage": [
+        {
+            "max": 2048,
+            "min": 5,
+            "step": 1
+        }
+    ],
+    "vm_yundisk_storage_max": [
+        {
+            "max": 2048,
+            "min": 0,
+            "step": 1
+        }
+    ]
+}
