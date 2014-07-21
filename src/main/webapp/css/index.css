@@ -64,7 +64,7 @@ div.project ul li span { display:block; background:url(../images/str.gif) no-rep
 
 .block_text p.order { background:url(../images/butt_order_now.gif) no-repeat; text-align:center; width:102px; height:12px; text-decoration:none; margin:0 0 0 180px; padding:5px 20px 15px 10px;}
 
-.main .services { float:left; width:283px; margin:0 0 0 114px !important; margin:0 0 0 57px; background:#151516;}
+.main .services { float:left; width:343px; margin:0 0 0 54px !important; background:#151516;}
 .main .services .service_bg { background:#151516 url(../images/side_text_bg.jpg) no-repeat 10px 10px; padding:10px;}
 .main .services p { padding:10px; margin:0; line-height:1.8em;}
 .main .services h3 { padding:10px; margin:0; font:normal 30px "Times New Roman", Times, serif; color:#dbccd7;}

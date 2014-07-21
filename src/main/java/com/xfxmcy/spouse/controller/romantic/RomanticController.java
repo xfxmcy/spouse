@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SystemicInfo;
+import com.xfxmcy.spouse.pojo.SJWish;
 import com.xfxmcy.spouse.service.RomanticService;
 import com.xfxmcy.spouse.util.SpouseUtil;
 import com.xfxmcy.spouse.vo.SMFavorite;
@@ -122,6 +123,32 @@ public class RomanticController {
 	public SystemicInfo doDeleteRomantic(@PathVariable String key,QueryParam param , SrRomanticWithBLOBs romanticBLOBS,SystemicInfo info,HttpServletRequest request){
 		try{
 			romanticServiceImpl.doDeleteRomantic(param,key);
+			info.setSuccess(true, "success");
+		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
+			logger.error(e.getMessage());
+		}
+		return info;
+	}
+	
+	/**
+	 * 
+	 * doDreamAtBirthday: get birthday present
+	 *
+	 * @param param
+	 * @param wish
+	 * @param info
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年7月21日 		cy
+	 */
+	@RequestMapping("/dreamBirthday")
+	@ResponseBody
+	public SystemicInfo doDreamAtBirthday(QueryParam param , SJWish wish,SystemicInfo info,HttpServletRequest request){
+		try{
+			romanticServiceImpl.doDreamWish(param,wish);
 			info.setSuccess(true, "success");
 		}catch(Exception e){
 			info.setSuccess(false, "system busy , please have a wait");

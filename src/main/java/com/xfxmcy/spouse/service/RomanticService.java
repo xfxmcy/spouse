@@ -14,6 +14,7 @@
 package com.xfxmcy.spouse.service;
 
 import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.pojo.SJWish;
 import com.xfxmcy.spouse.vo.SrRomanticWithBLOBs;
 
 /**
@@ -67,6 +68,17 @@ public  interface RomanticService {
 	 *   		 2014年5月2日 		cy
 	 */
 	public void doDeleteRomantic(QueryParam param,String key);
+	/**
+	 * 
+	 * doDreamWish:making a wish
+	 *
+	 * @param param
+	 * @param wish	wish
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年7月21日 		cy
+	 */
+	public void doDreamWish(QueryParam param, SJWish wish);
 	
 }
 

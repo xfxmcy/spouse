@@ -176,10 +176,10 @@ public class UploadServlet extends HttpServlet {
             IOException {
         String folderName = request.getParameter("folder");
         //是否转换文件为PDF
-        boolean isPdfCoverter =false;
+        /*boolean isPdfCoverter =false;
         if(request.getParameter("isPdfCoverter") != null){
             isPdfCoverter=Boolean.parseBoolean(request.getParameter("isPdfCoverter"));
-        }
+        }*/
         folderName = this.createSubfolder(folderName);
         request.setCharacterEncoding("utf-8");
         if (!ServletFileUpload.isMultipartContent(request)) {
@@ -207,10 +207,10 @@ public class UploadServlet extends HttpServlet {
                     }
                     item.write(file);
                     //是否转换文件为PDF
-                    if (isPdfCoverter) {
+                    //if (isPdfCoverter) {
                        // PDFConverter pdfConverter = (PDFConverter) SdcContextHelper.getBean(PDFConverter.class);
                       //  pdfConverter.convert2PDFByOpenOffice(file.getPath(), renamedName);
-                    }
+                    //}
                     JSONObject jsono = new JSONObject();
                     jsono.put("name", fileName);
                     jsono.put("size", item.getSize());

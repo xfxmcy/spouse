@@ -68,12 +68,13 @@ public class HomeController {
 	@ResponseBody
 	public SystemicInfo refreshIndexPage(QueryParam param,SystemicInfo sysInfo,HttpServletRequest request) {
 		try{
-			param.setMemoFirst(request.getRealPath("/"));
+			param.setMemoFirst(request.getSession().getServletContext().getRealPath("/"));
+			logger.debug("index path " + request.getSession().getServletContext().getRealPath("/"));	
 			syHomeServiceImpl.constructPageTemplate(param);
 			sysInfo.setMessage("successful");
 		}catch(RuntimeException e){
 			logger.error(e.getMessage());
-			sysInfo.setSuccess(false,"password is error");
+			sysInfo.setSuccess(false,"system is busy");
 		}
 		return sysInfo;
 	}

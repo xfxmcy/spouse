@@ -47,6 +47,7 @@
           <li>5/4/2014 &nbsp;&nbsp;&nbsp;<a href="#"><strong>first acquaintance</strong></a>.</li>
           <li>14/4/2014&nbsp;&nbsp;&nbsp;<a href="#"><strong>first phone</strong></a>.</li>
           <li>18/4/2014&nbsp;&nbsp;&nbsp;<a href="#"><strong>first date</strong></a>.</li>
+          <li>17/10/2014&nbsp;&nbsp;&nbsp;<a href="javascript:window.open('${cy}/app/birthday/index.jsp');"><strong>jing's birthday</strong></a>.</li>
         </ul>
         <p>snapshot </p>
         <p>release</p>

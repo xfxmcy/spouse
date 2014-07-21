@@ -119,8 +119,13 @@ p#controls {
     </div>
   </div>
   <div class="main">
-    <div class="services">
+    <div class="services" >
       <div class="service_bg">
+      	<div style="background-color: white;">
+      		<!-- <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=2&num=2" width="330" height="70" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> -->
+      		<!-- <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=2&num=1" width="220" height="70" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> -->
+      		<iframe allowtransparency="true" frameborder="0" width="290" height="96" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=0&v=0&d=2&bd=0&k=&f=&q=1&e=1&a=1&c=54511&w=290&h=96&align=center"></iframe>
+      	</div>
         <a href="${cy}/romantic/index.jsp"><h3>Our acquaintance</h3></a>
         <p><a href="${cy}/romantic/index.jsp"><u>2014年夏天......</u></a></p>
         <p><a href="${cy}/romantic/index.jsp"><strong>expected</strong></a></p>

@@ -21,7 +21,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.xfxmcy.spouse.constant.SpouseConstant;
 import com.xfxmcy.spouse.dao.SrRomanticMapper;
 import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.pojo.SJWish;
 import com.xfxmcy.spouse.service.RomanticService;
+import com.xfxmcy.spouse.util.EmailComponent;
 import com.xfxmcy.spouse.util.IdUtil;
 import com.xfxmcy.spouse.vo.SrRomanticWithBLOBs;
 
@@ -44,6 +46,8 @@ public class RomanticServiceImpl implements RomanticService {
 	@Resource
 	private SrRomanticMapper mapper;
 	
+	@Resource
+	private EmailComponent emailComponent ;
 	
 	@Override
 	public SrRomanticWithBLOBs doPersistRomantic(QueryParam param,
@@ -77,6 +81,15 @@ public class RomanticServiceImpl implements RomanticService {
 			mapper.deleteByPrimaryKey(key);
 		}
 		
+	}
+
+
+	@Override
+	public void doDreamWish(QueryParam param, SJWish wish) {
+		
+		if(SpouseConstant.SIMPLE_SAVE.equals(param.getQueryType())){
+			emailComponent.sendSimpleEmail(wish);
+		}
 	}
 
 }

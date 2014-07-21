@@ -22,6 +22,10 @@ import java.io.Writer;
 import java.util.Locale;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
+import com.xfxmcy.spouse.controller.romantic.RomanticController;
+
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -46,6 +50,10 @@ public class TemplateComponent {
 	private TemplateComponent() {
 
 	}
+	/**
+ 	 * Logger for this class
+	 */
+	private static final Logger logger = Logger.getLogger(TemplateComponent.class);
 	/**
 	 * 
 	 * getTemplateCom:get template component
@@ -83,6 +91,7 @@ public class TemplateComponent {
 			template = configuration.getTemplate(ftlName);
 			return template;
 		} catch (IOException e) {
+			logger.error(e.getMessage());
 			e.printStackTrace();
 			return template;
 		}
@@ -105,14 +114,14 @@ public class TemplateComponent {
 			out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(outFile)),"UTF-8"));
 			Template temp = this.getTemplateByName(fileName);
 			temp.process(root, out);
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (TemplateException e) {
+		} catch (Exception e) {
+			logger.error(e.getMessage());
 			e.printStackTrace();
 		} finally {
 			try {
 				if(out!=null) out.close();
 			} catch (IOException e) {
+				logger.error(e.getMessage());
 				e.printStackTrace();
 			}
 		}
