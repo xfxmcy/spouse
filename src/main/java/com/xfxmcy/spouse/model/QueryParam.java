@@ -45,6 +45,24 @@ public class QueryParam {
 	
 	private String likeNameFirst ;
 	
+	/*home type*/
+	private String photoType ;
+	
+	/*romantic isyear*/
+	private String isyear ;
+	
+	public String getIsyear() {
+		return isyear;
+	}
+	public void setIsyear(String isyear) {
+		this.isyear = isyear;
+	}
+	public String getPhotoType() {
+		return photoType;
+	}
+	public void setPhotoType(String photoType) {
+		this.photoType = photoType;
+	}
 	private String isFilter  = "false";
 	
 	

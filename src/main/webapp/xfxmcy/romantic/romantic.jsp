@@ -165,29 +165,41 @@ function deleteRomanticCheck(id){
 		parent.simpleMessAlert.call(this,'提示',json.message);
 	},'json');
 }
-
+function openRomantic(){
+	window.open('${cy}/romantic/index.jsp', 'romantic jing');
+}
+function searchRomantic(){
+	var param = {};
+	if(-1 != $('#romanticStatus').combo('getValue'))
+		param.isyear = $('#romanticStatus').combo('getValue');
+	if("" != $('#searchRomantic').val().trim())
+		param.likeNameFirst = $('#searchRomantic').val();
+	$('#romanticGrid').datagrid('reload',param);
+	
+}
 </script>
 <!-- toolbar -->
 <div id="mainProToolbar">
-	&nbsp;category &nbsp;: &nbsp; <select id="projectCheckStatus"
+	&nbsp;category &nbsp;: &nbsp; <select id="romanticStatus"
 		data-options="editable:false" class="easyui-combobox" name="dept"
 		style="width:100px;">
 		<option value="-1">全部</option>
-		<option value="0">年</option>
-		<option value="1">日子</option>
+		<option value="1">年</option>
+		<option value="0">日</option>
 	</select> &nbsp;title &nbsp;: &nbsp; 
-	<input size="20" type="text" id="searchPublicPro"> 
-	<a id="btnCurSearch" onclick="searchProject()" class="easyui-linkbutton"
+	<input size="20" type="text" id="searchRomantic"> 
+	<a id="btnCurSearch" onclick="searchRomantic()" class="easyui-linkbutton"
 		data-options="">查询</a>
 		<div class="button-group">
 			<a id="addRomantic" class="easyui-linkbutton" onclick="addRomantic()" data-options="plain:true"><label class="button-label">添加</label></a>
 			<a id="updateRomantic" class="easyui-linkbutton" onclick="updateRomantic()" data-options="plain:true"><label class="button-label">修改</label></a>
 			<a id="deleteRomantic" class="easyui-linkbutton" onclick="deleteRomantic()" data-options="plain:true"><label class="button-label">删除</label></a>
+			<a id="openRomantic" class="easyui-linkbutton" onclick="openRomantic()" data-options="plain:true"><label class="button-label">romantic</label></a>
 		</div>	
 	
 </div>
 <!-- 项目grid -->
-<div style="height: 480px;">
+<div style="height: 460px;">
 <!-- nowrap:false, -->
 	<table class="easyui-datagrid" id="romanticGrid"
 		data-options="fit:false,idField:'id',loadMsg:'正在加载…',pagination:true,title:'romantic信息维护',

@@ -35,7 +35,16 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from sr_romantic order by date
+    from sr_romantic 
+    <where>
+		<if test="isyear != null">
+			isYear = #{isyear}
+		</if>
+		<if test="title != null">
+			and title like #{title}
+		</if>
+    </where>
+    	order by date
     <if test="page != null">
 		limit #{startPoint},#{rows}
 	</if>
@@ -43,6 +52,14 @@
   <!-- query the count -->
   <select id="countByCondition" resultType="java.lang.Long" parameterType="java.util.HashMap" >
 		select count(*) from sr_romantic
+		<where>
+			<if test="isyear != null">
+				isYear = #{isyear}
+			</if>
+			<if test="title != null">
+				and title like #{title}
+			</if>
+	    </where>
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from sr_romantic

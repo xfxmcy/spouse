@@ -95,7 +95,6 @@ public class HomeController {
 	public SpouseGrid doQuery(QueryParam param , SpouseGrid grid ){
 		try{
 			grid = syHomeServiceImpl.doQuery(param);	
-			logger.info(grid);
 		}catch(Exception e){
 			logger.error(e.getMessage());
 		}	

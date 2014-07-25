@@ -38,6 +38,13 @@
 	easyloader.locale = 'zh_CN';
 	easyloader.theme = "bootstrap";
 	window._contextPath = "${cy}";
+	
+	/*trim*/
+	if(!String.prototype.trim) {
+        String.prototype.trim = function () {
+            return this.replace(/^\s+|\s+$/g,'');
+       };
+   }
 </script>
 <style type="text/css">
 

@@ -150,18 +150,26 @@ function constructIndexAble(){
 		parent.simpleMessAlert.call(this,'提示',json.message);
 	},'json');
 }
+function searchProject(){
+	var param = {};
+	if(-1 != $('#photoCheckStatus').combo('getValue'))
+		param.photoType = $('#photoCheckStatus').combo('getValue');
+	if("" != $('#searchPhoto').val().trim())
+		param.likeNameFirst = $('#searchPhoto').val();
+	$('#homeGrid').datagrid('reload',param);
+}
 </script>
 <!-- toolbar -->
 <div id="mainProToolbar">
-	&nbsp;category &nbsp;: &nbsp; <select id="projectCheckStatus"
-		data-options="editable:false" class="easyui-combobox" name="dept"
+	&nbsp;category &nbsp;: &nbsp; <select id="photoCheckStatus"
+		data-options="editable:false" class="easyui-combobox" name="category"
 		style="width:100px;">
 		<option value="-1">全部</option>
 		<option value="0">首页slide</option>
-		<option value="1">首页人物</option>
-		<option value="2">首页 头像</option>
+		<option value="2">首页人物</option>
+		<option value="1">首页 头像</option>
 	</select> &nbsp;图片描述 &nbsp;: &nbsp; 
-	<input size="20" type="text" id="searchPublicPro"> 
+	<input size="20" type="text" id="searchPhoto"> 
 	<a id="btnCurSearch" onclick="searchProject()" class="easyui-linkbutton"
 		data-options="">查询</a>
 		<div class="button-group">
@@ -181,7 +189,7 @@ function constructIndexAble(){
 	
 </div>
 <!-- 项目grid -->
-<div style="height: 480px;">
+<div style="height: 450px;">
 	<table class="easyui-datagrid" id="homeGrid"
 		data-options="fit:false,idField:'id',loadMsg:'正在加载…',pagination:true,title:'主页信息维护',
 			url:'${cy}/home/homeQuery.ajax?queryType=simpleQueryPaged',toolbar:'#mainProToolbar', 

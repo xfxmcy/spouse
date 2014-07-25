@@ -31,7 +31,7 @@
 		<include refid="Base_Column_List" />
 		from sy_home
 		<where>
-			<if test="isBig != null">
+			<if test="isBig != null" >
 				is_big = #{isBig,jdbcType=VARCHAR}	
 			</if>
 			<if test="isSmall != null">
@@ -39,6 +39,12 @@
 			</if>
 			<if test="ph_order != null">
 				and ph_order != '0'
+			</if>
+			<if test="photoType != null">
+				and type = #{photoType,jdbcType=VARCHAR}
+			</if>
+			<if test="descri != null">
+				and descri like #{descri,jdbcType=VARCHAR}
 			</if>
 		</where>
 			order by show_location
@@ -165,16 +171,14 @@
   <select id="countByCondition" resultType="java.lang.Long" parameterType="java.util.HashMap" >
 		select count(*) from sy_home
 	<where>
-    	
-    	  <if test="likeNameFirst != null">
-    	  	title like #{likeNameFirst,jdbcType=VARCHAR} and
-    	 </if>
-    	 <if test="owner != null">
-    	  	creater = #{owner,jdbcType=VARCHAR} 
-    	 </if>
-    
+    	  <if test="photoType != null">
+				type = #{photoType,jdbcType=VARCHAR}
+		  </if>
+		  <if test="descri != null">
+				and descri like #{descri,jdbcType=VARCHAR}
+		  </if>
     	  <if test="treeRootId != null">
-    	  	pid = #{treeRootId,jdbcType=VARCHAR} 
+    	  		pid = #{treeRootId,jdbcType=VARCHAR} 
     	 </if>
     </where>
   </select>

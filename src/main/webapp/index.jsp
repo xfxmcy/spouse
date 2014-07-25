@@ -19,10 +19,10 @@ function UrlConf(){
 var urlConf = new UrlConf(); 
 
 function openPrize() {
-	window.open('' + urlConf.prize + '',
+	/* window.open('' + urlConf.prize + '',
 					'window',
 					'top=50px,left=500px,resizable=yes,scrollbars=no,height=590px,width=880px,status=no,toolbar=no,titlebar=no,location=no',
-					false);
+					false); */
 }
 </script>
 <script type="text/javascript" charset="utf-8">

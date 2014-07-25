@@ -91,11 +91,19 @@ public class SyHomeServiceImpl implements SyHomeService {
 			mapParam.put("rows", param.getRows());
 		}
 		if(SpouseConstant.SIMPLE_QUERY_PAGED.equals(param.getQueryType())){
+			mapParam.put("photoType", param.getPhotoType());
+			if(null != param.getLikeNameFirst() && !"".equals(param.getLikeNameFirst())){
+				mapParam.put("descri", "%" + param.getLikeNameFirst() + "%");
+			}
 			grid.setRows(homeMapper.selectByCondition(mapParam));
 			grid.setTotal(homeMapper.countByCondition(mapParam));
 		}
 		/*romantic*/
 		else if(SpouseConstant.ROMANTIC_QUERY_PAGED.equals(param.getQueryType())){
+			mapParam.put("isyear", param.getIsyear());
+			if(null != param.getLikeNameFirst() && !"".equals(param.getLikeNameFirst())){
+				mapParam.put("title", "%" + param.getLikeNameFirst() + "%");
+			}
 			grid.setRows(romanticMapper.selectByCondition(mapParam));
 			grid.setTotal(romanticMapper.countByCondition(mapParam));
 		}
