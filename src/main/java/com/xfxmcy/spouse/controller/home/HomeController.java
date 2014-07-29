@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xfxmcy.spouse.constant.SpouseConstant;
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.model.SystemicInfo;
@@ -69,7 +70,8 @@ public class HomeController {
 	public SystemicInfo refreshIndexPage(QueryParam param,SystemicInfo sysInfo,HttpServletRequest request) {
 		try{
 			param.setMemoFirst(request.getSession().getServletContext().getRealPath("/"));
-			logger.debug("index path " + request.getSession().getServletContext().getRealPath("/"));	
+			logger.error("---/ path--" + request.getSession().getServletContext().getRealPath("/"));
+			logger.error("---/ index.jsp--" + request.getSession().getServletContext().getRealPath("/"+SpouseConstant.Home.MARKER_PATH_INDEX));
 			syHomeServiceImpl.constructPageTemplate(param);
 			sysInfo.setMessage("successful");
 		}catch(RuntimeException e){

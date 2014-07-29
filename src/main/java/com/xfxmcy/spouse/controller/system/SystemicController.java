@@ -119,6 +119,10 @@ public class SystemicController {
 		else if("meeting".equals(path)){
 			returnPath = SpouseConstant.SystemicPage.MEETING_INDEX;
 		}
+		/*video index*/
+		else if("video".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.VIDEO_INDEX;
+		}
 		return returnPath;
 	}
 	

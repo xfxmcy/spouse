@@ -150,7 +150,7 @@ public class FavoriteController {
 			info.setSuccess(false, "system busy , please have a wait");
 		}
 			return info;
-		} 
+	} 
 	/**
 	 * 
 	 * doDeleteFavorite:delete favorite

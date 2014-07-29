@@ -1,22 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xfxmcy.spouse.dao.SMAccountMapper" >
-  <resultMap id="BaseResultMap" type="com.xfxmcy.spouse.vo.SMAccount" >
+<mapper namespace="com.xfxmcy.spouse.dao.SMVideoMapper" >
+  <resultMap id="BaseResultMap" type="com.xfxmcy.spouse.vo.SMVideo" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="url" property="url" jdbcType="VARCHAR" />
     <result column="description" property="description" jdbcType="VARCHAR" />
     <result column="flag" property="flag" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
     <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, url, description, flag, createTime
+    id, name, url, description, flag, createTime,type
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from sm_video
     where id = #{id,jdbcType=VARCHAR}
+  </select>
+   <!-- query favorite treegrid -->
+   <select id="queryVideoPaged" resultMap="BaseResultMap" parameterType="com.xfxmcy.spouse.model.QueryParam" >
+    select 
+    <include refid="Base_Column_List" />
+    from sm_video
+    <where>
+    	 <if test="likeNameFirst != null" >
+    	  	name like #{likeNameFirst,jdbcType=VARCHAR} 
+    	 </if>
+    </where>
+
+    <if test="page != null">
+		limit #{startPoint},#{rows}
+	</if>
+  </select>
+   <!-- query the count -->
+  <select id="queryCountVideo" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.model.QueryParam" >
+		select count(*) from sm_favorite
+	<where>
+    	 <if test="likeNameFirst != null">
+    	  	name like #{likeNameFirst,jdbcType=VARCHAR} and
+    	 </if>
+    </where>
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from sm_video
@@ -51,6 +76,9 @@
       <if test="createTime != null" >
         createTime,
       </if>
+      <if test="type != null" >
+        type,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -71,7 +99,9 @@
       <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      
+      <if test="type != null" >
+        #{type,jdbcType=TIMESTAMP},
+      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.xfxmcy.spouse.vo.SMVideo" >
@@ -91,6 +121,9 @@
       </if>
       <if test="createTime != null" >
        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null" >
+       type = #{type,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}

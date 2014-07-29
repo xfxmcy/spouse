@@ -74,7 +74,7 @@ public final class SpouseConstant {
 	 *
 	 * @see
 	 */
-	public class SystemicPage {
+	public  class SystemicPage {
 		/*entire system*/
 		  /*management index*/
 		  public final static String MANAGEMENT_INDEX = "/xfxmcy/index";
@@ -102,8 +102,11 @@ public final class SpouseConstant {
 		/*my schedule page*/
 		  public final static String SCHEDULE_MANA_INDEX = "/xfxmcy/my/schedule/mySchedule";
 		/*meeting manager*/  
-		  public static final   String MEETING_INDEX = "/xfxmcy/family/meeting/meetingManager";  
+		  public final static String MEETING_INDEX = "/xfxmcy/family/meeting/meetingManager";
+		/*video manager*/  
+		  public final static String VIDEO_INDEX = "/xfxmcy/family/video/videoManager";  
 	}
+	
 	/**
 	 * 
 	 * ClassName:System
@@ -185,7 +188,7 @@ public final class SpouseConstant {
 		/*construct template home page*/
 		public final static String CONSTRUCT_HOME_PAGED = "constructHomePage";
 		/*construct page through freemarker*/
-		public final static String MARKER_PATH_INDEX = "/index.jsp";
+		public final static String MARKER_PATH_INDEX = "index.jsp";
 		/*ftl for index page*/
 		public final static String MARKER_PATH_INDEX_FTL = "/index.ftl";
 	}

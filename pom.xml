@@ -255,6 +255,7 @@
 				<groupId>com.xfxmcy.line</groupId>
 				<artifactId>xfxmcy</artifactId>
 				<version>1.0.0</version>
+				
 				<configuration>
 					<includes>
 						<include>java</include>

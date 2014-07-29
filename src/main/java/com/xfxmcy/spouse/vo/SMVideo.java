@@ -9,6 +9,13 @@ public class SMVideo {
 	private String description ;
 	private String flag ;
 	private Date createTime;
+	private String type ;
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	public SMVideo() {
 		// TODO Auto-generated constructor stub
 	}

@@ -137,8 +137,9 @@ CREATE TABLE `sm_video` (
   `id` varchar(32) NOT NULL COMMENT 'id',
   `url` varchar(300) DEFAULT NULL COMMENT 'url',
   `name` varchar(50) DEFAULT NULL COMMENT 'name',
+  `type` varchar(2) DEFAULT NULL COMMENT 'type',
   `description` varchar(500) DEFAULT NULL COMMENT 'description',
   `createTime` datetime DEFAULT NULL COMMENT 'createTime',
   `flag` varchar(1) DEFAULT NULL COMMENT '启用标识',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='favorite';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='video';

@@ -38,6 +38,10 @@ public class SpouseEntityConstant {
 		public static final String HOME_PHOTO_NONE = "0";
 	/*home field pre_count*/
 	public static final Integer HOME_COUNT_START = 1;
+	/*video type _video*/
+	public static final Integer VIDEO_TYPE_VIDEO = 1;
+	/*video type _music*/
+	public static final Integer VIDEO_TYPE_MUSIC = 3;
 	
 	
 }
