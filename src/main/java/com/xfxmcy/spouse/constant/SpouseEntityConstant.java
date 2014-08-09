@@ -41,7 +41,7 @@ public class SpouseEntityConstant {
 	/*video type _video*/
 	public static final Integer VIDEO_TYPE_VIDEO = 1;
 	/*video type _music*/
-	public static final Integer VIDEO_TYPE_MUSIC = 3;
+	public static final Integer VIDEO_TYPE_MUSIC = 0;
 	
 	
 }

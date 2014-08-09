@@ -80,6 +80,7 @@ private static final Logger logger = Logger.getLogger(TaskController.class);
 		try{
 			video = videoServiceImpl.persistVideo(param,video);
 			info.setSuccess(true, "success");
+			info.setResult(video);
 		}catch(Exception e){
 			info.setSuccess(false, "system busy , please have a wait");
 			logger.error(e.getMessage());
@@ -105,6 +106,7 @@ private static final Logger logger = Logger.getLogger(TaskController.class);
 		try{
 			video = videoServiceImpl.mergeVideo(param, video);
 			info.setSuccess(true, "success");
+			info.setResult(video);
 		}catch(Exception e){
 			logger.error(e.getMessage());
 			info.setSuccess(false, "system busy , please have a wait");

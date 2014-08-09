@@ -13,6 +13,7 @@
 
 package com.xfxmcy.spouse.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -27,6 +28,7 @@ import com.xfxmcy.spouse.dao.SMVideoMapper;
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.service.VideoService;
+import com.xfxmcy.spouse.util.IdUtil;
 import com.xfxmcy.spouse.vo.SMFavorite;
 import com.xfxmcy.spouse.vo.SMVideo;
 
@@ -59,6 +61,8 @@ public class VideoServiceImpl implements VideoService {
 	@Override
 	public SMVideo persistVideo(QueryParam param , SMVideo smVideo) {
 		if(SpouseConstant.SIMPLE_SAVE.equals(param.getQueryType())){
+			smVideo.setId(IdUtil.generaterThrityTwo());
+			smVideo.setCreateTime(new Date());
 			smVideoMapper.insertSelective(smVideo);
 		}
 		return smVideo;

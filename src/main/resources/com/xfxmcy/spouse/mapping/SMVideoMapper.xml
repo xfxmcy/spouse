@@ -31,7 +31,7 @@
     </where>
 
     <if test="page != null">
-		limit #{startPoint},#{rows}
+		order by createTime limit #{startPoint},#{rows} 
 	</if>
   </select>
    <!-- query the count -->
@@ -104,7 +104,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xfxmcy.spouse.vo.SMVideo" >
+  <update id="updateSelective" parameterType="com.xfxmcy.spouse.vo.SMVideo" >
     update sm_video
     <set >
       <if test="name != null" >
