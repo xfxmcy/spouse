@@ -70,8 +70,8 @@ public class HomeController {
 	public SystemicInfo refreshIndexPage(QueryParam param,SystemicInfo sysInfo,HttpServletRequest request) {
 		try{
 			param.setMemoFirst(request.getSession().getServletContext().getRealPath("/"));
-			logger.error("---/ path--" + request.getSession().getServletContext().getRealPath("/"));
-			logger.error("---/ index.jsp--" + request.getSession().getServletContext().getRealPath("/"+SpouseConstant.Home.MARKER_PATH_INDEX));
+			logger.error("------/ path--" + request.getSession().getServletContext().getRealPath("/"));
+			logger.error("------/ index.jsp--" + request.getSession().getServletContext().getRealPath("/"+SpouseConstant.Home.MARKER_PATH_INDEX));
 			syHomeServiceImpl.constructPageTemplate(param);
 			sysInfo.setMessage("successful");
 		}catch(RuntimeException e){

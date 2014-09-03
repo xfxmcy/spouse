@@ -35,7 +35,7 @@
 			
 			<span class="comments">// 沧州七中.</span><br />
 			<span class="comments">// 青县一中.</span><br />
-			<span class="comments">// 对面经济贸易.</span><br />
+			<span class="comments">// 对外经济贸易.</span><br />
 			<span class="comments">// 22个春秋.</span><br />
 			<span class="keyword">静</span> happy <span class="keyword">birthday</span>;<br />
 			<span class="placeholder"/><span class="comments">// 越来越漂亮</span><br />
@@ -48,6 +48,8 @@
 			.... forever;<br />
 			jing 来许愿吧...吼吼 
 			<input type="button" value="许愿" onclick="javascript:window.open('${cy}/app/paperPlane/index.jsp');"/>
+			<br/>
+			你可以将此网址发给好友,让他们为你许愿...
 		</div>
 		<div id="loveHeart">
 			<canvas id="garden"></canvas>
