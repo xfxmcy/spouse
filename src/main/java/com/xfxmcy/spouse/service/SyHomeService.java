@@ -15,6 +15,7 @@ package com.xfxmcy.spouse.service;
 
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
+import com.xfxmcy.spouse.pojo.SJWish;
 import com.xfxmcy.spouse.vo.SYHome;
 
 /**
@@ -86,6 +87,17 @@ public interface SyHomeService {
 	 * ──────────────────────────────────
 	 *   		 2014年6月19日 		cy
 	 */
-	void deleteHomePhoto(QueryParam param, SYHome syHome); 
+	void deleteHomePhoto(QueryParam param, SYHome syHome);
+	/**
+	 * 
+	 * doContactUs: contact us 
+	 *
+	 * @param param	param
+	 * @param wish	wish
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年9月7日 		cy
+	 */
+	void doContactUs(QueryParam param, SJWish wish); 
 }
 

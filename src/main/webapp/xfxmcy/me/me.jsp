@@ -20,7 +20,7 @@ $(function() {
 
 </script>
 <div style="width: 100%;height: 15%;text-align: center;" >
-		xfxmcy
+		xfxmcy system
 </div>
 <div style="width: 100%;">
 	<table style="width: 100%;" >

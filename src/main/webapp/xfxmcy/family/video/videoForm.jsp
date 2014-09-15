@@ -54,7 +54,7 @@
 							    <option value="1">video</option>  
 							</select> 
 						</td>
-						<td>上传图片&nbsp; &nbsp;<input id="imagefirst" name="url" class="easyui-validatebox" id="linkStr"   value="${param.linkStr}" style="width:130px;" readonly="readonly" data-options="required:true"  /></td>
+						<td>上传文件&nbsp; &nbsp;<input id="imagefirst" name="url" class="easyui-validatebox" id="linkStr"   value="${param.linkStr}" style="width:130px;" readonly="readonly" data-options="required:true"  /></td>
 					</tr>
 					<tr>
 						<td>是否启用 &nbsp; &nbsp;

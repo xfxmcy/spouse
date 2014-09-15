@@ -26,6 +26,7 @@ import com.xfxmcy.spouse.constant.SpouseConstant;
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.model.SystemicInfo;
+import com.xfxmcy.spouse.pojo.SJWish;
 import com.xfxmcy.spouse.service.SyHomeService;
 import com.xfxmcy.spouse.vo.SYHome;
 
@@ -176,6 +177,32 @@ public class HomeController {
 		try{
 			syHome.setId(key);
 			syHomeServiceImpl.deleteHomePhoto(param, syHome);
+			info.setSuccess(true, "success");
+		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
+			logger.error(e.getMessage());
+		}
+		return info;
+	}
+	/**
+	 * 
+	 * doDreamAtBirthday:(这里用一句话描述这个方法的作用)
+	 *
+	 * @param param
+	 * @param wish
+	 * @param info
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年9月7日 		cy
+	 */
+	@RequestMapping("/dreamBirthday")
+	@ResponseBody
+	public SystemicInfo doContactUs(QueryParam param , SJWish wish,SystemicInfo info,HttpServletRequest request){
+		try{
+			wish.setSubject("guest");
+			syHomeServiceImpl.doContactUs(param,wish);
 			info.setSuccess(true, "success");
 		}catch(Exception e){
 			info.setSuccess(false, "system busy , please have a wait");

@@ -107,6 +107,34 @@ public class ResourceUtil {
 	}
 	/**
 	 * 
+	 * getMailAuthor: get second mail author
+	 *
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年9月7日 		cy
+	 */
+	public static final String getMailSecondAuthor() {
+		
+		return bundle.getString("mail.second.author.account");
+		
+	}
+	/**
+	 * 
+	 * getMailAuthor: get second mail passwd
+	 *
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年9月7日 		cy
+	 */
+	public static final String getMailSecondAuthorPasswd() {
+		
+		return bundle.getString("mail.second.author.passwd");
+		
+	}
+	/**
+	 * 
 	 * getMailAuthorPasswd:mail author passwd
 	 *
 	 * @return

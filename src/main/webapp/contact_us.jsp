@@ -12,7 +12,7 @@
 <script type="text/javascript">
 // <![CDATA[
 jQuery(document).ready(function(){
-	$('#contactform').submit(function(){				  
+	/* $('#contactform').submit(function(){				  
 		var action = $(this).attr('action');
 		//$('#contactform')
 		//	.before('<div class="loader"><img src="images/ajax-loader.gif" align="center" /></div>')
@@ -34,7 +34,37 @@ jQuery(document).ready(function(){
 			}
 		); 
 		return false;
+	}); */
+	$("#contactUs").click(function(){
+		var name = $('#name').val();
+		var email = $('#email').val();
+		var message = $('#message').val();
+		if(!name || !email || !message || name =="" || email =="" || message==""){
+			alert("请填写必填信息");
+			return ;
+		}
+		$.post("${cy}/home/dreamBirthday.ajax", {
+				name: $('#name').val(),
+				emailForm: $('#email').val(),
+				queryType:'simpleSave',
+				//phone: $('#phone').val(),
+				//concerning: $('#concerning').val(),
+				text: $('#message').val()
+			},function(data){
+				if(data.success){
+					$('#sendTip').html('谢谢您的留言,我们已经收到,我们会在5个工作日给您回复');
+					alert("谢谢您的留言,我们已经收到,我们会在5个工作日给您回复");
+				}else{
+					$('#sendTip').html('网络延迟,请重新发送...');
+					alert("网络延迟,请重新发送...");
+				}
+							
+			return false;
+		},'json');
+		$('#sendTip').html('正在发送... 请稍后');	
+		alert("正在发送请稍后....");
 	});
+	
 });
 // ]]>
 </script>
@@ -88,7 +118,7 @@ jQuery(document).ready(function(){
         <div class="clr"></div>
         <div class="block_text">
           <h2></h2>
-          <p><img src="${cy}/images/xfxmcy.png" width="150" height="110" hspace="10" vspace="0" align="left" alt="picture 1" /><strong>give us a change</strong>to  realize you</p>
+          <p><img src="${cy}/images/xfxmcy.png" width="150" height="110" hspace="10" vspace="0" align="left" alt="picture 1" /><strong>give us a change</strong>  to  realize you</p>
           <br />
           <p>&gt;&gt; contact us</p>
           <p>&nbsp;</p>
@@ -110,7 +140,9 @@ jQuery(document).ready(function(){
             <textarea id="message" name="message" rows="6" cols="50"></textarea>
           </li>
           <li class="buttons">
-            <input type="submit" value="send message" id="submit" />
+            <input type="button" value="send message" id="contactUs"   />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span id="sendTip" style="color: white;"></span>
           </li>
         </ol>
       </form>

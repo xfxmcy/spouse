@@ -32,6 +32,22 @@ public class SJWish {
 	}
 	private String text ; 
 	private String subject ;
+	private String name ;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	private String emailForm;
+	
+	public String getEmailForm() {
+		return emailForm;
+	}
+	public void setEmailForm(String emailForm) {
+		this.emailForm = emailForm;
+	}
 	public String getText() {
 		return text;
 	}

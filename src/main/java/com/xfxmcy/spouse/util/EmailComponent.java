@@ -69,6 +69,8 @@ public class EmailComponent {
 	
 	private MailSSLSocketFactory mailSslSf = null ;
 	
+	
+	
 	@SuppressWarnings("static-access")
 	public void sendSimpleEmail(SJWish wish){
 		props = new Properties();
@@ -104,6 +106,43 @@ public class EmailComponent {
 		
 		
 	}
+
+	
+	@SuppressWarnings("static-access")
+	public void sendEmailForUs(SJWish wish){
+		props = new Properties();
+		props.setProperty(this.MAIL_STMP_AUTH, ResourceUtil.getMailSmtpAuth());
+		props.setProperty(this.MAIL_TRANSPORT_PROTOCOL, this.EMAIL_PROTOCOL_SMTP);
+		try {
+			mailSslSf = new MailSSLSocketFactory();
+			mailSslSf.setTrustAllHosts(true);
+			props.put(this.MAIL_SMTP_SSL_ENABLE, "true");
+			props.put(this.MAIL_STMP_SSL_SOCKET, mailSslSf);
+			session = Session.getDefaultInstance(props);
+			msg = new MimeMessage(session); // 建立一个要发送的信息
+			msg.setText(wish.getName()+"	给您发的信息...\n\n\n"+wish.getText()+"	...\n\n\n....他的eamil ..." + wish.getEmailForm());// 设置简单的发送内容
+			msg.setFrom(new InternetAddress(ResourceUtil.getMailSecondAuthor()));// 发件人邮箱号
+			msg.setSubject(wish.getSubject());
+			transport = session.getTransport();// 发送信息的工具
+			transport.connect(ResourceUtil.getMailSmtpServer(), ResourceUtil.getSmtpPort(), ResourceUtil.getMailSecondAuthor(), ResourceUtil.getMailSecondAuthorPasswd());
+			
+																					// 和密码
+			// transport.connect("smtp.exmail.qq.com", 25,
+			// "wenjian_332401890@qq.com", "MEIY0Umima");// 发件人邮箱号
+			/*transport.sendMessage(msg, new Address[] { new InternetAddress(
+					ResourceUtil.getMailSender()) ,  new InternetAddress(
+					ResourceUtil.getMailSenderSecond())});*/
+			transport.sendMessage(msg, new Address[] { new InternetAddress(
+					ResourceUtil.getMailAuthor())});
+			transport.close();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			e.printStackTrace();
+			
+		}
 		
+		
+	}
+	
 }
 

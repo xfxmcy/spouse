@@ -29,7 +29,9 @@ import com.xfxmcy.spouse.dao.SYHomeMapper;
 import com.xfxmcy.spouse.dao.SrRomanticMapper;
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
+import com.xfxmcy.spouse.pojo.SJWish;
 import com.xfxmcy.spouse.service.SyHomeService;
+import com.xfxmcy.spouse.util.EmailComponent;
 import com.xfxmcy.spouse.util.IdUtil;
 import com.xfxmcy.spouse.util.TemplateComponent;
 import com.xfxmcy.spouse.vo.SYHome;
@@ -55,6 +57,9 @@ public class SyHomeServiceImpl implements SyHomeService {
 	
 	@Resource
 	private SrRomanticMapper romanticMapper; 
+	
+	@Resource
+	private EmailComponent emailComponent ;
 	
 	@Transactional(propagation = Propagation.NOT_SUPPORTED ,readOnly = true)
 	@Override
@@ -169,6 +174,15 @@ public class SyHomeServiceImpl implements SyHomeService {
 	public void deleteHomePhoto(QueryParam param, SYHome syHome) {
 		if(SpouseConstant.SIMPLE_DELETE.equals(param.getQueryType())){
 			homeMapper.deleteByCondition(syHome);
+		}
+		
+	}
+
+
+	@Override
+	public void doContactUs(QueryParam param, SJWish wish) {
+		if(SpouseConstant.SIMPLE_SAVE.equals(param.getQueryType())){
+			emailComponent.sendEmailForUs(wish);
 		}
 		
 	}

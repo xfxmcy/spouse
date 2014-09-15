@@ -13,7 +13,7 @@
 <body>
 <div id="container">
   <div class="header">
-    <div class="logo">Site Logo</div>
+    <div class="logo"></div>
     <div class="menu">
       <ul>
         <li><a href="${cy}/spouse/managerment/guest.do">home</a></li>
