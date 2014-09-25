@@ -203,5 +203,20 @@ public class ResourceUtil {
 
 		return bundle.getString("mail.transport.sender.second.account");
 	}
+	
+	/**
+	 * 
+	 * getPop3Port:get port for pop3
+	 *
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年9月16日 		cy
+	 */
+	public static int getPop3Port() {
+		
+		return Integer.valueOf(bundle.getString("mail.pop3.port"));
+		
+	}
 }
 

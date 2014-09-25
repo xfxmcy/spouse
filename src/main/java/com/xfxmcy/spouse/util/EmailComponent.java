@@ -16,8 +16,12 @@ package com.xfxmcy.spouse.util;
 import java.util.Properties;
 
 import javax.mail.Address;
+import javax.mail.Folder;
 import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
+import javax.mail.Store;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -70,7 +74,15 @@ public class EmailComponent {
 	private MailSSLSocketFactory mailSslSf = null ;
 	
 	
-	
+	/**
+	 * 
+	 * sendSimpleEmail: send an email for jing birthday
+	 *
+	 * @param wish
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年9月16日 		cy
+	 */
 	@SuppressWarnings("static-access")
 	public void sendSimpleEmail(SJWish wish){
 		props = new Properties();
@@ -107,7 +119,15 @@ public class EmailComponent {
 		
 	}
 
-	
+	/**
+	 * 
+	 * sendEmailForUs: send an email in contact_us page
+	 *
+	 * @param wish
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年9月16日 		cy
+	 */
 	@SuppressWarnings("static-access")
 	public void sendEmailForUs(SJWish wish){
 		props = new Properties();
@@ -142,6 +162,23 @@ public class EmailComponent {
 		}
 		
 		
+	}
+	
+	
+	
+	public void receiveEmail(){
+		props = new Properties();
+		props.setProperty(this.MAIL_STMP_AUTH, ResourceUtil.getMailSmtpAuth());
+		props.setProperty(this.MAIL_TRANSPORT_PROTOCOL, this.EMAIL_PROTOCOL_POP3);
+		Session session = Session.getInstance(props); 
+        try {
+			Store store = session.getStore("pop3"); 
+			store.connect(ResourceUtil.getMailSmtpServer(), ResourceUtil.getPop3Port(), ResourceUtil.getMailSecondAuthor(), ResourceUtil.getMailSecondAuthorPasswd());
+			Folder folder = store.getFolder("INBOX");
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+			e.printStackTrace();
+		}
 	}
 	
 }

@@ -99,14 +99,6 @@
 	<session-config>
 		<session-timeout>15</session-timeout>
 	</session-config>	
-  
-  
-  
-  
-  
-  
-  
-  
   <welcome-file-list>
   	<welcome-file>app/love/index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>

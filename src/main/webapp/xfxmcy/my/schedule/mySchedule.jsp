@@ -5,6 +5,7 @@
 <html>
 <jsp:include page="/xfxmcy/initialEasyUI.jsp"></jsp:include>
 <head>
+<link rel='stylesheet' href='${cy}/js/fullcalendar/cupertino/jquery-ui.min.css' />
 <link rel="stylesheet" href="${cy}/js/fullcalendar/fullcalendar.css"/>
 <link rel="stylesheet" href="${cy}/js/fullcalendar/fancybox.css"/>
 <script type="text/javascript" src="${cy}/js/jquery-easyui-cy/jquery-1.9.1.js"></script>
@@ -16,11 +17,12 @@
 $(function() { 
 	//$("body").css("visibility","visible");
 	$('#calendar').fullCalendar({
-		//theme: false,  
+		//theme: false,
+		theme: true,
         editable:true,  
         header: {     
            left:  'prev,next',    
-           center: 'today',  
+           center: 'title',  
            right: 'month,agendaWeek,agendaDay' //right: 'month,agendaWeek,agendaDay'    
         },
         axisFormat: 'H(:mm)tt',
@@ -43,15 +45,29 @@ $(function() {
         height : 400,
         weekMode : 'liquid',
         currentTimezone: 'Asia/Beijing',
-        /**
+        /**/
         dayClick: function(date, allDay, jsEvent, view) { 
-            var selDate =$.fullCalendar.formatDate(date,'yyyy-MM-dd');//格式化日期 
-            console.info(date+","+allDay+","+jsEvent+","+view);
+           // var selDate =$.fullCalendar.formatDate(date,'yyyy-MM-dd');//格式化日期 
+            //console.info(date+","+allDay+","+jsEvent+","+view);
+          
             $.fancybox({//调用fancybox弹出层 
-                'href':'#inline'
+            	
+                'href':'${cy}/xfxmcy/my/schedule/task.jsp',
+                /* 'transitionIn'  :   'elastic',
+                'transitionOut' :   'elastic',
+                'speedIn'       :   600, 
+                'speedOut'      :   200  */
+                'width':'75%',
+    			'height':'75%',
+    			'autoScale':false,
+    			'transitionIn':'none',
+    			'transitionOut':'none',
+    			'type':'iframe'
+                //'overlayShow'   :   false
             }); 
+            
         },
-       **/
+       /**/
        eventClick: function(calEvent) {
            window.open(calEvent.url);
            return false;
@@ -115,7 +131,7 @@ $(function() {
 
 <body>
 	 <div style="font-family: 楷体;margin-top: 2%">
-	      <div id="calendar"></div>
+	      <div id="calendar" align="center"></div>
 		  <div style="display:none">
 	  			<div id="inline" style="width:400px; height:160px; overflow:auto">
 	     		</div>

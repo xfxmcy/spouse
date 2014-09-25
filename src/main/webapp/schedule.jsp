@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${cy}/style.css" rel="stylesheet" type="text/css" />
 </head>
-
+<link rel='stylesheet' href='${cy}/js/fullcalendar/cupertino/jquery-ui.min.css' />
 <link rel="stylesheet" href="${cy}/js/fullcalendar/fullcalendar.css"/>
 <link rel="stylesheet" href="${cy}/js/fullcalendar/fancybox.css"/>
 <script type="text/javascript" src="${cy}/js/jquery-easyui-cy/jquery-1.9.1.js"></script>
@@ -21,11 +21,11 @@
 $(function() { 
 	//$("body").css("visibility","visible");
 	$('#calendar').fullCalendar({
-		theme: false,  
+		theme: true,  
         editable:false,  
         header: {     
            left:  'prev,next',    
-           center: 'today',  
+           center: 'title',  
            right: 'month,agendaWeek,agendaDay' //right: 'month,agendaWeek,agendaDay'    
         },
         axisFormat: 'H(:mm)tt',
@@ -112,6 +112,7 @@ $(function() {
         }
 		
 	});
+	$('.fc-header-title h2').css('color','blue');
 }); 
 </script>
 <body>
