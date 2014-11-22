@@ -16,6 +16,7 @@ package com.xfxmcy.spouse.service;
 import java.util.ArrayList;
 
 import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.util.SessionUser;
 import com.xfxmcy.spouse.vo.Tasks;
 
 /**
@@ -43,5 +44,43 @@ public interface TaskService {
 	 *   		 2014年5月30日 		cy
 	 */
 	public ArrayList<Tasks> doQuery(QueryParam param);
+	
+	/**
+	 * 
+	 * persistenceTask:persisten a task
+	 *
+	 * @param param
+	 * @param task
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年9月30日 		cy
+	 */
+	Tasks persistenceTask(QueryParam param,Tasks task,SessionUser user);
+	
+	/**
+	 * 
+	 * mergeTask:merge a task
+	 *
+	 * @param param
+	 * @param task
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年9月30日 		cy
+	 */
+	Tasks mergeTask(QueryParam param,Tasks task);
+	
+	/**
+	 * 
+	 * deleteFavorite: delete tasks
+	 *
+	 * @param param	   query param	
+	 * @param key	   primary 	key
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年1月17日 		cy
+	 */
+	void deleteTask(QueryParam param,String key);
 }
 

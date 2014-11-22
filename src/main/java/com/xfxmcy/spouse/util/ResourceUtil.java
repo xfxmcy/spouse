@@ -218,5 +218,20 @@ public class ResourceUtil {
 		return Integer.valueOf(bundle.getString("mail.pop3.port"));
 		
 	}
+	
+	/**
+	 * 
+	 * getMeialTempaltePath: get media  's tempalte path
+	 *
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年11月22日 		cy
+	 */
+	public static String getMediaTempaltePath() {
+		
+		return bundle.getString("media.template");
+		
+	}
 }
 

@@ -19,6 +19,7 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
+import org.dom4j.Document;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +30,8 @@ import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.service.VideoService;
 import com.xfxmcy.spouse.util.IdUtil;
-import com.xfxmcy.spouse.vo.SMFavorite;
+import com.xfxmcy.spouse.util.ResourceUtil;
+import com.xfxmcy.spouse.util.XmlComponent;
 import com.xfxmcy.spouse.vo.SMVideo;
 
 /**
@@ -56,6 +58,9 @@ public class VideoServiceImpl implements VideoService {
 	/*mapper*/
 	@Resource
 	private SMVideoMapper smVideoMapper ;
+	
+	@Resource
+	private XmlComponent xmlComponent;
 	
 	
 	@Override
@@ -107,6 +112,20 @@ public class VideoServiceImpl implements VideoService {
 			return smVideoMapper.selectByPrimaryKey(id);
 		}
 		return null ;
+	}
+
+	@Transactional(propagation = Propagation.NOT_SUPPORTED ,readOnly = true)
+	@Override
+	public void contractMusicialTemplate(QueryParam param) {
+		
+		if(SpouseConstant.SIMPLE_QUERY_ONLY.equals(param.getQueryType())){
+			 List<SMVideo> list = smVideoMapper.queryVideoPaged(param);
+			 if(null == list || 0 == list.size())
+				 return ;
+			 Document doc = xmlComponent.createDocument(list);
+			 xmlComponent.writeXmlFile(doc, param.getBaseUrl() + ResourceUtil.getMediaTempaltePath());
+		}
+		
 	}
 
 }

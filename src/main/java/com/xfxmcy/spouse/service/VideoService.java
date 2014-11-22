@@ -84,5 +84,14 @@ public interface VideoService {
 	 *   		 2014年7月27日 		cy
 	 */
 	public SMVideo queryVideoByPK(QueryParam param , String id);
+	/**
+	 * 
+	 * contractMusicialTemplate:contract	a  musicialTemplate
+	 *
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年11月22日 		cy
+	 */
+	public void contractMusicialTemplate(QueryParam param);
 }
 

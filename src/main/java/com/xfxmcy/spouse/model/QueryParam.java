@@ -185,6 +185,14 @@ public class QueryParam {
 		// TODO Auto-generated constructor stub
 
 	}
+	private String baseUrl ;
+
+	public String getBaseUrl() {
+		return baseUrl;
+	}
+	public void setBaseUrl(String baseUrl) {
+		this.baseUrl = baseUrl;
+	}
 	
 }
 

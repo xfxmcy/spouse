@@ -28,7 +28,9 @@ import com.xfxmcy.spouse.constant.SpouseConstant;
 import com.xfxmcy.spouse.dao.STTaskMapper;
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.service.TaskService;
+import com.xfxmcy.spouse.util.IdUtil;
 import com.xfxmcy.spouse.util.ResourceUtil;
+import com.xfxmcy.spouse.util.SessionUser;
 import com.xfxmcy.spouse.vo.Tasks;
 
 /**
@@ -69,6 +71,32 @@ public class TaskServiceImpl implements TaskService {
 		map.put(SpouseConstant.SQL_END, param.getEnd());
 		return mapper.selectByCondition(map);
 
+	}
+
+	@Override
+	public Tasks persistenceTask(QueryParam param, Tasks task,SessionUser user) {
+		if(SpouseConstant.SIMPLE_SAVE.equals(param.getQueryType())){
+			task.setId(IdUtil.generaterThrityTwo());
+			task.setUserid(user.getUserId());
+			mapper.insertSelective(task);
+		}
+		return task;
+		
+	}
+
+	@Override
+	public Tasks mergeTask(QueryParam param, Tasks task) {
+		
+		// TODO Auto-generated method stub
+		return null;
+		
+	}
+
+	@Override
+	public void deleteTask(QueryParam param, String key) {
+		
+		// TODO Auto-generated method stub
+		
 	}
 
 }

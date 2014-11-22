@@ -42,6 +42,29 @@ public interface STTaskMapper {
 	 *   		 2014年5月30日 		cy
 	 */
 	ArrayList<Tasks> selectByCondition(Map<String,Object> mapParam); 
+	
+	/**
+	 * 
+	 * deleteByPrimaryKey:delete by id
+	 *
+	 * @param id
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年5月30日 		cy
+	 */
+    int deleteByPrimaryKey(String id);
+    /**
+     * 
+     * insertSelective:insert a record
+     *
+     * @param record	record
+     * @return
+     *   ver     date      		author
+     * ──────────────────────────────────
+     *   		 2014年5月30日 		cy
+     */
+    int insertSelective(Tasks record);
 
 }
 

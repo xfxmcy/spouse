@@ -28,6 +28,10 @@
     	 <if test="likeNameFirst != null" >
     	  	name like #{likeNameFirst,jdbcType=VARCHAR} 
     	 </if>
+    	 <if test="queryType != null" >
+    	  	type = #{queryType,jdbcType=VARCHAR} 
+    	 </if>
+    	 
     </where>
 
     <if test="page != null">

@@ -43,6 +43,11 @@ public class SpouseEntityConstant {
 	/*video type _music*/
 	public static final Integer VIDEO_TYPE_MUSIC = 0;
 	
+	/*task resource*/
+	/*created in schedule model*/
+	public static final String TASK_TYPE_SCHEDULE = "1";
+	/*created automatically*/
+	public static final String TASK_TYPE_AUTO = "0";
 	
 }
 

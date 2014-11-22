@@ -137,5 +137,28 @@ private static final Logger logger = Logger.getLogger(TaskController.class);
 			logger.error(e.getMessage());
 		}
 		return info;
-	} 
+	}
+	/**
+	 * 
+	 * changeMusicTemplate:  make a template for music
+	 *
+	 * @param info
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年11月22日 		cy
+	 */
+	@RequestMapping("/templateMusic")
+	@ResponseBody
+	public SystemicInfo changeMusicTemplate(QueryParam param , SystemicInfo info ,HttpServletRequest request){
+		try{
+			param.setBaseUrl(request.getSession().getServletContext().getRealPath("/"));
+			videoServiceImpl.contractMusicialTemplate(param);
+			info.setSuccess(true, "success");
+		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
+			logger.error(e.getMessage());
+		}
+		return info;
+	}
 }

@@ -65,7 +65,7 @@
 	</delete>
 	
 	
-	<insert id="insert" parameterType="com.xfxmcy.spouse.vo.SrRomanticWithBLOBs">
+	<insert id="insert" parameterType="com.xfxmcy.spouse.vo.Tasks">
 		insert into sr_romantic (id, date, dateClass,
 		imageFirst, imageSecond, isYear,
 		title, contentFirst, contentSecond
@@ -77,7 +77,7 @@
 		#{contentsecond,jdbcType=LONGVARCHAR}
 		)
 	</insert>
-	<insert id="insertSelective" parameterType="com.xfxmcy.spouse.vo.SrRomanticWithBLOBs">
+	<insert id="insertSelective" parameterType="com.xfxmcy.spouse.vo.Tasks">
 		insert into sr_romantic
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			<if test="id != null">
@@ -145,7 +145,7 @@
 			</if>
 		</trim>
 	</insert>
-	<update id="updateByPrimaryKeySelective" parameterType="com.xfxmcy.spouse.vo.SrRomanticWithBLOBs">
+	<update id="updateByPrimaryKeySelective" parameterType="com.xfxmcy.spouse.vo.Tasks">
 		update sr_romantic
 		<set>
 			<if test="date != null">
@@ -178,7 +178,7 @@
 		</set>
 		where id = #{id,jdbcType=VARCHAR}
 	</update>
-	<update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xfxmcy.spouse.vo.SrRomanticWithBLOBs">
+	<update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xfxmcy.spouse.vo.Tasks">
 		update sr_romantic
 		set date = #{date,jdbcType=VARCHAR},
 		dateClass = #{dateclass,jdbcType=VARCHAR},
@@ -191,7 +191,7 @@
 		contentClass = #{contentclass,jdbcType=LONGVARCHAR}
 		where id = #{id,jdbcType=VARCHAR}
 	</update>
-	<update id="updateByPrimaryKey" parameterType="com.xfxmcy.spouse.vo.SrRomantic">
+	<update id="updateByPrimaryKey" parameterType="com.xfxmcy.spouse.vo.Tasks">
 		update sr_romantic
 		set date = #{date,jdbcType=VARCHAR},
 		dateClass = #{dateclass,jdbcType=VARCHAR},

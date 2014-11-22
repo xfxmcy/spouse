@@ -41,7 +41,7 @@ $(function() {
           day: '日' 
         },  
         //minTime : 7,
-        editable: false,  
+        //editable: false,  
         height : 400,
         weekMode : 'liquid',
         currentTimezone: 'Asia/Beijing',
@@ -52,12 +52,12 @@ $(function() {
           
             $.fancybox({//调用fancybox弹出层 
             	
-                'href':'${cy}/xfxmcy/my/schedule/task.jsp',
+                'href':'${cy}/xfxmcy/my/schedule/task.jsp?type=add',
                 /* 'transitionIn'  :   'elastic',
                 'transitionOut' :   'elastic',
                 'speedIn'       :   600, 
                 'speedOut'      :   200  */
-                'width':'75%',
+                'width':'85%',
     			'height':'75%',
     			'autoScale':false,
     			'transitionIn':'none',
@@ -69,8 +69,42 @@ $(function() {
         },
        /**/
        eventClick: function(calEvent) {
-           window.open(calEvent.url);
+           /* window.open(calEvent.url);
+           return false; */
+    	   $.fancybox({//调用fancybox弹出层 
+            'href':'${cy}/xfxmcy/my/schedule/task.jsp?type=update',
+            'width':'85%',
+   			'height':'75%',
+   			'autoScale':false,
+   			'transitionIn':'none',
+   			'transitionOut':'none',
+   			'type':'iframe'
+               //'overlayShow'   :   false
+           }); 
            return false;
+
+       },
+       eventDragStart:function(event,jsEvent,ui,view) { 
+       },
+       eventDragStop:function( event, jsEvent, ui, view ) { 
+       },
+       eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) {
+		   console.info(event);
+          /*  alert(
+               event.title + " was moved " +
+               dayDelta + " days and " +
+               minuteDelta + " minutes."
+           ); */
+
+           if (allDay) {
+               alert("Event is now all-day");
+           }else{
+               alert("Event has a time-of-day");
+           }
+
+           if (!confirm("你确定要改变此任务吗?")) {
+               revertFunc();
+           }
 
        },
         events: function(start,end, callback) {
@@ -88,7 +122,8 @@ $(function() {
                     $(result).each(function() {
                  	   if($(this).attr('end')!="" && $(this).attr('end') != undefined){
                  		   events.push({
-                 			   title : $(this).attr('title'),
+                 			  	eid : $(this).attr('id'),
+                 			    title : $(this).attr('title'),
                                 url : $(this).attr('url'),
                                 businessId : $(this).attr('businessId'),
                                 taskFrom:$(this).attr('taskFrom'),
@@ -101,6 +136,7 @@ $(function() {
                             }); 
                  	   }else{
                  		   events.push({
+                 			  eid : $(this).attr('id'),
                  			  title : $(this).attr('title'),
                               url : $(this).attr('url'),
                               businessId : $(this).attr('businessId'),
