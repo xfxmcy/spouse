@@ -13,6 +13,7 @@
 
 package com.xfxmcy.spouse.service.impl;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +78,8 @@ public class SyHomeServiceImpl implements SyHomeService {
 			List<SYHome> smallPhotos = homeMapper.selectByCondition(mapParam);
 			mapTemplate.put("bigPhoto", bigPhotos);
 			mapTemplate.put("smallPhoto", smallPhotos);
+			File previous = new File(param.getMemoFirst()+SpouseConstant.Home.MARKER_PATH_INDEX);
+			previous.deleteOnExit();
 			TemplateComponent.getTemplateCom().filePrint(SpouseConstant.Home.MARKER_PATH_INDEX_FTL, mapTemplate, param.getMemoFirst()+SpouseConstant.Home.MARKER_PATH_INDEX);
 			
 		}
