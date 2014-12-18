@@ -28,8 +28,8 @@
     	 <if test="likeNameFirst != null" >
     	  	name like #{likeNameFirst,jdbcType=VARCHAR} 
     	 </if>
-    	 <if test="queryType != null" >
-    	  	type = #{queryType,jdbcType=VARCHAR} 
+    	 <if test="photoType != null" >
+    	  	and type = #{photoType,jdbcType=VARCHAR} 
     	 </if>
     	 
     </where>
@@ -40,10 +40,13 @@
   </select>
    <!-- query the count -->
   <select id="queryCountVideo" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.model.QueryParam" >
-		select count(*) from sm_favorite
+		select count(*) from sm_video
 	<where>
     	 <if test="likeNameFirst != null">
-    	  	name like #{likeNameFirst,jdbcType=VARCHAR} and
+    	  	name like #{likeNameFirst,jdbcType=VARCHAR}
+    	 </if>
+    	 <if test="photoType != null" >
+    	  	and type = #{photoType,jdbcType=VARCHAR} 
     	 </if>
     </where>
   </select>

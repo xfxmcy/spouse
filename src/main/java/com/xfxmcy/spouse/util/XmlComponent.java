@@ -50,7 +50,7 @@ public class XmlComponent {
 	private static final String MEDIA_TAG_MUSIC = "track";
 	/*music*/
 	private static final String MEDIA_TAG_MUSIC_FILE = "file";
-	private static final String MEDIA_TAG_MUSIC_FILE_BAICURL = "http://www.xfxmcy.com/";
+	private static final String MEDIA_TAG_MUSIC_FILE_BAICURL = "http://www.xfxmcy.com";
 	private static final String MEDIA_TAG_MUSIC_TITLE = "title";
 	private static final String MEDIA_TAG_MUSIC_ARTIST = "artist";
 	private static final String MEDIA_TAG_MUSIC_ALBUM = "album";
@@ -68,11 +68,13 @@ public class XmlComponent {
         Element music , fileDoc , titleDoc , artistDoc ,albumDoc ;
         /*each music*/
         for (SMVideo smVideo : list) {
+        	smVideo.setArtist("周杰伦");
+        	smVideo.setAlbum("依然范特西");
         	music = musicList.addElement(this.MEDIA_TAG_MUSIC);
 			fileDoc = music.addElement(this.MEDIA_TAG_MUSIC_FILE);
-			fileDoc.setText(MEDIA_TAG_MUSIC_FILE_BAICURL + smVideo.getName());
+			fileDoc.setText(MEDIA_TAG_MUSIC_FILE_BAICURL + smVideo.getUrl());
 			titleDoc = music.addElement(this.MEDIA_TAG_MUSIC_TITLE);
-			titleDoc.setText(smVideo.getDescription());
+			titleDoc.setText(smVideo.getName());
 			artistDoc = music.addElement(this.MEDIA_TAG_MUSIC_ARTIST);
 			artistDoc.setText(smVideo.getArtist());
 			albumDoc = music.addElement(this.MEDIA_TAG_MUSIC_ALBUM);

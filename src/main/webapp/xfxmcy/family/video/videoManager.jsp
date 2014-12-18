@@ -93,7 +93,17 @@ function deleteVideoAble(id){
 }
 /*构建 setting file*/
 function constructSetting(){
-	
+	parent.simpleMessConf.call(this,
+				 'warning',
+				 'do you want refresh musicial template ?',
+				 function(result){
+					if(result){
+						$.post('${cy}/video/templateMusic.do',"queryType=simpleQueryOnly",function(json){
+								parent.simpleMessAlert.call(this,'提示',json.message);
+							},'json');
+					}
+				}
+		);
 }
 function updateVideoAble(id){
 	mainDialog = parent.cy.dialog({

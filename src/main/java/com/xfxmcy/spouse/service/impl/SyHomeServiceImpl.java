@@ -20,12 +20,14 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xfxmcy.spouse.constant.SpouseConstant;
 import com.xfxmcy.spouse.constant.SpouseEntityConstant;
+import com.xfxmcy.spouse.controller.home.HomeController;
 import com.xfxmcy.spouse.dao.SYHomeMapper;
 import com.xfxmcy.spouse.dao.SrRomanticMapper;
 import com.xfxmcy.spouse.model.QueryParam;
@@ -52,7 +54,7 @@ import com.xfxmcy.spouse.vo.SYHome;
 @Transactional
 @Service
 public class SyHomeServiceImpl implements SyHomeService {
-
+	private static final Logger logger = Logger.getLogger(SyHomeService.class);
 	@Resource
 	private SYHomeMapper homeMapper ;
 	
@@ -78,8 +80,11 @@ public class SyHomeServiceImpl implements SyHomeService {
 			List<SYHome> smallPhotos = homeMapper.selectByCondition(mapParam);
 			mapTemplate.put("bigPhoto", bigPhotos);
 			mapTemplate.put("smallPhoto", smallPhotos);
-			File previous = new File(param.getMemoFirst()+SpouseConstant.Home.MARKER_PATH_INDEX);
-			previous.deleteOnExit();
+			File origin = new File(param.getMemoFirst()+SpouseConstant.Home.MARKER_PATH_INDEX);
+        	if(null != origin && origin.exists()){
+        		origin.delete();
+        		logger.error("------/ index.jsp----------------deleted");
+        	}
 			TemplateComponent.getTemplateCom().filePrint(SpouseConstant.Home.MARKER_PATH_INDEX_FTL, mapTemplate, param.getMemoFirst()+SpouseConstant.Home.MARKER_PATH_INDEX);
 			
 		}
