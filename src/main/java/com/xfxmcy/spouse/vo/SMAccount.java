@@ -1,6 +1,8 @@
 package com.xfxmcy.spouse.vo;
 
-public class SMAccount {
+import java.io.Serializable;
+
+public class SMAccount implements Serializable{
     private String id;
 
     private String account;

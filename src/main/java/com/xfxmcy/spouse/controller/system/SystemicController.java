@@ -141,6 +141,18 @@ public class SystemicController {
 	@RequestMapping("/login/{path}")
 	@ResponseBody
 	public SystemicInfo systemicLogin(@PathVariable String path , SPEmployer employer,SystemicInfo sysInfo,HttpServletRequest request) {
+		String code_a = request.getParameter("tvery");
+		String code_b = (String)request.getSession().getAttribute("rand");
+		 
+	    if ((code_a == null) || (code_b == null)) {
+	    	sysInfo.setSuccess(false,"验证码丢失，请重新输入.");
+			return sysInfo;
+		}
+		      
+		if (!code_a.equals(code_b)) {
+			sysInfo.setSuccess(false,"验证码错误.");
+		    return sysInfo;
+		}	  
 		SPEmployer result = systemServiceImpl.doLogin(path,employer);
 		/*result*/
 		if(null != result){

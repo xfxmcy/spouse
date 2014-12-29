@@ -1,8 +1,9 @@
 package com.xfxmcy.spouse.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SMMemo {
+public class SMMemo implements Serializable{
 	
     private String id;
 

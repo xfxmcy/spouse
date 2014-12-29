@@ -58,7 +58,7 @@ $(function() {
                 'speedIn'       :   600, 
                 'speedOut'      :   200  */
                 'width':'85%',
-    			'height':'75%',
+    			'height':'62%',
     			'autoScale':false,
     			'transitionIn':'none',
     			'transitionOut':'none',
@@ -74,7 +74,7 @@ $(function() {
     	   $.fancybox({//调用fancybox弹出层 
             'href':'${cy}/xfxmcy/my/schedule/task.jsp?type=update',
             'width':'85%',
-   			'height':'75%',
+   			'height':'62%',
    			'autoScale':false,
    			'transitionIn':'none',
    			'transitionOut':'none',

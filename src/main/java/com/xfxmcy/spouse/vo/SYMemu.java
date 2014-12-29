@@ -1,6 +1,8 @@
 package com.xfxmcy.spouse.vo;
 
-public class SYMemu {
+import java.io.Serializable;
+
+public class SYMemu implements Serializable{
     private String id;
 
     public String iconCls ;

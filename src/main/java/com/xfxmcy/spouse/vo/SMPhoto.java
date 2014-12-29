@@ -1,8 +1,9 @@
 package com.xfxmcy.spouse.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SMPhoto {
+public class SMPhoto implements Serializable{
     private String id;
 
     private String url;

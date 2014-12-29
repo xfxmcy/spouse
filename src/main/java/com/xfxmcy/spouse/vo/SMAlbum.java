@@ -1,8 +1,9 @@
 package com.xfxmcy.spouse.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SMAlbum {
+public class SMAlbum implements Serializable{
     private String id;
 
     private Long seq;

@@ -1,10 +1,11 @@
 package com.xfxmcy.spouse.vo;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class SMFavorite {
+public class SMFavorite implements Serializable{
     private String id;
 
     private String url;

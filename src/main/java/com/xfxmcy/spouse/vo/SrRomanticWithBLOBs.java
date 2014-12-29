@@ -1,6 +1,8 @@
 package com.xfxmcy.spouse.vo;
 
-public class SrRomanticWithBLOBs extends SrRomantic {
+import java.io.Serializable;
+
+public class SrRomanticWithBLOBs extends SrRomantic implements Serializable{
     private String title;
 
     private String contentfirst;

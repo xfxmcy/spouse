@@ -1,9 +1,11 @@
 package com.xfxmcy.spouse.vo;
 
+import java.io.Serializable;
+
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
-public class SPEmployer {
+public class SPEmployer implements Serializable{
     private String id;
 
     private String sAccount;

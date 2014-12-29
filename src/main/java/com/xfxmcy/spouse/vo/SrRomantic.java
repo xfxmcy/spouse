@@ -1,12 +1,13 @@
 package com.xfxmcy.spouse.vo;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class SrRomantic {
+public class SrRomantic implements Serializable{
     private String id;
     
     @DateTimeFormat(pattern="yyyy-MM-dd")

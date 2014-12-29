@@ -8,6 +8,7 @@
   <description/>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <cluster.msm.version>1.6.5</cluster.msm.version>
   </properties>
   <dependencies>
 		<!-- junit -->
@@ -237,6 +238,29 @@
   			<artifactId>dom4j</artifactId>
 			<version>1.6.1</version>
 		</dependency>
+		<!-- cluster -->
+		<dependency>
+			<groupId>msm-flexjson-serializer</groupId>
+  			<artifactId>msm-flexjson-serializer</artifactId>
+			<version>${cluster.msm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>msm-javolution-serializer</groupId>
+  			<artifactId>msm-javolution-serializer</artifactId>
+			<version>${cluster.msm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>msm-kryo-serializer</groupId>
+  			<artifactId>msm-kryo-serializer</artifactId>
+			<version>${cluster.msm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>msm-xstream-serializer</groupId>
+  			<artifactId>msm-xstream-serializer</artifactId>
+			<version>${cluster.msm.version}</version>
+		</dependency>
+			
+		
 		
   </dependencies>
 	<build>

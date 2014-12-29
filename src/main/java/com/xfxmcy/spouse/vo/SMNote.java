@@ -1,8 +1,9 @@
 package com.xfxmcy.spouse.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SMNote {
+public class SMNote implements Serializable{
     private String id;
 
     private String bookId;

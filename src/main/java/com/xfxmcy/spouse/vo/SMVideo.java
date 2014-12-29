@@ -1,10 +1,11 @@
 package com.xfxmcy.spouse.vo;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class SMVideo {
+public class SMVideo implements Serializable{
 	private String id;
 	private String name;
 	private String url;

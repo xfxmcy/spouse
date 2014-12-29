@@ -1,6 +1,8 @@
 package com.xfxmcy.spouse.vo;
 
-public class SYHome {
+import java.io.Serializable;
+
+public class SYHome implements Serializable{
     private String id;
 
     private String name;

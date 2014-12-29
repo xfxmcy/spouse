@@ -12,6 +12,9 @@
 */
 
 package com.xfxmcy.spouse.util;
+
+import java.io.Serializable;
+
 /**
  * ClassName:SessionUser
  * Function: information which saving current user
@@ -24,7 +27,7 @@ package com.xfxmcy.spouse.util;
  *
  * @see 	 
  */
-public class SessionUser {
+public class SessionUser implements Serializable{
 	/*当前登录人id*/
 	private String userId;
 	/*当前登录人 name*/

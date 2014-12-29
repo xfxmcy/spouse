@@ -50,7 +50,7 @@ public class XmlComponent {
 	private static final String MEDIA_TAG_MUSIC = "track";
 	/*music*/
 	private static final String MEDIA_TAG_MUSIC_FILE = "file";
-	private static final String MEDIA_TAG_MUSIC_FILE_BAICURL = "http://www.xfxmcy.com";
+	private static final String MEDIA_TAG_MUSIC_FILE_BAICURL = "http://www.xfxmcy.com/resource/upload/";
 	private static final String MEDIA_TAG_MUSIC_TITLE = "title";
 	private static final String MEDIA_TAG_MUSIC_ARTIST = "artist";
 	private static final String MEDIA_TAG_MUSIC_ALBUM = "album";

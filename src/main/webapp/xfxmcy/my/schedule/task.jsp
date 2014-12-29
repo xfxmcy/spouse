@@ -12,7 +12,7 @@
 	
 	<form action="" method="post" id="taskInfo" > 
 		<table class="tableForm datagrid-toolbar"
-					style="width: 100%;height: 110px;">
+					style="width: 100%;height: 90%;">
 					<tr>
 						<td>任务名称 &nbsp; &nbsp;<input id="dd" class="easyui-validatebox"  name="title" type="text"  required="required" style="width: 130px;"></input></td>
 						<td>任务描述 &nbsp; &nbsp;<input name="descri" id="dateclass"   style="width:300px;" />
@@ -62,6 +62,8 @@
 			$.post('${cy}/task/taskPersistent.do',taskForm,function(json){
 				parent.parent.simpleMessAlert.call(this,'提示',json.message);
 				if (json.success) {
+					
+					//parent.$('#calendar')
 					parent.$.fancybox.close();
 					
 				}

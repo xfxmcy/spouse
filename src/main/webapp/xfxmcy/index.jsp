@@ -192,7 +192,7 @@
 
 	<!-- login -->
 	<div id="loginAndRegDialog"
-		style="width:260px;height:180px;display: none;overflow: hidden;">
+		style="width:260px;height:190px;display: none;overflow: hidden;">
 		<div title="输入方式" style="overflow: hidden;">
 			<div class="info">
 				<div class="tip icon-tip"></div>
@@ -213,6 +213,13 @@
 								type="password" class="easyui-validatebox" required="true"
 								missingMessage="请填写登录密码" style="width: 145px;" /></td>
 
+						</tr>
+						<tr>
+							<th>验证码</th>
+							<td>
+								<input type="text" 	size="4" class="txt" name="tvery" id="tvery" value="" maxlength="4" style="width:50px"/> 
+								<img src="${cy}/xfxmcy/checkcode.jsp" align="absmiddle" />
+							</td>
 						</tr>
 					</table>
 				</form>
