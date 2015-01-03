@@ -14,6 +14,12 @@
 <script type="text/javascript" src="${cy}/js/fullcalendar/jquery.fancybox-1.3.1.pack.js"></script>
 
 <script type="text/javascript">
+var scheduleTitle = "";
+var scheduleUrl = "";
+var scheduleStart = "";
+var scheduleEnd = "";
+var scheduleEid = "";
+var scheduleEvent = null;
 $(function() { 
 	//$("body").css("visibility","visible");
 	$('#calendar').fullCalendar({
@@ -52,13 +58,13 @@ $(function() {
           
             $.fancybox({//调用fancybox弹出层 
             	
-                'href':'${cy}/xfxmcy/my/schedule/task.jsp?type=add',
+                'href':'${cy}/xfxmcy/my/schedule/task.jsp?queryType=simpleSave',
                 /* 'transitionIn'  :   'elastic',
                 'transitionOut' :   'elastic',
                 'speedIn'       :   600, 
                 'speedOut'      :   200  */
-                'width':'85%',
-    			'height':'62%',
+                'width':'48%',
+       			'height':'80%',
     			'autoScale':false,
     			'transitionIn':'none',
     			'transitionOut':'none',
@@ -71,25 +77,61 @@ $(function() {
        eventClick: function(calEvent) {
            /* window.open(calEvent.url);
            return false; */
+           
+           scheduleTitle = calEvent.title;
+           scheduleStart = calEvent.start;
+           if(!calEvent.allDay)
+           		scheduleEnd = calEvent.end;
+           scheduleEid = calEvent.eid;
+           scheduleUrl = calEvent.url;
+           scheduleEvent = calEvent;
     	   $.fancybox({//调用fancybox弹出层 
-            'href':'${cy}/xfxmcy/my/schedule/task.jsp?type=update',
-            'width':'85%',
-   			'height':'62%',
+            'href':'${cy}/xfxmcy/my/schedule/task.jsp?queryType=simpleUpdate',
+            'width':'48%',
+   			'height':'80%',
    			'autoScale':false,
    			'transitionIn':'none',
    			'transitionOut':'none',
-   			'type':'iframe'
+   			'type':'iframe',
+   			'onComplete':function(){
                //'overlayShow'   :   false
+   			}
            }); 
+          
+          // var title = window.frames["fancybox-frame"].document.getElementById("title");
+           //$(title)
+           
+           //$('#calendar').fullCalendar('updateEvent', event);
            return false;
 
        },
        eventDragStart:function(event,jsEvent,ui,view) { 
+    	  
        },
        eventDragStop:function( event, jsEvent, ui, view ) { 
        },
+       eventResize : function(calEvent, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view){
+    	   parent.simpleMessConf.call(this,'Confirm', 'Are you sure to resize the taskinfo?', function(r){
+				if (r){
+					var param = {};
+					param.id = calEvent.eid;
+					param.dayDelta = dayDelta;
+					param.queryType = 'simpleUpdate';
+					$.post('${cy}/task/taskResize.do',param,function(json){
+						parent.simpleMessAlert.call(this,'提示',json.message);
+						if (json.success) {
+							
+						}
+					},'json');		
+				}
+				else
+					revertFunc();
+    	   });	
+    	   console.info(dayDelta);
+    	   console.info(calEvent.allDay);
+    	   //$('#calendar').fullCalendar('updateEvent',calEvent);
+       },
        eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) {
-		   console.info(event);
           /*  alert(
                event.title + " was moved " +
                dayDelta + " days and " +
@@ -101,10 +143,8 @@ $(function() {
            }else{
                alert("Event has a time-of-day");
            }
-
-           if (!confirm("你确定要改变此任务吗?")) {
-               revertFunc();
-           }
+           console.info(dayDelta);
+           console.info(minuteDelta);
 
        },
         events: function(start,end, callback) {
@@ -120,7 +160,8 @@ $(function() {
                 success:function(result) {
                 	var events =[];
                     $(result).each(function() {
-                 	   if($(this).attr('end')!="" && $(this).attr('end') != undefined){
+                 	   //if($(this).attr('allDay')!="" && $(this).attr('allDay') != undefined){
+                 	    if($(this).attr('allday')!= "1"){	   
                  		   events.push({
                  			  	eid : $(this).attr('id'),
                  			    title : $(this).attr('title'),

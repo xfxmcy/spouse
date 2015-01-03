@@ -37,6 +37,14 @@ public class QueryParam {
 	
 	private Integer rows = 5,page =null;
 	
+	private String id;
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	private String queryType ;
 	/*favorite treegrid*/
 	private String treeRootId  ;
@@ -109,6 +117,20 @@ public class QueryParam {
 	/*column be ordered*/
 	private String colOrdered;
 	
+	private int dayDelta,minuteDelta;
+	
+	public int getDayDelta() {
+		return dayDelta;
+	}
+	public void setDayDelta(int dayDelta) {
+		this.dayDelta = dayDelta;
+	}
+	public int getMinuteDelta() {
+		return minuteDelta;
+	}
+	public void setMinuteDelta(int minuteDelta) {
+		this.minuteDelta = minuteDelta;
+	}
 	public Integer getStartPoint(){
 		return (page-1)*rows;
 	}

@@ -93,6 +93,13 @@ public class TaskController {
 	@ResponseBody
 	public SystemicInfo doPersistentTask(Tasks task,SystemicInfo info,HttpServletRequest request){
 		try{
+			Object result = request.getSession().getAttribute(ResourceUtil.getSessionInfo());
+			SessionUser user = null;
+			if(null != result){
+				user = (SessionUser) result;
+				task.setUserid(user.getUserId());
+			}
+			taskServiceImpl.persistenceTask(task);
 			info.setSuccess(true, "success");
 			info.setResult(task);
 		}catch(Exception e){
@@ -117,8 +124,9 @@ public class TaskController {
 	 */
 	@RequestMapping("/taskUpdate")
 	@ResponseBody
-	public SystemicInfo doUpdateTask(QueryParam param , Tasks task,SystemicInfo info,HttpServletRequest request){
+	public SystemicInfo doUpdateTask(Tasks task,SystemicInfo info,HttpServletRequest request){
 		try{
+			taskServiceImpl.mergeTask(task);
 			info.setSuccess(true, "success");
 			info.setResult(task);
 		}catch(Exception e){
@@ -145,12 +153,38 @@ public class TaskController {
 	public SystemicInfo doDeleteTask(@PathVariable String key,QueryParam param ,SystemicInfo info,HttpServletRequest request){
 		try{
 			info.setSuccess(true, "success");
+			taskServiceImpl.deleteTask(param, key);
 		}catch(Exception e){
 			info.setSuccess(false, "system busy , please have a wait");
 			logger.error(e.getMessage());
 		}
 		return info;
 	}
+	/**
+	 * 
+	 * doResizeTask:resize task 
+	 *
+	 * @param param	param 	
+	 * @param info	info
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年1月3日 		cy
+	 */
+	@RequestMapping("/taskResize")
+	@ResponseBody
+	public SystemicInfo doResizeTask(QueryParam param ,SystemicInfo info,HttpServletRequest request){
+		try{
+			info.setSuccess(true, "success");
+			taskServiceImpl.resizeTask(param);
+		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
+			logger.error(e.getMessage());
+		}	
+		return info;
+	}
+	
 	
 }
 

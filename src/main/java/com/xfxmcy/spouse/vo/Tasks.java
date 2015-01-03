@@ -49,7 +49,7 @@ public class Tasks implements Serializable{
      *
      * @ibatorgenerated Tue Feb 11 10:10:30 CST 2014
      */
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date start;
 
     /**
@@ -58,7 +58,7 @@ public class Tasks implements Serializable{
      *
      * @ibatorgenerated Tue Feb 11 10:10:30 CST 2014
      */
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date end;
 
     /**

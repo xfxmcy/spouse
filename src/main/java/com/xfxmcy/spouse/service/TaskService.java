@@ -50,13 +50,12 @@ public interface TaskService {
 	 * persistenceTask:persisten a task
 	 *
 	 * @param param
-	 * @param task
 	 * @return
 	 *   ver     date      		author
 	 * ──────────────────────────────────
 	 *   		 2014年9月30日 		cy
 	 */
-	Tasks persistenceTask(QueryParam param,Tasks task,SessionUser user);
+	Tasks persistenceTask(Tasks task);
 	
 	/**
 	 * 
@@ -69,7 +68,7 @@ public interface TaskService {
 	 * ──────────────────────────────────
 	 *   		 2014年9月30日 		cy
 	 */
-	Tasks mergeTask(QueryParam param,Tasks task);
+	Tasks mergeTask(Tasks task);
 	
 	/**
 	 * 
@@ -82,5 +81,16 @@ public interface TaskService {
 	 *   		 2014年1月17日 		cy
 	 */
 	void deleteTask(QueryParam param,String key);
+
+	/**
+	 * 
+	 * resizeTask:resize a task
+	 *
+	 * @param param
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年1月3日 		cy
+	 */
+	void resizeTask(QueryParam param);
 }
 

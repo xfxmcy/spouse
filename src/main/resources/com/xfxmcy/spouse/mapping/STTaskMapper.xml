@@ -49,11 +49,25 @@
 			    and
 			    (tend <= #{end,jdbcType=TIMESTAMP} or (tend is null AND tstart <= #{end,jdbcType=TIMESTAMP}))
 			    ]]>
+			    and
+			    flag = '1' 
+			    and 
+			    status = '1'
 		</where>
 		
 		order by tstart
 		
 	</select>
+	
+	<select id="selectById" resultMap="BaseResultMap"
+		parameterType="java.util.HashMap">
+		select
+		<include refid="Base_Column_List" />
+		from b_tasks 
+		<where>
+			id = #{id,jdbcType=VARCHAR}
+		</where>
+	</select>	
 	<!-- query the count -->
 	<select id="countByCondition" resultType="java.lang.Long"
 		parameterType="java.util.HashMap">
@@ -78,37 +92,43 @@
 		)
 	</insert>
 	<insert id="insertSelective" parameterType="com.xfxmcy.spouse.vo.Tasks">
-		insert into sr_romantic
+		insert into b_tasks
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			<if test="id != null">
 				id,
 			</if>
-			<if test="date != null">
-				date,
-			</if>
-			<if test="dateclass != null">
-				dateClass,
-			</if>
-			<if test="imagefirst != null">
-				imageFirst,
-			</if>
-			<if test="imagesecond != null">
-				imageSecond,
-			</if>
-			<if test="isyear != null">
-				isYear,
-			</if>
 			<if test="title != null">
 				title,
 			</if>
-			<if test="contentfirst != null">
-				contentFirst,
+			<if test="allday != null">
+				allDay,
 			</if>
-			<if test="contentsecond != null">
-				contentSecond,
+			<if test="start != null">
+				tstart,
 			</if>
-			<if test="contentclass != null">
-				contentClass,
+			<if test="end != null">
+				tend,
+			</if>
+			<if test="url != null">
+				url,
+			</if>
+			<if test="userid != null">
+				userid,
+			</if>
+			<if test="businessId != null">
+				business_id,
+			</if>
+			<if test="taskFrom != null">
+				task_from,
+			</if>
+			<if test="taskStatus != null">
+				task_status,
+			</if>
+			<if test="flag != null">
+				flag,
+			</if>
+			<if test="status != null">
+				status
 			</if>
 
 		</trim>
@@ -116,89 +136,78 @@
 			<if test="id != null">
 				#{id,jdbcType=VARCHAR},
 			</if>
-			<if test="date != null">
-				#{date,jdbcType=VARCHAR},
-			</if>
-			<if test="dateclass != null">
-				#{dateclass,jdbcType=VARCHAR},
-			</if>
-			<if test="imagefirst != null">
-				#{imagefirst,jdbcType=VARCHAR},
-			</if>
-			<if test="imagesecond != null">
-				#{imagesecond,jdbcType=VARCHAR},
-			</if>
-			<if test="isyear != null">
-				#{isyear,jdbcType=VARCHAR},
-			</if>
 			<if test="title != null">
-				#{title,jdbcType=LONGVARCHAR},
+				#{title,jdbcType=VARCHAR},
 			</if>
-			<if test="contentfirst != null">
-				#{contentfirst,jdbcType=LONGVARCHAR},
+			<if test="allday != null">
+				#{allday,jdbcType=VARCHAR},
 			</if>
-			<if test="contentsecond != null">
-				#{contentsecond,jdbcType=LONGVARCHAR},
+			<if test="start != null">
+				#{start,jdbcType=TIMESTAMP},
 			</if>
-			<if test="contentclass != null">
-				#{contentclass,jdbcType=LONGVARCHAR},
+			<if test="end != null">
+				#{end,jdbcType=TIMESTAMP},
+			</if>
+			<if test="url != null">
+				#{url,jdbcType=VARCHAR},
+			</if>
+			<if test="userid != null">
+				#{userid,jdbcType=VARCHAR},
+			</if>
+			<if test="businessId != null">
+				#{businessId,jdbcType=VARCHAR},
+			</if>
+			<if test="taskFrom != null">
+				#{taskFrom,jdbcType=VARCHAR},
+			</if>
+			<if test="taskStatus != null">
+				#{taskStatus,jdbcType=VARCHAR},
+			</if>
+			<if test="flag != null">
+				#{flag,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=VARCHAR}
 			</if>
 		</trim>
 	</insert>
-	<update id="updateByPrimaryKeySelective" parameterType="com.xfxmcy.spouse.vo.Tasks">
-		update sr_romantic
+	<update id="updateSelective" parameterType="com.xfxmcy.spouse.vo.Tasks">
+		update b_tasks
 		<set>
-			<if test="date != null">
-				date = #{date,jdbcType=VARCHAR},
+			<if test="start != null">
+				tstart = #{start,jdbcType=VARCHAR},
 			</if>
-			<if test="dateclass != null">
-				dateClass = #{dateclass,jdbcType=VARCHAR},
+			<if test="end != null">
+				tend = #{end,jdbcType=VARCHAR},
 			</if>
-			<if test="imagefirst != null">
-				imageFirst = #{imagefirst,jdbcType=VARCHAR},
+			<if test="taskFrom != null">
+				task_from = #{taskFrom,jdbcType=VARCHAR},
 			</if>
-			<if test="imagesecond != null">
-				imageSecond = #{imagesecond,jdbcType=VARCHAR},
+			<if test="taskStatus != null">
+				task_status = #{taskStatus,jdbcType=VARCHAR},
 			</if>
-			<if test="isyear != null">
-				isYear = #{isyear,jdbcType=CHAR},
+			<if test="userid != null">
+				userid = #{userid,jdbcType=VARCHAR},
+			</if>
+			<if test="businessId != null">
+				business_id = #{businessId,jdbcType=VARCHAR},
 			</if>
 			<if test="title != null">
-				title = #{title,jdbcType=LONGVARCHAR},
+				title = #{title,jdbcType=VARCHAR},
 			</if>
-			<if test="contentfirst != null">
-				contentFirst = #{contentfirst,jdbcType=LONGVARCHAR},
+			<if test="url != null">
+				url = #{url,jdbcType=VARCHAR},
 			</if>
-			<if test="contentsecond != null">
-				contentSecond = #{contentsecond,jdbcType=LONGVARCHAR},
+			<if test="allday != null">
+				allDay = #{allday,jdbcType=VARCHAR},
 			</if>
-			<if test="contentclass != null">
-				contentClass = #{contentclass,jdbcType=LONGVARCHAR},
+			<if test="flag != null">
+				flag = #{flag,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				status = #{status,jdbcType=VARCHAR},
 			</if>
 		</set>
-		where id = #{id,jdbcType=VARCHAR}
-	</update>
-	<update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xfxmcy.spouse.vo.Tasks">
-		update sr_romantic
-		set date = #{date,jdbcType=VARCHAR},
-		dateClass = #{dateclass,jdbcType=VARCHAR},
-		imageFirst = #{imagefirst,jdbcType=VARCHAR},
-		imageSecond = #{imagesecond,jdbcType=VARCHAR},
-		isYear = #{isyear,jdbcType=VARCHAR},
-		title = #{title,jdbcType=LONGVARCHAR},
-		contentFirst = #{contentfirst,jdbcType=LONGVARCHAR},
-		contentSecond = #{contentsecond,jdbcType=LONGVARCHAR},
-		contentClass = #{contentclass,jdbcType=LONGVARCHAR}
-		where id = #{id,jdbcType=VARCHAR}
-	</update>
-	<update id="updateByPrimaryKey" parameterType="com.xfxmcy.spouse.vo.Tasks">
-		update sr_romantic
-		set date = #{date,jdbcType=VARCHAR},
-		dateClass = #{dateclass,jdbcType=VARCHAR},
-		imageFirst = #{imagefirst,jdbcType=VARCHAR},
-		imageSecond = #{imagesecond,jdbcType=VARCHAR},
-		isYear = #{isyear,jdbcType=CHAR},
-		contentClass = #{contentclass,jdbcType=LONGVARCHAR}
 		where id = #{id,jdbcType=VARCHAR}
 	</update>
 </mapper>

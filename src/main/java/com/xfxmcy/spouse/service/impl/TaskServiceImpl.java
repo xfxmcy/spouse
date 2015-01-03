@@ -74,10 +74,9 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
-	public Tasks persistenceTask(QueryParam param, Tasks task,SessionUser user) {
-		if(SpouseConstant.SIMPLE_SAVE.equals(param.getQueryType())){
+	public Tasks persistenceTask(Tasks task) {
+		if(SpouseConstant.SIMPLE_SAVE.equals(task.getQueryType())){
 			task.setId(IdUtil.generaterThrityTwo());
-			task.setUserid(user.getUserId());
 			mapper.insertSelective(task);
 		}
 		return task;
@@ -85,17 +84,29 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
-	public Tasks mergeTask(QueryParam param, Tasks task) {
-		
-		// TODO Auto-generated method stub
-		return null;
-		
+	public Tasks mergeTask(Tasks task) {
+		if(SpouseConstant.SIMPLE_UPDATE.equals(task.getQueryType())){
+			mapper.updateSelective(task);
+		}
+		return task;
 	}
 
 	@Override
 	public void deleteTask(QueryParam param, String key) {
 		
-		// TODO Auto-generated method stub
+		if(SpouseConstant.SIMPLE_DELETE.equals(param.getQueryType())){
+			mapper.deleteByPrimaryKey(key);
+		}
+		
+	}
+
+	@Override
+	public void resizeTask(QueryParam param) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		if(SpouseConstant.SIMPLE_UPDATE.equals(param.getQueryType())){
+			map.put(SpouseConstant.SQL_PRIMARY_KEY, param.getId());
+			Tasks task = mapper.selectById(map);
+		}
 		
 	}
 

@@ -65,6 +65,28 @@ public interface STTaskMapper {
      *   		 2014年5月30日 		cy
      */
     int insertSelective(Tasks record);
-
+    
+    /**
+     * 
+     * updateSelective:update a tasks
+     *
+     * @param record
+     * @return
+     *   ver     date      		author
+     * ──────────────────────────────────
+     *   		 2015年1月2日 		cy
+     */
+    int updateSelective(Tasks record);
+    /**
+     * 
+     * selectById:select by id 
+     *
+     * @param id	 id
+     * @return
+     *   ver     date      		author
+     * ──────────────────────────────────
+     *   		 2015年1月3日 		cy
+     */
+    Tasks selectById(Map<String, Object> map);
 }
 
