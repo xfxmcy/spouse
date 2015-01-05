@@ -92,5 +92,15 @@ public interface TaskService {
 	 *   		 2015年1月3日 		cy
 	 */
 	void resizeTask(QueryParam param);
+	/**
+	 * 
+	 * dropTask:drop a task 
+	 *
+	 * @param param
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年1月4日 		cy
+	 */
+	void dropTask(QueryParam param);
 }
 

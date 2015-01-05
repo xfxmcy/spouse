@@ -24,26 +24,26 @@
 <script type="text/javascript">
 	function initTask(){
 		if("${param.queryType}" == "simpleUpdate"){
+			
+			$("#title").val(parent.window.scheduleTitle);
+			$("#url").val(parent.window.scheduleUrl);
+			$("#eid").val(parent.window.scheduleEid);
+			var sheduleDate = parent.window.scheduleStart;
+			var formattedStart = changeDate(sheduleDate);
+			$("#start").datetimebox('setValue', formattedStart);
+			$("#taskInfo").form('validate');
+			$("#eventName").html("编辑事件") ;
+			
 			if(!parent.window.scheduleEvent.allDay || parent.window.scheduleEvent.allDay == "false"){
 				var sheduleDate = parent.window.scheduleEnd;
+				if(!sheduleDate || sheduleDate == null)
+					return;
 				var formattedEnd = changeDate(sheduleDate);
 				$("#end").datetimebox('setValue', formattedEnd);
 				$("[name = allday][value = 0]:radio").attr("checked", true);
 				$('#end').datetimebox('enable');
 				
 			}
-			$("#title").val(parent.window.scheduleTitle);
-			$("#url").val(parent.window.scheduleUrl);
-			//$("#start").datebox('setValue', parent.window.scheduleStart);
-			$("#eid").val(parent.window.scheduleEid);
-			var sheduleDate = parent.window.scheduleStart;
-			var formattedStart = changeDate(sheduleDate);
-			$("#start").datetimebox('setValue', formattedStart);
-			//$("#start").val(parent.window.scheduleStart);
-			$("#taskInfo").form('validate');
-			//$("#title").val(parent.window.scheduleTitle);
-			//$("#title").val(parent.window.scheduleTitle);
-			$("#eventName").html("编辑事件") ;
 		}
 		else
 			$("#eventName").html("创建事件") ;
@@ -74,7 +74,7 @@
 	    <p>开始时间：<input id="start" name="start" type="text" class="easyui-datetimebox"  style="width: 110px;"></input></p>
 	    
 	   	<p>      
-	   		是否为全天任务&nbsp;  是<input type="radio" value="1" name="allday" onclick="javascript:$('#edate').datebox('disable');" checked="checked" />&nbsp;否<input type="radio" name="allday" value="0" onclick="javascript:$('#end').datetimebox('enable');" /></p> 
+	   		是否为全天任务&nbsp;  是<input type="radio" value="1" name="allday" onclick="javascript:$('#end').datebox('disable');" checked="checked" />&nbsp;否<input type="radio" name="allday" value="0" onclick="javascript:$('#end').datetimebox('enable');" /></p> 
 	    <p>
 	   	  	结束时间 ：<input id="end" name="end" type="text" class="easyui-datetimebox" data-options="disabled:true" style="width: 110px;"></input>      
 	    </p>
@@ -133,11 +133,14 @@
 		
 		function updateTask(taskForm){
 			var schEvent = parent.window.scheduleEvent;
-			if(taskForm.allday == '1' || taskForm.allday){
-				schEvent.end = null;	
+			//console.info(schEvent);
+			if(taskForm.allday == '1' || taskForm.allday == 1){
+				schEvent.end = null;
+				schEvent.allDay = true;
 			}
 			else{
 				schEvent.end = new Date(taskForm.end);
+				schEvent.allDay = false;
 			}
 			//taskForm.allday = taskForm.allday == '1'?true:false;
 			schEvent.start = new Date(taskForm.start);
@@ -146,7 +149,6 @@
 			$.post('${cy}/task/taskUpdate.do',taskForm,function(json){
 				parent.parent.simpleMessAlert.call(this,'提示',json.message);
 				if (json.success) {
-					//source[0] = taskForm;
 					parent.$('#calendar').fullCalendar('updateEvent',schEvent);
 					parent.$.fancybox.close();
 				}

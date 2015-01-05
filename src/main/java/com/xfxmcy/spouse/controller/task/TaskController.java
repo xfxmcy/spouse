@@ -186,5 +186,30 @@ public class TaskController {
 	}
 	
 	
+	/**
+	 * 
+	 * doDropTask:drop a task
+	 *
+	 * @param param		param
+	 * @param info		information
+	 * @param request	request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年1月4日 		cy
+	 */
+	@RequestMapping("/taskDrop")
+	@ResponseBody
+	public SystemicInfo doDropTask(QueryParam param ,SystemicInfo info,HttpServletRequest request){
+		try{
+			info.setSuccess(true, "success");
+			taskServiceImpl.dropTask(param);
+		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
+			logger.error(e.getMessage());
+		}	
+		return info;
+	}
+	
 }
 

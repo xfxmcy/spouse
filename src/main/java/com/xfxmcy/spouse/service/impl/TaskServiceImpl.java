@@ -14,6 +14,8 @@
 package com.xfxmcy.spouse.service.impl;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,12 +27,12 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xfxmcy.spouse.constant.SpouseConstant;
+import com.xfxmcy.spouse.constant.SpouseEntityConstant;
 import com.xfxmcy.spouse.dao.STTaskMapper;
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.service.TaskService;
 import com.xfxmcy.spouse.util.IdUtil;
 import com.xfxmcy.spouse.util.ResourceUtil;
-import com.xfxmcy.spouse.util.SessionUser;
 import com.xfxmcy.spouse.vo.Tasks;
 
 /**
@@ -106,8 +108,64 @@ public class TaskServiceImpl implements TaskService {
 		if(SpouseConstant.SIMPLE_UPDATE.equals(param.getQueryType())){
 			map.put(SpouseConstant.SQL_PRIMARY_KEY, param.getId());
 			Tasks task = mapper.selectById(map);
+			Date myDate = null ;
+			Calendar calendar = Calendar.getInstance();
+			if (null == task)
+				return ;
+			else{
+				/*allday*/
+				if(SpouseEntityConstant.TASK_ALLDAY.equals(task.getAllday())){
+					task.setAllday(SpouseEntityConstant.TASK_ALLDAY_NOT);
+					myDate = task.getStart();
+					calendar.setTime(myDate);
+					/*allday event change to not-allday event,no need + 1day
+					 * for view
+					 * */
+					calendar.add(Calendar.DATE, param.getDayDelta());
+				}else{
+					myDate = task.getEnd();
+					calendar.setTime(myDate);
+					calendar.add(Calendar.DATE, param.getDayDelta());
+				}
+				calendar.add(Calendar.HOUR_OF_DAY,param.getMinuteDelta());
+			    myDate = calendar.getTime();
+			    
+			    task.setEnd(myDate);
+			    mapper.updateSelective(task);
+			}
+			
 		}
 		
+	}
+
+	@Override
+	public void dropTask(QueryParam param) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		if(SpouseConstant.SIMPLE_UPDATE.equals(param.getQueryType())){
+			map.put(SpouseConstant.SQL_PRIMARY_KEY, param.getId());
+			Tasks task = mapper.selectById(map);
+			if (null == task)
+				return ;
+			else{
+				Date myDateEnd = task.getEnd();
+				Date myDateStart = task.getStart();
+				Calendar calendarStart = Calendar.getInstance();
+				calendarStart.setTime(myDateStart);
+				calendarStart.add(Calendar.DATE, param.getDayDelta());
+				calendarStart.add(Calendar.HOUR_OF_DAY,param.getMinuteDelta());
+				myDateStart = calendarStart.getTime();
+				if(null != myDateEnd){
+					Calendar calendar = Calendar.getInstance();
+					calendar.setTime(myDateEnd);
+					calendar.add(Calendar.DATE, param.getDayDelta());
+					calendar.add(Calendar.HOUR_OF_DAY,param.getMinuteDelta());
+					myDateEnd = calendar.getTime();	
+					task.setEnd(myDateEnd);
+				}
+			    task.setStart(myDateStart);
+			    mapper.updateSelective(task);	
+			}
+		}		
 	}
 
 }

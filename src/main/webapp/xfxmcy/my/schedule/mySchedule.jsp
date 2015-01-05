@@ -111,24 +111,30 @@ $(function() {
        eventDragStop:function( event, jsEvent, ui, view ) { 
        },
        eventResize : function(calEvent, dayDelta, minuteDelta, revertFunc, jsEvent, ui, view){
+    	   if(calEvent.allDay){
+    		   parent.simpleMessAlert.call(this,'提示','allday event not allow to resize, you need to update event turn to allday-not');
+    		   revertFunc();
+    		   return;
+    	   }
     	   parent.simpleMessConf.call(this,'Confirm', 'Are you sure to resize the taskinfo?', function(r){
 				if (r){
 					var param = {};
 					param.id = calEvent.eid;
 					param.dayDelta = dayDelta;
+					param.minuteDelta = minuteDelta;
 					param.queryType = 'simpleUpdate';
 					$.post('${cy}/task/taskResize.do',param,function(json){
 						parent.simpleMessAlert.call(this,'提示',json.message);
-						if (json.success) {
-							
+						if (!json.success) {
+							revertFunc();
 						}
 					},'json');		
 				}
 				else
 					revertFunc();
     	   });	
-    	   console.info(dayDelta);
-    	   console.info(calEvent.allDay);
+    	   //console.info(dayDelta);
+    	   //console.info(calEvent.allDay);
     	   //$('#calendar').fullCalendar('updateEvent',calEvent);
        },
        eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) {
@@ -136,15 +142,32 @@ $(function() {
                event.title + " was moved " +
                dayDelta + " days and " +
                minuteDelta + " minutes."
-           ); */
+           ); 
 
            if (allDay) {
                alert("Event is now all-day");
            }else{
                alert("Event has a time-of-day");
-           }
-           console.info(dayDelta);
-           console.info(minuteDelta);
+           }*/
+           parent.simpleMessConf.call(this,'Confirm', 'Are you sure to drop the taskinfo?', function(r){
+				if (r){
+					var param = {};
+					param.id = event.eid;
+					param.dayDelta = dayDelta;
+					param.minuteDelta = minuteDelta;
+					param.queryType = 'simpleUpdate';
+					$.post('${cy}/task/taskDrop.do',param,function(json){
+						parent.simpleMessAlert.call(this,'提示',json.message);
+						if (!json.success) {
+							revertFunc();
+						}
+					},'json');		
+				}
+				else
+					revertFunc();
+   	   	   });
+           //console.info(dayDelta);
+           //console.info(minuteDelta);
 
        },
         events: function(start,end, callback) {

@@ -49,5 +49,9 @@ public class SpouseEntityConstant {
 	/*created automatically*/
 	public static final String TASK_TYPE_AUTO = "0";
 	
+	/*task allday*/
+	public static final String TASK_ALLDAY = "1";
+	/*task allday_not*/
+	public static final String TASK_ALLDAY_NOT = "0";
 }
 

@@ -145,6 +145,7 @@ jQuery(document).ready(function(){
             <span id="sendTip" style="color: white;"></span>
           </li>
         </ol>
+       	
       </form>
           <div class="clr"></div>
         </div>

@@ -95,7 +95,7 @@ public class EmailComponent {
 			props.put(this.MAIL_STMP_SSL_SOCKET, mailSslSf);
 			session = Session.getDefaultInstance(props);
 			msg = new MimeMessage(session); // 建立一个要发送的信息
-			msg.setText(wish.getText()+"\n\n\n   静,happy birthday 祝小静 心想事成,万事如意... 愿望 一定会实现 ,让我们一起见证");// 设置简单的发送内容
+			msg.setText(wish.getText()+"\n\n\n   静,happy new year 祝小静 心想事成,万事如意... 愿望 一定会实现 ,一起见证");// 设置简单的发送内容
 			msg.setFrom(new InternetAddress(ResourceUtil.getMailAuthor()));// 发件人邮箱号
 			msg.setSubject(wish.getSubject());
 			transport = session.getTransport();// 发送信息的工具
