@@ -1,0 +1,231 @@
+ @charset "utf-8";
+/* CSS Document */
+
+a{
+	color: #ccd500;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+	color: #a9b119;
+}
+.clear {
+    clear: both;
+}
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    background: black;
+}
+b{
+	font-weight: 600;
+}
+
+/* General ID
+-------------------------------------------------------------------------*/
+.wrapper{
+	width: 960px;
+	margin: 120px auto 0;
+}
+.wrapper_inner{
+	width: 960px;
+	margin: 0 auto 0;
+}
+.wrapper.margin1{
+	width: 960px;
+	margin: 70px auto 0;
+}
+.wrapper.foot{
+	width: 960px;
+	margin: 0 auto 0;
+}
+.content{
+	padding: 30px;
+	width: 900px;
+	margin: 0 auto;
+	height: 436px;
+}
+.content.foot{
+	padding: 0 30px;
+	float: inherit;
+	margin:0 auto 0;
+	width: 900px;
+	margin-bottom:0;
+}
+
+
+/* Titulos
+-------------------------------------------------------------------------*/
+h1{
+	float: left;
+	width: 288px;
+	height: 73px;
+}
+h1 a{
+	float: left;
+	width: 288px;
+	height: 73px;
+	background: url(../img/logo_menu.jpg) no-repeat 0 0;
+}
+h1 a span{
+	display: none;
+}
+h2{
+	color: #000000;
+    display: table-cell;
+    float: left;
+    font-size: 45px;
+    line-height: 40px;
+    margin: 0 0 50px;
+    text-align: center;
+    width: 100%;
+    font-weight: 300;
+}
+h2 span{
+	font-weight: 400;
+}
+h3{
+	float: left;
+	width: 100%;
+	margin: 0 0 20px 0;
+	color: white;
+	font-size:40px;
+	font-family: 'Lato', 'sans-serif';
+	font-weight: 300;
+}
+h4{
+	color: #ffffff;
+    display: table-cell;
+    float: left;
+    font-size: 35px;
+    line-height: 31px;
+    margin: 0 0 0;
+    text-align: center;
+    width: 100%;
+    font-weight: 400;
+}
+
+p.title{
+	color: #000000;
+    display: table-cell;
+    float: left;
+    font-size: 45px;
+    line-height: 40px;
+    margin: 0 0 50px;
+    text-align: center;
+    width: 100%;
+    font-weight: 300;
+}
+
+.grey {	color:#444;}
+
+
+
+.line{
+	background-color: #DCD293;
+	padding: 75px 0px;
+	width:100%;
+	height:100%;
+	border-top: 20px dotted #A48E4E;
+}
+
+
+body{ margin:0; padding:0;}
+
+#textMachine, #textMachine2{
+	width:520px;
+	height: 67px;
+	overflow: hidden;
+	display: inline-block;
+	text-align: center;
+}
+#textMachine > *, #textMachine2 > *{
+	padding: 0px 0px;
+}
+
+
+
+
+.slotMachineButton{
+	width:100px;
+	height: 100px;
+	overflow: hidden;
+	display: inline-block;
+	text-align: center;
+}
+.slotMachineButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25) );
+	background:-moz-linear-gradient( center top, #ffc477 5%, #fb9e25 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#fb9e25');
+	background-color:#ffc477;
+	border-radius: 75px;
+	text-indent:0px;
+	border:6px solid #eeb44f;
+	display:inline-block;
+	color:#ffffff;
+	font-size:50px;
+	font-weight:bold;
+	font-style:normal;
+	height:100px;
+	line-height:100px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #cc9f52;
+	margin-left: 50px;
+	cursor:pointer;
+}
+.slotMachineButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
+	background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477');
+	background-color:#fb9e25;
+}.slotMachineButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+.slotMachine{
+	width:100px;
+	height: 100px;
+	overflow: hidden;
+	display: inline-block;
+	text-align: center;
+	border: 5px solid #000;
+	background-color: #ffffff;
+}
+.noBorder{
+	border:none !important;
+	background: transparent !important;
+}
+.slotMachine .slot{
+	width:100px;
+	height:100px;
+}
+.slot1{
+	background-image: url("../img/slot1.png");
+}
+.slot2{
+	background-image: url("../img/slot2.png");
+}
+.slot3{
+	background-image: url("../img/slot3.png");
+}
+.slot4{
+	background-image: url("../img/slot4.png");
+}
+.slot5{
+	background-image: url("../img/slot5.png");
+}
+.slot6{
+	background-image: url("../img/slot6.png");
+}
+
