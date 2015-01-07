@@ -14,15 +14,15 @@
   
 <script type="text/javascript">
 function UrlConf(){
-	this.prize = "${cy}/app/prize/jing_prize.jsp";
+	this.prize = "${cy}/app/divination/index.jsp";
 }
 var urlConf = new UrlConf(); 
 
 function openPrize() {
-	/* window.open('' + urlConf.prize + '',
+	 window.open('' + urlConf.prize + '',
 					'window',
 					'top=50px,left=500px,resizable=yes,scrollbars=no,height=590px,width=880px,status=no,toolbar=no,titlebar=no,location=no',
-					false); */
+					false);
 }
 </script>
 <script type="text/javascript" charset="utf-8">
@@ -126,9 +126,9 @@ p#controls {
       		<!-- <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=2&num=1" width="220" height="70" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe> -->
       		<iframe allowtransparency="true" frameborder="0" width="290" height="96" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=0&v=0&d=2&bd=0&k=&f=&q=1&e=1&a=1&c=54511&w=290&h=96&align=center"></iframe>
       	</div>
-        <a href="${cy}/romantic/index.jsp"><h3>Our acquaintance</h3></a>
-        <p><a href="${cy}/romantic/index.jsp"><u>2014年夏天......</u></a></p>
-        <p><a href="${cy}/romantic/index.jsp"><strong>expected</strong></a></p>
+        <%-- <a href="${cy}/romantic/index.jsp"> --%><h3>Our acquaintance</h3><!-- </a> -->
+        <p><u>2014年夏天......</u></p>
+        <p><strong>expected</strong></p>
       </div>
       <ul class="banner">
         <li><a href="#"><img src="${cy}/images/girl.jpg" width="104" height="104" border="0" alt="banner" /></a></li>
@@ -138,7 +138,7 @@ p#controls {
       <h3>Give a bless!</h3>
       <p>a statistics of blessing them</p>
       <p><span class="px22">+ 800 258 4578</span></p>
-      <a href="${cy}/romantic/index.jsp"><h3>About them</h3></a>
+      <%-- <a href="${cy}/romantic/index.jsp"> --%><h3>About them</h3><!-- </a> -->
       <p><a href="${cy}/spouse/managerment/host.do"><img src="${cy}/images/xfxmcy.png" width="50%"  hspace="5" align="left" alt="picture" /></a>
       <a href="#"><strong></strong></a><br />
         silent and loneliness<br/>

@@ -38,6 +38,9 @@
 			<if test="title != null">
 				title like '%$title$%'
 			</if>
+			<if test="userid != null">
+				userid = #{userid,jdbcType=VARCHAR}
+			</if>
 			<if test="taskStatus != null">
 				task_status = #{taskStatus,jdbcType=VARCHAR}
 			</if>

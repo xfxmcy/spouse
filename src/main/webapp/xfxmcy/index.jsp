@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cy" value="${pageContext.request.contextPath}" ></c:set>
 <jsp:include page="/xfxmcy/initialEasyUI.jsp"></jsp:include>
+<title>xfxmcy</title>
 </head>
 <body>
 <script type="text/javascript">

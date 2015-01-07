@@ -1,8 +1,11 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cy" value="${pageContext.request.contextPath}" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>luck</title>
+		<title>Jing</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
 		<link rel="shortcut icon" href="../../icon/favicon.ico" type="image/x-icon"/>
 		<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
@@ -11,9 +14,10 @@
 		<script type="text/javascript" src="js/jquery.slotmachine.js"></script>
 	</head>
 	<body style="height:100%">
-
+		<%-- <audio autoplay="autopaly"> 
+			<source src="${cy}/app/love/renxi.mp3" type="audio/mp3" /> 
+		</audio> --%>
 		<div class="line">
-			
 			<div class="content" style="text-align: center">
 				
 				<div style="clear:both;">
@@ -37,6 +41,7 @@
 						<div class="slot slot4"></div>
 						<div class="slot slot5"></div>
 						<div class="slot slot6"></div>
+						<div class="slot slot7"></div>
 					</div>
 					
 					<div id="machine3" class="slotMachine">

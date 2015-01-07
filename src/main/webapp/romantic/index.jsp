@@ -21,6 +21,7 @@
     }
     
 })(); */
+	var lastId ;
 	initialTimeSheet.call(this);
   
    /*initial timesheet*/
@@ -98,6 +99,7 @@
 		  // document.write("<script src='${cy}/romantic/js/impress.js' type='text/javascript'/>");
 		   //initialPage.call(this);
 		   initialEffort.call(this);
+		   lastId = dataId;
 	   },'json');
    }
 </script>
@@ -119,252 +121,6 @@
   <div id="line" class="line_white"> </div>
   <div id="impress">
     <div id="timeList">
-    
-      <!-- year -->	
-      <!-- <div class="step year"  data-x="-600" data-y="0" data-scale ="0.5" id="0">
-        <div class="year2012"> 2012 </div>
-        <div class="list_show"> 2012，开源中国快速发展的一年<br/>
-        </div>
-      </div> -->
-      <!-- time -->
-      <!-- <div class="timeList_item step"  data-x="0" data-y="0"  id="1">
-        <div class="circle"> 02/29 </div>
-        <h2 class="timeList_item_title"> 全面启用HTTPS登陆 </h2>
-        <div class="list_show show1" > <img src="images/event1.jpg" width="500">
-          <h2><a href="#">全面启用HTTPS登陆</a></h2>
-          <p>彻底保护你的密码不被嗅探和盗用<br/>
-            OSCHINA采用商业证书，值得信赖</p>
-        </div>
-      </div> -->
-      
-     <!--  <div class="timeList_item step"  data-x="200" data-y="0" id="2">
-        <div class="circle"> 03/10 </div>
-        <h2 class="timeList_item_title"> 空间自定义风格 </h2>
-        <div class="list_show"> <img src="images/event2.jpg">
-          <h2><a href="#">全面启空间自定义风格</a></h2>
-          <p class="m160">Less CSS 框架开发<br/>
-            7种方案随心选择</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="400" data-y="0" id="3">
-        <div class="circle"> 04/09 </div>
-        <h2 class="timeList_item_title"> 收录软件超过2万 </h2>
-        <div class="list_show" > <img src="images/event3.png" width="500">
-          <h2><a href="#">收录软件超过2万</a></h2>
-          <p>截至2012年4月3日，OSChina.NET 收录的软件/项目（包括极少部分商业软件）达到2万款。</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="600" data-y="0" id="4">
-        <div class="circle"> 04/15 </div>
-        <h2 class="timeList_item_title" > 成都源创会 </h2>
-        <div class="list_show show3"> <img src="images/event4.jpg" width="500">
-          <h2> <a href="#">成都源创会</a> </h2>
-          <p><img src="images/chengdu.jpg" /> </p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="800" data-y="0" id="5">
-        <div class="circle"> 05/02 </div>
-        <h2 class="timeList_item_title" > 开源U型枕 </h2>
-        <div class="list_show"> <img src="images/event5.png" width="500">
-          <h2> <a href="#">开源U型枕</a> </h2>
-          <p>倾情定制，开源U型枕！<br/>
-            我们找了我们能找到的最好的工厂，用最好的面料加最好的粒子定制！</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="1000" data-y="0" id="6">
-        <div class="circle"> 05/04 </div>
-        <h2 class="timeList_item_title" > OSChina客户端发布 </h2>
-        <div class="list_show"> <img src="images/event6.png" width="500">
-          <h2> <a href="#">OSChina客户端发布</a> </h2>
-          <p>千呼万唤始出来 - OSChina Android 客户端发布</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="1200" data-y="0" id="7">
-        <div class="circle"> 05/26 </div>
-        <h2 class="timeList_item_title" > OSC 深圳源创会 </h2>
-        <div class="list_show show4"><img src="images/event7.jpg">
-          <h2> <a href="#">OSC 深圳源创会</a> </h2>
-          <p> <img src="images/shenzhen.jpg" /> </p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="1400" data-y="0" id="8">
-        <div class="circle"> 06/17 </div>
-        <h2 class="timeList_item_title" > OSChina开源T恤 </h2>
-        <div class="list_show"> <img src="images/event8.jpg" width="500">
-          <h2> <a href="#">OSChina开源T恤</a> </h2>
-          <p>炎炎夏日已来，T恤乃我等码农必备良品。<br/>
-            OSChina.NET（开源中国）倾情推出开源T恤，让您清爽一夏~</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="1600" data-y="0" id="9">
-        <div class="circle"> 07/01 </div>
-        <h2 class="timeList_item_title" > OSC北京源创会 </h2>
-        <div class="list_show show3"> <img src="images/event9.jpg" width="500">
-          <h2> <a href="#">OSC北京源创会</a> </h2>
-          <p> <img src="images/beijing.jpg" /> </p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="1800" data-y="0"  id="10">
-        <div class="circle"> 07/10 </div>
-        <h2 class="timeList_item_title" > 开源中国在线工具 osctools.net 上线 </h2>
-        <div class="list_show"> <img src="images/event10.jpg" width="500">
-          <h2> <a href="#">开源中国在线工具 osctools.net 上线</a> </h2>
-          <p class="m160">为了方便程序员们开发中查询文档、编码转换、调试 JavaScript 等需求，我们将一些常用工具和文档集合在一起，推出新的网站 www.osctools.net 。</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="2000" data-y="0" id="11">
-        <div class="circle"> 07/21 </div>
-        <h2 class="timeList_item_title" > OSC 广州源创会 </h2>
-        <div class="list_show show4"> <img src="images/event11.jpg" width="500">
-          <h2> <a href="#">OSC 广州源创会</a> </h2>
-          <p><img src="images/guangzhou.jpg" /> </p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="2200" data-y="0" id="12">
-        <div class="circle"> 08/18 </div>
-        <h2 class="timeList_item_title" > OSC南京源创会 </h2>
-        <div class="list_show"> <img src="images/event12.jpg" width="500">
-          <h2> <a href="#">OSC南京源创会</a> </h2>
-          <p><img src="images/nanjing.jpg" /> </p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="2400" data-y="0" id="13">
-        <div class="circle"> 08/23 </div>
-        <h2 class="timeList_item_title" > 开源扑克 </h2>
-        <div class="list_show"> <img src="images/event13.jpg" width="500">
-          <h2> <a href="#">开源扑克</a> </h2>
-          <p>开源中国定制的扑克，标准桥牌大小。背面是绿色螺旋花纹和开源LOGO，正面是世界知名开源项目LOGO。一共54张牌，每张牌的LOGO均不一样。</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="2600" data-y="0" id="14">
-        <div class="circle"> 08/31 </div>
-        <h2 class="timeList_item_title" > 开源中国四周年，客户端全面开源 </h2>
-        <div class="list_show"> <img src="images/event14.jpg" width="500">
-          <h2> <a href="#">开源中国四周年，客户端全面开源</a> </h2>
-        <p class="m160">OSChina 三个平台的客户端全面开源，包括 Android、iPhone 和 Windows Phone 。三个平台客户端均采用 GPL 授权协议，欢迎大家在我们的代码的基础上进行改进，并与大家分享你的贡献。</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="2800" data-y="0" id="15">
-        <div class="circle"> 09/22 </div>
-        <h2 class="timeList_item_title" > OSC 西安源创会 </h2>
-        <div class="list_show show5"> <img src="images/event15.jpg" width="500">
-          <h2> <a href="#">OSC 西安源创会</a> </h2>
-          <p><img src="images/xian.jpg" /></p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="3000" data-y="0" id="16">
-        <div class="circle"> 10/20 </div>
-        <h2 class="timeList_item_title" > OSC 杭州源创会 </h2>
-        <div class="list_show"> <img src="images/event16.jpg" width="500">
-          <h2> <a href="#">OSC 杭州源创会</a> </h2>
-          <p><img src="images/hangzhou.jpg" /></p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="3200" data-y="0" id="17">
-        <div class="circle"> 10/30 </div>
-        <h2 class="timeList_item_title" > RunJS 上线 </h2>
-        <div class="list_show"> <img src="images/event17.jpg" width="500">
-          <h2> <a href="#">RunJS 上线</a> </h2>
-          <p>RunJS 是一个在线编辑、保存、分享 HTML、CSS、JavaScript 代码的平台，拥有实时预览、分享、Fork等多种特性。</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="3400" data-y="0" id="18">
-        <div class="circle"> 11/19 </div>
-        <h2 class="timeList_item_title" > 更换Tengine和Druid并进行压力测试 </h2>
-        <div class="list_show"> <img src="images/event18.png" width="500">
-          <h2> <a href="#">更换Tengine和Druid并进行压力测试</a> </h2>
-          <p class="m160">感谢大家对 OSC 的关心、关注、测试、鄙视和褒奖，顺便说一下，今天 @蟋蟀哥哥 压得最狠，你知道，都是因为鹅的关系。</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="3600" data-y="0" id="19">
-        <div class="circle"> 11/25 </div>
-        <h2 class="timeList_item_title" > OSC 珠海源创会 </h2>
-        <div class="list_show show4"> <img src="images/event19.jpg" width="500">
-          <h2> <a href="#">OSC 珠海源创会</a> </h2>
-          <p><img src="images/zhuhai.jpg" /></p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="3800" data-y="0" id="20">
-        <div class="circle"> 12/10 </div>
-        <h2 class="timeList_item_title" > 2012年度最受欢迎开源软件评选 </h2>
-        <div class="list_show show4"> <img src="images/event20.jpg"/>
-          <h2> <a href="http://www.greatidc.com">2012年度最受欢迎开源软件评选</a> </h2>
-          <p class="m160"> <img src="images/event20_2.jpg"/></p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="4000" data-y="0" id="21">
-        <div class="circle"> 12/12 </div>
-        <h2 class="timeList_item_title" > OSC 应用开发大赛 </h2>
-        <div class="list_show"> <img src="images/event21.jpg" width="500">
-          <h2> <a href="#">OSC 应用开发大赛</a> </h2>
-          <p>举办此次大赛的目的是为了普及 PaaS 的概念，让开发者了解 PaaS 的优点，同时也希望开发者能多了解 Cloud Foundry 这个开源的项目。</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="4200" data-y="0" id="22">
-        <div class="circle"> 12/22 </div>
-        <h2 class="timeList_item_title" > OSC 厦门源创会 </h2>
-        <div class="list_show show5"> <img src="images/event22.jpg" width="500">
-          <h2> <a href="#">OSC 厦门源创会</a> </h2>
-          <p><img src="images/xiamen.jpg" /></p>
-        </div>
-      </div> -->
-      
-      <!-- <div class="step year"  data-x="4200" data-y="0" data-scale ="0.5" id="2013">
-        <div class="year2012"> 2013 </div>
-        <div class="list_show year"> 此时末日已远······ </div>
-      </div>
-      <div class="timeList_item step"  data-x="4600" data-y="0" id="23">
-        <div class="circle"> 01/06 </div>
-        <h2 class="timeList_item_title" > OSChina 翻译频道上线 </h2>
-        <div class="list_show"> <img src="images/event23.png" width="500">
-          <h2> <a href="#">OSChina 翻译频道上线</a> </h2>
-          <p class="m160">我们将一篇长篇的英文文章人工切分成一小段，你可以直接翻译其中的一段，大家一起来完成一整篇文章，不再孤独、寂寞、烦躁、无助 ：） 而且翻译通过编辑审核之后会有积分赠送。</p>
-        </div>
-      </div>
-      
-      <div class="timeList_item step"  data-x="4800" data-y="0" id="24">
-        <div class="circle"> 01/31 </div>
-        <h2 class="timeList_item_title" > JetBrains 开发工具全场2折 </h2>
-        <div class="list_show"> <img src="images/event24.jpg" class="opacity7">
-          <h2> <a href="#">JetBrains 开发工具全场2折</a> </h2>
-          <p class="m160">每个人都有选择的权力。你可以选择开源，可以选择正版，当然在国内选择盗版也没人管你。作为软件产业的一份子，我们十分清楚软件的价值，我们应该尊重他人的劳动，这样他人才会尊重你的工作成果。 <br/>
-        	    拒绝盗版，选择开源 or 正版！</p>
-        </div>
-      </div> -->
-      <!-- lastet 
-      <div class="timeList_item step refresh"  data-x="5000" data-y="0" id="25">
-        <div class="list_show"> <a href='javascript:replay();'><img src="images/refress.png"/></a>
-          <p class="end">jing 的每一天离不开大家的支持！
-            2014，我们会更加努力！</p>
-        </div>
-      </div> -->
-      
-      
-      
-      
-      
-      
-      
     </div>
   </div>
 </section>
@@ -1201,7 +957,7 @@ function initialEffort(){
 			timing = setInterval(function(){
 				var dom = impress.next();
 				var id = +$(dom).attr("id");
-				if(id==25){
+				if(id == lastId){
 					clearInterval(timing);
 					loop = false;
 				}

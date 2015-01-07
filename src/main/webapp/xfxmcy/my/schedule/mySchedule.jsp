@@ -172,7 +172,7 @@ $(function() {
        },
         events: function(start,end, callback) {
             $.ajax({
-                url:'${cy}/task/queryTasks.do',
+                url:'${cy}/task/queryTasks.do?queryType=taskForUser',
                 dataType: 'json',
                 type: "post",
                 data: {
