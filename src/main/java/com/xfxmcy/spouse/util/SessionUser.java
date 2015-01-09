@@ -36,6 +36,17 @@ public class SessionUser implements Serializable{
 	private String ip;
 	/*当前登录角色*/
 	private String role;
+	/*当前登录人图片*/
+	private String photo ;
+	
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
 	public String getRole() {
 		return role;
 	}

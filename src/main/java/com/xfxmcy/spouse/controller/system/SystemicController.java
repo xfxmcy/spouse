@@ -204,6 +204,7 @@ public class SystemicController {
 		sessionInfo.setUserId(employer.getId());
 		sessionInfo.setLoginName(employer.getsAccount());
 		sessionInfo.setIp(IpUtil.getIpAddr(request));
+		sessionInfo.setPhoto(employer.getPath());
 		return sessionInfo;
 	}
 	

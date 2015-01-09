@@ -10,3 +10,5 @@ src/main/webapp/cuSunPlayer/resource/
 /src/main/webapp/media/mp3/
 /.externalToolBuilders
 /src/main/webapp/resource/swf
+/src/main/webapp/resource/upload/romantic/*.jpg
+/src/main/webapp/resource/upload/romantic/*.png

@@ -104,10 +104,10 @@ jQuery(document).ready(function(){
       <div class="service_bg">
         <h3>Get in touch!</h3>
         <ul class="link">
-          <li>jing<a href="#"><strong> cy</strong></a></li>
+          <li>cy<a href="#"><strong> jing</strong></a></li>
         </ul>
-        <p>you</p>
-        <p><span class="px22">+ 800 258 4578</span></p>
+        <p>wait you&nbsp;&nbsp;&nbsp;&nbsp;来信</p>
+        <p>email &nbsp;:&nbsp;&nbsp;<span class="px22"> 11101</span></p>
         <p><img src="${cy}/images/you.jpg" width="204" height="205" alt="picture 1" /></p>
       </div>
       <div class="clr"></div>
@@ -117,7 +117,6 @@ jQuery(document).ready(function(){
         <h1>Our services</h1>
         <div class="clr"></div>
         <div class="block_text">
-          <h2></h2>
           <p><img src="${cy}/images/xfxmcy.png" width="150" height="110" hspace="10" vspace="0" align="left" alt="picture 1" /><strong>give us a change</strong>  to  realize you</p>
           <br />
           <p>&gt;&gt; contact us</p>
@@ -149,6 +148,14 @@ jQuery(document).ready(function(){
       </form>
           <div class="clr"></div>
         </div>
+        <div class="block_text">
+        <div class="block_full">
+          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />title</p>
+          <p>content</p>
+          <div class="clr"></div>
+        </div>
+        <div class="clr"></div>
+      </div>
       </div>
       <div class="clr"></div>
     </div>
@@ -165,7 +172,7 @@ jQuery(document).ready(function(){
        	<li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
-       <p>author lcy</p>
+       <p>Copyright © 2013-2015 xfxmcy.com. All rights reserved.</p>
       <div class="clr"></div>
     </div>
     <div class="clr"></div>

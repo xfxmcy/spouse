@@ -53,5 +53,9 @@ public class SpouseEntityConstant {
 	public static final String TASK_ALLDAY = "1";
 	/*task allday_not*/
 	public static final String TASK_ALLDAY_NOT = "0";
+	
+	/*SPEmployer role */
+	public static final String EMPLOYER_GIRL = "0";
+	public static final String EMPLOYER_BOY = "1";
 }
 

@@ -148,13 +148,12 @@ $(function() {
   <div class="main">
     <div class="services">
       <div class="service_bg">
-        <h3>my dream</h3>
+        <h3>our dream</h3>
         <ul class="link">
-          <li>looking meteor shower<a href="#"><strong>		with you</strong></a></li>
-          <li>sunrise<a href="#"><strong>	with you</strong></a></li>
-          <li>sea<a href="#"><strong>	with you</strong></a></li>
+          <li>looking meteor shower<a href="#"><strong>		together</strong></a></li>
+          <li>sunrise<a href="#"><strong>	together</strong></a></li>
+          <li>sea<a href="#"><strong>	together</strong></a></li>
         </ul>
-        <p>i am not happy beca se</p>
         <p>i am not happy beca se</p>
       </div>
       <div class="clr"></div>
@@ -173,9 +172,8 @@ $(function() {
 	  </div>
       <div class="block_text">
         <div class="block_full">
-          <p>把昨天都作废,现在你在我眼前,我想love</p>
-          <div class="line"></div>
-          <p>请给我机会</p>
+          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />title</p>
+          <p>content</p>
           <div class="clr"></div>
         </div>
         <div class="clr"></div>
@@ -194,7 +192,7 @@ $(function() {
         <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
-       <p>author lcy</p>
+       <p>Copyright © 2013-2015 xfxmcy.com. All rights reserved.</p>
       <div class="clr"></div>
     </div>
     <div class="clr"></div>

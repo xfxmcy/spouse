@@ -24,6 +24,11 @@ function openPrize() {
 					'top=50px,left=500px,resizable=yes,scrollbars=no,height=590px,width=880px,status=no,toolbar=no,titlebar=no,location=no',
 					false);
 }
+
+function blessCount(){
+	alert("谢谢您! bless+1");
+	$("#blessCount").html(parseInt($("#blessCount").html())+1);
+}
 </script>
 <script type="text/javascript" charset="utf-8">
 // <![CDATA[
@@ -127,23 +132,26 @@ p#controls {
       		<iframe allowtransparency="true" frameborder="0" width="290" height="96" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=0&v=0&d=2&bd=0&k=&f=&q=1&e=1&a=1&c=54511&w=290&h=96&align=center"></iframe>
       	</div>
         <%-- <a href="${cy}/romantic/index.jsp"> --%><h3>Our acquaintance</h3><!-- </a> -->
-        <p><u>2014年夏天......</u></p>
-        <p><strong>expected</strong></p>
+        <p><strong>2014年夏天......</strong></p>
       </div>
       <ul class="banner">
         <li><a href="#"><img src="${cy}/images/girl.jpg" width="104" height="104" border="0" alt="banner" /></a></li>
         <li><a href="#"><img src="${cy}/images/girl1.jpg" width="104" height="104" border="0" alt="banner" /></a></li>
       </ul>
       <div class="clr"></div>
-      <h3>Give a bless!</h3>
-      <p>a statistics of blessing them</p>
-      <p><span class="px22">+ 800 258 4578</span></p>
+      <h3>Give a bless!
+      	<span class="block_text">
+      		<a href="javascript:void(0)" onclick="blessCount()" class="link" style="color: #FFF">&nbsp;bless&nbsp;!</a>
+      	</span>
+      </h3>
+      <p>bless &nbsp;:&nbsp;&nbsp;<span class="px22" id="blessCount">4578</span></p>
       <%-- <a href="${cy}/romantic/index.jsp"> --%><h3>About them</h3><!-- </a> -->
-      <p><a href="${cy}/spouse/managerment/host.do"><img src="${cy}/images/xfxmcy.png" width="50%"  hspace="5" align="left" alt="picture" /></a>
-      <a href="#"><strong></strong></a><br />
+      <p><a href="${cy}/spouse/managerment/host.do"><img src="${cy}/images/xfxmcy.png" width="60%"  hspace="5" align="left" alt="picture" /></a>
+      
+        <!-- <a href="#"><strong></strong></a><br />
         silent and loneliness<br/>
-        <a href="#"><strong>cy</strong></a><br />
-        await
+        <a href="#"><strong>cy</strong></a><br /> -->
+        
        </p>
     </div>
     <div class="global_main">
@@ -172,21 +180,19 @@ p#controls {
         <div class="block_list">
           <p class="title">琳</p>
           <p>下忍 </p>
-          <a href="#" class="link">&nbsp;赞&nbsp;</a> </div>
+          <a href="javascript:void(0)" class="link">&nbsp;赞&nbsp;</a> </div>
         <div class="block_list">
           <p class="title">带土</p>
           <p>下忍 </p>
-          <a href="#" class="link">&nbsp;赞&nbsp;</a> </div>
+          <a href="javascript:void(0)" class="link">&nbsp;赞&nbsp;</a> </div>
         <div class="block_list">
          <p class="title">卡卡西</p>
           <p>上忍 </p>
-          <a href="#" class="link">&nbsp;赞&nbsp;</a> </div>
+          <a href="javascript:void(0)" class="link">&nbsp;赞&nbsp;</a> </div>
         <div class="clr"></div>
         <div class="block_full">
-           <p class="title">team</p>
-          <p>隶属于四代下的team</p>
-          <p>4次B级任务,28次C级任务,289次D级任务</p>
-          <a href="#" class="link">&nbsp;赞&nbsp;</a> 
+          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />title</p>
+          <p>content</p>
           <br/>
           <div class="clr"></div>
         </div>
@@ -205,7 +211,7 @@ p#controls {
         <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
-      <p>Copyright © 2001-2007 DreamTemplate.com. All rights reserved.</p>
+      <p>Copyright © 2013-2015 xfxmcy.com. All rights reserved.</p>
       <div class="clr"></div>
     </div>
     <div class="clr"></div>

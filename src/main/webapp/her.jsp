@@ -42,15 +42,13 @@
   <div class="main">
     <div class="services">
       <div class="service_bg">
-        <h3>our memory</h3>
+        <h3>her introduce</h3>
         <ul class="link" style="font-size: 14px;">
           <li>5/4/2014 &nbsp;&nbsp;&nbsp;<a href="#"><strong>first acquaintance</strong></a>.</li>
           <li>14/4/2014&nbsp;&nbsp;&nbsp;<a href="#"><strong>first phone</strong></a>.</li>
           <li>18/4/2014&nbsp;&nbsp;&nbsp;<a href="#"><strong>first date</strong></a>.</li>
           <li>17/10/2014&nbsp;&nbsp;&nbsp;<a href="javascript:window.open('${cy}/app/birthday/index.jsp');"><strong>jing's birthday</strong></a>.</li>
         </ul>
-        <p>snapshot </p>
-        <p>release</p>
       </div>
       <div class="clr"></div>
     </div>
@@ -76,9 +74,8 @@
       </div>
       <div class="block_text">
         <div class="block_full">
-          <p style="font-size: 14px;"><!-- 静 ,美丽,体贴,孝顺,勤劳,善良,爱与智慧的结合体 ....prefect --></p>
-          <div class="line"></div>
-          <p style="font-size: 14px;"><!-- cy想做,土豆辣子,土豆炒土豆,走在通向西藏的路上,抱着熊,欣赏薰衣草的芬芳,目的地云南!<br/>(有静&nbsp;足迹的地方) ...welfare --></p>
+          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />title</p>
+          <p>content</p>
           <div class="clr"></div>
         </div>
         <div class="clr"></div>
@@ -97,7 +94,7 @@
         <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
-       <p>author lcy</p>
+       <p>Copyright © 2013-2015 xfxmcy.com. All rights reserved.</p>
       <div class="clr"></div>
     </div>
     <div class="clr"></div>

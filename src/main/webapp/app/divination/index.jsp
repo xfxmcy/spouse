@@ -41,7 +41,6 @@
 						<div class="slot slot4"></div>
 						<div class="slot slot5"></div>
 						<div class="slot slot6"></div>
-						<div class="slot slot7"></div>
 					</div>
 					
 					<div id="machine3" class="slotMachine">

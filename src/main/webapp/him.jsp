@@ -83,9 +83,8 @@
       </div>
       <div class="block_text">
         <div class="block_full">
-          <p>把昨天都作废,现在你在我眼前,我想love</p>
-          <div class="line"></div>
-          <p>请给我机会</p>
+          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />title</p>
+          <p>content</p>
           <div class="clr"></div>
         </div>
         <div class="clr"></div>
@@ -104,7 +103,7 @@
         <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
-       <p>author lcy</p>
+       <p>Copyright © 2013-2015 xfxmcy.com. All rights reserved.</p>
       <div class="clr"></div>
     </div>
     <div class="clr"></div>

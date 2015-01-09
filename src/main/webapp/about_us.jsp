@@ -28,26 +28,17 @@
   <div class="main">
     <div class="services">
       <div class="service_bg">
-        <h3>Fly me too moon</h3>
-        <p>回忆是条长线,盘旋在天边</p>
-        <p> <a href="#"><strong>沉浮中以为,情深缘浅</strong></a></p>
+        <h3>our memory</h3>
+        <ul class="link" style="font-size: 14px;">
+          <li>5/4/2014 &nbsp;&nbsp;&nbsp;<a href="#"><strong>first acquaintance</strong></a>.</li>
+          <li>14/4/2014&nbsp;&nbsp;&nbsp;<a href="#"><strong>first phone</strong></a>.</li>
+          <li>18/4/2014&nbsp;&nbsp;&nbsp;<a href="#"><strong>first date</strong></a>.</li>
+          <li>17/10/2014&nbsp;&nbsp;&nbsp;<a href="javascript:window.open('${cy}/app/birthday/index.jsp');"><strong>jing's birthday</strong></a>.</li>
+        </ul>
       </div>
-      <ul>
-        <li><a href="${cy}/romantic/index.jsp"><img src="${cy}/images/xfxmcy.png" width="241" height="105" border="0" alt="banner" /></a></li>
-      </ul>
       <div class="clr"></div>
-      <div class="service_bg">
-        <h3>no change in life</h3>
-        <p><a href="#"><strong>14. 04. 15</strong></a></p>
-        <p><strong>你再度出现,我看见誓言</strong></p>
-        <p>错过今世的依恋... <br />
-        	回头看...不曾走远...</p>
-        <p><a href="#"><strong>14. 04. 18</strong></a></p>
-        <p><strong>依依目光...此生不换...</strong></p>
-        <p>要分算不习惯... <br />
-                                 你哭喊,我呼唤,听清耳边的呢喃...</p>
-      </div>
     </div>
+    
     <div class="global_main">
 <!--       <div class="page_title"> -->
 <!--         <h1>About our company</h1> -->
@@ -132,11 +123,9 @@
       <div class="clr"></div>
       <div class="block_text">
         <div class="block_full">
-          <p class="title">...今世的依恋 ...</p>
-          <p>yesterday is destory<br/>
-            <strong>you in the front of you</strong></p>
-          <p>I want have a love<a href="#"> <strong>give me a chance</strong></a></p>
-          <a href="#" class="link2">jing</a>
+          <p class="title">video title</p>
+          <p>	video content  </p>
+          <a href="javascript:void(0)" class="link2">jing</a>
           <div class="clr"></div>
         </div>
         <div class="block_list">
@@ -153,10 +142,8 @@
           <a href="#" class="link2">jing er</a> </div>
         <div class="clr"></div>
         <div class="block_full">
-          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />prefect jing</p>
-          <p>episode</p>
-          <p>cy</p>
-          <a href="#" class="link2">jing er</a>
+          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />title</p>
+          <p>content</p>
           <div class="clr"></div>
         </div>
       </div>
@@ -174,7 +161,7 @@
         <li><a href="${cy}/spouse/managerment/schedule.do">schedule</a></li>
       </ul>
       <div class="clr"></div>
-       <p>author lcy</p>
+      <p>Copyright © 2013-2015 xfxmcy.com. All rights reserved.</p>
       <div class="clr"></div>
     </div>
     <div class="clr"></div>
