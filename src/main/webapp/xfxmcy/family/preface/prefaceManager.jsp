@@ -35,7 +35,7 @@ function saveVideo(){
 				}
 				$.post('${cy}/video/videoPersistent.do',cy.serializeObject(formDia),function(json){
 					if (json.success) {
-						$("#videoGrid").datagrid("insertRow",{
+						$("#prefaceGrid").datagrid("insertRow",{
 							index : 0 ,
 							row : json.result
 						});
@@ -58,21 +58,21 @@ function saveVideo(){
 	});
 }
 function updateVideo(id){
-	if ($("#videoGrid").datagrid('getSelections').length == 1) {
-		updateVideoAble.call(this, $("#videoGrid").datagrid('getSelected').id);
+	if ($("#prefaceGrid").datagrid('getSelections').length == 1) {
+		updateVideoAble.call(this, $("#prefaceGrid").datagrid('getSelected').id);
 	} else {
 		parent.simpleMessAlert.call(this,'提示','请选择1条记录进行操作');
 	}
 }
 
 function deleteVideo(id){
-	if ($("#videoGrid").datagrid('getSelections').length == 1) {
+	if ($("#prefaceGrid").datagrid('getSelections').length == 1) {
 		parent.simpleMessConf.call(this,
 				 'warning',
 				 'do you be sure for your dicision ?',
 				 function(result){
 					if(result){
-						deleteVideoAble.call(this, $("#videoGrid").datagrid('getSelected').id);
+						deleteVideoAble.call(this, $("#prefaceGrid").datagrid('getSelected').id);
 					}
 				}
 		);
@@ -83,8 +83,8 @@ function deleteVideo(id){
 function deleteVideoAble(id){
 	$.post('${cy}/video/videoDelete/'+id+'.do',"queryType=simpleDelete",function(json){
 		if (json.success) {
-			$("#videoGrid").datagrid("deleteRow",
-				 $("#videoGrid").datagrid("getRowIndex",id)
+			$("#prefaceGrid").datagrid("deleteRow",
+				 $("#prefaceGrid").datagrid("getRowIndex",id)
 			);
 		}
 		parent.simpleMessAlert.call(this,'提示',json.message);
@@ -121,8 +121,8 @@ function updateVideoAble(id){
 				}
 				$.post('${cy}/video/videoMerge.do',cy.serializeObject(formDia),function(json){
 					if (json.success) {
-						$("#videoGrid").datagrid("updateRow",{
-							index : $("#videoGrid").datagrid("getRowIndex",id) ,
+						$("#prefaceGrid").datagrid("updateRow",{
+							index : $("#prefaceGrid").datagrid("getRowIndex",id) ,
 							row : json.result
 						});
 						mainDialog.dialog('close');
@@ -139,7 +139,7 @@ function updateVideoAble(id){
 		}],
 		onLoad : function(){
 			formDia = mainDialog.find('form');
-			formDia.form('load',$("#videoGrid").datagrid("getSelected"));	
+			formDia.form('load',$("#prefaceGrid").datagrid("getSelected"));	
 		}
 		
 	});
@@ -175,8 +175,8 @@ function updateVideoAble(id){
 </div>
 <!-- 项目grid -->
 <div style="height: 480px;">
-	<table class="easyui-datagrid" id="videoGrid"
-		data-options="fit:false,idField:'id',loadMsg:'正在加载…',pagination:true,title:'视频信息维护',
+	<table class="easyui-datagrid" id="prefaceGrid"
+		data-options="fit:false,idField:'id',loadMsg:'正在加载…',pagination:true,title:'preface信息维护',
 			url:'${cy}/video/videoQuery.ajax?queryType=simpleQueryPaged',toolbar:'#mainProToolbar', 
 			singleSelect:true, rownumbers : true,pagination : true,  maximized:true, striped:true,
 			pageSize : 5,pageList:[5],fitColumns:true,

@@ -140,6 +140,31 @@ CREATE TABLE `sm_video` (
   `type` varchar(2) DEFAULT NULL COMMENT 'type',
   `description` varchar(500) DEFAULT NULL COMMENT 'description',
   `createTime` datetime DEFAULT NULL COMMENT 'createTime',
+  `artist` varchar(100) DEFAULT NULL COMMENT 'artist',
+  `album` varchar(100) DEFAULT NULL COMMENT 'album',
   `flag` varchar(1) DEFAULT NULL COMMENT '启用标识',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='video';
+
+
+CREATE TABLE  `sm_memory`(
+ `id` varchar(32) NOT NULL COMMENT 'id',
+ `title` varchar(100) DEFAULT NULL COMMENT 'title',
+ `description` text DEFAULT NULL COMMENT 'description',
+ `currentTime` datetime DEFAULT NULL COMMENT '发生时间',
+ `flag` varchar(1) DEFAULT NULL COMMENT '启用标识',
+ `model` varchar(1) DEFAULT NULL COMMENT 'model,ours,her,him,schedule',
+ `userId` varchar(32) DEFAULT NULL COMMENT '添加人'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='memory';
+alter table sm_memory comment '左侧提示表';
+
+CREATE TABLE  `sm_preface`(
+ `id` varchar(32) NOT NULL COMMENT 'id',
+ `title` varchar(100) DEFAULT NULL COMMENT 'title',
+ `image` varchar(500) DEFAULT NULL COMMENT 'image',
+ `content` text DEFAULT NULL COMMENT 'description',
+ `flag` varchar(1) DEFAULT NULL COMMENT '启用标识,每个model只能启用一个',
+ `model` varchar(1) DEFAULT NULL COMMENT 'model,ours,her,him,schedule',
+ `userId` varchar(32) DEFAULT NULL COMMENT '添加人'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='preface';
+alter table sm_preface comment '下侧提示表';

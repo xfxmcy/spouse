@@ -97,7 +97,7 @@
 		}
 	}
 </script>
-<div id="portal" style="position:relative;" >
+<div id="portal" style="position:relative;width: 80%" >
 	<div></div>
 	<div></div>
 </div>

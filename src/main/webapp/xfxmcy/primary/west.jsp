@@ -69,10 +69,12 @@
 </script>
 <div class="easyui-accordion" fit="true" border="false">
 	<div title="菜单">
-		<div id="menuXfxmcyPanel" fit="true" border="false" title="功能菜单"
-			style="padding: 2px;">
-			<ul id="menuXfxmcy"></ul>
-		</div>
+		<div id="menuXfxmcyPanel" fit="false" border="false" title="功能菜单"
+			style="padding: 0px;overflow: hidden;">
+			<ul id="menuXfxmcy" fit="false"></ul>
+		</div> 
 	</div>
-	<div title="其他内容"></div>
+	<div title="其他内容">
+	
+	</div>
 </div>

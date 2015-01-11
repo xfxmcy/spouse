@@ -39,32 +39,37 @@
 		<table class="tableForm datagrid-toolbar"
 					style="width: 100%;height: 110px;">
 					<tr>
-						<td>名称 &nbsp; &nbsp;<input id="dd" name="name" type="text"  required="required" style="width: 130px;"></input></td>
+						<td>名称 &nbsp; &nbsp;<input id="dname" name="name" type="text"  required="required" style="width: 130px;" class="easyui-validatebox" data-options="validType:'maxLength[50]',invalidMessage:'最大长度50'"></input></td>
 						<td colspan="2">描述 &nbsp; &nbsp;<input name="description" id="dateclass"   style="width:350px;" /></td>
 					</tr>
-					
 					<tr>
-						
-						<td colspan="2">
+						<td>作者 &nbsp; &nbsp;<input id="artist" name="artist" type="text"  required="required" style="width: 130px;"></input></td>
+						<td>专辑 &nbsp; &nbsp;<input name="album" id="album"   style="width:190px;" /></td>
+					</tr>
+					<tr>
+						<td>
 							<input name="queryType" id="queryType" value="${param.type}"   style="width:130px;display: none;" />
 							<input name="id" value="${param.mid}"  style="width:130px;display: none;" />
-							类型&nbsp; &nbsp;
+							类型&nbsp;&nbsp;&nbsp;
 							<select id="locationClass" class="easyui-combobox" name="type" style="width:130px;" data-options="editable:false">  
 							    <option value="0">mp3</option>  
 							    <option value="1">video</option>  
 							</select> 
 						</td>
-						<td>上传文件&nbsp; &nbsp;<input id="imagefirst" name="url" class="easyui-validatebox" id="linkStr"   value="${param.linkStr}" style="width:130px;" readonly="readonly" data-options="required:true"  /></td>
+						<td>文件&nbsp;&nbsp;&nbsp;&nbsp;<input id="imagefirst" name="url" class="easyui-validatebox" id="linkStr"   value="${param.linkStr}" style="width:190px;" readonly="readonly" data-options="required:true"  /></td>
 					</tr>
 					<tr>
-						<td>是否启用 &nbsp; &nbsp;
+						<td>启用 &nbsp;&nbsp;
 							<select id="contentclass" class="easyui-combobox" name="flag" style="width:130px;" data-options="editable:false">  
 							    <option value="1">启用</option>  
 							    <option value="0">停用</option>  
 							</select>
 							<input name="formattedCreateTime"     style="width:130px;display: none;" /> 
 						</td>
+						<td>
+						</td>
 					</tr>
+					
 				</table>
 	</form>
 			

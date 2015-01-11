@@ -8,10 +8,12 @@
     <result column="description" property="description" jdbcType="VARCHAR" />
     <result column="flag" property="flag" jdbcType="VARCHAR" />
     <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="artist" property="artist" jdbcType="VARCHAR" />
+    <result column="album" property="album" jdbcType="VARCHAR" />
     <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, url, description, flag, createTime,type
+    id, name, url, description, flag, createTime,type,artist,album
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
@@ -54,14 +56,7 @@
     delete from sm_video
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.xfxmcy.spouse.vo.SMVideo" >
-    insert into sm_video (id, name, url, 
-    	description, flag, createTime
-      )
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
-      #{description,jdbcType=VARCHAR}, #{flag,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP} 
-      )
-  </insert>
+  
   <insert id="insertSelective" parameterType="com.xfxmcy.spouse.vo.SMVideo" >
     insert into sm_video
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -86,6 +81,12 @@
       <if test="type != null" >
         type,
       </if>
+      <if test="artist != null" >
+        artist,
+      </if>
+      <if test="album != null" >
+        album,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -107,7 +108,13 @@
         #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="type != null" >
-        #{type,jdbcType=TIMESTAMP},
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="artist != null" >
+        #{artist,jdbcType=VARCHAR},
+      </if>
+      <if test="album != null" >
+        #{album,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -130,7 +137,13 @@
        createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="type != null" >
-       type = #{type,jdbcType=TIMESTAMP},
+       type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="artist != null" >
+        artist = #{artist,jdbcType=VARCHAR},
+      </if>
+      <if test="album != null" >
+        album = #{album,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}

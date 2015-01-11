@@ -123,6 +123,18 @@ public class SystemicController {
 		else if("video".equals(path)){
 			returnPath = SpouseConstant.SystemicPage.VIDEO_INDEX;
 		}
+		/*ours index*/
+		else if("our".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.OURS_INDEX;
+		}
+		/*preface index*/
+		else if("preface".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.PREFACE_INDEX;
+		}
+		/*memory index*/
+		else if("memory".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.MEMORY_INDEX;
+		}
 		return returnPath;
 	}
 	

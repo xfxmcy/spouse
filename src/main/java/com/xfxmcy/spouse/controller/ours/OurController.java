@@ -13,6 +13,7 @@
 
 package com.xfxmcy.spouse.controller.ours;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.model.SystemicInfo;
+import com.xfxmcy.spouse.service.OurService;
 import com.xfxmcy.spouse.vo.SMFavorite;
 import com.xfxmcy.spouse.vo.SPEmployer;
 
@@ -46,7 +48,9 @@ public class OurController {
  	 * Logger for this class
 	 */
 	private static final Logger logger = Logger.getLogger(OurController.class);
-	
+	/*service*/
+	@Resource
+	private OurService ourServiceImpl ;
 	
 	/**
 	 * 

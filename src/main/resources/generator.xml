@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 	<!-- 数据库驱动包位置 -->
@@ -43,6 +43,7 @@
 		 -->
 	 	<!--   表名                                                                 生成的类名                 Example 的配置 默认为true(生成的class会比较乱,多生成  实体Example类,
 		  										          生成的配置文件会有好多example的配置,所以我们设为false) -->
-        <table tableName="sr_romantic" domainObjectName="SrRomantic" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />		  										          
+   	 		<table tableName="sm_memory" domainObjectName="SMMemory" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />		  										          
+    		<table tableName="sm_preface" domainObjectName="SMPreface" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />		  										          
 	</context>
 </generatorConfiguration>

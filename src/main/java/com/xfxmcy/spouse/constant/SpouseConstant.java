@@ -104,7 +104,14 @@ public final class SpouseConstant {
 		/*meeting manager*/  
 		  public final static String MEETING_INDEX = "/xfxmcy/family/meeting/meetingManager";
 		/*video manager*/  
-		  public final static String VIDEO_INDEX = "/xfxmcy/family/video/videoManager";  
+		  public final static String VIDEO_INDEX = "/xfxmcy/family/video/videoManager";
+		/*memory manager*/  
+		  public final static String MEMORY_INDEX = "/xfxmcy/family/memory/memoryManager";
+		/*ours manager*/  
+		  public final static String OURS_INDEX = "/xfxmcy/family/ours/oursManager";
+		/*preface manager*/  
+		  public final static String PREFACE_INDEX = "/xfxmcy/family/preface/prefaceManager";
+		  
 	}
 	
 	/**
