@@ -25,6 +25,7 @@ import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.model.SystemicInfo;
 import com.xfxmcy.spouse.service.OurService;
+import com.xfxmcy.spouse.util.SpouseUtil;
 import com.xfxmcy.spouse.vo.SMFavorite;
 import com.xfxmcy.spouse.vo.SPEmployer;
 
@@ -102,10 +103,15 @@ public class OurController {
 	 * ──────────────────────────────────
 	 *   		 2015年1月9日 		cy
 	 */
-	@RequestMapping("/memoryQuery")
+	@RequestMapping("/oursQuery")
 	@ResponseBody
-	public SpouseGrid doQueryMemory(QueryParam param , SpouseGrid grid ,HttpServletRequest request){
-		
+	public SpouseGrid doQuery(QueryParam param , SpouseGrid grid ,HttpServletRequest request){
+		try{
+			grid = ourServiceImpl.queryOursPaged(param);
+			logger.info(grid);
+		}catch(Exception e){
+			logger.error(e.getMessage());
+		}	
 		return grid;
 	}
 	

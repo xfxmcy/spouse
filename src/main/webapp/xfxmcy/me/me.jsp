@@ -20,19 +20,55 @@ $(function() {
 
 /*修改密码*/
 function updateSecret(){
-	
+	meDialog = parent.cy.dialog({
+		title : 'update my passwd',
+		href : '${cy}/xfxmcy/me/passwd.jsp?type=simpleUpdate',
+		width : 370,
+		height : 164,
+		buttons : [ {
+			text : 'update',
+			handler : function() {			
+				formDia = meDialog.find('form');
+				
+				if(!formDia.form("validate")){
+					parent.simpleMessAlert.call(this,'提示',"请正确填写您的信息");
+					return;
+				}
+				parent.$.messager.progress();
+				//parent.$.messager.progress('close');
+				$.post('${cy}/employer/passWdMerge.do?type=simpleUpdate',cy.serializeObject(formDia),function(json){
+					if (json.success) {
+						meDialog.dialog('close');
+						
+					}
+					parent.$.messager.progress('close');
+					parent.simpleMessAlert.call(this,'提示',json.message);
+				},'json');
+				
+			} 
+		}, {
+			text : 'cancel',
+			handler : function() {
+				meDialog.dialog('close');
+			}
+		}],
+		onLoad : function(){
+			formDia = meDialog.find('form');
+		}
+		
+	});
 }
 var formDia ;
 var meDialog ;
 /*上传图片*/
 function uploadPhoto(){
 	meDialog = parent.cy.dialog({
-		title : 'add a romantic',
+		title : 'update my photo',
 		href : '${cy}/xfxmcy/me/photo.jsp?type=simpleUpdate',
-		width : 680,
-		height : 400,
+		width : 440,
+		height : 300,
 		buttons : [ {
-			text : 'add',
+			text : 'sure',
 			handler : function() {			
 				formDia = meDialog.find('form');
 				
@@ -42,22 +78,22 @@ function uploadPhoto(){
 				}
 				parent.$.messager.progress();
 				//parent.$.messager.progress('close');
-				/*$.post('${cy}/romantic/romanticPersistent.do',cy.serializeObject(formDia),function(json){
+				$.post('${cy}/employer/employerMerge.do?type=simpleUpdate',cy.serializeObject(formDia),function(json){
 					if (json.success) {
-						$("#romanticGrid").datagrid("insertRow",{
-							index : 0 ,
-							row : json.result
-						});
+						$("#myPhoto").attr('src','${cy}/' + cy.uploadPath + json.result.path);
+						//change photo
 						meDialog.dialog('close');
+						
 					}
+					parent.$.messager.progress('close');
 					parent.simpleMessAlert.call(this,'提示',json.message);
-				},'json');*/
+				},'json');
 				
 			} 
 		}, {
-			text : 'clean',
+			text : 'cancel',
 			handler : function() {
-				formDia.form('clear');	
+				meDialog.dialog('close');
 			}
 		}],
 		onLoad : function(){
@@ -89,7 +125,7 @@ function uploadPhoto(){
 		<tr>
 			<td>照片</td>
 			<td>
-				<img alt="my photo" width="100px" src="${cy}/${sessionInfo.path}">
+				<img id="myPhoto" alt="my photo" width="100px" src="${cy}/${sessionInfo.photo}">
 			</td>
 			<td>
 				<a href="#" class="easyui-linkbutton" onclick="uploadPhoto();">上传</a>	

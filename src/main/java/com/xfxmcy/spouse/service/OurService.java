@@ -12,6 +12,10 @@
 */
 
 package com.xfxmcy.spouse.service;
+
+import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.model.SpouseGrid;
+
 /**
  * ClassName:OurService
  * Function: Ours Service
@@ -25,6 +29,16 @@ package com.xfxmcy.spouse.service;
  * @see 	 
  */
 public interface OurService {
-
+	/**
+	 * 
+	 * queryOursPaged:query ours model paged
+	 *
+	 * @param param		param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年1月12日 		cy
+	 */
+	public SpouseGrid queryOursPaged(QueryParam param);
 }
 

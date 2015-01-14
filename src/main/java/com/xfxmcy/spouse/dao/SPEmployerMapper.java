@@ -3,6 +3,7 @@ package com.xfxmcy.spouse.dao;
 import java.util.List;
 import java.util.Map;
 
+import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.vo.SPEmployer;
 
 public interface SPEmployerMapper {
@@ -63,6 +64,17 @@ public interface SPEmployerMapper {
     int updateByPrimaryKeySelective(SPEmployer record);
     /**
      * 
+     * updateByAccountSelective:update selectively by account
+     *
+     * @param record
+     * @return
+     *   ver     date      		author
+     * ──────────────────────────────────
+     *   		 2015年1月12日 		cy
+     */
+    int updateByAccountSelective(SPEmployer record);
+    /**
+     * 
      * updateByPrimaryKey:update employer 
      *
      * @param record		record	
@@ -83,4 +95,16 @@ public interface SPEmployerMapper {
      *   		 2014年1月9日 		cy
      */
 	SPEmployer doLogin(Map<String, String> map);
+	
+	/**
+	 * 
+	 * queryList:query for list
+	 *
+	 * @param param	param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年1月13日 		cy
+	 */
+	List<SPEmployer> queryListPaged(QueryParam param);
 }

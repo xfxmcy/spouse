@@ -10,6 +10,8 @@ var cy = $.extend({}, cy);/* 定义全局对象，类似于命名空间或包的
 
 
 cy.errorMessage = 'system have a exception , please go on  your action after a while';
+
+cy.uploadPath = '/resource/upload';
 /**
  * @author CY
  * 
@@ -326,3 +328,34 @@ function simpleMessConf(pTitle,pMsg,pFn){
 function simpleMessAlert(pTitle,pMsg,pIcon,pFn){
 	$.messager.alert(pTitle,pMsg,pIcon,pFn);
 }
+
+/**
+ * @author CY
+ * 
+ * model 转换
+ */
+cy.transModelInFront= function(value) {
+	var statusValue = {};
+	statusValue.status = "";
+	switch (value) {
+	case "0":
+		statusValue.status = "ours";
+		break;
+	case "1":
+		statusValue.status = "her";
+		break;
+	case "2":
+		statusValue.status = "him";
+		break;
+	case "3":
+		statusValue.status = "schedule";
+		break;
+	case "4":
+		statusValue.status = "index";
+		break;	
+	default:
+		statusValue.status = "ours";
+		break;
+	}
+	return statusValue;
+};

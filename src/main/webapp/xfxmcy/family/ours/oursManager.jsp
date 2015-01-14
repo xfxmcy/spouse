@@ -177,7 +177,7 @@ function updateVideoAble(id){
 <div style="height: 480px;">
 	<table class="easyui-datagrid" id="oursGrid"
 		data-options="fit:false,idField:'id',loadMsg:'正在加载…',pagination:true,title:'ours信息维护',
-			url:'${cy}/video/videoQuery.ajax?queryType=simpleQueryPaged',toolbar:'#mainProToolbar', 
+			url:'${cy}/ours/oursQuery.ajax?queryType=ours',toolbar:'#mainProToolbar', 
 			singleSelect:true, rownumbers : true,pagination : true,  maximized:true, striped:true,
 			pageSize : 5,pageList:[5],fitColumns:true,
 			checkOnSelect : false,selectOnCheck : false,singleSelect  : true

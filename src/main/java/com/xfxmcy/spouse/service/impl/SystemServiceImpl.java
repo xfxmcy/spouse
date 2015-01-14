@@ -59,8 +59,10 @@ public class SystemServiceImpl implements SystemService {
 		SPEmployer spEmployer = null ;
 		if(SpouseConstant.System.ADMIN_LOGIN.equals(operator)){
 			map.put(SpouseConstant.System.QUERY_ACCOUNT, employer.getsAccount());
-			if(null != employer.getsPassword()){
+			if(null != employer.getsPassword() && !"".equals(employer.getsPassword().trim())){
 				map.put(SpouseConstant.System.QUERY_PASSWORD, Encrypt.md5(employer.getsPassword()));	
+			}else{
+				map.put(SpouseConstant.System.QUERY_PASSWORD, employer.getsPassword());
 			}
 			spEmployer = employerMapper.doLogin(map);
 		}

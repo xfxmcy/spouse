@@ -218,6 +218,30 @@ public final class SpouseConstant {
 		public final static String TASK_FOR_USER = "taskForUser";
 		/*query cy's task*/
 		public final static String TASK_FOR_CY = "taskForCy";
-	}	
+	}
+	
+	/**
+	 * 
+	 * ClassName:Ours
+	 * Function: ours model
+	 * Reason:	 ours model
+	 *
+	 * @author   cy
+	 * @version  SpouseConstant
+	 * @since    Ver 1.1
+	 * @Date	 2015	2015年1月12日		上午9:55:00
+	 *
+	 * @see
+	 */
+	public class Ours {
+		/*preface model*/
+		public final static String OUR_MODEL_PREFACE = "preface";
+		/*our model*/
+		public final static String OUR_MODEL_OURS = "ours";
+		/*memory model*/
+		public final static String OUR_MODEL_MEMORY = "memory";
+	}
+	
+	
 }
 

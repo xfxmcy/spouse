@@ -97,4 +97,33 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  
+  <select id="queryPrefacePaged" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sm_preface
+    <where>
+    	 <if test="likeNameFirst != null" >
+    	  	title like #{likeNameFirst,jdbcType=VARCHAR} 
+    	 </if>
+    	 <if test="model != null and model != ''" >
+    	  	and model =  #{model,jdbcType=VARCHAR} 
+    	 </if>
+    	   
+    </where>
+    <if test="page != null">
+		order by model limit #{startPoint},#{rows} 
+	</if>
+  </select>
+  <select id="queryCountPreface" resultType="java.lang.Long" parameterType="java.lang.String" >
+    select 
+    	count(*)
+    from sm_preface
+    <where>
+    	 <if test="likeNameFirst != null" >
+    	  	title like #{likeNameFirst,jdbcType=VARCHAR} 
+    	 </if>	 
+    </where>
+  </select>
+  
 </mapper>

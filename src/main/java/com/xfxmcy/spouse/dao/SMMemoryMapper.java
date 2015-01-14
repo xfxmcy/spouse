@@ -12,6 +12,12 @@
 */
 
 package com.xfxmcy.spouse.dao;
+
+import java.util.List;
+
+import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.vo.SMMemory;
+
 /**
  * ClassName:SMMemoryMapper
  * Function: memory mapper
@@ -25,6 +31,50 @@ package com.xfxmcy.spouse.dao;
  * @see 	 
  */
 public interface SMMemoryMapper {
-
+	/**
+	 * 
+	 * deleteByPrimaryKey:delete by pk
+	 *
+	 * @param id
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年7月27日 		cy
+	 */
+	int deleteByPrimaryKey(String id);
+	
+	/**
+	 * 
+	 * insertSelective: insert selective
+	 *
+	 * @param smMemory
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年7月27日 		cy
+	 */	
+	int insertSelective(SMMemory smMemory);
+	/**
+	 * 
+	 * queryMemoryPaged:query memory paged
+	 *
+	 * @param param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年1月12日 		cy
+	 */
+	List<SMMemory> queryMemoryPaged(QueryParam param);
+	/**
+	 * 
+	 * queryCountMemory:query count(*) memory
+	 *
+	 * @param param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年1月12日 		cy
+	 */
+	Long queryCountMemory(QueryParam param);
 }
 

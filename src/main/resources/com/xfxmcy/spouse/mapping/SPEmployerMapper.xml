@@ -114,6 +114,31 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
+    <update id="updateByAccountSelective" parameterType="com.xfxmcy.spouse.vo.SPEmployer" >
+    update sp_employer
+    <set >
+      <if test="sPassword != null" >
+        s_password = #{sPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null" >
+        role = #{role,jdbcType=CHAR},
+      </if>
+      <if test="image != null" >
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="path != null" >
+        path = #{path,jdbcType=VARCHAR},
+      </if>
+      <if test="memofirst != null" >
+        memoFirst = #{memofirst,jdbcType=VARCHAR},
+      </if>
+      <if test="memosecond != null" >
+        memoSecond = #{memosecond,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where s_account = #{sAccount,jdbcType=VARCHAR}
+  </update>
+  
   <update id="updateByPrimaryKey" parameterType="com.xfxmcy.spouse.vo.SPEmployer" >
     update sp_employer
     set s_account = #{sAccount,jdbcType=VARCHAR},
@@ -127,12 +152,27 @@
   </update>
   
   <!-- admin login  -->
-   <select id="doLogin" resultMap="BaseResultMap" parameterType="java.util.HashMap">
+  <select id="doLogin" resultMap="BaseResultMap" parameterType="java.util.HashMap">
     select 
     <include refid="Base_Column_List" />
     from sp_employer
     where s_account = #{saccount,jdbcType=VARCHAR}
     and s_password = #{spassword,jdbcType=VARCHAR}
     
+  </select>
+  
+  <select id="queryListPaged" resultMap="BaseResultMap" parameterType="com.xfxmcy.spouse.model.QueryParam" >
+    select 
+    <include refid="Base_Column_List" />
+    from sp_employer
+    	<where>
+    		<if test="queryType != null and queryType != ''">
+    			role = '0' or role = '1'
+    		</if>
+    	</where>
+    
+    	<if test="page != null">
+			order by role desc limit #{startPoint},#{rows} 
+		</if>
   </select>
 </mapper>

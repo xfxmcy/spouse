@@ -99,4 +99,27 @@
     where id = #{id,jdbcType=VARCHAR}
   </update>
   
+  <select id="queryMemoryPaged" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sm_memory
+    <where>
+    	 <if test="likeNameFirst != null" >
+    	  	title like #{likeNameFirst,jdbcType=VARCHAR} 
+    	 </if>  
+    </where>
+    <if test="page != null">
+		order by model limit #{startPoint},#{rows} 
+	</if>
+  </select>
+  <select id="queryCountMemory" resultType="java.lang.Long" parameterType="java.lang.String" >
+    select 
+    	count(*)
+    from sm_memory
+    <where>
+    	 <if test="likeNameFirst != null" >
+    	  	title like #{likeNameFirst,jdbcType=VARCHAR} 
+    	 </if>	 
+    </where>
+  </select>
 </mapper>

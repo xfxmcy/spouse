@@ -167,9 +167,6 @@ function updateVideoAble(id){
 			<a id="showPro" class="easyui-linkbutton" onclick="deleteVideo()" data-options="plain:true">
 				<label class="button-label"><span id = "proDis">删除</span></label>
 			</a>
-			<a id="frontPro" class="easyui-linkbutton" onclick="constructSetting()" data-options="plain:true">
-				<label class="button-label">构建音乐配置文件</label>
-			</a>
 		</div>	
 	
 </div>
@@ -177,7 +174,7 @@ function updateVideoAble(id){
 <div style="height: 480px;">
 	<table class="easyui-datagrid" id="memoryGrid"
 		data-options="fit:false,idField:'id',loadMsg:'正在加载…',pagination:true,title:'memory信息维护',
-			url:'${cy}/video/videoQuery.ajax?queryType=simpleQueryPaged',toolbar:'#mainProToolbar', 
+			url:'${cy}/ours/oursQuery.ajax?queryType=memory',toolbar:'#mainProToolbar', 
 			singleSelect:true, rownumbers : true,pagination : true,  maximized:true, striped:true,
 			pageSize : 5,pageList:[5],fitColumns:true,
 			checkOnSelect : false,selectOnCheck : false,singleSelect  : true
@@ -186,20 +183,13 @@ function updateVideoAble(id){
 			<tr>
 				<th data-options="field:'id',hidden:true, width:100, align:'center'"></th>
 
-				<th data-options="field:'name', width:152, align:'center'">名称</th>
-
-				<th data-options="field:'url', width:180, align:'center'">路径</th>
+				<th data-options="field:'title', width:152, align:'center'">名称</th>
 
 				<th
 					data-options="field:'description', width:330,align:'center'">描述</th>
 				<th
-					data-options="field:'type', width:130,align:'center',formatter:function(value,row){
-					if(value == 1)
-						return 'video';
-					
-					if(value == 0)
-						return 'mp3';
-					
+					data-options="field:'model', width:130,align:'center',formatter:function(value,row){
+						return cy.transModelInFront(value).status;
 					}">类型</th>
 
 				<th
@@ -211,8 +201,7 @@ function updateVideoAble(id){
 						return '停用';
 					
 					}">启用</th>
-				<th
-					data-options="field:'formattedCreateTime', width:170,align:'center' ">创建时间</th>
+				
 			</tr>
 		</thead>
 	</table>

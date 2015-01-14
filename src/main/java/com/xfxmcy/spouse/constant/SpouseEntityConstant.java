@@ -57,5 +57,18 @@ public class SpouseEntityConstant {
 	/*SPEmployer role */
 	public static final String EMPLOYER_GIRL = "0";
 	public static final String EMPLOYER_BOY = "1";
+	
+	
+	/*model in front*/
+	public static final String MODEL_OURS = "0";
+	public static final String MODEL_HER = "1";
+	public static final String MODEL_HIM = "2";
+	public static final String MODEL_SCHEDULE = "3";
+	public static final String MODEL_INDEX = "4";
+	
+	/*employer role*/
+	public static final String ROLE_BOY = "1";
+	public static final String ROLE_GIRL = "0";
+	
 }
 

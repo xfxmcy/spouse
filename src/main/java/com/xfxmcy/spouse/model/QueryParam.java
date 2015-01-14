@@ -37,6 +37,22 @@ public class QueryParam {
 	
 	private Integer rows = 5,page =null;
 	
+	private String role;
+	
+	private String model;
+	
+	public String getModel() {
+		return model;
+	}
+	public void setModel(String model) {
+		this.model = model;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	private String id;
 	
 	public String getId() {

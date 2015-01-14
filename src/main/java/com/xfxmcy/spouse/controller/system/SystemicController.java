@@ -216,7 +216,7 @@ public class SystemicController {
 		sessionInfo.setUserId(employer.getId());
 		sessionInfo.setLoginName(employer.getsAccount());
 		sessionInfo.setIp(IpUtil.getIpAddr(request));
-		sessionInfo.setPhoto(employer.getPath());
+		sessionInfo.setPhoto(request.getSession().getServletContext().getInitParameter("upload_path") + employer.getPath());
 		return sessionInfo;
 	}
 	

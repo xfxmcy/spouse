@@ -26,24 +26,27 @@
 			if (data instanceof Array) {
 				$.each(data, function(index, obj) {
 					var url = obj.fileName;
-						$("#imagesecond").val(url);
+					if (url) {
+						$("#imageFirst").val(obj.name);
+						$("#imageSecond").val(url);
+						$("#me").form('validate');
+					}
 				});
 			}
 		}
 		
-		function clearPhoto(){
-			$("#imagefirst").val();
-			$("#imagesecond").val();
-		}
+		
 	</script>
-	<form action="" method="post" id="romantic"> 
+	<form action="" method="post" id="me"> 
 		<table class="tableForm datagrid-toolbar"
-					style="width: 100%;height: 110px;">
+					style="width: 100%;height: 60px;">
 					<tr>
-						<td>图片 &nbsp; &nbsp;<input id="imagefirst" name="imagefirst" class="easyui-validatebox" id="linkStr"   value="${param.linkStr}" style="width:130px;" readonly="readonly" data-options="required:true"  /></td>
+						<td>图片 &nbsp; &nbsp;<input id="imageFirst" name="image" class="easyui-validatebox" id="linkStr"   style="width:130px;" readonly="readonly" data-options="required:true"  /></td>
 						<td>
 							<input name="queryType" id="queryType" value="${param.type}"   style="width:130px;display: none;" />
-							<input name="id" value="${param.mid}"  style="width:130px;display: none;" />
+							<input name="sAccount" value="${sessionInfo.loginName}"  style="width:130px;display: none;" />
+							<input id="imageSecond" name="path"   style="width:130px;display: none;" />
+							
 						</td>
 					</tr>
 					
@@ -51,7 +54,7 @@
 	</form>
 			
 		<div id="dlg" title="文件上传"
-			style="width: 450px; height: 0px; padding: 10px">
+			style="width: 250px; height: 0px; padding: 10px">
 			<iframe
 				src="${cy}/upload.jsp?params=getTestcaseParam&success=afterTestcaseUploaded"
 				frameborder="0" scrolling="no" id="ifr" ></iframe>

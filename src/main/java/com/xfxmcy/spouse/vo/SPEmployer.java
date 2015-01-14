@@ -10,9 +10,17 @@ public class SPEmployer implements Serializable{
 
     private String sAccount;
 
-    private String sPassword;
+    private String sPassword,sPasswordNew;
+    
+    public String getsPasswordNew() {
+		return sPasswordNew;
+	}
 
-    private String role;
+	public void setsPasswordNew(String sPasswordNew) {
+		this.sPasswordNew = sPasswordNew;
+	}
+
+	private String role;
 
     private String image;
 
@@ -21,8 +29,18 @@ public class SPEmployer implements Serializable{
     private String memofirst;
 
     private String memosecond;
+    
+    private String queryType;
+    
+    public String getQueryType() {
+		return queryType;
+	}
 
-    public String getId() {
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+	}
+
+	public String getId() {
         return id;
     }
 

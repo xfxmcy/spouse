@@ -20,6 +20,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -28,6 +29,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.xfxmcy.spouse.constant.SpouseConstant;
 import com.xfxmcy.spouse.constant.SpouseEntityConstant;
 import com.xfxmcy.spouse.controller.home.HomeController;
+import com.xfxmcy.spouse.dao.SMPrefaceMapper;
+import com.xfxmcy.spouse.dao.SPEmployerMapper;
 import com.xfxmcy.spouse.dao.SYHomeMapper;
 import com.xfxmcy.spouse.dao.SrRomanticMapper;
 import com.xfxmcy.spouse.model.QueryParam;
@@ -37,6 +40,8 @@ import com.xfxmcy.spouse.service.SyHomeService;
 import com.xfxmcy.spouse.util.EmailComponent;
 import com.xfxmcy.spouse.util.IdUtil;
 import com.xfxmcy.spouse.util.TemplateComponent;
+import com.xfxmcy.spouse.vo.SMPreface;
+import com.xfxmcy.spouse.vo.SPEmployer;
 import com.xfxmcy.spouse.vo.SYHome;
 
 /**
@@ -62,7 +67,14 @@ public class SyHomeServiceImpl implements SyHomeService {
 	private SrRomanticMapper romanticMapper; 
 	
 	@Resource
+	private SPEmployerMapper employerMapper; 
+	
+	@Resource
 	private EmailComponent emailComponent ;
+	
+	@Resource
+	private SMPrefaceMapper prefaceMapper; 
+
 	
 	@Transactional(propagation = Propagation.NOT_SUPPORTED ,readOnly = true)
 	@Override
@@ -74,12 +86,22 @@ public class SyHomeServiceImpl implements SyHomeService {
 		if(SpouseConstant.Home.CONSTRUCT_HOME_PAGED.equals(param.getQueryType())){
 			mapParam.put("isBig", SpouseConstant.SQL_FIELD_TRUE);
 			mapParam.put("ph_order", SpouseConstant.SQL_FIELD_TRUE);
+			/*右中大图*/
 			List<SYHome> bigPhotos = homeMapper.selectByCondition(mapParam);
 			mapParam.put("isBig",null);
 			mapParam.put("isSmall", SpouseConstant.SQL_FIELD_TRUE);
+			/*右下小图*/
 			List<SYHome> smallPhotos = homeMapper.selectByCondition(mapParam);
 			mapTemplate.put("bigPhoto", bigPhotos);
 			mapTemplate.put("smallPhoto", smallPhotos);
+			param.setQueryType("host");
+			/*左中角色图*/
+			List<SPEmployer> hostPhotos = employerMapper.queryListPaged(param);
+			mapTemplate.put("hostPhoto", hostPhotos);
+			/*右下 preface*/
+			param.setModel(SpouseEntityConstant.MODEL_INDEX);
+			List<SMPreface> prefaces = prefaceMapper.queryPrefacePaged(param);
+			mapTemplate.put("prefaces", prefaces);
 			File origin = new File(param.getMemoFirst()+SpouseConstant.Home.MARKER_PATH_INDEX);
         	if(null != origin && origin.exists()){
         		origin.delete();
