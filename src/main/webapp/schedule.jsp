@@ -16,10 +16,26 @@
 <script type="text/javascript" src="${cy}/js/fullcalendar/jquery-ui.custom.min.js"></script>
 <script type="text/javascript" src="${cy}/js/fullcalendar/fullcalendar.min.js"></script>
 <script type="text/javascript" src="${cy}/js/fullcalendar/jquery.fancybox-1.3.1.pack.js"></script>
-
+<script type="text/javascript" src="${cy}/js/jquery-easyui-cy/xfUtil.js"></script>
 <script type="text/javascript">
 $(function() { 
 	//$("body").css("visibility","visible");
+	$.post("${cy}/ours/oursQuery.ajax", {
+			queryType:'preface',
+			model: cy.reverseModelInFront("schedule").status
+			},function(data){
+				if(data.total > 0){
+					if(data.rows[0].image && data.rows[0].image != ''){
+						$("#schedulePhoto").attr('src','${cy}' + cy.uploadPath + data.rows[0].image);	
+					}
+					$("#scheduleContent").html(data.rows[0].content); 
+					$("#scheduleTitle").html(data.rows[0].title); 
+				}
+			
+			},'json');
+	
+	
+	
 	$('#calendar').fullCalendar({
 		theme: true,  
         editable:false,  
@@ -172,8 +188,11 @@ $(function() {
 	  </div>
       <div class="block_text">
         <div class="block_full">
-          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />title</p>
-          <p>content</p>
+          <p class="title">
+          <img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="schedulePhoto" id="schedulePhoto" />
+          <span id="scheduleTitle"></span>
+          </p>
+          <p id="scheduleContent"></p>
           <div class="clr"></div>
         </div>
         <div class="clr"></div>

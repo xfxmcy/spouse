@@ -39,6 +39,20 @@ $(document).ready(function(){
 		auto: true, 
 		continuous: true
 	});	
+	$.post("${cy}/ours/oursQuery.ajax", {
+		queryType:'preface',
+		model: cy.reverseModelInFront("index").status
+		},function(data){
+			if(data.total > 0){
+				
+				if(data.rows[0].image && data.rows[0].image != ''){
+					$("#indexPhoto").attr('src','${cy}' + cy.uploadPath + data.rows[0].image);	
+				}
+				$("#indexContent").html(data.rows[0].content); 
+				$("#indexTitle").html(data.rows[0].title); 
+			}
+		
+		},'json');
 });
 // ]]>
 </script>
@@ -191,8 +205,10 @@ p#controls {
           <a href="javascript:void(0)" class="link">&nbsp;赞&nbsp;</a> </div>
         <div class="clr"></div>
         <div class="block_full">
-          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />title</p>
-          <p>content</p>
+          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="indexPhoto"  id="indexPhoto"/>
+          <span id="indexTitle"></span>
+          </p>
+          <p id="indexContent"></p>
           <br/>
           <div class="clr"></div>
         </div>

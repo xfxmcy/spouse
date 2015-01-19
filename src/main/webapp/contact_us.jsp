@@ -65,6 +65,21 @@ jQuery(document).ready(function(){
 		alert("正在发送请稍后....");
 	});
 	
+	$.post("${cy}/ours/oursQuery.ajax", {
+		queryType:'preface',
+		model: cy.reverseModelInFront("contact").status
+		},function(data){
+			if(data.total > 0){
+				
+				if(data.rows[0].image && data.rows[0].image != ''){
+					$("#contactPhoto").attr('src','${cy}' + cy.uploadPath + data.rows[0].image);	
+				}
+				$("#contactContent").html(data.rows[0].content); 
+				$("#contactTitle").html(data.rows[0].title); 
+			}
+		
+		},'json');
+	
 });
 // ]]>
 </script>
@@ -150,8 +165,10 @@ jQuery(document).ready(function(){
         </div>
         <div class="block_text">
         <div class="block_full">
-          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />title</p>
-          <p>content</p>
+          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="contactPhoto" id="contactPhoto" />
+          	<span id="contactTitle"></span>
+          </p>
+          <p id="contactContent"></p>
           <div class="clr"></div>
         </div>
         <div class="clr"></div>

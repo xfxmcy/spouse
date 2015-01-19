@@ -81,5 +81,115 @@ public class OurServiceImpl implements OurService {
 		
 		return grid;
 	}
+
+
+
+	@Override
+	public Object persistOurs(Object t , String queryType) {
+		
+		if(SpouseConstant.Ours.OUR_MODEL_PREFACE.equals(queryType)){
+			prefaceMapper.insertSelective((SMPreface)t);
+		}
+		/*ours model*/
+		else if(SpouseConstant.Ours.OUR_MODEL_OURS.equals(queryType)){
+		}
+		/*memory model*/
+		else if(SpouseConstant.Ours.OUR_MODEL_MEMORY.equals(queryType)){
+		}
+		
+		return t ;
+	}
+
+
+
+	@Override
+	public Object mergeOurs(Object t, String queryType) {
+		
+		if(SpouseConstant.Ours.OUR_MODEL_PREFACE.equals(queryType)){
+			prefaceMapper.updateByPrimaryKeySelective((SMPreface)t);
+		}
+		/*ours model*/
+		else if(SpouseConstant.Ours.OUR_MODEL_OURS.equals(queryType)){
+		}
+		/*memory model*/
+		else if(SpouseConstant.Ours.OUR_MODEL_MEMORY.equals(queryType)){
+		}
+		return t;
+		
+	}
+
+
+
+	@Override
+	public void deleteOurs(String key, QueryParam queryType) {
+		
+		if(SpouseConstant.Ours.OUR_MODEL_PREFACE.equals(queryType.getQueryType())){
+			prefaceMapper.deleteByPrimaryKey(key);
+		}
+		/*ours model*/
+		else if(SpouseConstant.Ours.OUR_MODEL_OURS.equals(queryType.getQueryType())){
+		}
+		/*memory model*/
+		else if(SpouseConstant.Ours.OUR_MODEL_MEMORY.equals(queryType.getQueryType())){
+		}
+		
+	}
+
+
+
+	@Override
+	public String closeOurs(String key, QueryParam param) {
+		
+		if(SpouseConstant.Ours.OUR_MODEL_PREFACE.equals(param.getQueryType())){
+			SMPreface preface = new SMPreface();
+			preface.setId(key);
+			preface.setFlag("0");
+			prefaceMapper.updateByPrimaryKeySelective(preface);
+			return "1";
+				
+		}
+		/*ours model*/
+		else if(SpouseConstant.Ours.OUR_MODEL_OURS.equals(param.getQueryType())){
+		}
+		/*memory model*/
+		else if(SpouseConstant.Ours.OUR_MODEL_MEMORY.equals(param.getQueryType())){
+		}
+		return null ;
+		
+	}
+
+
+
+	
+	@Override
+	public String openOurs(String key, QueryParam param) {
+		
+		if(SpouseConstant.Ours.OUR_MODEL_PREFACE.equals(param.getQueryType())){
+			param.setId(key);
+			List<SMPreface> list = prefaceMapper.selectOpenedInModel(param);
+			if(null != list && list.size() > 0)
+				return "0";
+			SMPreface preface = new SMPreface();
+			preface.setId(key);
+			preface.setFlag("1");
+			prefaceMapper.updateByPrimaryKeySelective(preface);
+			return "1";
+				
+		}
+		/*ours model*/
+		else if(SpouseConstant.Ours.OUR_MODEL_OURS.equals(param.getQueryType())){
+		}
+		/*memory model*/
+		else if(SpouseConstant.Ours.OUR_MODEL_MEMORY.equals(param.getQueryType())){
+		}
+		return null ;
+		
+	}
+
+
+
+
+
+
 }
 

@@ -98,7 +98,7 @@
     where id = #{id,jdbcType=VARCHAR}
   </update>
   
-  <select id="queryPrefacePaged" resultMap="BaseResultMap" parameterType="java.lang.String" >
+  <select id="queryPrefacePaged" resultMap="BaseResultMap" parameterType="com.xfxmcy.spouse.model.QueryParam" >
     select 
     <include refid="Base_Column_List" />
     from sm_preface
@@ -109,21 +109,32 @@
     	 <if test="model != null and model != ''" >
     	  	and model =  #{model,jdbcType=VARCHAR} 
     	 </if>
-    	   
+     
     </where>
     <if test="page != null">
 		order by model limit #{startPoint},#{rows} 
 	</if>
   </select>
-  <select id="queryCountPreface" resultType="java.lang.Long" parameterType="java.lang.String" >
+  <select id="queryCountPreface" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.model.QueryParam" >
     select 
     	count(*)
     from sm_preface
     <where>
     	 <if test="likeNameFirst != null" >
     	  	title like #{likeNameFirst,jdbcType=VARCHAR} 
+    	 </if>
+    	 <if test="model != null and model != ''" >
+    	  	and model =  #{model,jdbcType=VARCHAR} 
     	 </if>	 
     </where>
   </select>
-  
+  <!-- open in specifical model -->
+  <select id="selectOpenedInModel" resultMap="BaseResultMap" parameterType="com.xfxmcy.spouse.model.QueryParam" >
+    select 
+    <include refid="Base_Column_List" />
+    from sm_preface
+    where 
+    model = (select model from sm_preface where id = #{id,jdbcType=VARCHAR})
+    and flag = '1' 
+  </select>
 </mapper>

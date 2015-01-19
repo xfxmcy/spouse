@@ -88,6 +88,12 @@ public class SMPreface {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	
+	private String queryType ;
+	public String getQueryType() {
+		return queryType;
+	}
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+	}
 }
 

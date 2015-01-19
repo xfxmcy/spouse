@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${cy}/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${cy}/js/jquery-easyui-cy/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="${cy}/js/jquery-easyui-cy/xfUtil.js"></script>
 <script type="text/javascript">
 	var liFavorite = "";
 	(function(){
@@ -22,6 +23,21 @@
 			}
 			$("#favorite").append(liFavorite);
 		});
+		
+		$.post("${cy}/ours/oursQuery.ajax", {
+			queryType:'preface',
+			model: cy.reverseModelInFront("him").status
+			},function(data){
+				if(data.total > 0){
+					if(data.rows[0].image && data.rows[0].image != ''){
+						$("#hisPhoto").attr('src','${cy}' + cy.uploadPath + data.rows[0].image);	
+					}
+					$("#hisContent").html(data.rows[0].content); 
+					$("#hisTitle").html(data.rows[0].title); 
+				}
+			
+			},'json');
+		
 		
 	})();
 </script>
@@ -83,8 +99,11 @@
       </div>
       <div class="block_text">
         <div class="block_full">
-          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />title</p>
-          <p>content</p>
+          <p class="title">
+          	<img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="hisPhoto" id="hisPhoto" />
+          <span id="hisTitle"></span>
+          </p>
+          <p id="hisContent"></p>
           <div class="clr"></div>
         </div>
         <div class="clr"></div>

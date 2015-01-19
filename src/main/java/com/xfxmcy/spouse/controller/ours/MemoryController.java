@@ -43,5 +43,9 @@ public class MemoryController {
 	/*service*/
 	@Resource
 	private OurService ourServiceImpl ;
+	
+	
+	
+	
 }
 

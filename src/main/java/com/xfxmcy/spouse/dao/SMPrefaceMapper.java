@@ -54,6 +54,17 @@ public interface SMPrefaceMapper {
 	 *   		 2014年7月27日 		cy
 	 */
 	int insertSelective(SMPreface preface);
+	/**
+	 * 
+	 * updateByPrimaryKeySelective: update selective
+	 *
+	 * @param preface
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2014年7月27日 		cy
+	 */
+	int updateByPrimaryKeySelective(SMPreface preface);
 
 	/**
 	 * 
@@ -77,5 +88,16 @@ public interface SMPrefaceMapper {
 	 *   		 2015年1月12日 		cy
 	 */
 	Long queryCountPreface(QueryParam param);
+	/**
+	 * 
+	 * selectOpenedInModel:select opened by model
+	 *
+	 * @param param	param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年1月18日 		cy
+	 */
+	List<SMPreface> selectOpenedInModel(QueryParam param);
 }
 

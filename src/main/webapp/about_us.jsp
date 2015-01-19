@@ -8,8 +8,28 @@
 <link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${cy}/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${cy}/js/primary/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="${cy}/js/jquery-easyui-cy/xfUtil.js"></script>
 </head>
-
+<script type="text/javascript">
+$(document).ready(function(){	
+	$.post("${cy}/ours/oursQuery.ajax", {
+		queryType:'preface',
+		model: cy.reverseModelInFront("ours").status
+		},function(data){
+			if(data.total > 0){
+				
+				if(data.rows[0].image && data.rows[0].image != ''){
+					$("#oursPhoto").attr('src','${cy}' + cy.uploadPath + data.rows[0].image);	
+				}
+				$("#oursContent").html(data.rows[0].content); 
+				$("#oursTitle").html(data.rows[0].title); 
+			}
+		
+		},'json');
+		
+});
+</script>
 <body>
 <div id="container">
   <div class="header">
@@ -142,8 +162,10 @@
           <a href="#" class="link2">jing er</a> </div>
         <div class="clr"></div>
         <div class="block_full">
-          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="picture" />title</p>
-          <p>content</p>
+          <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="oursPhoto" id="oursPhoto" />
+         	<span id="oursTitle"></span>
+          </p>
+          <p id="oursContent"></p>
           <div class="clr"></div>
         </div>
       </div>

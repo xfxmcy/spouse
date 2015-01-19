@@ -353,8 +353,44 @@ cy.transModelInFront= function(value) {
 	case "4":
 		statusValue.status = "index";
 		break;	
+	case "5":
+		statusValue.status = "contact";
+		break;			
 	default:
 		statusValue.status = "ours";
+		break;
+	}
+	return statusValue;
+};
+/**
+ * @author CY
+ * 
+ * model 反转换
+ */
+cy.reverseModelInFront= function(value) {
+	var statusValue = {};
+	statusValue.status = "";
+	switch (value) {
+	case "ours":
+		statusValue.status = "0";
+		break;
+	case "her":
+		statusValue.status = "1";
+		break;
+	case "him":
+		statusValue.status = "2";
+		break;
+	case "schedule":
+		statusValue.status = "3";
+		break;
+	case "index":
+		statusValue.status = "4";
+		break;
+	case "contact":
+		statusValue.status = "5";
+		break;		
+	default:
+		statusValue.status = "0";
 		break;
 	}
 	return statusValue;

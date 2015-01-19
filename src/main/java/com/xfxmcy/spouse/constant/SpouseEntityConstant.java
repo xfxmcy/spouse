@@ -65,6 +65,7 @@ public class SpouseEntityConstant {
 	public static final String MODEL_HIM = "2";
 	public static final String MODEL_SCHEDULE = "3";
 	public static final String MODEL_INDEX = "4";
+	public static final String MODEL_CONTACT = "5";
 	
 	/*employer role*/
 	public static final String ROLE_BOY = "1";
