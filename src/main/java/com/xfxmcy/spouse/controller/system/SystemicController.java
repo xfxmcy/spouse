@@ -115,6 +115,14 @@ public class SystemicController {
 		else if("mySchedule".equals(path)){
 			returnPath = SpouseConstant.SystemicPage.SCHEDULE_MANA_INDEX;
 		}
+		/*myPhoto index*/
+		else if("myPhoto".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.SCHEDULE_MYPHOTO_INDEX;
+		}
+		/*hisPhoto index*/
+		else if("hisPhoto".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.SCHEDULE_HISPHOTO_INDEX;
+		}
 		/*meeting index*/
 		else if("meeting".equals(path)){
 			returnPath = SpouseConstant.SystemicPage.MEETING_INDEX;

@@ -154,7 +154,8 @@ CREATE TABLE  `sm_memory`(
  `currentTime` datetime DEFAULT NULL COMMENT '发生时间',
  `flag` varchar(1) DEFAULT NULL COMMENT '启用标识',
  `model` varchar(1) DEFAULT NULL COMMENT 'model,ours,her,him,schedule',
- `userId` varchar(32) DEFAULT NULL COMMENT '添加人'
+ `userId` varchar(32) DEFAULT NULL COMMENT '添加人',
+ `href` varchar(150) DEFAULT NULL COMMENT 'href'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='memory';
 alter table sm_memory comment '左侧提示表';
 

@@ -95,6 +95,7 @@ public class OurServiceImpl implements OurService {
 		}
 		/*memory model*/
 		else if(SpouseConstant.Ours.OUR_MODEL_MEMORY.equals(queryType)){
+			smMemoryMapper.insertSelective((SMMemory)t);
 		}
 		
 		return t ;
@@ -113,6 +114,7 @@ public class OurServiceImpl implements OurService {
 		}
 		/*memory model*/
 		else if(SpouseConstant.Ours.OUR_MODEL_MEMORY.equals(queryType)){
+			smMemoryMapper.updateByPrimaryKeySelective((SMMemory)t);
 		}
 		return t;
 		
@@ -131,6 +133,7 @@ public class OurServiceImpl implements OurService {
 		}
 		/*memory model*/
 		else if(SpouseConstant.Ours.OUR_MODEL_MEMORY.equals(queryType.getQueryType())){
+			smMemoryMapper.deleteByPrimaryKey(key);
 		}
 		
 	}
@@ -153,6 +156,10 @@ public class OurServiceImpl implements OurService {
 		}
 		/*memory model*/
 		else if(SpouseConstant.Ours.OUR_MODEL_MEMORY.equals(param.getQueryType())){
+			SMMemory memory = new SMMemory();
+			memory.setId(key);
+			memory.setFlag("0");
+			smMemoryMapper.updateByPrimaryKeySelective(memory);
 		}
 		return null ;
 		
@@ -181,6 +188,10 @@ public class OurServiceImpl implements OurService {
 		}
 		/*memory model*/
 		else if(SpouseConstant.Ours.OUR_MODEL_MEMORY.equals(param.getQueryType())){
+			SMMemory memory = new SMMemory();
+			memory.setId(key);
+			memory.setFlag("1");
+			smMemoryMapper.updateByPrimaryKeySelective(memory);
 		}
 		return null ;
 		

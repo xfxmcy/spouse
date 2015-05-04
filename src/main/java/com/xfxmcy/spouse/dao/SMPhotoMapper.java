@@ -1,5 +1,8 @@
 package com.xfxmcy.spouse.dao;
 
+import java.util.List;
+
+import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.vo.SMPhoto;
 
 public interface SMPhotoMapper {
@@ -10,6 +13,8 @@ public interface SMPhotoMapper {
     int insertSelective(SMPhoto record);
 
     SMPhoto selectByPrimaryKey(String id);
+    
+    List<SMPhoto> selectPhotosBySelective(QueryParam param);
 
     int updateByPrimaryKeySelective(SMPhoto record);
 

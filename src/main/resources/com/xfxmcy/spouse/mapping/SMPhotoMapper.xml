@@ -125,4 +125,11 @@
       author_id = #{authorId,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <!-- select photoes -->
+  <select id="selectPhotosBySelective"  resultMap="BaseResultMap" parameterType="com.xfxmcy.spouse.model.QueryParam" >
+    select 
+    <include refid="Base_Column_List" />
+    from sm_photo
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
 </mapper>

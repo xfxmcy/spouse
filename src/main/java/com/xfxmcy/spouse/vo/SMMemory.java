@@ -49,6 +49,13 @@ public class SMMemory {
 	private String flag;
 	private String model;
 	private String userId;
+	private String href ;
+	public String getHref() {
+		return href;
+	}
+	public void setHref(String href) {
+		this.href = href;
+	}
 	public SMMemory() {
 
 		// TODO Auto-generated constructor stub
@@ -103,6 +110,17 @@ public class SMMemory {
     		return df.format(getCurrentTime());
     	}
     	return "";
+	}
+	String queryType;
+	
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+	}
+	public String getQueryType() {
+		
+		// TODO Auto-generated method stub
+		return queryType;
+		
 	} 
 }
 

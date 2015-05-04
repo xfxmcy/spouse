@@ -9,9 +9,10 @@
     <result column="flag" property="flag" jdbcType="VARCHAR" />
     <result column="model" property="model" jdbcType="VARCHAR" />
     <result column="userId" property="userId" jdbcType="VARCHAR" />
+     <result column="href" property="href" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, currentTime, description, title, flag, model, userId
+    id, currentTime, description, title, flag, model, userId ,href
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
@@ -48,7 +49,9 @@
       <if test="currentTime != null" >
         currentTime,
       </if>
-      
+      <if test="href != null" >
+        href,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -71,6 +74,9 @@
       </if>
       <if test="currentTime != null" >
         #{currentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="href != null" >
+        #{href,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -95,6 +101,9 @@
       <if test="currentTime != null" >
         currentTime = #{currentTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="href != null" >
+        href = #{href,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
@@ -106,19 +115,25 @@
     <where>
     	 <if test="likeNameFirst != null" >
     	  	title like #{likeNameFirst,jdbcType=VARCHAR} 
+    	 </if>
+    	  <if test="model != null and model != ''" >
+    	  	and model =  #{model,jdbcType=VARCHAR} 
     	 </if>  
     </where>
     <if test="page != null">
 		order by model limit #{startPoint},#{rows} 
 	</if>
   </select>
-  <select id="queryCountMemory" resultType="java.lang.Long" parameterType="java.lang.String" >
+  <select id="queryCountMemory" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.model.QueryParam" >
     select 
     	count(*)
     from sm_memory
     <where>
     	 <if test="likeNameFirst != null" >
     	  	title like #{likeNameFirst,jdbcType=VARCHAR} 
+    	 </if>
+    	  <if test="model != null and model != ''" >
+    	  	and model =  #{model,jdbcType=VARCHAR} 
     	 </if>	 
     </where>
   </select>

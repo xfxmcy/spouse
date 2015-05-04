@@ -33,7 +33,38 @@ $(function() {
 				}
 			
 			},'json');
-	
+	/*schedule*/
+	$.post("${cy}/ours/oursQuery.ajax", {
+		queryType:'memory',
+		model: cy.reverseModelInFront("schedule").status
+		},function(data){
+			if(data.total > 0){
+				var lis = "";
+				for(var i = 0 ; i < data.rows.length ; i ++){
+					if(data.rows[i].href != null && data.rows[i].href != ""){
+						if(data.rows[i].href.substr(0,4) == "http"){
+							var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
+							+"<a href=\"javascript:window.open('" + data.rows[i].href + "');\">"
+							+"<strong>" + data.rows[i].title + "</strong></a></li>";	
+						}
+						else{
+							var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
+							+"<a href=\"javascript:window.open('${cy}" + data.rows[i].href + "');\">"
+							+"<strong>" + data.rows[i].title + "</strong></a></li>";
+						}
+						
+					}
+					else{
+						var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
+						+"<a href=\"#\">"
+						+"<strong>" + data.rows[i].title + "</strong></a></li>";
+					}
+					lis += li;
+				}
+				$("#scheduleIntroduce").html(lis);
+			}
+		
+		},'json');
 	
 	
 	$('#calendar').fullCalendar({
@@ -165,10 +196,8 @@ $(function() {
     <div class="services">
       <div class="service_bg">
         <h3>our dream</h3>
-        <ul class="link">
-          <li>looking meteor shower<a href="#"><strong>		together</strong></a></li>
-          <li>sunrise<a href="#"><strong>	together</strong></a></li>
-          <li>sea<a href="#"><strong>	together</strong></a></li>
+        <ul class="link" id ="scheduleIntroduce">
+          
         </ul>
         <p>i am not happy beca se</p>
       </div>

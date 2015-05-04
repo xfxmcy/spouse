@@ -28,6 +28,38 @@ $(document).ready(function(){
 			}
 		
 		},'json');
+	
+	$.post("${cy}/ours/oursQuery.ajax", {
+		queryType:'memory',
+		model: cy.reverseModelInFront("her").status
+		},function(data){
+			if(data.total > 0){
+				var lis = "";
+				for(var i = 0 ; i < data.rows.length ; i ++){
+					if(data.rows[i].href != null && data.rows[i].href != ""){
+						if(data.rows[i].href.substr(0,4) == "http"){
+							var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
+							+"<a href=\"javascript:window.open('" + data.rows[i].href + "');\">"
+							+"<strong>" + data.rows[i].title + "</strong></a></li>";	
+						}
+						else{
+							var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
+							+"<a href=\"javascript:window.open('${cy}" + data.rows[i].href + "');\">"
+							+"<strong>" + data.rows[i].title + "</strong></a></li>";
+						}
+						
+					}
+					else{
+						var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
+						+"<a href=\"#\">"
+						+"<strong>" + data.rows[i].title + "</strong></a></li>";
+					}
+					lis += li;
+				}
+				$("#herIntroduce").html(lis);
+			}
+		
+		},'json');
 		
 });
 </script>
@@ -64,11 +96,7 @@ $(document).ready(function(){
     <div class="services">
       <div class="service_bg">
         <h3>her introduce</h3>
-        <ul class="link" style="font-size: 14px;">
-          <li>5/4/2014 &nbsp;&nbsp;&nbsp;<a href="#"><strong>first acquaintance</strong></a>.</li>
-          <li>14/4/2014&nbsp;&nbsp;&nbsp;<a href="#"><strong>first phone</strong></a>.</li>
-          <li>18/4/2014&nbsp;&nbsp;&nbsp;<a href="#"><strong>first date</strong></a>.</li>
-          <li>17/10/2014&nbsp;&nbsp;&nbsp;<a href="javascript:window.open('${cy}/app/birthday/index.jsp');"><strong>jing's birthday</strong></a>.</li>
+        <ul id="herIntroduce" class="link" style="font-size: 14px;">
         </ul>
       </div>
       <div class="clr"></div>

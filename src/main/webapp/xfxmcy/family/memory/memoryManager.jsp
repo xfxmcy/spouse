@@ -19,12 +19,12 @@ $(function() {
 
 var mainDialog ;
 var formDia ;
-function saveVideo(){
+function saveMemory(){
  	mainDialog = parent.cy.dialog({
-		title : 'add a video',
-		href : '${cy}/xfxmcy/family/video/videoForm.jsp?type=simpleSave',
+		title : 'add a memory',
+		href : '${cy}/xfxmcy/family/memory/memoryForm.jsp?type=memory',
 		width : 680,
-		height : 400,
+		height : 191,
 		buttons : [{
 			text : 'add',
 			handler : function() {			
@@ -33,7 +33,7 @@ function saveVideo(){
 					parent.simpleMessAlert.call(this,'提示',"请认真填写信息");
 					return;
 				}
-				$.post('${cy}/video/videoPersistent.do',cy.serializeObject(formDia),function(json){
+				$.post('${cy}/memory/memoryPersistent.do',cy.serializeObject(formDia),function(json){
 					if (json.success) {
 						$("#memoryGrid").datagrid("insertRow",{
 							index : 0 ,
@@ -57,22 +57,22 @@ function saveVideo(){
 		
 	});
 }
-function updateVideo(id){
+function updateMemory(id){
 	if ($("#memoryGrid").datagrid('getSelections').length == 1) {
-		updateVideoAble.call(this, $("#memoryGrid").datagrid('getSelected').id);
+		updateMemoryAble.call(this, $("#memoryGrid").datagrid('getSelected').id);
 	} else {
 		parent.simpleMessAlert.call(this,'提示','请选择1条记录进行操作');
 	}
 }
 
-function deleteVideo(id){
+function deleteMemory(id){
 	if ($("#memoryGrid").datagrid('getSelections').length == 1) {
 		parent.simpleMessConf.call(this,
 				 'warning',
 				 'do you be sure for your dicision ?',
 				 function(result){
 					if(result){
-						deleteVideoAble.call(this, $("#memoryGrid").datagrid('getSelected').id);
+						deleteMemoryAble.call(this, $("#memoryGrid").datagrid('getSelected').id);
 					}
 				}
 		);
@@ -80,8 +80,8 @@ function deleteVideo(id){
 		parent.simpleMessAlert.call(this,'提示','请选择1条记录进行操作');
 	}
 }
-function deleteVideoAble(id){
-	$.post('${cy}/video/videoDelete/'+id+'.do',"queryType=simpleDelete",function(json){
+function deleteMemoryAble(id){
+	$.post('${cy}/memory/memoryDelete/'+id+'.do',"queryType=memory",function(json){
 		if (json.success) {
 			$("#memoryGrid").datagrid("deleteRow",
 				 $("#memoryGrid").datagrid("getRowIndex",id)
@@ -91,26 +91,13 @@ function deleteVideoAble(id){
 	},'json');
 	
 }
-/*构建 setting file*/
-function constructSetting(){
-	parent.simpleMessConf.call(this,
-				 'warning',
-				 'do you want refresh musicial template ?',
-				 function(result){
-					if(result){
-						$.post('${cy}/video/templateMusic.do',"queryType=simpleQueryOnly",function(json){
-								parent.simpleMessAlert.call(this,'提示',json.message);
-							},'json');
-					}
-				}
-		);
-}
-function updateVideoAble(id){
+
+function updateMemoryAble(id){
 	mainDialog = parent.cy.dialog({
-		title : 'update a video',
-		href : '${cy}/xfxmcy/family/video/videoForm.jsp?type=simpleUpdate',
+		title : 'update a memory',
+		href : '${cy}/xfxmcy/family/memory/memoryForm.jsp?type=memory',
 		width : 680,
-		height : 400,
+		height : 191,
 		buttons : [ {
 			text : 'update',
 			handler : function() {			
@@ -119,7 +106,7 @@ function updateVideoAble(id){
 					parent.simpleMessAlert.call(this,'提示',"请认真填写信息");
 					return;
 				}
-				$.post('${cy}/video/videoMerge.do',cy.serializeObject(formDia),function(json){
+				$.post('${cy}/memory/memoryMerge.do',cy.serializeObject(formDia),function(json){
 					if (json.success) {
 						$("#memoryGrid").datagrid("updateRow",{
 							index : $("#memoryGrid").datagrid("getRowIndex",id) ,
@@ -138,34 +125,64 @@ function updateVideoAble(id){
 			}
 		}],
 		onLoad : function(){
+			var rowSelected = $("#memoryGrid").datagrid("getSelected");
 			formDia = mainDialog.find('form');
-			formDia.form('load',$("#memoryGrid").datagrid("getSelected"));	
+			formDia.form('load',{title:rowSelected.title,id:rowSelected.id,description:rowSelected.description,model:rowSelected.model,href:rowSelected.href});	
+			formDia.form('load',{'queryType':'memory','currentTime':rowSelected.formattedDate});
 		}
 		
 	});
 }
+/*开启 memory*/
+function openMemory(){
+	if ($("#memoryGrid").datagrid('getSelections').length == 1) {
+		parent.simpleMessConf.call(this,
+				 'warning',
+				 'do you want open or close this preface?',
+				 function(result){
+					if(result){
+						var id = $("#memoryGrid").datagrid('getSelected').id;
+						var flag = $("#memoryGrid").datagrid('getSelected').flag;
+						if(flag == "1"){
+							$.post('${cy}/memory/memoryClose/'+id+'.do',"queryType=memory",function(json){
+								if(json.success)
+									$("#memoryGrid").datagrid('reload');
+								parent.simpleMessAlert.call(this,'提示',json.message);
+							},'json');
+						}else {
+							$.post('${cy}/memory/memoryOpen/'+id+'.do',"queryType=memory",function(json){
+								if(json.success)
+									$("#memoryGrid").datagrid('reload');
+								parent.simpleMessAlert.call(this,'提示',json.message);
+								},'json');
+						}
+					}
+				 		
+			});
+	} else {
+		parent.simpleMessAlert.call(this,'提示','请选择1条记录进行操作');
+	}
+	
+}
 </script>
 <!-- toolbar -->
 <div id="mainProToolbar">
-	&nbsp;category &nbsp;: &nbsp; <select id="projectCheckStatus"
-		data-options="editable:false" class="easyui-combobox" name="dept"
-		style="width:100px;">
-		<option value="-1">全部</option>
-		<option value="0">视频</option>
-		<option value="1">音乐</option>
-	</select> &nbsp;描述 &nbsp;: &nbsp; 
+	&nbsp;标题关键字 &nbsp;: &nbsp; 
 	<input size="20" type="text" id="searchPublicPro"> 
-	<a id="btnCurSearch" onclick="searchVideo()" class="easyui-linkbutton"
+	<a id="btnCurSearch" onclick="searchMemory()" class="easyui-linkbutton"
 		data-options="">查询</a>
 		<div class="button-group">
-			<a id="enterPro" class="easyui-linkbutton" onclick="saveVideo()" data-options="plain:true">
+			<a id="enterPro" class="easyui-linkbutton" onclick="saveMemory()" data-options="plain:true">
 				<label class="button-label">增加</label>
 			</a>
-			<a id="processPro" class="easyui-linkbutton" onclick="updateVideo()" data-options="plain:true">
+			<a id="processPro" class="easyui-linkbutton" onclick="updateMemory()" data-options="plain:true">
 				<label class="button-label">修改</label>
 			</a>
-			<a id="showPro" class="easyui-linkbutton" onclick="deleteVideo()" data-options="plain:true">
+			<a id="showPro" class="easyui-linkbutton" onclick="deleteMemory()" data-options="plain:true">
 				<label class="button-label"><span id = "proDis">删除</span></label>
+			</a>
+			<a id="openPro" class="easyui-linkbutton" onclick="openMemory()" data-options="plain:true">
+				<label class="button-label">启/停</label>
 			</a>
 		</div>	
 	
@@ -186,11 +203,13 @@ function updateVideoAble(id){
 				<th data-options="field:'title', width:152, align:'center'">名称</th>
 
 				<th
-					data-options="field:'description', width:330,align:'center'">描述</th>
+					data-options="field:'description', width:280,align:'center'">描述</th>
 				<th
-					data-options="field:'model', width:130,align:'center',formatter:function(value,row){
+					data-options="field:'model', width:120,align:'center',formatter:function(value,row){
 						return cy.transModelInFront(value).status;
 					}">类型</th>
+				<th
+					data-options="field:'formattedDate', width:120,align:'center'">时间</th>
 
 				<th
 					data-options="field:'flag', width:160,align:'center',formatter:function(value,row){

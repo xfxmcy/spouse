@@ -111,7 +111,10 @@ public final class SpouseConstant {
 		  public final static String OURS_INDEX = "/xfxmcy/family/ours/oursManager";
 		/*preface manager*/  
 		  public final static String PREFACE_INDEX = "/xfxmcy/family/preface/prefaceManager";
-		  
+		/*myPhoto index*/ 
+		  public final static String SCHEDULE_MYPHOTO_INDEX = "/xfxmcy/family/photo/myPhoto";
+		/*hisPhoto index*/ 
+		  public final static String SCHEDULE_HISPHOTO_INDEX = "/xfxmcy/family/photo/hisPhoto";  
 	}
 	
 	/**

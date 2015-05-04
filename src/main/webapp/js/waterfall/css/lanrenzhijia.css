@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* 代码整理：懒人之家 www.lanrenzhijia.com */
+*{ margin:0; padding:0;}
+body { font:12px/1.5 Arial; color:#666; background:#EDEDED;}
+ul,li{ list-style:none;}
+a{ color:#666; text-decoration:none;}
+a:hover{ text-decoration:none; color:#000;}
+img{border:0 none;}
+
+#waterfall{ text-align:center; width:1000px; margin:0 auto;}
+#waterfall img{ width:203px;}
+#waterfall .cell{ padding:10px 0px 5px 0px; width:223px;border:1px solid #E3E3E3; background:#fff; margin-top:20px;box-shadow: 0px 2px 3px 1px #ccc;}
+#waterfall .cell:hover{box-shadow: 0px 2px 3px 1px #999;}
+

@@ -56,6 +56,17 @@ public interface SMMemoryMapper {
 	int insertSelective(SMMemory smMemory);
 	/**
 	 * 
+	 * updateByPrimaryKeySelective:update smMemory by pk
+	 *
+	 * @param smMemory
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年1月21日 		cy
+	 */
+	int updateByPrimaryKeySelective(SMMemory smMemory);
+	/**
+	 * 
 	 * queryMemoryPaged:query memory paged
 	 *
 	 * @param param
