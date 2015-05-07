@@ -95,7 +95,15 @@
 			<param-value>WEB-INF/classes/log4j.properties</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
-  	</servlet>	
+  	</servlet>
+  	<servlet>
+    	<servlet-name>CXFService</servlet-name>
+    	<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>CXFService</servlet-name>
+	    <url-pattern>/cyws/*</url-pattern>
+	</servlet-mapping>	
 	<!-- 配置session超时时间，单位分钟 -->
 	<session-config>
 		<session-timeout>15</session-timeout>
