@@ -13,7 +13,11 @@
 
 package com.xfxmcy.spouse.webservice.impl;
 
+import java.util.List;
+
 import com.xfxmcy.spouse.dao.SMPhotoMapper;
+import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.vo.SMPhoto;
 import com.xfxmcy.spouse.webservice.PhotoWService;
 
 import javax.annotation.Resource;
@@ -42,11 +46,24 @@ public class PhotoServiceImpl implements PhotoWService {
 	private SMPhotoMapper photoMapper;
 	
 	
-	
+
+
+
 	@Override
-	public void queryUser(@WebParam(name = "name") String userName) {
-		System.out.println(photoMapper);
-		System.out.println(userName);
+	public List<SMPhoto> queryMyPhotos(QueryParam param) {
+		
+		// TODO Auto-generated method stub
+		return null;
+		
+	}
+
+
+
+	@Override
+	public List<SMPhoto> queryHisPhotos(QueryParam param) {
+		
+		// TODO Auto-generated method stub
+		return null;
 		
 	}
 

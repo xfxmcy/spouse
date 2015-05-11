@@ -12,3 +12,5 @@ src/main/webapp/cuSunPlayer/resource/
 /src/main/webapp/resource/swf
 /src/main/webapp/resource/upload/romantic/*.jpg
 /src/main/webapp/resource/upload/romantic/*.png
+/src/main/resources/config.properties
+.gitignore

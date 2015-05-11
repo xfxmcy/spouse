@@ -13,10 +13,15 @@
 
 package com.xfxmcy.spouse.webservice;
 
+import java.util.List;
+
 import javax.jws.WebService;
 import javax.jws.WebParam;
 import javax.jws.soap.SOAPBinding.Style;
 import javax.jws.soap.SOAPBinding;
+
+import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.vo.SMPhoto;
 
 /**
  * ClassName:PhotoService
@@ -33,7 +38,28 @@ import javax.jws.soap.SOAPBinding;
 @WebService
 @SOAPBinding(style = Style.RPC)
 public interface PhotoWService {
+	/**
+	 * 
+	 * queryMyPhotos:query MyPhoto
+	 *
+	 * @param param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月11日 		cy
+	 */
+	public List<SMPhoto> queryMyPhotos(QueryParam param);
 	
-	public void queryUser(@WebParam(name = "name") String userName);
+	/**
+	 * 
+	 * queryHisPhotos: 查询他/她的照片
+	 *
+	 * @param param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月11日 		cy
+	 */
+	public List<SMPhoto> queryHisPhotos(QueryParam param);
 }
 
