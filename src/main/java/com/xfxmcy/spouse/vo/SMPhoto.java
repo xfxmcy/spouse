@@ -11,9 +11,11 @@ public class SMPhoto implements Serializable{
     private String albumId;
 
     private String title;
-
+   
     private String memofirst;
-
+    /**
+     * 是否展示  0  1 展示
+     */
     private String memosecond;
 
     private Date createtime;

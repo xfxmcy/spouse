@@ -13,4 +13,6 @@ src/main/webapp/cuSunPlayer/resource/
 /src/main/webapp/resource/upload/romantic/*.jpg
 /src/main/webapp/resource/upload/romantic/*.png
 /src/main/resources/config.properties
-.gitignore
+/.gitignore
+/src/main/webapp/app/rose/chang.mp3
+/src/main/webapp/app/rose/mchang.mp3

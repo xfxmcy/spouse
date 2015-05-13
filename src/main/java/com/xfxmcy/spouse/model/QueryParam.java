@@ -69,6 +69,13 @@ public class QueryParam {
 	
 	private String likeNameFirst ;
 	
+	private String authorId;
+	public String getAuthorId() {
+		return authorId;
+	}
+	public void setAuthorId(String authorId) {
+		this.authorId = authorId;
+	}
 	/*home type*/
 	private String photoType ;
 	

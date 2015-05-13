@@ -52,8 +52,7 @@ public class PhotoServiceImpl implements PhotoWService {
 	@Override
 	public List<SMPhoto> queryMyPhotos(QueryParam param) {
 		
-		// TODO Auto-generated method stub
-		return null;
+		return photoMapper.selectPhotosBySelectivePages(param);
 		
 	}
 

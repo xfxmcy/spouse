@@ -30,9 +30,20 @@
 <script type="text/javascript" src="${cy}/js/jquery-easyui-cy/utils.core.js"></script>
 <%-- <script type="text/javascript" src="${cy}/js/sms/tjise_iss_sms.js"></script>
 <script type="text/javascript" src="${cy}/js/sms/config.js"></script> --%>
+
+<!-- full canlendar -->
+<link rel='stylesheet' href='${cy}/js/fullcalendar/cupertino/jquery-ui.min.css' />
+<link rel="stylesheet" href="${cy}/js/fullcalendar/fullcalendar.css"/>
+<link rel="stylesheet" href="${cy}/js/fullcalendar/fancybox.css"/>
+<script type="text/javascript" src="${cy}/js/jquery-easyui-cy/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="${cy}/js/fullcalendar/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="${cy}/js/fullcalendar/fullcalendar.min.js"></script>
+<script type="text/javascript" src="${cy}/js/fullcalendar/jquery.fancybox-1.3.1.pack.js"></script>
+
+
+
 <!-- load  -->
 <script type="text/javascript" src="${cy}/js/jquery-easyui-cy/xfUtil.js"></script> 
-
 <link rel="stylesheet" href="${cy}/css/font.css"/>
 <script type="text/javascript">
 	easyloader.locale = 'zh_CN';
@@ -46,6 +57,3 @@
        };
    }
 </script>
-<style type="text/css">
-
-</style>

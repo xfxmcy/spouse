@@ -162,8 +162,7 @@
 })(jQuery);
 /*图片上传*/
 function uploadMyPhoto(){
-	 $.fancybox({//调用fancybox弹出层 
-     	
+	 parent.$.fancybox({//调用fancybox弹出层 
          'href':'${cy}/js/multifile/index.html',
          /* 'transitionIn'  :   'elastic',
          'transitionOut' :   'elastic',
@@ -180,7 +179,7 @@ function uploadMyPhoto(){
 }
 </script>
 <div style="margin-left: 40%;margin-top: 5%;">	
-		<a onclick="uploadMyPhoto()">上传图片</a>
+		<a onclick="uploadMyPhoto()" style="cursor: pointer;">上传图片</a>
 </div>
 <div id="waterfall">
 	<div class="cell"><a href="#"><img src="${cy}/js/waterfall/images/00.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>

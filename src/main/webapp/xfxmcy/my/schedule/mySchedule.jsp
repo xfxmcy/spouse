@@ -5,13 +5,6 @@
 <html>
 <jsp:include page="/xfxmcy/initialEasyUI.jsp"></jsp:include>
 <head>
-<link rel='stylesheet' href='${cy}/js/fullcalendar/cupertino/jquery-ui.min.css' />
-<link rel="stylesheet" href="${cy}/js/fullcalendar/fullcalendar.css"/>
-<link rel="stylesheet" href="${cy}/js/fullcalendar/fancybox.css"/>
-<script type="text/javascript" src="${cy}/js/jquery-easyui-cy/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="${cy}/js/fullcalendar/jquery-ui.custom.min.js"></script>
-<script type="text/javascript" src="${cy}/js/fullcalendar/fullcalendar.min.js"></script>
-<script type="text/javascript" src="${cy}/js/fullcalendar/jquery.fancybox-1.3.1.pack.js"></script>
 
 <script type="text/javascript">
 var scheduleTitle = "";

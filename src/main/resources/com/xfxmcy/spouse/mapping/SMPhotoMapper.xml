@@ -131,5 +131,23 @@
     <include refid="Base_Column_List" />
     from sm_photo
     where id = #{id,jdbcType=VARCHAR}
+   </select> 
+    
+  <!-- select photoes By Page -->
+  <select id="selectPhotosBySelectivePages"  resultMap="BaseResultMap" parameterType="com.xfxmcy.spouse.model.QueryParam" >
+    select 
+    <include refid="Base_Column_List" />
+    from sm_photo
+    <where>  
+    	<if test="memoSecond">
+    		memoSecond = #{memoSecond,jdbcType=VARCHAR} 
+    	</if>
+    	<if test="authorId">
+    		author_id = #{authorId,jdbcType=VARCHAR} 
+    	</if>
+    </where>
+    <if test="page != null">
+			limit #{startPoint},#{rows}
+	</if>
   </select>
 </mapper>

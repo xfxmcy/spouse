@@ -71,7 +71,7 @@
 			<input name="taskStatus"  value="1"   style="width:130px;display: none;" />	
 			<input name="businessId"  value="1"   style="width:130px;display: none;" />
 		</p>
-	    <p>开始时间：<input id="start" name="start" type="text" class="easyui-datetimebox"  style="width: 110px;"></input></p>
+	    <p>开始时间：<input id="start" name="start" type="text" class="easyui-datetimebox" data-options="required:true"  style="width: 110px;"></input></p>
 	    
 	   	<p>      
 	   		是否为全天任务&nbsp;  是<input type="radio" value="1" name="allday" onclick="javascript:$('#end').datebox('disable');" checked="checked" />&nbsp;否<input type="radio" name="allday" value="0" onclick="javascript:$('#end').datetimebox('enable');" /></p> 
@@ -86,7 +86,7 @@
 	    	<span class="del">
 	    		<input type="button" class="btn btn_del" onclick="deleteTask()" id="del_event" value="删除">
 	    	</span>
-	    	<input type="submit" class="btn btn_ok" value="确定" onclick="submitTask()"> 
+	    	<input type="button" class="btn btn_ok" value="确定" onclick="submitTask()"> 
 	    	<input type="button" class="btn btn_cancel" value="取消" onClick="parent.$.fancybox.close()"></div>
 		</form>
 	</div>
@@ -134,6 +134,8 @@
 		function updateTask(taskForm){
 			var schEvent = parent.window.scheduleEvent;
 			//console.info(schEvent);
+			schEvent.title = taskForm.title;
+			schEvent.url = taskForm.url;
 			if(taskForm.allday == '1' || taskForm.allday == 1){
 				schEvent.end = null;
 				schEvent.allDay = true;

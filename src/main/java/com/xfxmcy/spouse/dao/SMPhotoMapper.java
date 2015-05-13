@@ -19,4 +19,15 @@ public interface SMPhotoMapper {
     int updateByPrimaryKeySelective(SMPhoto record);
 
     int updateByPrimaryKey(SMPhoto record);
+    /**
+     * 
+     * selectPhotosBySelectivePages: queryPhotosByPage
+     *
+     * @param param
+     * @return
+     *   ver     date      		author
+     * ──────────────────────────────────
+     *   		 2015年5月13日 		cy
+     */
+    List<SMPhoto> selectPhotosBySelectivePages(QueryParam param);
 }
