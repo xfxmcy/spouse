@@ -14,6 +14,7 @@
 package com.xfxmcy.spouse.service;
 
 import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.model.SpouseGrid;
 
 /**
  * ClassName:PhotoService
@@ -30,27 +31,25 @@ import com.xfxmcy.spouse.model.QueryParam;
 public interface PhotoService {
 	/**
 	 * 
-	 * queryMyPhotosForBackGround:query my photos at backGround
+	 * doQueryMyPhoto:query my photo
 	 *
 	 * @param param
-	 * @return	json for photoes
+	 * @return
 	 *   ver     date      		author
 	 * ──────────────────────────────────
-	 *   		 2015年4月20日 		cy
+	 *   		 2015年5月14日 		cy
 	 */
-	public String queryMyPhotosForBackGround(QueryParam param);
-	
-	
+	public SpouseGrid doQueryMyPhoto(QueryParam param);
 	/**
 	 * 
-	 * queryHisPhotosForBackGround:query his photos at backGround
+	 * doQueryHisPhoto:query his photo
 	 *
 	 * @param param
-	 * @return	json for photoes
+	 * @return
 	 *   ver     date      		author
 	 * ──────────────────────────────────
-	 *   		 2015年4月20日 		cy
+	 *   		 2015年5月14日 		cy
 	 */
-	public String queryHisPhotosForBackGround(QueryParam param);
+	public SpouseGrid doQueryHisPhoto(QueryParam param);
 }
 

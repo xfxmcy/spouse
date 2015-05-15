@@ -30,4 +30,26 @@ public interface SMPhotoMapper {
      *   		 2015年5月13日 		cy
      */
     List<SMPhoto> selectPhotosBySelectivePages(QueryParam param);
+    /**
+     * 
+     * doQueryMyPhoto:query My photo
+     *
+     * @param param		param
+     * @return
+     *   ver     date      		author
+     * ──────────────────────────────────
+     *   		 2015年5月14日 		cy
+     */
+	List<SMPhoto> doQueryMyPhoto(QueryParam param);
+	/**
+	 * 
+	 * doQueryTotalMyPhoto:query total my photo
+	 *
+	 * @param param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月14日 		cy
+	 */
+	Long doQueryTotalMyPhoto(QueryParam param);
 }

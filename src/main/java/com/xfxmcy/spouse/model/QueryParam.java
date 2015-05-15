@@ -209,6 +209,15 @@ public class QueryParam {
 	
 	
 	private String end;
+	
+	public String getFlagEnAble() {
+		return flagEnAble;
+	}
+	public void setFlagEnAble(String flagEnAble) {
+		this.flagEnAble = flagEnAble;
+	}
+	private String flagEnAble ;
+	
 	public String getStart() {
 		return start;
 	}

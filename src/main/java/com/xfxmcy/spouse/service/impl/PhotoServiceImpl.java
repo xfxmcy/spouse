@@ -18,12 +18,15 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.xfxmcy.spouse.constant.SpouseConstant;
 import com.xfxmcy.spouse.dao.SMPhotoMapper;
 import com.xfxmcy.spouse.dao.SPEmployerMapper;
 import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.service.PhotoService;
 import com.xfxmcy.spouse.vo.SMPhoto;
 
@@ -40,6 +43,7 @@ import com.xfxmcy.spouse.vo.SMPhoto;
  * @see 	 
  */
 @Transactional
+@Service
 public class PhotoServiceImpl implements PhotoService {
 	
 	/**
@@ -49,24 +53,34 @@ public class PhotoServiceImpl implements PhotoService {
 	
 	@Resource
 	private SMPhotoMapper photoMapper;
+
+	@Transactional(propagation = Propagation.NOT_SUPPORTED ,readOnly = true)
+	@Override
+	public SpouseGrid doQueryMyPhoto(QueryParam param) {
+		SpouseGrid grid = new SpouseGrid();
+		List<SMPhoto> result = null;
+		/**
+		 *  query my photo paged 
+		 */
+		if(SpouseConstant.Photo.QUERY_MYPHOTO_PAGED_BG.equals(param.getQueryType())){
+			result = photoMapper.doQueryMyPhoto(param);
+			grid.setGrid(photoMapper.doQueryTotalMyPhoto(param),result);
+		} 
+		
+		return grid;
+		
+	}
+
+	@Transactional(propagation = Propagation.NOT_SUPPORTED ,readOnly = true)
+	@Override
+	public SpouseGrid doQueryHisPhoto(QueryParam param) {
+		SpouseGrid grid = new SpouseGrid();
+		// TODO Auto-generated method stub
+		return null;
+		
+	}
 	
-	@Override
-	@Transactional(propagation = Propagation.NOT_SUPPORTED ,readOnly = true)
-	public String queryMyPhotosForBackGround(QueryParam param) {
-		
-		List<SMPhoto> result = photoMapper.selectPhotosBySelective(param);
-		
-		return null;
-		
-	}
-	@Transactional(propagation = Propagation.NOT_SUPPORTED ,readOnly = true)
-	@Override
-	public String queryHisPhotosForBackGround(QueryParam param) {
-		
-		
-		return null;
-		
-	}
+	
 	
 	
 }

@@ -26,6 +26,7 @@
 		
 		$.post("${cy}/ours/oursQuery.ajax", {
 			queryType:'preface',
+			flagEnAble:'1',
 			model: cy.reverseModelInFront("him").status
 			},function(data){
 				if(data.total > 0){

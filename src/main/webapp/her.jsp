@@ -16,6 +16,7 @@
 $(document).ready(function(){	
 	$.post("${cy}/ours/oursQuery.ajax", {
 		queryType:'preface',
+		flagEnAble:'1',
 		model: cy.reverseModelInFront("her").status
 		},function(data){
 			if(data.total > 0){
@@ -31,6 +32,7 @@ $(document).ready(function(){
 	
 	$.post("${cy}/ours/oursQuery.ajax", {
 		queryType:'memory',
+		flagEnAble:'1',
 		model: cy.reverseModelInFront("her").status
 		},function(data){
 			if(data.total > 0){

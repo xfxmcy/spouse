@@ -10,6 +10,10 @@
 <script type="text/javascript" src="${cy}/js/fullcalendar/jquery.fancybox-1.3.1.pack.js"></script>
 <link rel="stylesheet" href="${cy}/js/fullcalendar/fancybox.css"/>
 <script>
+
+
+
+
 (function($){
    var 
    //参数
@@ -23,7 +27,9 @@
 	  fadein:true,//是否渐显载入
 	  fadein_speed:600,//渐显速率，单位毫秒
 	  insert_type:1, //单元格插入方式，1为插入最短那列，2为按序轮流插入
-	  getResource:function(index){ }  //获取动态资源函数,必须返回一个砖块元素集合,传入参数为加载的次数
+	  getResource:function(index){ 
+		 
+	  }  //获取动态资源函数,必须返回一个砖块元素集合,传入参数为加载的次数
    },
    //
    waterfall=$.waterfall={},//对外信息对象
@@ -63,8 +69,25 @@
 	  if(num<1){ num=1; } //保证至少有一列
 	  return num;
    }
-   function render(elements,fadein){//渲染元素
+   function render(elements,fadein){
+	   var waterStr = "";
+	   $.post("${cy}/photo/queryMyPhoto.do?",{"queryType":"queryOnBG","rows":"6","page":"1"},function(data){
+			total = data.total;
+			rows = data.rows;
+			if(rows.length  <= 0)
+				return ;
+			for(var i = 0 ; i <rows.length ; i++){
+				waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/js/waterfall/images/00.jpg\" /></a><p><a href=\"http://www.lanrenzhijia.com/\">xfxmcy</a></p></div>";
+				
+			}
+			renderCy($(waterStr),true); 
+		});	
+   }
+   
+   function renderCy(elements,fadein){//渲染元素
+	  console.info("111" + elements);
       if(!$(elements).length) return;//没有元素
+      console.info("111" + elements);
       var $columns = waterfall.$columns;
       $(elements).each(function(i){										
 		  if(!setting.auto_imgHeight||setting.insert_type==2){//如果给出了图片高度，或者是按顺序插入，则不必等图片加载完就能计算列的高度了
@@ -109,7 +132,35 @@
 	  });
    }
    function public_render(elems){//ajax得到元素的渲染接口
-   	  render(elems,true);	
+	  
+	   var waterStr = [];
+	      var waterStr2 = [];
+		  //if (index + 1 > totalpage || opt.loading) return false;//加载的页数大于总页数或者正在加载信息未返回则退出
+	      $('#pLoading').show();
+	      opt.loading = true;
+	      $.ajax({
+	          url: '${cy}/photo/queryMyPhoto.do?',//数据接口地址
+	          data: {"queryType":"queryOnBG","rows":"6","page":"1"},/*如果你有其他过滤参数，按照totalpage那样赋值给data配置一起发送到服务器端，以便服务器进行数据读取过滤*/ 
+	          type: 'POST',
+	          complete: function (data) {
+	        	  data = eval("("+data.responseText+")");
+	              opt.loading = false;
+	              $('#pLoading').hide();
+	              var total = data.total;
+	      		  var rows = data.rows;
+	      		  if(rows.length  <= 0)
+	      			 return ;
+	      		  for(var i = 0 ; i <rows.length ; i++){
+	      			 waterStr[i] = $("<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/js/waterfall/images/00.jpg\" /></a><p><a href=\"http://www.lanrenzhijia.com/\">xfxmcy</a></p></div>");
+	      			 waterStr2[i] = "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/js/waterfall/images/00.jpg\" /></a><p><a href=\"http://www.lanrenzhijia.com/\">xfxmcy</a></p></div>";
+	      		  }
+	    		  console.info($(waterStr2));
+	      		  render($(waterStr2));
+	             /*  if(200==xhr.status)render($(xhr.responseText));
+	              else alert('动态页出现问题，返回如下信息：'); */
+	          }
+	      });
+   	 
    }
    function insert($element,fadein){//把元素插入最短列
       if(fadein){//渐显
@@ -182,38 +233,15 @@ function uploadMyPhoto(){
 		<a onclick="uploadMyPhoto()" style="cursor: pointer;">上传图片</a>
 </div>
 <div id="waterfall">
-	<div class="cell"><a href="#"><img src="${cy}/js/waterfall/images/00.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-	<div class="cell"><a href="#"><img src="${cy}/js/waterfall/images/00.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-	<div class="cell"><a href="#"><img src="${cy}/js/waterfall/images/00.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-	<div class="cell"><a href="#"><img src="${cy}/js/waterfall/images/00.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-	<div class="cell"><a href="#"><img src="${cy}/js/waterfall/images/00.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-	<div class="cell"><a href="#"><img src="${cy}/js/waterfall/images/00.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-	<div class="cell"><a href="#"><img src="${cy}/js/waterfall/images/00.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-  <!--  <div class="cell"><a href="#"><img src="images/00.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/01.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/02.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/03.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/04.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/05.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/06.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/07.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/08.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/09.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/10.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/11.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/12.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/13.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/14.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/15.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/16.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/17.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/18.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    <div class="cell"><a href="#"><img src="images/19.jpg" /></a><p><a href="http://www.lanrenzhijia.com/">懒人之家</a></p></div>
-    -->
 </div>
 <script>
+
 var opt={
   getResource:function(index,render){//index为已加载次数,render为渲染接口函数,接受一个dom集合或jquery对象作为参数。通过ajax等异步方法得到的数据可以传入该接口进行渲染，如 render(elem)
+      
+  
+  	//	return render.call(this);
+  	 /*  
 	  if(index>=7) index=index%7+1;
 	  var html='';
 	  for(var i=20*(index-1);i<20*(index-1)+20;i++){
@@ -226,10 +254,31 @@ var opt={
 		 html+='<div class="cell"><a href="#"><img src="'+src+'" /></a><p>'+k+'</p></div>';
 	  }
 	  //return "";
-	  return $(html);
+	  return $(html); */
   },
   auto_imgHeight:true,
   insert_type:1
 }
-$('#waterfall').waterfall(opt);
+
+
+var total = 0; 
+(function(){
+	var rows = null ;
+	var waterStr = "";
+	$('#waterfall').waterfall(opt);
+	/* $.post("${cy}/photo/queryMyPhoto.do?",{"queryType":"queryOnBG","rows":"6","page":"1"},function(data){
+		total = data.total;
+		rows = data.rows;
+		if(rows.length  <= 0)
+			return ;
+		for(var i = 0 ; i <rows.length ; i++){
+			waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/js/waterfall/images/00.jpg\" /></a><p><a href=\"http://www.lanrenzhijia.com/\">xfxmcy</a></p></div>";
+			
+		}
+		$("#waterfall").append(waterStr);
+		$('#waterfall').append('<p id="pLoading" style="line-height:20px;display:none">正在加载....</p>').waterfall(opt);
+	}); */
+	
+})();
+
 </script>

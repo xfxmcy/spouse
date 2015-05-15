@@ -13,16 +13,32 @@ public class SMPhoto implements Serializable{
     private String title;
    
     private String memofirst;
-    /**
-     * 是否展示  0  1 展示
-     */
+    
     private String memosecond;
 
     private Date createtime;
 
     private String authorId;
 
-    public String getId() {
+    private String flag,seq;
+    
+    public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
+	}
+
+	public String getSeq() {
+		return seq;
+	}
+
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
+
+	public String getId() {
         return id;
     }
 

@@ -244,7 +244,24 @@ public final class SpouseConstant {
 		/*memory model*/
 		public final static String OUR_MODEL_MEMORY = "memory";
 	}
-	
+	/**
+	 * 
+	 * ClassName:Photo
+	 * Function: photo model
+	 * Reason:	 photo model
+	 *
+	 * @author   cy
+	 * @version  SpouseConstant
+	 * @since    Ver 1.1
+	 * @Date	 2015	2015年5月14日		下午3:01:45
+	 *
+	 * @see
+	 */
+	public class Photo {
+		/*query myPhoto paged*/
+		public final static String QUERY_MYPHOTO_PAGED_BG = "queryOnBG";
+		
+	}
 	
 }
 
