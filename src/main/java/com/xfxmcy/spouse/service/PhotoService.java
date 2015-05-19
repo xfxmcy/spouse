@@ -15,6 +15,7 @@ package com.xfxmcy.spouse.service;
 
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
+import com.xfxmcy.spouse.vo.SMPhoto;
 
 /**
  * ClassName:PhotoService
@@ -51,5 +52,16 @@ public interface PhotoService {
 	 *   		 2015年5月14日 		cy
 	 */
 	public SpouseGrid doQueryHisPhoto(QueryParam param);
+	/**
+	 * 
+	 * doSaveMyPhoto: save my photo
+	 *
+	 * @param smPhoto the smPhoto
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月18日 		cy
+	 */
+	public SMPhoto doSaveMyPhoto(SMPhoto smPhoto);
 }
 

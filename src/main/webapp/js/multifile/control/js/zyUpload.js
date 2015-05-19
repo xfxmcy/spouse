@@ -320,8 +320,8 @@
 						$("#uploadList_" + file.index).fadeOut();
 						// 重新设置统计栏信息
 						self.funSetStatusInfo(files);
-						console.info("剩下的文件");
-						console.info(files);
+						//console.info("剩下的文件");
+						//console.info(files);
 					},
 					onProgress: function(file, loaded, total) {
 						var eleProgress = $("#uploadProgress_" + file.index), percent = (loaded / total * 100).toFixed(2) + '%';
@@ -333,6 +333,13 @@
 					onSuccess: function(file, response) {
 						$("#uploadProgress_" + file.index).hide();
 						$("#uploadSuccess_" + file.index).show();
+						var filePath = eval("("+response+")")[0].fileName;
+						/*ajax 上传图片*/
+						if(filePath){
+							insertMyPhoto.call(this,filePath);	
+						}
+						
+						
 						$("#uploadInf").append("<p>上传成功，文件地址是：" + response + "</p>");
 						// 根据配置参数确定隐不隐藏上传成功的文件
 						if(para.finishDel){

@@ -52,4 +52,15 @@ public interface SMPhotoMapper {
 	 *   		 2015年5月14日 		cy
 	 */
 	Long doQueryTotalMyPhoto(QueryParam param);
+	/**
+	 * 
+	 * doQueryMyMaxSeq: query Max sequence
+	 *
+	 * @param record	param
+	 * @return			max sequence
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月18日 		cy
+	 */
+	Long doQueryMyMaxSeq(SMPhoto record);
 }

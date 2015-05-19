@@ -38,7 +38,29 @@
 				}
 			
 			},'json');
-		
+		var photosHtml = "";
+		var rows ;
+		$.post("${cy}/photo/queryHisPhotoInFront.do?",{"queryType":"queryOnBG","rows":"6","page":1},function(data){
+			rows = data.rows;
+			if(rows.length  <= 0)
+				return ;
+			for(var i = 0 ; i <rows.length ; i++){
+				/* var oReq = new ActiveXObject("Microsoft.xmlHTTP")
+				oReq.open("Get","${cy}/resource/upload"+rows[i].url,false);
+				oReq.send();
+				//alert(oReq.status)
+				if(oReq.status==404)
+				alert('不存在');
+				else
+				alert("存在") */
+				//alert(object.FileExists("${cy}/resource/upload"+rows[i].url)); 
+				if(rows[i].url){
+					photosHtml +=  "<li><a href=\"#\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" alt=\"project 1\" width=\"303\" height=\"129\" border=\"0\" /></a><span>dream</span></li>";
+				}
+				
+			}
+			$("#project_his_photo").append(photosHtml);	
+		});	
 		
 	})();
 </script>
@@ -86,15 +108,17 @@
     </div>
     <div class="global_main">
       <div class="page_title_text">
-        <h1>cy</h1>
+        <h1>cy   
+        	<span style="position: relative;float: right;"><a href="#" onclick="javascript:window.open('${cy}/spouse/managerment/cyPhoto.do')" style="cursor: pointer;font: 'normal 30px Times New Roman, Times, serif';color: #dbccd7;font-size: 16px;margin:0px;">the all</a></span>
+        </h1>
       </div>
       <div class="clr"></div>
       <div class="project">
-        <ul>
-          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>dream</span></li>
-          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>love</span></li>
+        <ul id="project_his_photo">
+          
+          <%-- <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>love</span></li>
           <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>together</span></li>
-          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>you</span></li>
+          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>you</span></li> --%>
         </ul>
         <div class="clr"></div>
       </div>

@@ -20,9 +20,19 @@ public class SMPhoto implements Serializable{
 
     private String authorId;
 
-    private String flag,seq;
+    private String flag = "1",seq;
     
-    public String getFlag() {
+    private String queryType;
+    
+    public String getQueryType() {
+		return queryType;
+	}
+
+	public void setQueryType(String queryType) {
+		this.queryType = queryType;
+	}
+
+	public String getFlag() {
 		return flag;
 	}
 

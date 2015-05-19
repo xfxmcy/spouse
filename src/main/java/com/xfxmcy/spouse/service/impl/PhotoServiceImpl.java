@@ -13,6 +13,7 @@
 
 package com.xfxmcy.spouse.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -24,10 +25,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.xfxmcy.spouse.constant.SpouseConstant;
 import com.xfxmcy.spouse.dao.SMPhotoMapper;
-import com.xfxmcy.spouse.dao.SPEmployerMapper;
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.service.PhotoService;
+import com.xfxmcy.spouse.util.IdUtil;
 import com.xfxmcy.spouse.vo.SMPhoto;
 
 /**
@@ -76,6 +77,19 @@ public class PhotoServiceImpl implements PhotoService {
 	public SpouseGrid doQueryHisPhoto(QueryParam param) {
 		SpouseGrid grid = new SpouseGrid();
 		// TODO Auto-generated method stub
+		return null;
+		
+	}
+
+	@Override
+	public SMPhoto doSaveMyPhoto(SMPhoto smPhoto) {
+		
+		if(SpouseConstant.SIMPLE_SAVE.equals(smPhoto.getQueryType())){
+			smPhoto.setId(IdUtil.generaterThrityTwo());
+			smPhoto.setCreatetime(new Date());
+			smPhoto.setSeq((photoMapper.doQueryMyMaxSeq(smPhoto)+1)+"");
+			photoMapper.insertSelective(smPhoto);
+		} 
 		return null;
 		
 	}

@@ -64,6 +64,20 @@ public class ResourceUtil {
 	}
 	/**
 	 * 
+	 * getSuperAdminId:get super admin Information  is her
+	 *
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月19日 		cy
+	 */
+	public static final String getSuperAdminId() {
+		
+		return bundle.getString("administratorId");
+		
+	}
+	/**
+	 * 
 	 * getMailSmtpAuth:mail author
 	 *
 	 * @return

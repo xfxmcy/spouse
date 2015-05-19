@@ -62,6 +62,33 @@ $(document).ready(function(){
 			}
 		
 		},'json');
+	
+	
+	
+	var photosHtml = "";
+	var rows ;
+	$.post("${cy}/photo/queryHerPhotoInFront.do?",{"queryType":"queryOnBG","rows":"6","page":1},function(data){
+		rows = data.rows;
+		alert(rows);
+		if(rows.length  <= 0)
+			return ;
+		for(var i = 0 ; i <rows.length ; i++){
+			/* var oReq = new ActiveXObject("Microsoft.xmlHTTP")
+			oReq.open("Get","${cy}/resource/upload"+rows[i].url,false);
+			oReq.send();
+			//alert(oReq.status)
+			if(oReq.status==404)
+			alert('不存在');
+			else
+			alert("存在") */
+			//alert(object.FileExists("${cy}/resource/upload"+rows[i].url)); 
+			if(rows[i].url){
+				photosHtml +=  "<li><a href=\"#\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" alt=\"project 1\" width=\"303\" height=\"129\" border=\"0\" /></a><span>dream</span></li>";
+			}
+			
+		}
+		$("#project_her_photo").append(photosHtml);	
+	},'json');	
 		
 });
 </script>
@@ -105,7 +132,9 @@ $(document).ready(function(){
     </div>
     <div class="global_main">
       <div class="page_title_text">
-        <h1>Jing</h1>
+        <h1>xx   
+        	<span style="position: relative;float: right;"><a href="#" onclick="javascript:window.open('${cy}/spouse/managerment/xxPhoto.do')" style="cursor: pointer;font: 'normal 30px Times New Roman, Times, serif';color: #dbccd7;font-size: 16px;margin:0px;">the all</a></span>
+        </h1>
       </div>
       <div class="clr"></div>
       <div class="project">
@@ -115,11 +144,7 @@ $(document).ready(function(){
           <li><a href="#"><img src="${cy}/images/jing/jing8.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>smile</span></li>
           <li><a href="#"><img src="${cy}/images/jing/jing11.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>tenderness</span></li>
         </ul> --%>
-        <ul>
-          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
-          <li><a href="#"><img src="${cy}/images/kdl.jpg" alt="project 1" width="303" height="129" border="0" /></a><span>Lorem Ipsum is simply dummy text</span></li>
+        <ul id="project_her_photo">
         </ul>
         <div class="clr"></div>
       </div>

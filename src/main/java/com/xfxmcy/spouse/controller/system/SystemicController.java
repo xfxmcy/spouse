@@ -79,9 +79,17 @@ public class SystemicController {
 		else if("hers".equals(path)){
 			returnPath = SpouseConstant.SystemicPage.SPOUSE_HER;
 		}
+		/*enter xxPhoto.jsp*/
+		else if("xxPhoto".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.SPOUSE_HER_PHOTO;
+		}
 		/*enter him.jsp*/
 		else if("his".equals(path)){
 			returnPath = SpouseConstant.SystemicPage.SPOUSE_HIM;
+		}
+		/*enter cyPhoto.jsp*/
+		else if("cyPhoto".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.SPOUSE_HIS_PHOTO;
 		}
 		/*enter about_us.jsp*/
 		else if("ours".equals(path)){

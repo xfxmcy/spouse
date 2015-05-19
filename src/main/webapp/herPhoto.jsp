@@ -4,7 +4,8 @@
 <%-- <jsp:include page="/xfxmcy/initialEasyUI.jsp"></jsp:include> --%> 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>my photo</title>
+<title>xx photo</title>
+<link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <link href="${cy}/js/waterfall/css/lanrenzhijia.css" type="text/css" rel="stylesheet" />
 <script src="${cy}/js/waterfall/js/jquery.min.js"></script>
 <script type="text/javascript" src="${cy}/js/fullcalendar/jquery.fancybox-1.3.1.pack.js"></script>
@@ -72,8 +73,8 @@ var initLoad = true ;
    }
    function render(elements,fadein){
 	   var waterStr = "";
-	   if(!initLoad && pageCurrent >= (total/6)) return;
-	   $.post("${cy}/photo/queryMyPhoto.do?",{"queryType":"queryOnBG","rows":"6","page":(pageCurrent+1)},function(data){
+	   if(!initLoad && pageCurrent >= (total/12)) return;
+	   $.post("${cy}/photo/queryHerPhotoInFront.do?",{"queryType":"queryOnBG","rows":"12","page":(pageCurrent+1)},function(data){
 			total = data.total;
 			initLoad = false ;
 			pageCurrent++ ;
@@ -197,36 +198,13 @@ var initLoad = true ;
       render($cells,false); //重排已有元素时强制不渐显
    }
 })(jQuery);
-/*图片上传*/
-function uploadMyPhoto(){
-	 parent.$.fancybox({//调用fancybox弹出层 
-         'href':'${cy}/js/multifile/index.jsp',
-         /* 'transitionIn'  :   'elastic',
-         'transitionOut' :   'elastic',
-         'speedIn'       :   600, 
-         'speedOut'      :   200  */
-         'width':'60%',
-		 'height':'60%',
-		 'autoScale':false,
-		 'transitionIn':'none',
-		 'transitionOut':'none',
-		 'type':'iframe',
-		 'enableEscapeButton':true,
-		 'onClosed' : function(){
-			 location.reload();
-		 },//回调函数，关闭fancybox后触发
-		 'onStart':function(){}, //回调函数，加载内容是触发
-		 'onCancel':function(){},//回调函数，取消加载内容后触发
-		 'onComplete':function(){},//回调函数，加载内容完成后触发
-		 'onCleanup':function(){}//回调函数，关闭fancybox前触发
-         //'overlayShow'   :   false
-     }); 
-}
+
+
 
 
 </script>
 <div style="margin-left: 40%;margin-top: 5%;margin-bottom: 3%">	
-		<a onclick="uploadMyPhoto()" style="cursor: pointer;font-size: 14px;">上传图片</a>
+		<h3>xx's photo</h3>
 </div>
 <div id="waterfall">
 </div>

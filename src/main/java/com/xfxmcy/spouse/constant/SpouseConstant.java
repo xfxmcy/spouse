@@ -84,8 +84,12 @@ public final class SpouseConstant {
 		  public final static String SPOUSE_ABOUT_US = "/about_us";
 		  /*spouse her*/
 		  public final static String SPOUSE_HER = "/her";
+		  /*spouse her all photo*/
+		  public final static String SPOUSE_HER_PHOTO = "/herPhoto";
 		  /*spouse him*/
 		  public final static String SPOUSE_HIM = "/him";
+		  /*spouse his all photo*/
+		  public final static String SPOUSE_HIS_PHOTO = "/hisPhoto";
 		  /*spouse contact_us*/
 		  public final static String SPOUSE_CONTACT_US = "/contact_us";
 		/*favorite*/  

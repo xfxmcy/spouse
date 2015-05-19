@@ -23,9 +23,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
+import com.xfxmcy.spouse.model.SystemicInfo;
 import com.xfxmcy.spouse.service.PhotoService;
+import com.xfxmcy.spouse.util.ResourceUtil;
 import com.xfxmcy.spouse.util.SessionUser;
 import com.xfxmcy.spouse.util.SpouseUtil;
+import com.xfxmcy.spouse.vo.SMPhoto;
 
 /**
  * ClassName:PhotoController
@@ -102,5 +105,80 @@ public class PhotoController {
 		}	
 		return grid;
 	} 
+	/**
+	 * 
+	 * queryPhotosInHisModel:query admin's photo in his model at front
+	 *
+	 * @param param			param
+	 * @param grid			result
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月19日 		cy
+	 */
+	@RequestMapping("/queryHisPhotoInFront")
+	@ResponseBody
+	public SpouseGrid queryPhotosInHisModel(QueryParam param ,SpouseGrid grid,HttpServletRequest request){
+		try{
+			param.setOwner(ResourceUtil.getAdminId());
+			grid = photoServiceImpl.doQueryMyPhoto(param);	
+		}catch(Exception e){
+			logger.error(e.getMessage());
+		}	
+		return grid;
+	} 
+	/**
+	 * 
+	 * queryPhotosInHerModel:query administrator's photo in his model at front
+	 *
+	 * @param param		param 
+	 * @param grid		result
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月19日 		cy
+	 */
+	@RequestMapping("/queryHerPhotoInFront")
+	@ResponseBody
+	public SpouseGrid queryPhotosInHerModel(QueryParam param ,SpouseGrid grid,HttpServletRequest request){
+		try{
+			param.setOwner(ResourceUtil.getSuperAdminId());
+			grid = photoServiceImpl.doQueryMyPhoto(param);	
+		}catch(Exception e){
+			logger.error(e.getMessage());
+		}	
+		return grid;
+	} 
+	/**
+	 * 
+	 * saveMyPhoto:save my photo
+	 *
+	 * @param param	param
+	 * @param info  response  info
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月18日 		cy
+	 */
+	@RequestMapping("/photoPersistent")
+	@ResponseBody
+	public SystemicInfo saveMyPhoto(SMPhoto smPhoto,SystemicInfo info,HttpServletRequest request){
+		try{
+			SessionUser user = SpouseUtil.getSessionUser(request);
+			if(null != user){
+				smPhoto.setAuthorId(user.getUserId());
+				photoServiceImpl.doSaveMyPhoto(smPhoto);
+				info.setSuccess(true, "success");
+			}else
+				info.setSuccess(false, "用户session失效,请重新登录后继续上传!");
+			
+		}catch(Exception e){
+			logger.error(e.getMessage());
+		}
+		return info;
+	}
 }
 

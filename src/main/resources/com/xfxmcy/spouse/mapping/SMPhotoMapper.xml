@@ -203,7 +203,12 @@
     </where>
   </select>
   <!-- query the queryMaxSeq -->
-  <select id="queryMaxSeq" resultType="java.lang.Long" parameterType="java.util.HashMap" >
-		select MAX(seq) from sm_favorite where pid = #{pid,jdbcType=VARCHAR}
+  <select id="doQueryMyMaxSeq" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.vo.SMPhoto" >
+		select MAX(seq) from sm_photo 
+		<where>  
+    		<if test="authorId">
+    			author_id = #{authorId,jdbcType=VARCHAR} 
+    		</if>
+    	</where>
   </select>
 </mapper>
