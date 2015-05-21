@@ -92,7 +92,7 @@ var initLoad = true ;
 				alert("存在") */
 				//alert(object.FileExists("${cy}/resource/upload"+rows[i].url)); 
 				if(rows[i].url){
-					waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" onerror=\"javascript:this.src='${cy}/resource/upload/main/lin.jpg';\" /></a><p><a href=\"http://www.xfxmcy.com/\">xfxmcy</a></p></div>";
+					waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" onerror=\"javascript:this.src='${cy}/resource/upload/main/lin.jpg';\" /></a><p>"+rows[i].title+"</p></div>";
 				}else
 					waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/resource/upload/main/lin.jpg\"  /></a><p><a href=\"http://www.xfxmcy.com/\">xfxmcy</a></p></div>";
 			}

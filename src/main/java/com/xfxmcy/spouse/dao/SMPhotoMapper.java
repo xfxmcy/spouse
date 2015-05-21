@@ -63,4 +63,27 @@ public interface SMPhotoMapper {
 	 *   		 2015年5月18日 		cy
 	 */
 	Long doQueryMyMaxSeq(SMPhoto record);
+	
+	/**
+	 * 
+	 * doQueryHisPhoto:do query  about his photo
+	 *
+	 * @param param		param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月21日 		cy
+	 */
+	List<SMPhoto> doQueryHisPhoto(QueryParam param);
+	/**
+	 * 
+	 * doQueryTotalHisPhoto:do query total about his photo
+	 *
+	 * @param param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月21日 		cy
+	 */
+	Long doQueryTotalHisPhoto(QueryParam param);
 }

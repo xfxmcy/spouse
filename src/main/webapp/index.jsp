@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${cy}/css/prize.css" rel="stylesheet" type="text/css" /> 
 <script type="text/javascript" src="${cy}/js/primary/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="${cy}/js/jquery-easyui-cy/xfUtil.js"></script>
 <script type="text/javascript" src="${cy}/js/primary/easySlider1.5.js" charset="utf-8"></script>
 <script type="text/javascript" src="${cy}/js/cy/prize.js" charset="utf-8"></script>
   

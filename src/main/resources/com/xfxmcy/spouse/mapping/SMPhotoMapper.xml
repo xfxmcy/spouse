@@ -202,6 +202,39 @@
     	
     </where>
   </select>
+  
+  <!-- do query his photo -->
+  <select id="doQueryHisPhoto"  resultMap="BaseResultMap" parameterType="com.xfxmcy.spouse.model.QueryParam" >
+    select 
+    <include refid="Base_Column_List" />
+    from sm_photo
+    <where>  
+    	<if test="owner">
+    		author_id != #{owner,jdbcType=VARCHAR} 
+    	</if>
+    </where>
+			order by seq desc
+			
+	<if test="page != null">
+			limit #{startPoint},#{rows}
+	</if>		
+			
+  </select>
+  <!-- query the count  for his photo   -->
+  <select id="doQueryTotalHisPhoto" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.model.QueryParam" >
+	select 
+    	count(*)
+    from sm_photo
+    <where>  
+    	<if test="owner">
+    		author_id != #{owner,jdbcType=VARCHAR} 
+    	</if>
+    	
+    </where>
+  </select>
+  
+  
+  
   <!-- query the queryMaxSeq -->
   <select id="doQueryMyMaxSeq" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.vo.SMPhoto" >
 		select MAX(seq) from sm_photo 

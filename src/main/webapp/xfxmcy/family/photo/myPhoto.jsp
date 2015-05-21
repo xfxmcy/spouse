@@ -72,8 +72,8 @@ var initLoad = true ;
    }
    function render(elements,fadein){
 	   var waterStr = "";
-	   if(!initLoad && pageCurrent >= (total/6)) return;
-	   $.post("${cy}/photo/queryMyPhoto.do?",{"queryType":"queryOnBG","rows":"6","page":(pageCurrent+1)},function(data){
+	   if(!initLoad && pageCurrent >= (total/8)) return;
+	   $.post("${cy}/photo/queryMyPhoto.do?",{"queryType":"queryOnBG","rows":"8","page":(pageCurrent+1)},function(data){
 			total = data.total;
 			initLoad = false ;
 			pageCurrent++ ;
@@ -91,7 +91,8 @@ var initLoad = true ;
 				alert("存在") */
 				//alert(object.FileExists("${cy}/resource/upload"+rows[i].url)); 
 				if(rows[i].url){
-					waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" onerror=\"javascript:this.src='${cy}/resource/upload/main/lin.jpg';\" /></a><p><a href=\"http://www.xfxmcy.com/\">xfxmcy</a></p></div>";
+					//waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" onerror=\"javascript:this.src='${cy}/resource/upload/main/lin.jpg';\" /></a><p><a href=\"http://www.xfxmcy.com/\">xfxmcy</a></p></div>";
+					waterStr +=  "<div class=\"cell\"><a href=\"#\" onclick=\"updatePhotInfo()\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" onerror=\"javascript:this.src='${cy}/resource/upload/main/lin.jpg';\" /></a><p>"+rows[i].title+"</p></div>";
 				}else
 					waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/resource/upload/main/lin.jpg\"  /></a><p><a href=\"http://www.xfxmcy.com/\">xfxmcy</a></p></div>";
 			}
@@ -222,8 +223,10 @@ function uploadMyPhoto(){
          //'overlayShow'   :   false
      }); 
 }
-
-
+/*更新图片信息*/
+function updatePhotInfo(){
+	
+}
 </script>
 <div style="margin-left: 40%;margin-top: 5%;margin-bottom: 3%">	
 		<a onclick="uploadMyPhoto()" style="cursor: pointer;font-size: 14px;">上传图片</a>

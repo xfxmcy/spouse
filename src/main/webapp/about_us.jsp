@@ -176,7 +176,7 @@ $(document).ready(function(){
           <a href="javascript:void(0)" class="link2">jing</a>
           <div class="clr"></div>
         </div>
-        <div class="block_list">
+        <!-- <div class="block_list">
           <p class="title">jing</p>
           <p>cy </p>
           <a href="#" class="link2">jing er</a> </div>
@@ -187,7 +187,7 @@ $(document).ready(function(){
         <div class="block_list">
           <p class="title">jing</p>
           <p>cy </p>
-          <a href="#" class="link2">jing er</a> </div>
+          <a href="#" class="link2">jing er</a> </div> -->
         <div class="clr"></div>
         <div class="block_full">
           <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="oursPhoto" id="oursPhoto" />

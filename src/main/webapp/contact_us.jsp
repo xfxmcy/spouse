@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${cy}/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${cy}/js/primary/jquery.js"></script>
+<script type="text/javascript" src="${cy}/js/jquery-easyui-cy/xfUtil.js"></script>
 <script type="text/javascript">
 // <![CDATA[
 jQuery(document).ready(function(){
@@ -71,7 +72,6 @@ jQuery(document).ready(function(){
 		model: cy.reverseModelInFront("contact").status
 		},function(data){
 			if(data.total > 0){
-				
 				if(data.rows[0].image && data.rows[0].image != ''){
 					$("#contactPhoto").attr('src','${cy}' + cy.uploadPath + data.rows[0].image);	
 				}

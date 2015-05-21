@@ -53,8 +53,9 @@
 			parentField : 'pid',
 			lines : true,
 			onClick : function(node) {
-				
-				addTab.call(this,node);
+				var childrenTree = node.children;
+				if(!childrenTree || !childrenTree.length || childrenTree.length == 0)
+					addTab.call(this,node);
 			},
 			onDblClick : function(node) {
 				if (node.state == 'closed') {

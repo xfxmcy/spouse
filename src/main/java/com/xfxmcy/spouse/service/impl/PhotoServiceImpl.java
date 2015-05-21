@@ -76,8 +76,15 @@ public class PhotoServiceImpl implements PhotoService {
 	@Override
 	public SpouseGrid doQueryHisPhoto(QueryParam param) {
 		SpouseGrid grid = new SpouseGrid();
-		// TODO Auto-generated method stub
-		return null;
+		List<SMPhoto> result = null;
+		/**
+		 *  query my photo paged 
+		 */
+		if(SpouseConstant.Photo.QUERY_MYPHOTO_PAGED_BG.equals(param.getQueryType())){
+			result = photoMapper.doQueryHisPhoto(param);
+			grid.setGrid(photoMapper.doQueryTotalHisPhoto(param),result);
+		} 
+		return grid;
 		
 	}
 

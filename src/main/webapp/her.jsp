@@ -69,7 +69,6 @@ $(document).ready(function(){
 	var rows ;
 	$.post("${cy}/photo/queryHerPhotoInFront.do?",{"queryType":"queryOnBG","rows":"6","page":1},function(data){
 		rows = data.rows;
-		alert(rows);
 		if(rows.length  <= 0)
 			return ;
 		for(var i = 0 ; i <rows.length ; i++){
@@ -83,7 +82,10 @@ $(document).ready(function(){
 			alert("存在") */
 			//alert(object.FileExists("${cy}/resource/upload"+rows[i].url)); 
 			if(rows[i].url){
-				photosHtml +=  "<li><a href=\"#\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" alt=\"project 1\" width=\"303\" height=\"129\" border=\"0\" /></a><span>dream</span></li>";
+				if(rows[i].title)
+					photosHtml +=  "<li><a href=\"#\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" alt=\"project 1\" width=\"303\" height=\"129\" border=\"0\" /></a><span>"+rows[i].title+"</span></li>";
+				else	
+					photosHtml +=  "<li><a href=\"#\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" alt=\"project 1\" width=\"303\" height=\"129\" border=\"0\" /></a><span></span></li>";
 			}
 			
 		}

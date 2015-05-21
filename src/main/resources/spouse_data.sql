@@ -26,6 +26,7 @@ INSERT INTO `sy_menu` VALUES ('9', 'icon-connector', '4', 'family', '', null, nu
 INSERT INTO `sy_menu` VALUES ('16', 'icon-child', '0', 'schedule', '/spouse/managerment/mySchedule.do', '2', null, null);
 INSERT INTO `sy_menu` VALUES ('17', 'icon-connector', '3', 'meeting', '/spouse/managerment/meeting.do','9', null, null);
 
-
+INSERT INTO `sy_menu` VALUES ('18', 'icon-child', '4', 'memory', '/spouse/managerment/memory.do', '9', null, null);
+INSERT INTO `sy_menu` VALUES ('19', 'icon-child', '5', 'preface', '/spouse/managerment/preface.do', '9', null, null);
 
 /*home data*/
