@@ -63,5 +63,35 @@ public interface PhotoService {
 	 *   		 2015年5月18日 		cy
 	 */
 	public SMPhoto doSaveMyPhoto(SMPhoto smPhoto);
+	/**
+	 * 
+	 * doTopMyPhoto:top own photo
+	 *
+	 * @param key
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月22日 		cy
+	 */
+	public void doTopMyPhoto(QueryParam param);
+	/**
+	 * 
+	 * doDeleteMyPhoto:delete own photo
+	 *
+	 * @param key
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月22日 		cy
+	 */
+	public void doDeleteMyPhoto(QueryParam param);
+	/**
+	 * 
+	 * doUpdateMyPhoto:update own photo
+	 *
+	 * @param smPhoto	photo
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月22日 		cy
+	 */
+	public void doUpdateMyPhoto(SMPhoto smPhoto);
 }
 

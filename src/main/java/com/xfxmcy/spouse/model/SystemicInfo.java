@@ -28,7 +28,7 @@ package com.xfxmcy.spouse.model;
 public class SystemicInfo {
 	
 	/*the flag of result*/
-	private boolean success = true;
+	private boolean success = false;
 	/*the information of operate*/
 	private String message = "";
 	/*the result*/

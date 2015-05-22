@@ -86,4 +86,15 @@ public interface SMPhotoMapper {
 	 *   		 2015年5月21日 		cy
 	 */
 	Long doQueryTotalHisPhoto(QueryParam param);
+	/**
+	 * 
+	 * topByPrimaryKey: top photo
+	 * 
+	 *
+	 * @param param    param
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月22日 		cy
+	 */
+	void topByPrimaryKey(QueryParam param);
 }

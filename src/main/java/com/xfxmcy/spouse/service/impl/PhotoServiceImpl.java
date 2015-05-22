@@ -97,7 +97,33 @@ public class PhotoServiceImpl implements PhotoService {
 			smPhoto.setSeq((photoMapper.doQueryMyMaxSeq(smPhoto)+1)+"");
 			photoMapper.insertSelective(smPhoto);
 		} 
-		return null;
+		return smPhoto;
+		
+	}
+
+	@Override
+	public void doTopMyPhoto(QueryParam param) {
+		if(SpouseConstant.SIMPLE_UPDATE.equals(param.getQueryType())){
+			photoMapper.topByPrimaryKey(param);
+		}
+		
+	}
+
+	@Override
+	public void doDeleteMyPhoto(QueryParam param) {
+		if(SpouseConstant.SIMPLE_DELETE.equals(param.getQueryType())){
+			photoMapper.deleteByPrimaryKey(param.getId());
+		}
+		
+		
+	}
+
+	@Override
+	public void doUpdateMyPhoto(SMPhoto smPhoto) {
+		
+		if(SpouseConstant.SIMPLE_UPDATE.equals(smPhoto.getQueryType())){
+			photoMapper.updateByPrimaryKeySelective(smPhoto);
+		}
 		
 	}
 	

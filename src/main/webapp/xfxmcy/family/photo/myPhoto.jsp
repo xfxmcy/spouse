@@ -1,12 +1,17 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cy" value="${pageContext.request.contextPath}" />
-<%-- <jsp:include page="/xfxmcy/initialEasyUI.jsp"></jsp:include> --%> 
+<%-- <jsp:include page="/xfxmcy/initialEasyUI.jsp"></jsp:include> --%>  
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>my photo</title>
 <link href="${cy}/js/waterfall/css/lanrenzhijia.css" type="text/css" rel="stylesheet" />
+
+<!-- css -->
+<link rel="stylesheet" href="${cy}/js/jquery-easyui-cy/themes/icon.css"/>
+
 <script src="${cy}/js/waterfall/js/jquery.min.js"></script>
+<script type="text/javascript" src="${cy}/js/jquery-easyui-cy/easyloader.js"></script>
 <script type="text/javascript" src="${cy}/js/fullcalendar/jquery.fancybox-1.3.1.pack.js"></script>
 <link rel="stylesheet" href="${cy}/js/fullcalendar/fancybox.css"/>
 <script>
@@ -14,7 +19,8 @@
 var total = 0; 
 var pageCurrent = 0;
 var initLoad = true ;
-
+var currentPid = "";
+var currentTitle = "";
 (function($){
    var 
    //参数
@@ -92,7 +98,7 @@ var initLoad = true ;
 				//alert(object.FileExists("${cy}/resource/upload"+rows[i].url)); 
 				if(rows[i].url){
 					//waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" onerror=\"javascript:this.src='${cy}/resource/upload/main/lin.jpg';\" /></a><p><a href=\"http://www.xfxmcy.com/\">xfxmcy</a></p></div>";
-					waterStr +=  "<div class=\"cell\"><a href=\"#\" onclick=\"updatePhotInfo()\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" onerror=\"javascript:this.src='${cy}/resource/upload/main/lin.jpg';\" /></a><p>"+rows[i].title+"</p></div>";
+					waterStr +=  "<div class=\"cell\"><a href=\"#\" oncontextmenu=\"updatePhotInfo(\'"+rows[i].id+"\',\'"+rows[i].title+"\')\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" onerror=\"javascript:this.src='${cy}/resource/upload/main/lin.jpg';\" /></a><p>"+rows[i].title+"</p></div>";
 				}else
 					waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/resource/upload/main/lin.jpg\"  /></a><p><a href=\"http://www.xfxmcy.com/\">xfxmcy</a></p></div>";
 			}
@@ -197,6 +203,13 @@ var initLoad = true ;
 	  waterfall.$columns=creatColumn();
       render($cells,false); //重排已有元素时强制不渐显
    }
+   
+   
+   easyloader.load(["dialog", "parser", "tabs","validatebox", "combobox",  "menu" ], function() {
+			
+	   $('#taskMenu').menu();    
+   });
+	 
 })(jQuery);
 /*图片上传*/
 function uploadMyPhoto(){
@@ -224,12 +237,87 @@ function uploadMyPhoto(){
      }); 
 }
 /*更新图片信息*/
-function updatePhotInfo(){
+function updatePhotInfo(id , title){
+	currentPid = id;
+	currentTitle = title;
+	event.preventDefault();
+	
+	$('#taskMenu').show();
+	$('#taskMenu').menu('show', {
+		left : event.pageX,
+		top : event.pageY
+	});
+}
+/**
+ *  EDIT title
+ */
+var mainDialog,formDia;
+function editTitlePhoto(){
+	mainDialog = parent.cy.dialog({
+		title : 'edit title',
+		href : '${cy}/xfxmcy/family/photo/photoForm.jsp',
+		width : 620,
+		height : 180,
+		buttons : [{
+			text : 'submit',
+			handler : function() {			
+				formDia = mainDialog.find('form');
+				if(!formDia.form("validate")){
+					parent.simpleMessAlert.call(this,'提示',"请认真填写信息");
+					return;
+				}
+				$.post('${cy}/preface/prefacePersistent.do',cy.serializeObject(formDia),function(json){
+					if (json.success) {
+						$("#prefaceGrid").datagrid("insertRow",{
+							index : 0 ,
+							row : json.result
+						});
+						mainDialog.dialog('close');
+					}
+					parent.simpleMessAlert.call(this,'提示',json.message);
+				},'json');
+				
+			} 
+		}, {
+			text : 'cancel',
+			handler : function() {
+				mainDialog.dialog('close');
+			}
+		}],
+		onLoad : function(){
+			formDia = mainDialog.find('form');
+			parent.$('#previousTitle').html(currentTitle);
+			
+		}
+		
+	});
+}
+/**
+ *   go to   top
+ */
+function topTitlePhoto(){
+	
+	
+}
+/**
+ * remove
+ */
+function removeTitlePhoto(){
 	
 }
 </script>
 <div style="margin-left: 40%;margin-top: 5%;margin-bottom: 3%">	
 		<a onclick="uploadMyPhoto()" style="cursor: pointer;font-size: 14px;">上传图片</a>
+</div>
+<div id="taskMenu" style="width: 120px;display: none;">
+		<div onclick="topTitlePhoto()" data-options="iconCls:'icon-add'">置顶</div>
+		<div class="menu-sep"></div>
+		<div onclick="editTitlePhoto()" data-options="iconCls:'icon-edit'">修改title</div>
+		<div class="menu-sep"></div>
+		<div onclick="removeTitlePhoto()"
+			data-options="iconCls:'icon-remove'">删除</div>
+		<div class="menu-sep"></div>
+		
 </div>
 <div id="waterfall">
 </div>

@@ -18,9 +18,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xfxmcy.spouse.constant.SpouseConstant;
 import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.model.SystemicInfo;
@@ -176,6 +178,99 @@ public class PhotoController {
 				info.setSuccess(false, "用户session失效,请重新登录后继续上传!");
 			
 		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
+			logger.error(e.getMessage());
+		}
+		return info;
+	}
+	
+	/**
+	 * 
+	 * updateMyPhoto: update my photo about title
+	 *
+	 * @param smPhoto smPhoto
+	 * @param info
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月22日 		cy
+	 */
+	@RequestMapping("/photoMerge")
+	@ResponseBody
+	public SystemicInfo updateMyPhoto(SMPhoto smPhoto,SystemicInfo info,HttpServletRequest request){
+		try{
+			SessionUser user = SpouseUtil.getSessionUser(request);
+			if(null != user){
+				photoServiceImpl.doUpdateMyPhoto(smPhoto);
+				info.setSuccess(true, "success");
+			}else
+				info.setSuccess(false, "用户session失效,请重新登录后继续上传!");
+			
+		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
+			logger.error(e.getMessage());
+		}
+		return info;
+	}
+	/**
+	 * 
+	 * deleteMyPhoto:delete my photo
+	 *
+	 * @param key		id	pk
+	 * @param info
+	 * @param request	request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月22日 		cy
+	 */
+	@RequestMapping("/photoRemove/{key}")
+	@ResponseBody
+	public SystemicInfo deleteMyPhoto(@PathVariable String key,QueryParam param ,SystemicInfo info,HttpServletRequest request){
+		try{
+			SessionUser user = SpouseUtil.getSessionUser(request);
+			if(null != user){
+				param.setId(key);
+				param.setQueryType(SpouseConstant.SIMPLE_DELETE);
+				photoServiceImpl.doDeleteMyPhoto(param);
+				info.setSuccess(true, "success");
+			}else
+				info.setSuccess(false, "用户session失效,请重新登录后继续上传!");
+			
+		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
+			logger.error(e.getMessage());
+		}
+		return info;
+	}
+	/**
+	 * 
+	 * topMyPhoto:top for the photo
+	 *
+	 * @param key
+	 * @param info
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年5月22日 		cy
+	 */
+	@RequestMapping("/photoTop/{key}")
+	@ResponseBody
+	public SystemicInfo topMyPhoto(@PathVariable String key,QueryParam param ,SystemicInfo info,HttpServletRequest request){
+		try{
+			SessionUser user = SpouseUtil.getSessionUser(request);
+			if(null != user){
+				param.setId(key);
+				param.setQueryType(SpouseConstant.SIMPLE_UPDATE);
+				photoServiceImpl.doTopMyPhoto(param);
+				info.setSuccess(true, "success");
+			}else
+				info.setSuccess(false, "用户session失效,请重新登录后继续上传!");
+			
+		}catch(Exception e){
+			info.setSuccess(false, "system busy , please have a wait");
 			logger.error(e.getMessage());
 		}
 		return info;
