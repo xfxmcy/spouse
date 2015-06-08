@@ -24,6 +24,12 @@ public class SMPhoto implements Serializable{
     
     private String queryType;
     
+    public SMPhoto() {
+
+		// TODO Auto-generated constructor stub
+
+	}
+    
     public String getQueryType() {
 		return queryType;
 	}

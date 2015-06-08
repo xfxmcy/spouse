@@ -33,7 +33,7 @@
          implementorClass = "com.xfxmcy.spouse.webservice.PhotoWService" > 
          <jaxws:implementor> 
              <bean  id = "photoWServiceImpl" 
-                 class = "com.xfxmcy.spouse.webservice.impl.PhotoServiceImpl" > 
+                 class = "com.xfxmcy.spouse.webservice.impl.PhotoWServiceImpl" > 
                  <!-- <property  name = "userDao" > 
                      <ref  bean = "userDao"  /> 
                  </property >  -->
