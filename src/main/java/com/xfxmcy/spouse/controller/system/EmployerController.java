@@ -21,6 +21,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.model.SystemicInfo;
 import com.xfxmcy.spouse.service.EmployerService;
 import com.xfxmcy.spouse.util.ResourceUtil;
@@ -79,10 +81,21 @@ public class EmployerController {
 		}
 			return info;
 	}
-	
+	/**
+	 * 
+	 * doMergePassWd:update passWd
+	 *
+	 * @param info
+	 * @param employer
+	 * @param request
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年6月8日 		cy
+	 */
 	@RequestMapping("/passWdMerge")
 	@ResponseBody
-	public SystemicInfo doMergePassWd(SystemicInfo info,SPEmployer employer,HttpServletRequest request) {
+	public SystemicInfo doMergePassWd(SystemicInfo info,SPEmployer employer) {
 		try{
 			employer = employerServiceImpl.mergeEmployerPassWd(employer);
 			if(null != employer){
@@ -97,7 +110,30 @@ public class EmployerController {
 			logger.error(e.getMessage());
 			info.setSuccess(false, "system busy , please have a wait");
 		}
-			return info;
+		return info;
+	}
+	
+	/**
+	 * 
+	 * queryAdministrator: query administrator for indexPage
+	 *
+	 * @param param
+	 * @param grid
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年6月8日 		cy
+	 */
+	@RequestMapping("/queryAdmin")
+	@ResponseBody
+	public SpouseGrid queryAdministrator(QueryParam param , SpouseGrid grid){
+		try{
+			grid = employerServiceImpl.queryAdministrators(param);
+			logger.info(grid);
+		}catch(Exception e){
+			logger.error(e.getMessage());
+		}
+		return grid;
 	}
 }
 

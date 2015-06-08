@@ -22,11 +22,9 @@
 					</tr>
 					
 					<tr>
-						<td colspan="2">新标题&nbsp;&nbsp;<input name="content" id="content"  style="width:380px;" />
+						<td colspan="2">新标题&nbsp;&nbsp;<input name="title" id="title"  style="width:380px;" />
 							<input name="queryType" id="queryType"  value="${param.type}"   style="width:130px;display: none;" />
-							<input name="id"   style="width:130px;display: none;" />
-							<input name="flag" value="0"   style="width:130px;display: none;" />
-							
+							<input name="id" id="pid"  style="width:130px;display: none;" />
 						</td>
 					</tr>
 					

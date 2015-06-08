@@ -175,10 +175,10 @@ public class PhotoController {
 				photoServiceImpl.doSaveMyPhoto(smPhoto);
 				info.setSuccess(true, "success");
 			}else
-				info.setSuccess(false, "用户session失效,请重新登录后继续上传!");
+				info.setSuccess(false, SpouseConstant.Alert.SESSION_DISABLE);
 			
 		}catch(Exception e){
-			info.setSuccess(false, "system busy , please have a wait");
+			info.setSuccess(false, SpouseConstant.Alert.SYSTEM_ERROR);
 			logger.error(e.getMessage());
 		}
 		return info;
@@ -205,10 +205,10 @@ public class PhotoController {
 				photoServiceImpl.doUpdateMyPhoto(smPhoto);
 				info.setSuccess(true, "success");
 			}else
-				info.setSuccess(false, "用户session失效,请重新登录后继续上传!");
+				info.setSuccess(false, SpouseConstant.Alert.SESSION_DISABLE);
 			
 		}catch(Exception e){
-			info.setSuccess(false, "system busy , please have a wait");
+			info.setSuccess(false, SpouseConstant.Alert.SYSTEM_ERROR);
 			logger.error(e.getMessage());
 		}
 		return info;
@@ -232,14 +232,13 @@ public class PhotoController {
 			SessionUser user = SpouseUtil.getSessionUser(request);
 			if(null != user){
 				param.setId(key);
-				param.setQueryType(SpouseConstant.SIMPLE_DELETE);
 				photoServiceImpl.doDeleteMyPhoto(param);
 				info.setSuccess(true, "success");
 			}else
-				info.setSuccess(false, "用户session失效,请重新登录后继续上传!");
+				info.setSuccess(false, SpouseConstant.Alert.SESSION_DISABLE);
 			
 		}catch(Exception e){
-			info.setSuccess(false, "system busy , please have a wait");
+			info.setSuccess(false, SpouseConstant.Alert.SYSTEM_ERROR);
 			logger.error(e.getMessage());
 		}
 		return info;
@@ -263,14 +262,13 @@ public class PhotoController {
 			SessionUser user = SpouseUtil.getSessionUser(request);
 			if(null != user){
 				param.setId(key);
-				param.setQueryType(SpouseConstant.SIMPLE_UPDATE);
 				photoServiceImpl.doTopMyPhoto(param);
 				info.setSuccess(true, "success");
 			}else
-				info.setSuccess(false, "用户session失效,请重新登录后继续上传!");
+				info.setSuccess(false, SpouseConstant.Alert.SESSION_DISABLE);
 			
 		}catch(Exception e){
-			info.setSuccess(false, "system busy , please have a wait");
+			info.setSuccess(false, SpouseConstant.Alert.SYSTEM_ERROR);
 			logger.error(e.getMessage());
 		}
 		return info;

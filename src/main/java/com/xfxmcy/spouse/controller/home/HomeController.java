@@ -75,7 +75,7 @@ public class HomeController {
 			sysInfo.setMessage("successful");
 		}catch(RuntimeException e){
 			logger.error(e.getMessage());
-			sysInfo.setSuccess(false,"system is busy");
+			sysInfo.setSuccess(false,SpouseConstant.Alert.SYSTEM_ERROR);
 		}
 		return sysInfo;
 	}
@@ -123,7 +123,7 @@ public class HomeController {
 			info.setSuccess(true, "success");
 			info.setResult(syHome);
 		}catch(Exception e){
-			info.setSuccess(false, "system busy , please waiting ...");
+			info.setSuccess(false, SpouseConstant.Alert.SYSTEM_ERROR);
 			logger.error(e.getMessage());
 		}
 		return info;
@@ -149,7 +149,7 @@ public class HomeController {
 			info.setResult(syHome);
 			info.setSuccess(true, "success");
 		}catch(Exception e){
-			info.setSuccess(false, "system busy , please have a wait");
+			info.setSuccess(false, SpouseConstant.Alert.SYSTEM_ERROR);
 			logger.error(e.getMessage());
 		}
 		return info;
@@ -177,7 +177,7 @@ public class HomeController {
 			syHomeServiceImpl.deleteHomePhoto(param, syHome);
 			info.setSuccess(true, "success");
 		}catch(Exception e){
-			info.setSuccess(false, "system busy , please have a wait");
+			info.setSuccess(false, SpouseConstant.Alert.SYSTEM_ERROR);
 			logger.error(e.getMessage());
 		}
 		return info;
@@ -203,7 +203,7 @@ public class HomeController {
 			syHomeServiceImpl.doContactUs(param,wish);
 			info.setSuccess(true, "success");
 		}catch(Exception e){
-			info.setSuccess(false, "system busy , please have a wait");
+			info.setSuccess(false, SpouseConstant.Alert.SYSTEM_ERROR);
 			logger.error(e.getMessage());
 		}
 		return info;

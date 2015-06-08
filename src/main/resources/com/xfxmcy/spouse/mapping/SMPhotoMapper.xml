@@ -232,7 +232,33 @@
     	
     </where>
   </select>
-  
+  <!-- to Up -->
+  <update id="topByPrimaryKey" parameterType="com.xfxmcy.spouse.model.QueryParam">
+    UPDATE sm_photo
+	SET seq = (
+		SELECT
+			tm.sq
+		FROM
+			(
+				SELECT
+					max(sm.seq + 1) AS sq
+				FROM
+					sm_photo sm
+					 <where>  
+				    	<if test="owner">
+				    		sm.author_id != #{owner,jdbcType=VARCHAR} 
+				    	</if>
+				    	
+				    </where>
+				
+			) tm
+	)
+	 <where>  
+    	<if test="id">
+    		id = #{id,jdbcType=VARCHAR} 
+    	</if>
+    </where>
+  </update>
   
   
   <!-- query the queryMaxSeq -->

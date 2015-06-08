@@ -13,6 +13,7 @@
 <script src="${cy}/js/waterfall/js/jquery.min.js"></script>
 <script type="text/javascript" src="${cy}/js/jquery-easyui-cy/easyloader.js"></script>
 <script type="text/javascript" src="${cy}/js/fullcalendar/jquery.fancybox-1.3.1.pack.js"></script>
+<script type="text/javascript" src="${cy}/js/jquery-easyui-cy/xfUtil.js"></script> 
 <link rel="stylesheet" href="${cy}/js/fullcalendar/fancybox.css"/>
 <script>
 
@@ -21,6 +22,7 @@ var pageCurrent = 0;
 var initLoad = true ;
 var currentPid = "";
 var currentTitle = "";
+var topMostId = [];  //最顶端图片Id
 (function($){
    var 
    //参数
@@ -87,6 +89,9 @@ var currentTitle = "";
 			if(rows.length  <= 0)
 				return ;
 			for(var i = 0 ; i <rows.length ; i++){
+				if(pageCurrent == 1){
+					topMostId[i] = rows[i].id;
+				}	
 				/* var oReq = new ActiveXObject("Microsoft.xmlHTTP")
 				oReq.open("Get","${cy}/resource/upload"+rows[i].url,false);
 				oReq.send();
@@ -95,12 +100,12 @@ var currentTitle = "";
 				alert('不存在');
 				else
 				alert("存在") */
-				//alert(object.FileExists("${cy}/resource/upload"+rows[i].url)); 
+				//alert(object.FileExists("${cy}/resource/upload"+rows[i].url));
 				if(rows[i].url){
 					//waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" onerror=\"javascript:this.src='${cy}/resource/upload/main/lin.jpg';\" /></a><p><a href=\"http://www.xfxmcy.com/\">xfxmcy</a></p></div>";
 					waterStr +=  "<div class=\"cell\"><a href=\"#\" oncontextmenu=\"updatePhotInfo(\'"+rows[i].id+"\',\'"+rows[i].title+"\')\"><img src=\"${cy}/resource/upload"+rows[i].url+"\" onerror=\"javascript:this.src='${cy}/resource/upload/main/lin.jpg';\" /></a><p>"+rows[i].title+"</p></div>";
 				}else
-					waterStr +=  "<div class=\"cell\"><a href=\"#\"><img src=\"${cy}/resource/upload/main/lin.jpg\"  /></a><p><a href=\"http://www.xfxmcy.com/\">xfxmcy</a></p></div>";
+					waterStr +=  "<div class=\"cell\"><a href=\"#\" oncontextmenu=\"updatePhotInfo(\'"+rows[i].id+"\',\'"+rows[i].title+"\')\"><img src=\"${cy}/resource/upload/main/lin.jpg\"  /></a><p><a href=\"http://www.xfxmcy.com/\">"+rows[i].title+"</a></p></div>";
 			}
 			renderCy($(waterStr),true); 
 		});	
@@ -255,7 +260,7 @@ var mainDialog,formDia;
 function editTitlePhoto(){
 	mainDialog = parent.cy.dialog({
 		title : 'edit title',
-		href : '${cy}/xfxmcy/family/photo/photoForm.jsp',
+		href : '${cy}/xfxmcy/family/photo/photoForm.jsp?type=simpleUpdate',
 		width : 620,
 		height : 180,
 		buttons : [{
@@ -266,15 +271,13 @@ function editTitlePhoto(){
 					parent.simpleMessAlert.call(this,'提示',"请认真填写信息");
 					return;
 				}
-				$.post('${cy}/preface/prefacePersistent.do',cy.serializeObject(formDia),function(json){
-					if (json.success) {
-						$("#prefaceGrid").datagrid("insertRow",{
-							index : 0 ,
-							row : json.result
-						});
-						mainDialog.dialog('close');
-					}
+				$.post('${cy}/photo/photoMerge.do',cy.serializeObject(formDia),function(json){
+					
 					parent.simpleMessAlert.call(this,'提示',json.message);
+					if (json.success) {
+						mainDialog.dialog('close');
+						location.reload();
+					}
 				},'json');
 				
 			} 
@@ -287,7 +290,7 @@ function editTitlePhoto(){
 		onLoad : function(){
 			formDia = mainDialog.find('form');
 			parent.$('#previousTitle').html(currentTitle);
-			
+			parent.$('#pid').val(currentPid);
 		}
 		
 	});
@@ -297,24 +300,50 @@ function editTitlePhoto(){
  */
 function topTitlePhoto(){
 	
-	
+	if(topMostId.indexOf(currentPid) > -1){
+		parent.simpleMessAlert.call(this,'提示','该图片已经在首页,无需前置');
+		return ;
+	}
+	$.post('${cy}/photo/photoTop/'+currentPid+'.do',{'queryType':'simpleUpdate'},function(json){
+		parent.simpleMessAlert.call(this,'提示',json.message);
+		if (json.success) {
+			location.reload();
+		}
+	},'json');
 }
 /**
  * remove
  */
-function removeTitlePhoto(){
-	
+function removePhoto(){
+	parent.simpleMessConf.call(this,
+			 'warning',
+			 'do you sure your dicision ?',
+			 function(result){
+				/*sure*/
+				if(result){
+					removePhotoAble.call(this);
+				}
+			}
+		);
+}
+function removePhotoAble(){
+	$.post('${cy}/photo/photoRemove/'+currentPid+'.do',{'queryType':'simpleDelete'},function(json){
+		parent.simpleMessAlert.call(this,'提示',json.message);
+		if (json.success) {
+			location.reload();
+		}
+	},'json');
 }
 </script>
 <div style="margin-left: 40%;margin-top: 5%;margin-bottom: 3%">	
 		<a onclick="uploadMyPhoto()" style="cursor: pointer;font-size: 14px;">上传图片</a>
 </div>
 <div id="taskMenu" style="width: 120px;display: none;">
-		<div onclick="topTitlePhoto()" data-options="iconCls:'icon-add'">置顶</div>
+		<div onclick="topTitlePhoto()" data-options="iconCls:'icon-add'">置首页</div>
 		<div class="menu-sep"></div>
 		<div onclick="editTitlePhoto()" data-options="iconCls:'icon-edit'">修改title</div>
 		<div class="menu-sep"></div>
-		<div onclick="removeTitlePhoto()"
+		<div onclick="removePhoto()"
 			data-options="iconCls:'icon-remove'">删除</div>
 		<div class="menu-sep"></div>
 		

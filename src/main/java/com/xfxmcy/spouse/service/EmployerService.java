@@ -13,6 +13,8 @@
 
 package com.xfxmcy.spouse.service;
 
+import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.vo.SPEmployer;
 
 /**
@@ -50,5 +52,16 @@ public interface EmployerService {
 	 *   		 2015年1月13日 		cy
 	 */
 	public SPEmployer mergeEmployerPassWd(SPEmployer employer);
+	/**
+	 * 
+	 * queryAdministrators: query administrators
+	 *
+	 * @param param
+	 * @return
+	 *   ver     date      		author
+	 * ──────────────────────────────────
+	 *   		 2015年6月8日 		cy
+	 */
+	public SpouseGrid queryAdministrators(QueryParam param);
 }
 

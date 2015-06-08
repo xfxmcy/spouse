@@ -266,6 +266,25 @@ public final class SpouseConstant {
 		public final static String QUERY_MYPHOTO_PAGED_BG = "queryOnBG";
 		
 	}
-	
+	/**
+	 * 
+	 * ClassName:Alert
+	 * Function: system alert
+	 * Reason:	 system alert
+	 *
+	 * @author   cy
+	 * @version  SpouseConstant
+	 * @since    Ver 1.1
+	 * @Date	 2015	2015年6月8日		上午9:02:03
+	 *
+	 * @see
+	 */
+	public class Alert {
+		/*session out*/
+		public final static String SESSION_DISABLE = "session失效,请重新登录后继续操作!";
+		/*system error*/
+		public final static String SYSTEM_ERROR = "system busy , please have a wait!";
+		
+	}
 }
 

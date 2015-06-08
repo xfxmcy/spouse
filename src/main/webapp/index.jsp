@@ -54,6 +54,30 @@ $(document).ready(function(){
 			}
 		
 		},'json');
+	
+	
+	/*图像查询*/
+	$.post("${cy}/employer/queryAdmin.ajax", {
+		queryType:'simpleUpdate'
+		},function(data){
+			if(data.rows.length > 0){
+				var boy = $("#boyImage");
+				var girl = $("#girlImage");
+				if(data.rows[0].path && data.rows[0].path != ''){
+					if(data.rows[0].role == 1)
+						boy.attr('src','${cy}' + cy.uploadPath + data.rows[0].path);
+					else if (data.rows[0].role == 0)
+						girl.attr('src','${cy}' + cy.uploadPath + data.rows[0].path);
+				}
+				if(data.rows[1].path && data.rows[1].path != ''){
+					if(data.rows[1].role == 1)
+						boy.attr('src','${cy}' + cy.uploadPath + data.rows[1].path);
+					else if (data.rows[1].role == 0)
+						girl.attr('src','${cy}' + cy.uploadPath + data.rows[1].path);
+				}
+			}
+		
+		},'json');
 });
 // ]]>
 </script>
@@ -150,8 +174,8 @@ p#controls {
         <p><strong>2014年夏天......</strong></p>
       </div>
       <ul class="banner">
-        <li><a href="#"><img src="${cy}/images/girl.jpg" width="104" height="104" border="0" alt="banner" /></a></li>
-        <li><a href="#"><img src="${cy}/images/girl1.jpg" width="104" height="104" border="0" alt="banner" /></a></li>
+        <li><a href="#"><img src="${cy}/images/girl.jpg" width="104" height="104" border="0" alt="banner" id="boyImage"/></a></li>
+        <li><a href="#"><img src="${cy}/images/girl1.jpg" width="104" height="104" border="0" alt="banner" id="girlImage" /></a></li>
       </ul>
       <div class="clr"></div>
       <h3>Give a bless!

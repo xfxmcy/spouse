@@ -13,7 +13,9 @@
 
 package com.xfxmcy.spouse.service.impl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -23,8 +25,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xfxmcy.spouse.constant.SpouseConstant;
-import com.xfxmcy.spouse.dao.SMFavoriteMapper;
 import com.xfxmcy.spouse.dao.SPEmployerMapper;
+import com.xfxmcy.spouse.model.QueryParam;
+import com.xfxmcy.spouse.model.SpouseGrid;
 import com.xfxmcy.spouse.service.EmployerService;
 import com.xfxmcy.spouse.util.Encrypt;
 import com.xfxmcy.spouse.vo.SPEmployer;
@@ -88,6 +91,18 @@ public class EmployerServiceImpl implements EmployerService {
 			spEmployerMapper.updateByAccountSelective(employer);
 		}
 		return employer;
+		
+	}
+
+	@Override
+	public SpouseGrid queryAdministrators(QueryParam param) {
+		SpouseGrid grid = new SpouseGrid();
+		List<SPEmployer> lists = new ArrayList<SPEmployer>();
+		if(SpouseConstant.SIMPLE_UPDATE.equals(param.getQueryType())){
+			lists = spEmployerMapper.queryListPaged(param);
+			grid.setGrid(0l, lists);
+		}
+		return grid;
 		
 	}
 

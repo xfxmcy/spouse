@@ -238,7 +238,7 @@
   			<artifactId>dom4j</artifactId>
 			<version>1.6.1</version>
 		</dependency>
-		<!-- cluster -->
+		<!-- cluster 
 		<dependency>
 			<groupId>msm-flexjson-serializer</groupId>
   			<artifactId>msm-flexjson-serializer</artifactId>
@@ -259,7 +259,7 @@
   			<artifactId>msm-xstream-serializer</artifactId>
 			<version>${cluster.msm.version}</version>
 		</dependency>
-			
+		-->	
 		
 		
 		
