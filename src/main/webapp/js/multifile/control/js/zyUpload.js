@@ -235,11 +235,19 @@
 			 * 返回: 无
 			 */
 			this.createCorePlug = function(){
+				/*修改bug 上传地址*/
+			    var pathName = document.location.pathname;
+			    var index = pathName.substr(1).indexOf("/");
+			    var result = pathName.substr(0,index+1);
+			    /*修改bug 上传地址   */
+			    	/*ps:此问题未解决 原因是获得的contextPath 不准确 ( xfxmcy.com/js) 
+			    	 * 生产环境 直接写死 xfxmcy.com
+			    	 * */
 				var params = {
 					fileInput: $("#fileImage").get(0),
 					uploadInput: $("#fileSubmit").get(0),
 					dragDrop: $("#fileDragArea").get(0),
-					url: "/spouse/UploadServlet?folder=/main",
+					url: result+"/UploadServlet?folder=/main",
 					
 					filterFile: function(files) {
 						// 过滤合格的文件

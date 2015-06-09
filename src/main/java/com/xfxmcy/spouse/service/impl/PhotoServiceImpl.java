@@ -95,8 +95,11 @@ public class PhotoServiceImpl implements PhotoService {
 			smPhoto.setId(IdUtil.generaterThrityTwo());
 			smPhoto.setCreatetime(new Date());
 			smPhoto.setTitle("");
-			smPhoto.setSeq((photoMapper.doQueryMyMaxSeq(smPhoto)+1)+"");
+			Long seq = photoMapper.doQueryMyMaxSeq(smPhoto);
+			seq = (seq == null)? 0:seq+1;
+			smPhoto.setSeq(seq+"");
 			photoMapper.insertSelective(smPhoto);
+			
 		} 
 		return smPhoto;
 		

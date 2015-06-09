@@ -80,7 +80,7 @@ function uploadPhoto(){
 				//parent.$.messager.progress('close');
 				$.post('${cy}/employer/employerMerge.do?type=simpleUpdate',cy.serializeObject(formDia),function(json){
 					if (json.success) {
-						$("#myPhoto").attr('src','${cy}/' + cy.uploadPath + json.result.path);
+						$("#myPhoto").attr('src','${cy}' + cy.uploadPath + json.result.path);
 						//change photo
 						meDialog.dialog('close');
 						
@@ -125,7 +125,7 @@ function uploadPhoto(){
 		<tr>
 			<td>照片</td>
 			<td>
-				<img id="myPhoto" alt="my photo" width="100px" src="${cy}/${sessionInfo.photo}">
+				<img id="myPhoto" alt="my photo" width="100px" src="${cy}${sessionInfo.photo}">
 			</td>
 			<td>
 				<a href="#" class="easyui-linkbutton" onclick="uploadPhoto();">上传</a>	
