@@ -12,9 +12,15 @@
 <script type="text/javascript" src="${cy}/js/jquery-easyui-cy/xfUtil.js"></script>
 </head>
 <script type="text/javascript">
+
+function showDes(str){
+	$('#memoryInfo').text(str);
+}
+
 $(document).ready(function(){	
 	$.post("${cy}/ours/oursQuery.ajax", {
 		queryType:'preface',
+		flagEnAble:'1',
 		model: cy.reverseModelInFront("ours").status
 		},function(data){
 			if(data.total > 0){
@@ -30,6 +36,7 @@ $(document).ready(function(){
 	
 	$.post("${cy}/ours/oursQuery.ajax", {
 		queryType:'memory',
+		flagEnAble:'1',
 		model: cy.reverseModelInFront("ours").status
 		},function(data){
 			if(data.total > 0){
@@ -38,19 +45,19 @@ $(document).ready(function(){
 					if(data.rows[i].href != null && data.rows[i].href != ""){
 						if(data.rows[i].href.substr(0,4) == "http"){
 							var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
-							+"<a href=\"javascript:window.open('" + data.rows[i].href + "');\">"
+							+"<a onMouseOver=\"showDes('"+data.rows[i].description+"')\" href=\"javascript:window.open('" + data.rows[i].href + "');\">"
 							+"<strong>" + data.rows[i].title + "</strong></a></li>";	
 						}
 						else{
 							var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
-							+"<a href=\"javascript:window.open('${cy}" + data.rows[i].href + "');\">"
+							+"<a onMouseOver=\"showDes('"+data.rows[i].description+"')\" href=\"javascript:window.open('${cy}" + data.rows[i].href + "');\">"
 							+"<strong>" + data.rows[i].title + "</strong></a></li>";
 						}
 						
 					}
 					else{
 						var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
-						+"<a href=\"#\">"
+						+"<a onMouseOver=\"showDes('"+data.rows[i].description+"')\" href=\"#\">"
 						+"<strong>" + data.rows[i].title + "</strong></a></li>";
 					}
 					lis += li;
@@ -79,12 +86,16 @@ $(document).ready(function(){
   </div>
   <div class="main">
     <div class="services">
-      <div class="service_bg">
+      <div class="service_bg" style="word-break:break-all">
         <h3>our memory</h3>
         <ul class="link" id="ourIntroduce" style="font-size: 14px;">
+        
         </ul>
+        <p id="memoryInfo"  ></p>
       </div>
+     
       <div class="clr"></div>
+     
     </div>
     
     <div class="global_main">
@@ -173,7 +184,7 @@ $(document).ready(function(){
         <div class="block_full">
           <p class="title">video title</p>
           <p>	video content  </p>
-          <a href="javascript:void(0)" class="link2">jing</a>
+          <a href="javascript:void(0)" class="link2">baby</a>
           <div class="clr"></div>
         </div>
         <!-- <div class="block_list">

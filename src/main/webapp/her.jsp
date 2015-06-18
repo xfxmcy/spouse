@@ -13,6 +13,11 @@
 </head>
 <body>
 <script type="text/javascript">
+
+function showDes(str){
+	$('#memoryInfo').text(str);
+}
+
 $(document).ready(function(){	
 	$.post("${cy}/ours/oursQuery.ajax", {
 		queryType:'preface',
@@ -41,19 +46,19 @@ $(document).ready(function(){
 					if(data.rows[i].href != null && data.rows[i].href != ""){
 						if(data.rows[i].href.substr(0,4) == "http"){
 							var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
-							+"<a href=\"javascript:window.open('" + data.rows[i].href + "');\">"
+							+"<a onMouseOver=\"showDes('"+data.rows[i].description+"')\" href=\"javascript:window.open('" + data.rows[i].href + "');\">"
 							+"<strong>" + data.rows[i].title + "</strong></a></li>";	
 						}
 						else{
 							var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
-							+"<a href=\"javascript:window.open('${cy}" + data.rows[i].href + "');\">"
+							+"<a onMouseOver=\"showDes('"+data.rows[i].description+"')\" href=\"javascript:window.open('${cy}" + data.rows[i].href + "');\">"
 							+"<strong>" + data.rows[i].title + "</strong></a></li>";
 						}
 						
 					}
 					else{
 						var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
-						+"<a href=\"#\">"
+						+"<a onMouseOver=\"showDes('"+data.rows[i].description+"')\" href=\"#\">"
 						+"<strong>" + data.rows[i].title + "</strong></a></li>";
 					}
 					lis += li;
@@ -125,10 +130,11 @@ $(document).ready(function(){
   </div>
   <div class="main">
     <div class="services">
-      <div class="service_bg">
+      <div class="service_bg" style="word-break:break-all">
         <h3>her introduce</h3>
         <ul id="herIntroduce" class="link" style="font-size: 14px;">
         </ul>
+         <p id="memoryInfo"  ></p>
       </div>
       <div class="clr"></div>
     </div>

@@ -100,7 +100,7 @@
   </div>
   <div class="main">
     <div class="services">
-      <div class="service_bg">
+      <div class="service_bg" style="word-break:break-all">
         <h3>my favorite</h3>
         <ul id="favorite" class="link">
         

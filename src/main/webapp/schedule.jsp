@@ -18,6 +18,10 @@
 <script type="text/javascript" src="${cy}/js/fullcalendar/jquery.fancybox-1.3.1.pack.js"></script>
 <script type="text/javascript" src="${cy}/js/jquery-easyui-cy/xfUtil.js"></script>
 <script type="text/javascript">
+function showDes(str){
+	$('#memoryInfo').text(str);
+}
+
 $(function() { 
 	//$("body").css("visibility","visible");
 	$.post("${cy}/ours/oursQuery.ajax", {
@@ -46,19 +50,19 @@ $(function() {
 					if(data.rows[i].href != null && data.rows[i].href != ""){
 						if(data.rows[i].href.substr(0,4) == "http"){
 							var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
-							+"<a href=\"javascript:window.open('" + data.rows[i].href + "');\">"
+							+"<a onMouseOver=\"showDes('"+data.rows[i].description+"')\" href=\"javascript:window.open('" + data.rows[i].href + "');\">"
 							+"<strong>" + data.rows[i].title + "</strong></a></li>";	
 						}
 						else{
 							var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
-							+"<a href=\"javascript:window.open('${cy}" + data.rows[i].href + "');\">"
+							+"<a onMouseOver=\"showDes('"+data.rows[i].description+"')\" href=\"javascript:window.open('${cy}" + data.rows[i].href + "');\">"
 							+"<strong>" + data.rows[i].title + "</strong></a></li>";
 						}
 						
 					}
 					else{
 						var li = "<li>" + data.rows[i].formattedDate + "&nbsp;&nbsp;&nbsp;"
-						+"<a href=\"#\">"
+						+"<a onMouseOver=\"showDes('"+data.rows[i].description+"')\" href=\"#\">"
 						+"<strong>" + data.rows[i].title + "</strong></a></li>";
 					}
 					lis += li;
@@ -196,12 +200,12 @@ $(function() {
   </div>
   <div class="main">
     <div class="services">
-      <div class="service_bg">
+      <div class="service_bg" style="word-break:break-all">
         <h3>our dream</h3>
         <ul class="link" id ="scheduleIntroduce">
           
         </ul>
-        <p>i am not happy beca se</p>
+        <p id="memoryInfo"  ></p>
       </div>
       <div class="clr"></div>
     </div>

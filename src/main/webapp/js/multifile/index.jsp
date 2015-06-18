@@ -17,6 +17,8 @@
 				
 				if(!data.success){
 					parent.simpleMessAlert.call(this,'提示',data.message);
+				}else{
+					parent.simpleMessAlert.call(this,'提示',data.message);
 				}
 			});
 		}
