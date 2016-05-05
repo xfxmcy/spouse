@@ -1,6 +1,10 @@
 package com.xfxmcy.spouse.dao;
 
+import java.util.List;
+
+import com.xfxmcy.spouse.model.QueryParam;
 import com.xfxmcy.spouse.vo.SMAccount;
+import com.xfxmcy.spouse.vo.SMMemory;
 
 public interface SMAccountMapper {
 	/**
@@ -69,4 +73,24 @@ public interface SMAccountMapper {
      *   		 2014年1月18日 		cy
      */
     int updateByPrimaryKey(SMAccount record);
+    /**
+     * 
+     * queryAccountPaged:  分页查询account
+     * 
+     * @author 李丛阳
+     * @param param
+     * @return
+     * @since 　Ver 1.1
+     */
+	List<SMAccount> queryAccountPaged(QueryParam param);
+	/**
+	 * 
+	 * queryCountAccount:  query count(*) account 
+	 * 
+	 * @author 李丛阳
+	 * @param param
+	 * @return
+	 * @since 　Ver 1.1
+	 */
+	Long queryCountAccount(QueryParam param);
 }

@@ -188,17 +188,17 @@ $(document).ready(function(){
           <div class="clr"></div>
         </div>
         <!-- <div class="block_list">
-          <p class="title">jing</p>
+          <p class="title">xue</p>
           <p>cy </p>
-          <a href="#" class="link2">jing er</a> </div>
+          <a href="#" class="link2">xue er</a> </div>
         <div class="block_list">
-          <p class="title">jing</p>
+          <p class="title">xue</p>
           <p>cy </p>
-          <a href="#" class="link2">jing er</a> </div>
+          <a href="#" class="link2">xue er</a> </div>
         <div class="block_list">
-          <p class="title">jing</p>
+          <p class="title">xue</p>
           <p>cy </p>
-          <a href="#" class="link2">jing er</a> </div> -->
+          <a href="#" class="link2">xue er</a> </div> -->
         <div class="clr"></div>
         <div class="block_full">
           <p class="title"><img src="${cy}/images/tian.jpg" width="138" height="132" hspace="10" vspace="5" align="left" alt="oursPhoto" id="oursPhoto" />

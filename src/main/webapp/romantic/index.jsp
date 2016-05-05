@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>静</title>
+<title>xue</title>
 <link rel="shortcut icon" href="${cy}/icon/favicon.ico" type="image/x-icon"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="css/reset_y.css"/>
@@ -107,7 +107,7 @@
 <body class="impress-not-supported">
 <div class="bg"> <img src="images/bg04.jpg" width="100%"/> </div>
 <header class="top" id="top">
-  <h1><a href="${cy}/index.jsp"><img src="images/jing.png" alt="jing"/>静花雪月</a>
+  <h1><a href="${cy}/index.jsp"><!-- <img src="images/jing.png" alt="jing"/> -->阳春白雪</a>
   <%-- <a href="${cy}/index.jsp"><em>静花雪月</em></a> --%>
   </h1>
   <div class="music" id="bgMusicSwitch" title="stop music">

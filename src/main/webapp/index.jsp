@@ -133,7 +133,7 @@ p#controls {
 </head>
 <link href="${cy}/style.css" rel="stylesheet" type="text/css" /> 
 <body>
-<div id="container" style="width: 1132px;">
+<div id="container" >
   <div class="header">
     <div class="logo"  >
     	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="349" height="220">
@@ -171,7 +171,7 @@ p#controls {
       		<iframe allowtransparency="true" frameborder="0" width="290" height="96" scrolling="no" src="http://tianqi.2345.com/plugin/widget/index.htm?s=2&z=1&t=0&v=0&d=2&bd=0&k=&f=&q=1&e=1&a=1&c=54511&w=290&h=96&align=center"></iframe>
       	</div>
         <%-- <a href="${cy}/romantic/index.jsp"> --%><h3>Our acquaintance</h3><!-- </a> -->
-        <p><strong>2014年夏天......</strong></p>
+        <p><strong>2016-01-26</strong></p>
       </div>
       <ul class="banner">
         <li><a href="#"><img src="${cy}/images/girl.jpg" width="104" height="104" border="0" alt="banner" id="boyImage"/></a></li>
@@ -183,7 +183,7 @@ p#controls {
       		<a href="javascript:void(0)" onclick="blessCount()" class="link" style="color: #FFF">&nbsp;bless&nbsp;!</a>
       	</span>
       </h3>
-      <p>bless &nbsp;:&nbsp;&nbsp;<span class="px22" id="blessCount">4578</span></p>
+      <p>bless &nbsp;:&nbsp;&nbsp;<span class="px22" id="blessCount">126</span></p>
       <%-- <a href="${cy}/romantic/index.jsp"> --%><h3>About them</h3><!-- </a> -->
       <p><a href="${cy}/spouse/managerment/host.do"><img src="${cy}/images/xfxmcy.png" width="60%"  hspace="5" align="left" alt="picture" /></a>
       

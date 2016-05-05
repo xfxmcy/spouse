@@ -395,3 +395,36 @@ cy.reverseModelInFront= function(value) {
 	}
 	return statusValue;
 };
+/**
+ * @author CY
+ * 
+ * accountType
+ */
+cy.transAccountType= function(value) {
+	var statusValue = {};
+	statusValue.status = "";
+	switch (value) {
+	case "0":
+		statusValue.status = "game";
+		break;
+	case "1":
+		statusValue.status = "learning";
+		break;
+	case "2":
+		statusValue.status = "him";
+		break;
+	case "3":
+		statusValue.status = "schedule";
+		break;
+	case "4":
+		statusValue.status = "index";
+		break;	
+	case "5":
+		statusValue.status = "contact";
+		break;			
+	default:
+		statusValue.status = "ours";
+		break;
+	}
+	return statusValue;
+};

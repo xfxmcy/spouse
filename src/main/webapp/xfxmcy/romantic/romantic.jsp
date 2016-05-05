@@ -166,7 +166,7 @@ function deleteRomanticCheck(id){
 	},'json');
 }
 function openRomantic(){
-	window.open('${cy}/romantic/index.jsp', 'romantic jing');
+	window.open('${cy}/romantic/index.jsp', 'romantic xue');
 }
 function searchRomantic(){
 	var param = {};

@@ -2,7 +2,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>wen</title>
+<title>xue</title>
 <link rel="shortcut icon" href="./icon/favicon.ico" type="image/x-icon"/>
 <link type="text/css" rel="stylesheet" href="./app/love/renxi/default.css">
 <script type="text/javascript" src="./app/love/renxi/jquery.min.js"></script>
@@ -31,52 +31,58 @@
 		<div id="error">
 			目前您的浏览器无法显示，请换成谷歌(<a
 				href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a
-				href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。
+				href="http:/r/firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。
 		</div>
 		<div id="wrap">
 			<div id="text">
 				<div id="code">
-					<!-- <font color="#FF0000"> <span class="say">静儿...</span>
+					<span class="say">雪儿...</span>
 					<br>
-					<span class="say"> </span>
-					<br>
-					<span class="say">我知道自己比较笨,有时候,言语间让静失落,无语,流汗<br />...但,现在和以后一定要静每一分钟都充满60秒的甜蜜
+					<!-- <span class="say"> </span>
+					<br> -->
+					<span class="say">老公总是笨手笨脚的&nbsp;&nbsp;...但,他会一点一点聪明起来
 					</span>
 					<br>
-					<span class="say">静 不善言语..我本想多说...不过不会改变太多<br/>静 想要cy做他自己</span>
+					<span class="say">老公偶尔会惹老婆生气&nbsp;&nbsp;...但,他会第一个承认错误</span>
 					<br>
 
-					<span class="say">静喜欢的菜,土豆辣子,辣子土豆,土豆片,土豆丝,土豆 炒
-						potato......看着顺眼就好</span>
+					<span class="say">老公站在了"高富帅"的对立面&nbsp;&nbsp;...但,他会在别的领域弥补这一点</span>
 					<br>
-					<span class="say">静喜欢的歌,早早就在播放之中.....lubov,不过静时而听会电台,一分钟换十首..嘿嘿</span>
+					<span class="say">未来道路的崎岖,会拭去过去的尘埃</span>
 					<br>
-					<span class="say">静最喜欢的地方,云南,西藏......幸福的地方,充满着薰衣草的庄园</span>
+					<span class="say">......</span>
 					<br>
-					<span class="say">静喜欢白色,喜欢熊.........是不是喜欢北极熊?,错,是熊就喜欢..静期待的是一只比静大的熊...很快..很快...</span>
-					<br>
-
-					<span class="say">我知道你不喜欢浮夸,不喜欢太过直白的言语.... 时间会告诉你...cy
-						在向有静的地方不停的奔跑</span>
+					<span class="say">老公不认识路,但永远会记得有你的方向...</span>
 					<br>
 
-					<span class="say">人生是一条漫长的路...还有很长的时间去了解...不管结局怎样,我会将快乐洒在静的每一天</span>
+					<span class="say">老婆,我想拥有你此生的陪伴,永远的支持
+					<img src="./images/qq/49.gif"/></span>
 					<br>
-					<span class="say">好想静以后陶醉在电视中,有cy的陪伴 </span>
+					<font color="#FF0000"> 
+						<span class="say">愿君多采撷</span>
+						<br>
+						<span class="say">此物最相思 </span>
+					</font>
 					<br>
-					<span class="say"><span class="space"></span> -- 奔跑的cy--</span> </font>
+					<span class="say"><span class="space"></span>老婆等我...我来了...哥哥妹妹  你们快点...
+					<img src="./images/qq/21.gif"/></span> </font>
 					<br/>	
 					<span class="say"><span class="space" >未来
-						静在</span>  <a href="http://www.xfxmcy.com/index.jsp">充满幸福的地方(click)</a></span> </font>
-					</p> -->
+						我们4个人在</span>  
+						
+							<a href="http://www.xfxmcy.com/index.jsp">
+							<font color="#FF0000">充满幸福的地方(click)</font></a>
+						
+					</span>
+					</p> 
 				</div>
 			</div>
 			<div id="clock-box">
-				<span class="STYLE1"></span><font color="#33CC00">子文,我们 在一起</font> <span
+				<span class="STYLE1"></span><font color="#33CC00">雪,我们相识</font> <span
 					class="STYLE1">已经是……</span>
 				<div id="clock"></div>
 			</div>
-			<canvas id="canvas" width="1100" height="680"></canvas>
+			<canvas id="canvas" width="1100" height="590"></canvas>
 		</div>
 
 	</div>
@@ -162,7 +168,7 @@
 				bloom : {
 					num : 700,
 					width : 1080,
-					height : 650,
+					height : 550,
 				},
 				footer : {
 					width : 1200,
@@ -253,8 +259,9 @@
 			var textAnimate = eval(Jscex.compile("async", function() {
 				var together = new Date();
 				//together.setFullYear(2014, 3, 5); //时间年月日
-				together.setFullYear(2015, 5, 18); //时间年月日
-				together.setHours(1); //小时	
+				// 1月26号     0 26  == > 距离 26 号 第一天   == > 25
+				together.setFullYear(2016, 0, 25); //时间年月日
+				together.setHours(0); //小时	
 				//together.setMonth(3);						
 				together.setMinutes(0); //分钟
 				together.setSeconds(0); //秒前一位

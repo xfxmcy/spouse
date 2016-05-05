@@ -151,6 +151,10 @@ public class SystemicController {
 		else if("memory".equals(path)){
 			returnPath = SpouseConstant.SystemicPage.MEMORY_INDEX;
 		}
+		/*account index*/
+		else if("account".equals(path)){
+			returnPath = SpouseConstant.SystemicPage.ACCOUNT_INDEX;
+		}
 		return returnPath;
 	}
 	

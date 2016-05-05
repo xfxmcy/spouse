@@ -120,7 +120,7 @@ jQuery(document).ready(function(){
       <div class="service_bg">
         <h3>Get in touch!</h3>
         <ul class="link">
-          <li>cy<a href="#"><strong> jing</strong></a></li>
+          <li>cy<a href="#"><strong> xue</strong></a></li>
         </ul>
         <p>wait you&nbsp;&nbsp;&nbsp;&nbsp;来信</p>
         <p>email &nbsp;:&nbsp;&nbsp;<span class="px22"> 11101</span></p>

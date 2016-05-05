@@ -124,7 +124,10 @@
     	 </if>  
     </where>
     <if test="page != null">
-		order by model limit #{startPoint},#{rows} 
+		order by model,currentTime desc limit #{startPoint},#{rows} 
+	</if>
+	<if test="page == null">
+		order by currentTime desc
 	</if>
   </select>
   <select id="queryCountMemory" resultType="java.lang.Long" parameterType="com.xfxmcy.spouse.model.QueryParam" >

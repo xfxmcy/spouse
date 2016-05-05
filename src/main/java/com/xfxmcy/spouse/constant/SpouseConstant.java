@@ -110,7 +110,9 @@ public final class SpouseConstant {
 		/*video manager*/  
 		  public final static String VIDEO_INDEX = "/xfxmcy/family/video/videoManager";
 		/*memory manager*/  
-		  public final static String MEMORY_INDEX = "/xfxmcy/family/memory/memoryManager";
+		  public final static String MEMORY_INDEX = "/xfxmcy/family/memory/memoryManager";	
+		/*account manager*/  
+		  public final static String ACCOUNT_INDEX = "/xfxmcy/my/account/accountManager";		  
 		/*ours manager*/  
 		  public final static String OURS_INDEX = "/xfxmcy/family/ours/oursManager";
 		/*preface manager*/  

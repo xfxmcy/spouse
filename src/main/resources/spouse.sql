@@ -20,15 +20,17 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `sm_account`;
 CREATE TABLE `sm_account` (
-  `id` varchar(32) NOT NULL,
-  `account` varchar(200) NOT NULL,
-  `pass` varchar(200) DEFAULT NULL,
-  `title` varchar(500) DEFAULT NULL,
-  `email` varchar(200) DEFAULT NULL,
-  `phone` varchar(100) DEFAULT NULL,
-  `id_card` varchar(100) DEFAULT NULL,
-  `menofirst` varchar(500) DEFAULT NULL,
-  `menosecond` varchar(500) DEFAULT NULL,
+  `id` varchar(32) NOT NULL COMMENT 'id',
+  `account` varchar(200) NOT NULL COMMENT 'account',
+  `pass` varchar(200) DEFAULT NULL COMMENT 'pass',
+  `title` varchar(500) DEFAULT NULL COMMENT 'title',
+  `email` varchar(200) DEFAULT NULL COMMENT 'email',
+  `phone` varchar(100) DEFAULT NULL COMMENT 'phone',
+  `id_card` varchar(100) DEFAULT NULL COMMENT 'id_card',
+  `url` varchar(200) DEFAULT NULL COMMENT 'url',
+  `type` varchar(2) DEFAULT NULL COMMENT 'type',
+  `menofirst` varchar(500) DEFAULT NULL COMMENT '备注1',
+  `menosecond` varchar(500) DEFAULT NULL COMMENT '备注2',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

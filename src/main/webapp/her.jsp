@@ -147,10 +147,10 @@ $(document).ready(function(){
       <div class="clr"></div>
       <div class="project">
        <%--  <ul>
-          <li><a href="#"><img src="${cy}/images/jing/jing.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>看着我的眼睛....</span></li>
-          <li><a href="#"><img src="${cy}/images/jing/jing3.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>老师不在,快抄啊! 1+1=？  看看同桌的答案..哈哈 2</span></li>
-          <li><a href="#"><img src="${cy}/images/jing/jing8.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>smile</span></li>
-          <li><a href="#"><img src="${cy}/images/jing/jing11.jpg" alt="project 1" width="303" height="430" border="0" /></a><span>tenderness</span></li>
+          <li><a href="#"><img src="${cy}/images/jing/xue.jpg" alt="project 1" width="303" height="430" border="0" /></a><span></span></li>
+          <li><a href="#"><img src="${cy}/images/jing/xue.jpg" alt="project 1" width="303" height="430" border="0" /></a><span></span></li>
+          <li><a href="#"><img src="${cy}/images/jing/xue.jpg" alt="project 1" width="303" height="430" border="0" /></a><span></span></li>
+          <li><a href="#"><img src="${cy}/images/jing/xue.jpg" alt="project 1" width="303" height="430" border="0" /></a><span></span></li>
         </ul> --%>
         <ul id="project_her_photo">
         </ul>

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Jing</title>
+		<title>xue</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
 		<link rel="shortcut icon" href="../../icon/favicon.ico" type="image/x-icon"/>
 		<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" />
